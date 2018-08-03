@@ -4,13 +4,13 @@ import (
 	"encoding/json"
 	"testing"
 
-	pconfig "github.com/pip-services-go/pip-services-commons-go/config"
+	conf "github.com/pip-services-go/pip-services-commons-go/config"
 	"github.com/pip-services-go/pip-services-commons-go/data"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestConfigSections(t *testing.T) {
-	config := pconfig.NewConfigParamsFromTuples(
+	config := conf.NewConfigParamsFromTuples(
 		"Section1.Key1", "Value1",
 		"Section1.Key2", "Value2",
 		"Section1.Key3", "Value3",
@@ -22,7 +22,7 @@ func TestConfigSections(t *testing.T) {
 	assert.Equal(t, config.Get("Section1.Key3"), "Value3")
 	assert.Equal(t, "", config.Get("Section1.Key4"))
 
-	section2 := pconfig.NewConfigParamsFromTuples(
+	section2 := conf.NewConfigParamsFromTuples(
 		"Key1", "ValueA",
 		"Key2", "ValueB",
 	)
@@ -41,7 +41,7 @@ func TestConfigSections(t *testing.T) {
 }
 
 func TestConfigFromString(t *testing.T) {
-	config := pconfig.NewConfigParamsFromString("Queue=TestQueue;Endpoint=sb://cvctestbus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=K70UpCUXN1Q5RFykll6/gz4Et14iJrYFnGPlwiFBlow=")
+	config := conf.NewConfigParamsFromString("Queue=TestQueue;Endpoint=sb://cvctestbus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=K70UpCUXN1Q5RFykll6/gz4Et14iJrYFnGPlwiFBlow=")
 	assert.Equal(t, config.Length(), 4)
 	assert.Equal(t, config.Get("Queue"), "TestQueue")
 }
@@ -62,14 +62,14 @@ func TestConfigJsonSerialization(t *testing.T) {
 
 // func TestConfigFromObject(t *testing.T) {
 // 	value := data.NewAnyValueMapFromTuples(
-// 		"field1", pconfig.NewConfigParamsFromString("field11=123;field12=ABC"),
+// 		"field1", conf.NewConfigParamsFromString("field11=123;field12=ABC"),
 // 		"field2", data.NewAnyValueArrayFromValues(
-// 			123, "ABC", pconfig.NewConfigParamsFromString("field21=543;field22=XYZ"),
+// 			123, "ABC", conf.NewConfigParamsFromString("field21=543;field22=XYZ"),
 // 		),
 // 		"field3", true,
 // 	)
 
-// 	config := pconfig.NewConfigParamsFromValue(value)
+// 	config := conf.NewConfigParamsFromValue(value)
 // 	assert.Equal(t, config.Length(), 7)
 // 	assert.Equal(t, config.GetAsInteger("field1.field11"), 123)
 // 	assert.Equal(t, config.Get("field1.field12"), "ABC")

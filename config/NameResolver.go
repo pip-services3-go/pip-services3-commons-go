@@ -1,8 +1,6 @@
 package config
 
-import (
-	"github.com/pip-services-go/pip-services-commons-go/refer"
-)
+import "strings"
 
 type TNameResolver struct{}
 
@@ -22,9 +20,9 @@ func (c *TNameResolver) ResolveWithDefault(config *ConfigParams, defaultName str
 	if name == "" {
 		var descriptorStr = config.GetAsString("descriptor")
 		if descriptorStr != "" {
-			var descriptor = refer.NewDescriptorFromString(descriptorStr)
-			if descriptor != nil {
-				name = descriptor.Name()
+			tokens := strings.Split(descriptorStr, ":")
+			if len(tokens) == 5 {
+				name = tokens[3]
 			}
 		}
 	}

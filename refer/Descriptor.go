@@ -2,8 +2,6 @@ package refer
 
 import (
 	"strings"
-
-	"github.com/pip-services-go/pip-services-commons-go/errors"
 )
 
 type Descriptor struct {
@@ -90,12 +88,11 @@ func (c *Descriptor) IsComplete() bool {
 }
 
 func (c *Descriptor) Equals(value interface{}) bool {
-	switch value.(type) {
-	case *Descriptor:
-		return c.Match(value.(*Descriptor))
-	default:
-		return false
+	descriptor, ok := value.(*Descriptor)
+	if ok {
+		return c.Match(descriptor)
 	}
+	return false
 }
 
 func (c *Descriptor) ToString() string {
@@ -128,18 +125,16 @@ func (c *Descriptor) ToString() string {
 	return result
 }
 
-func NewDescriptorFromString(value string) *Descriptor {
+func ParseDescriptorFromString(value string) (*Descriptor, bool) {
 	if value == "" {
-		return nil
+		return nil, false
 	}
 
 	tokens := strings.Split(value, ":")
 	if len(tokens) != 5 {
-		err := errors.NewConfigError(
-			"", "BAD_DESCRIPTOR", "Descriptor "+value+" is in wrong format").WithDetails("descriptor", value)
-		panic(err)
+		return nil, false
 	}
 
 	return NewDescriptor(strings.TrimSpace(tokens[0]), strings.TrimSpace(tokens[1]),
-		strings.TrimSpace(tokens[2]), strings.TrimSpace(tokens[3]), strings.TrimSpace(tokens[4]))
+		strings.TrimSpace(tokens[2]), strings.TrimSpace(tokens[3]), strings.TrimSpace(tokens[4])), true
 }

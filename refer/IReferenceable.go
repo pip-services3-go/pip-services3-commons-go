@@ -1,3 +1,5 @@
 package refer
 
-// Todo: Complete implementation
+type IReferenceable interface {
+	SetReferences(references IReferences)
+}
