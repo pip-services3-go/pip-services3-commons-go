@@ -1,4 +1,4 @@
-package data
+package test_refer
 
 import (
 	"testing"

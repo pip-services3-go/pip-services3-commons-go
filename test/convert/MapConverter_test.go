@@ -1,4 +1,4 @@
-package convert
+package test_convert
 
 import (
 	"testing"

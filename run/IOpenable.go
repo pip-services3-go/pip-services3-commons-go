@@ -3,6 +3,6 @@ package run
 type IOpenable interface {
 	IClosable
 
-	IsOpened() bool
+	IsOpen() bool
 	Open(correlationId string) error
 }
