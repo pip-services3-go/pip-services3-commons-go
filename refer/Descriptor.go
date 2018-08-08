@@ -95,7 +95,7 @@ func (c *Descriptor) Equals(value interface{}) bool {
 	return false
 }
 
-func (c *Descriptor) ToString() string {
+func (c *Descriptor) String() string {
 	result := ""
 	if c.group == "" {
 		result += "*"

@@ -1,3 +1,4 @@
 package validate
 
-// Todo: Complete implementation
+type Schema struct {
+}

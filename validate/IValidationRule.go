@@ -1,3 +1,5 @@
 package validate
 
-// Todo: Complete implementation
+type IValidationRule interface {
+	Validate(path string, schema Schema, value interface{}, results []*ValidationResult)
+}

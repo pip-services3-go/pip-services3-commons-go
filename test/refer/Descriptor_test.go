@@ -36,10 +36,10 @@ func TestDescriptorMatch(t *testing.T) {
 
 func TestDescriptorToString(t *testing.T) {
 	descriptor1 := refer.NewDescriptor("pip-dummies", "controller", "default", "default", "1.0")
-	assert.Equal(t, "pip-dummies:controller:default:default:1.0", descriptor1.ToString())
+	assert.Equal(t, "pip-dummies:controller:default:default:1.0", descriptor1.String())
 
 	descriptor2 := refer.NewDescriptor("", "controller", "", "", "")
-	assert.Equal(t, "*:controller:*:*:*", descriptor2.ToString())
+	assert.Equal(t, "*:controller:*:*:*", descriptor2.String())
 }
 
 func TestDescriptorFromString(t *testing.T) {
