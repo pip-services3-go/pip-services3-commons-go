@@ -1,3 +1,3 @@
 package commands
 
-// Todo: Complete implementation
+type CommandSet struct{}

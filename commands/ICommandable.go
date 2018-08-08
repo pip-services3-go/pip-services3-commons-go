@@ -1,3 +1,5 @@
 package commands
 
-// Todo: Complete implementation
+type ICommandable interface {
+	GetCommandSet() *CommandSet
+}
