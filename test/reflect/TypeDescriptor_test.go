@@ -1,4 +1,4 @@
-package test_run
+package test_reflect
 
 import (
 	"testing"
