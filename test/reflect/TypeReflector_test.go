@@ -4,9 +4,8 @@ import (
 	refl "reflect"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
-
 	"github.com/pip-services-go/pip-services-commons-go/reflect"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestTypeReflectorCreate(t *testing.T) {

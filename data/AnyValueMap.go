@@ -25,6 +25,10 @@ func NewAnyValueMap(values map[string]interface{}) *AnyValueMap {
 	return c
 }
 
+func (c *AnyValueMap) InnerValue() interface{} {
+	return c.values
+}
+
 func (c *AnyValueMap) Get(key string) interface{} {
 	return (*c).values[key]
 }

@@ -25,6 +25,10 @@ func NewAnyValueArray(values []interface{}) *AnyValueArray {
 	return c
 }
 
+func (c *AnyValueArray) InnerValue() interface{} {
+	return c.values
+}
+
 func (c *AnyValueArray) Values() []interface{} {
 	return (*c).values
 }

@@ -6,39 +6,40 @@ import (
 )
 
 func valueToInterface(value reflect.Value) interface{} {
-	// switch value.Kind() {
-	// case reflect.Invalid:
-	// 	return nil
-	// case reflect.String:
-	// 	return value.String()
-	// case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
-	// 	return int64(value.Int())
-	// case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
-	// 	return int64(value.Uint())
-	// case reflect.Float32, reflect.Float64:
-	// 	return float64(value.Float())
-	// case reflect.Bool:
-	// 	return value.Bool()
+	switch value.Kind() {
+	case reflect.Invalid:
+		return nil
+	case reflect.String:
+		return value.String()
+	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+		return int64(value.Int())
+	case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
+		return int64(value.Uint())
+	case reflect.Float32, reflect.Float64:
+		return float64(value.Float())
+	case reflect.Bool:
+		return value.Bool()
+	case reflect.Map:
+		return mapToMap(value)
+	case reflect.Array, reflect.Slice:
+		return arrayToArray(value)
+	case reflect.Struct:
+		return structToMap(value)
+	case reflect.Interface, reflect.Ptr:
+		if value.IsNil() {
+			return nil
+		}
+		return valueToInterface(value.Elem())
+	}
 
-	// case reflect.Map:
-	// 	return mapToMap(value)
-	// case reflect.Array, reflect.Slice:
-	// 	return arrayToArray(value)
-	// case reflect.Struct:
-	// 	return structToMap(value)
-	// case reflect.Interface, reflect.Ptr:
-	// 	if value.IsNil() {
-	// 		return nil
-	// 	}
-	// 	return valueToInterface(value.Elem())
-	// }
+	return value.Interface()
 
 	// return nil
 
-	if value.IsNil() {
-		return nil
-	}
-	return value.Interface()
+	// if value.IsNil() {
+	// 	return nil
+	// }
+	// return value.Interface()
 }
 
 func arrayToArray(value reflect.Value) []interface{} {

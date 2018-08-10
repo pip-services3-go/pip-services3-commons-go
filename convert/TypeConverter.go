@@ -60,9 +60,42 @@ func ToTypeCode(value interface{}) TypeCode {
 		return Duration
 	}
 
-	rt := reflect.TypeOf(value)
+	rt, ok := value.(reflect.Type)
+	if !ok {
+		rt = reflect.TypeOf(value)
+	}
+	if rt.Kind() == reflect.Ptr {
+		rt = rt.Elem()
+	}
+
+	if rt == reflect.TypeOf((*time.Time)(nil)).Elem() {
+		return DateTime
+	}
+
+	if rt == reflect.TypeOf((*time.Duration)(nil)).Elem() {
+		return Duration
+	}
 
 	switch rt.Kind() {
+	case reflect.String:
+		return String
+
+	case reflect.Bool:
+		return Boolean
+
+	case reflect.Int8, reflect.Uint8, reflect.Int16, reflect.Uint16,
+		reflect.Int32, reflect.Uint32, reflect.Int, reflect.Uint:
+		return Integer
+
+	case reflect.Int64, reflect.Uint64:
+		return Long
+
+	case reflect.Float32:
+		return Float
+
+	case reflect.Float64:
+		return Double
+
 	case reflect.Struct:
 		return Object
 
