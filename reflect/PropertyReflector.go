@@ -70,10 +70,12 @@ func (c *TPropertyReflector) HasProperty(obj interface{}, name string) bool {
 	}
 
 	fieldType := c.toFieldType(obj)
-	for index := 0; index < fieldType.NumField(); index++ {
-		field := fieldType.Field(index)
-		if c.matchField(field, name) {
-			return true
+	if fieldType.Kind() == refl.Struct {
+		for index := 0; index < fieldType.NumField(); index++ {
+			field := fieldType.Field(index)
+			if c.matchField(field, name) {
+				return true
+			}
 		}
 	}
 
@@ -102,14 +104,16 @@ func (c *TPropertyReflector) GetProperty(obj interface{}, name string) interface
 	}()
 
 	fieldType := c.toFieldType(obj)
-	for index := 0; index < fieldType.NumField(); index++ {
-		field := fieldType.Field(index)
-		if c.matchField(field, name) {
-			val := refl.ValueOf(obj)
-			if val.Kind() == refl.Ptr {
-				val = val.Elem()
+	if fieldType.Kind() == refl.Struct {
+		for index := 0; index < fieldType.NumField(); index++ {
+			field := fieldType.Field(index)
+			if c.matchField(field, name) {
+				val := refl.ValueOf(obj)
+				if val.Kind() == refl.Ptr {
+					val = val.Elem()
+				}
+				return val.Field(index).Interface()
 			}
-			return val.Field(index).Interface()
 		}
 	}
 
@@ -133,10 +137,12 @@ func (c *TPropertyReflector) GetPropertyNames(obj interface{}) []string {
 	properties := []string{}
 
 	fieldType := c.toFieldType(obj)
-	for index := 0; index < fieldType.NumField(); index++ {
-		field := fieldType.Field(index)
-		if c.matchField(field, field.Name) {
-			properties = append(properties, field.Name)
+	if fieldType.Kind() == refl.Struct {
+		for index := 0; index < fieldType.NumField(); index++ {
+			field := fieldType.Field(index)
+			if c.matchField(field, field.Name) {
+				properties = append(properties, field.Name)
+			}
 		}
 	}
 
@@ -164,14 +170,16 @@ func (c *TPropertyReflector) GetProperties(obj interface{}) map[string]interface
 	properties := map[string]interface{}{}
 
 	fieldType := c.toFieldType(obj)
-	for index := 0; index < fieldType.NumField(); index++ {
-		field := fieldType.Field(index)
-		if c.matchField(field, field.Name) {
-			val := refl.ValueOf(obj)
-			if val.Kind() == refl.Ptr {
-				val = val.Elem()
+	if fieldType.Kind() == refl.Struct {
+		for index := 0; index < fieldType.NumField(); index++ {
+			field := fieldType.Field(index)
+			if c.matchField(field, field.Name) {
+				val := refl.ValueOf(obj)
+				if val.Kind() == refl.Ptr {
+					val = val.Elem()
+				}
+				properties[field.Name] = val.Field(index).Interface()
 			}
-			properties[field.Name] = val.Field(index).Interface()
 		}
 	}
 
@@ -201,15 +209,17 @@ func (c *TPropertyReflector) SetProperty(obj interface{}, name string, value int
 	}()
 
 	fieldType := c.toFieldType(obj)
-	for index := 0; index < fieldType.NumField(); index++ {
-		field := fieldType.Field(index)
-		if c.matchField(field, name) {
-			val := refl.ValueOf(obj)
-			if val.Kind() == refl.Ptr {
-				val = val.Elem()
+	if fieldType.Kind() == refl.Struct {
+		for index := 0; index < fieldType.NumField(); index++ {
+			field := fieldType.Field(index)
+			if c.matchField(field, name) {
+				val := refl.ValueOf(obj)
+				if val.Kind() == refl.Ptr {
+					val = val.Elem()
+				}
+				val.Field(index).Set(refl.ValueOf(value))
+				return
 			}
-			val.Field(index).Set(refl.ValueOf(value))
-			return
 		}
 	}
 
