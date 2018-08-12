@@ -31,7 +31,7 @@ func (c *StringValueMap) InnerValue() interface{} {
 }
 
 func (c *StringValueMap) Get(key string) string {
-	return (*c).values[key]
+	return c.values[key]
 }
 
 func (c *StringValueMap) Keys() []string {
@@ -43,15 +43,20 @@ func (c *StringValueMap) Keys() []string {
 }
 
 func (c *StringValueMap) Values() map[string]string {
-	return (*c).values
+	return c.values
 }
 
 func (c *StringValueMap) Put(key string, value interface{}) {
-	(*c).values[key] = convert.StringConverter.ToString(value)
+	c.values[key] = convert.StringConverter.ToString(value)
 }
 
 func (c *StringValueMap) Remove(key string) {
-	delete((*c).values, key)
+	delete(c.values, key)
+}
+
+func (c *StringValueMap) ContainsKey(key string) bool {
+	_, ok := c.values[key]
+	return ok
 }
 
 func (c *StringValueMap) Append(values map[string]string) {

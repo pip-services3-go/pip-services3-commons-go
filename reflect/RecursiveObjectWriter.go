@@ -1,6 +1,10 @@
 package reflect
 
-import "strings"
+import (
+	"strings"
+
+	"github.com/pip-services-go/pip-services-commons-go/convert"
+)
 
 type TRecursiveObjectWriter struct{}
 
@@ -8,17 +12,18 @@ var RecursiveObjectWriter = &TRecursiveObjectWriter{}
 
 func (c *TRecursiveObjectWriter) createProperty(obj interface{}, names []string, nameIndex int) interface{} {
 	// Todo: Complete implementation
+	// If next field is index then create an array
+	subField := ""
+	if len(names) > nameIndex+1 {
+		subField = names[nameIndex+1]
+	}
+	subFieldIndex := convert.IntegerConverter.ToNullableInteger(subField)
+	if subFieldIndex != nil {
+		return []interface{}{}
+	}
 
-	// // If next field is index then create an array
-	// string subField = names.Length > nameIndex + 1 ? names[nameIndex + 1] : null;
-	// int? subFieldIndex = IntegerConverter.ToNullableInteger(subField);
-	// if (subFieldIndex != null)
-	// 	return new List<object>();
-
-	// // Else create a dictionary
-	// return new Dictionary<string, object>();
-
-	return nil
+	// Else create a dictionary
+	return map[string]interface{}{}
 }
 
 func (c *TRecursiveObjectWriter) performSetProperty(obj interface{}, names []string, nameIndex int, value interface{}) {

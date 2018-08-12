@@ -9,18 +9,30 @@ import (
 
 type AnyValueMap struct {
 	values map[string]interface{}
+	base   IMap
 }
 
 func NewEmptyAnyValueMap() *AnyValueMap {
-	return &AnyValueMap{
+	c := &AnyValueMap{
 		values: map[string]interface{}{},
 	}
+	c.base = c
+	return c
+}
+
+func InheritAnyValueMap(base IMap) *AnyValueMap {
+	c := &AnyValueMap{
+		values: map[string]interface{}{},
+	}
+	c.base = base
+	return c
 }
 
 func NewAnyValueMap(values map[string]interface{}) *AnyValueMap {
 	c := &AnyValueMap{
 		values: map[string]interface{}{},
 	}
+	c.base = c
 	c.Append(values)
 	return c
 }
@@ -30,7 +42,7 @@ func (c *AnyValueMap) InnerValue() interface{} {
 }
 
 func (c *AnyValueMap) Get(key string) interface{} {
-	return (*c).values[key]
+	return c.values[key]
 }
 
 func (c *AnyValueMap) Keys() []string {
@@ -42,15 +54,20 @@ func (c *AnyValueMap) Keys() []string {
 }
 
 func (c *AnyValueMap) Values() map[string]interface{} {
-	return (*c).values
+	return c.values
 }
 
 func (c *AnyValueMap) Put(key string, value interface{}) {
-	(*c).values[key] = value
+	c.values[key] = value
 }
 
 func (c *AnyValueMap) Remove(key string) {
-	delete((*c).values, key)
+	delete(c.values, key)
+}
+
+func (c *AnyValueMap) ContainsKey(key string) bool {
+	_, ok := c.values[key]
+	return ok
 }
 
 func (c *AnyValueMap) Append(values map[string]interface{}) {
@@ -59,37 +76,37 @@ func (c *AnyValueMap) Append(values map[string]interface{}) {
 	}
 
 	for key := range values {
-		(*c).values[key] = values[key]
+		c.values[key] = values[key]
 	}
 }
 
 func (c *AnyValueMap) Clear() {
-	(*c).values = map[string]interface{}{}
+	c.values = map[string]interface{}{}
 }
 
 func (c *AnyValueMap) Length() int {
-	return len((*c).values)
+	return len(c.values)
 }
 
 func (c *AnyValueMap) GetAsSingleObject() interface{} {
-	return *c
+	return c.values
 }
 
 func (c *AnyValueMap) SetAsSingleObject(value interface{}) {
 	a := convert.ToMap(value)
-	(*c).values = a
+	c.values = a
 }
 
 func (c *AnyValueMap) GetAsObject(key string) interface{} {
-	return c.Get(key)
+	return c.base.Get(key)
 }
 
 func (c *AnyValueMap) SetAsObject(key string, value interface{}) {
-	c.Put(key, value)
+	c.base.Put(key, value)
 }
 
 func (c *AnyValueMap) GetAsNullableString(key string) *string {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.StringConverter.ToNullableString(value)
 }
 
@@ -98,12 +115,12 @@ func (c *AnyValueMap) GetAsString(key string) string {
 }
 
 func (c *AnyValueMap) GetAsStringWithDefault(key string, defaultValue string) string {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.StringConverter.ToStringWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableBoolean(key string) *bool {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.BooleanConverter.ToNullableBoolean(value)
 }
 
@@ -112,12 +129,12 @@ func (c *AnyValueMap) GetAsBoolean(key string) bool {
 }
 
 func (c *AnyValueMap) GetAsBooleanWithDefault(key string, defaultValue bool) bool {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.BooleanConverter.ToBooleanWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableInteger(key string) *int {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.IntegerConverter.ToNullableInteger(value)
 }
 
@@ -126,12 +143,12 @@ func (c *AnyValueMap) GetAsInteger(key string) int {
 }
 
 func (c *AnyValueMap) GetAsIntegerWithDefault(key string, defaultValue int) int {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.IntegerConverter.ToIntegerWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableLong(key string) *int64 {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.LongConverter.ToNullableLong(value)
 }
 
@@ -140,12 +157,12 @@ func (c *AnyValueMap) GetAsLong(key string) int64 {
 }
 
 func (c *AnyValueMap) GetAsLongWithDefault(key string, defaultValue int64) int64 {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.LongConverter.ToLongWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableFloat(key string) *float32 {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.FloatConverter.ToNullableFloat(value)
 }
 
@@ -154,12 +171,12 @@ func (c *AnyValueMap) GetAsFloat(key string) float32 {
 }
 
 func (c *AnyValueMap) GetAsFloatWithDefault(key string, defaultValue float32) float32 {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.FloatConverter.ToFloatWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableDouble(key string) *float64 {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.DoubleConverter.ToNullableDouble(value)
 }
 
@@ -168,12 +185,12 @@ func (c *AnyValueMap) GetAsDouble(key string) float64 {
 }
 
 func (c *AnyValueMap) GetAsDoubleWithDefault(key string, defaultValue float64) float64 {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.DoubleConverter.ToDoubleWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableDateTime(key string) *time.Time {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.DateTimeConverter.ToNullableDateTime(value)
 }
 
@@ -182,12 +199,12 @@ func (c *AnyValueMap) GetAsDateTime(key string) time.Time {
 }
 
 func (c *AnyValueMap) GetAsDateTimeWithDefault(key string, defaultValue time.Time) time.Time {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.DateTimeConverter.ToDateTimeWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableDuration(key string) *time.Duration {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.DurationConverter.ToNullableDuration(value)
 }
 
@@ -196,12 +213,12 @@ func (c *AnyValueMap) GetAsDuration(key string) time.Duration {
 }
 
 func (c *AnyValueMap) GetAsDurationWithDefault(key string, defaultValue time.Duration) time.Duration {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.DurationConverter.ToDurationWithDefault(value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsNullableType(typ convert.TypeCode, key string) interface{} {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.TypeConverter.ToNullableType(typ, value)
 }
 
@@ -210,17 +227,17 @@ func (c *AnyValueMap) GetAsType(typ convert.TypeCode, key string) interface{} {
 }
 
 func (c *AnyValueMap) GetAsTypeWithDefault(typ convert.TypeCode, key string, defaultValue interface{}) interface{} {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return convert.TypeConverter.ToTypeWithDefault(typ, value, defaultValue)
 }
 
 func (c *AnyValueMap) GetAsValue(key string) *AnyValue {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return NewAnyValue(value)
 }
 
 func (c *AnyValueMap) GetAsNullableArray(key string) *AnyValueArray {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	if value != nil {
 		return NewAnyValueArrayFromValue(value)
 	} else {
@@ -229,7 +246,7 @@ func (c *AnyValueMap) GetAsNullableArray(key string) *AnyValueArray {
 }
 
 func (c *AnyValueMap) GetAsArray(key string) *AnyValueArray {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return NewAnyValueArrayFromValue(value)
 }
 
@@ -243,7 +260,7 @@ func (c *AnyValueMap) GetAsArrayWithDefault(key string, defaultValue *AnyValueAr
 }
 
 func (c *AnyValueMap) GetAsNullableMap(key string) *AnyValueMap {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	if value != nil {
 		return NewAnyValueMapFromValue(value)
 	} else {
@@ -252,7 +269,7 @@ func (c *AnyValueMap) GetAsNullableMap(key string) *AnyValueMap {
 }
 
 func (c *AnyValueMap) GetAsMap(key string) *AnyValueMap {
-	value := c.Get(key)
+	value := c.base.Get(key)
 	return NewAnyValueMapFromValue(value)
 }
 
@@ -270,7 +287,7 @@ func (c *AnyValueMap) String() string {
 
 	// Todo: User encoder
 	for key := range c.Values() {
-		value := c.Get(key)
+		value := c.base.Get(key)
 
 		if len(builder) > 0 {
 			builder = builder + ";"
