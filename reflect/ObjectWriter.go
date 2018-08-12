@@ -38,11 +38,16 @@ func (c *TObjectWriter) SetProperty(obj interface{}, name string, value interfac
 				return
 			}
 		}
+		val.SetMapIndex(refl.ValueOf(name), refl.ValueOf(value))
 		return
 	}
 
 	if val.Kind() == refl.Slice || val.Kind() == refl.Array {
 		index := convert.IntegerConverter.ToIntegerWithDefault(name, -1)
+
+		// Todo: Think how to resize slice
+
+		// Set array element
 		if index >= 0 && index < val.Len() {
 			v := val.Index(index)
 			v.Set(refl.ValueOf(value))
