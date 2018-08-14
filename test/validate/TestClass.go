@@ -1,8 +1,17 @@
 package test_validate
 
+type SubTestClass struct {
+	Id         string
+	FloatField float32
+}
+
 type TestClass struct {
-	StringField1 string
-	StringField2 string
-	IntField     int
-	FloatField   float64
+	IntField         int
+	StringField1     string
+	StringField2     string
+	IntArrayField    []int
+	StringArrayField []string
+	MapField         map[string]interface{}
+	SubObjectField   *SubTestClass
+	SubArrayField    []*SubTestClass
 }

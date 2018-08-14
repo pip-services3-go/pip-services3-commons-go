@@ -12,7 +12,7 @@ func NewPropertySchema() *PropertySchema {
 	return c
 }
 
-func NewPropertySchemaWithRules(required bool, rules []IValidationRule, name string, typ interface{}) *PropertySchema {
+func NewPropertySchemaWithRules(name string, typ interface{}, required bool, rules []IValidationRule) *PropertySchema {
 	c := &PropertySchema{
 		name: name,
 		typ:  typ,
