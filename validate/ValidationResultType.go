@@ -4,6 +4,6 @@ type ValidationResultType int
 
 const (
 	Information ValidationResultType = iota
-	Warning     ValidationResultType = iota
-	Error       ValidationResultType = iota
+	Warning
+	Error
 )

@@ -19,7 +19,7 @@ func TestRecursiveSetProperty(t *testing.T) {
 	reflect.RecursiveObjectWriter.SetProperty(obj, "value4.1", "EEE")
 
 	values := reflect.RecursiveObjectReader.GetProperties(obj)
-	assert.Equal(t, 5, len(values))
+	assert.Equal(t, 6, len(values))
 	assert.Equal(t, "AAA", values["value1"])
 	assert.Equal(t, "BBB", values["value2"])
 	//assert.Equal(t, 111, values["value2.value21"])
@@ -45,7 +45,7 @@ func TestRecursiveSetProperties(t *testing.T) {
 	reflect.RecursiveObjectWriter.SetProperties(obj, values)
 
 	resultValues := reflect.RecursiveObjectReader.GetProperties(obj)
-	assert.Equal(t, 5, len(resultValues))
+	assert.Equal(t, 6, len(resultValues))
 	assert.Equal(t, "AAA", resultValues["value1"])
 	assert.Equal(t, "BBB", resultValues["value2"])
 	//assert.Equal(t, 111, resultValues["value2.value21"])
