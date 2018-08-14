@@ -9,7 +9,7 @@ import (
 )
 
 type Schema struct {
-	base     ISchema
+	base     ISchemaBase
 	required bool
 	rules    []IValidationRule
 }
@@ -32,7 +32,7 @@ func NewSchemaWithRules(required bool, rules []IValidationRule) *Schema {
 	return c
 }
 
-func InheritSchema(base ISchema) *Schema {
+func InheritSchema(base ISchemaBase) *Schema {
 	c := &Schema{
 		required: false,
 		rules:    []IValidationRule{},
@@ -41,7 +41,7 @@ func InheritSchema(base ISchema) *Schema {
 	return c
 }
 
-func InheritSchemaWithRules(base ISchema, required bool, rules []IValidationRule) *Schema {
+func InheritSchemaWithRules(base ISchemaBase, required bool, rules []IValidationRule) *Schema {
 	c := &Schema{
 		required: required,
 		rules:    rules,
@@ -140,7 +140,7 @@ func (c *Schema) PerformTypeValidation(path string, typ interface{}, value inter
 	}
 
 	// Perform validation against the schema
-	schema, ok := typ.(ISchema)
+	schema, ok := typ.(ISchemaBase)
 	if ok {
 		schemaResults := schema.PerformValidation(path, value)
 		if schemaResults != nil {

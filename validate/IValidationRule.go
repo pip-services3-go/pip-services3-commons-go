@@ -1,5 +1,5 @@
 package validate
 
 type IValidationRule interface {
-	Validate(path string, schema *Schema, value interface{}) []*ValidationResult
+	Validate(path string, schema ISchema, value interface{}) []*ValidationResult
 }
