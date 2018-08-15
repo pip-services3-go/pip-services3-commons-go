@@ -8,5 +8,5 @@ import (
 type ICommandInterceptor interface {
 	Name(command ICommand) string
 	Execute(correlationId string, command ICommand, args *run.Parameters) (interface{}, error)
-	Validate(command ICommand, args *run.Parameters) []validate.ValidationResult
+	Validate(command ICommand, args *run.Parameters) []*validate.ValidationResult
 }
