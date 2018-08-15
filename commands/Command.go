@@ -57,7 +57,7 @@ func (c *Command) Execute(correlationId string, args *run.Parameters) (interface
 
 				cause, ok := r.(error)
 				if ok {
-					tempError.Wrap(cause)
+					tempError.WithCause(cause)
 				}
 
 				err = tempError
