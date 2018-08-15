@@ -6,7 +6,7 @@ import (
 )
 
 type ICommandInterceptor interface {
-	GetName(command ICommand) string
+	Name(command ICommand) string
 	Execute(correlationId string, command ICommand, args *run.Parameters) (interface{}, error)
 	Validate(command ICommand, args *run.Parameters) []validate.ValidationResult
 }

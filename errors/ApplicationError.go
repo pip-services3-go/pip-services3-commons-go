@@ -26,6 +26,9 @@ func (e *ApplicationError) WithStatus(status int) *ApplicationError {
 }
 
 func (e *ApplicationError) WithDetails(key string, value interface{}) *ApplicationError {
+	if e.Details == nil {
+		e.Details = map[string]interface{}{}
+	}
 	e.Details[key] = value
 	return e
 }
