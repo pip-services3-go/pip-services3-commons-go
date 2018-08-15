@@ -1,5 +1,7 @@
 package refer
 
+import "github.com/pip-services-go/pip-services-commons-go/data"
+
 type Reference struct {
 	locator   interface{}
 	component interface{}
@@ -36,9 +38,9 @@ func (c *Reference) Match(locator interface{}) bool {
 	}
 
 	// Locate by direct locator matching
-	descriptor, ok := c.locator.(*Descriptor)
+	equatable, ok := c.locator.(data.IEquatable)
 	if ok {
-		return descriptor.Equals(locator)
+		return equatable.Equals(locator)
 	}
 
 	// Locate by direct locator matching

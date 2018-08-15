@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/pip-services-go/pip-services-commons-go/convert"
+	"github.com/pip-services-go/pip-services-commons-go/data"
 )
 
 type TObjectComparator struct{}
@@ -45,6 +46,15 @@ func (c *TObjectComparator) AreEqual(value1 interface{}, value2 interface{}) boo
 	}
 	if value1 == nil || value2 == nil {
 		return false
+	}
+
+	equatable, ok := value1.(data.IEquatable)
+	if ok {
+		return equatable.Equals(value2)
+	}
+	equatable, ok = value2.(data.IEquatable)
+	if ok {
+		return equatable.Equals(value1)
 	}
 
 	number1 := convert.DoubleConverter.ToNullableDouble(value1)
