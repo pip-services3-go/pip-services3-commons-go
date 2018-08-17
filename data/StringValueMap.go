@@ -54,7 +54,7 @@ func (c *StringValueMap) Remove(key string) {
 	delete(c.value, key)
 }
 
-func (c *StringValueMap) ContainsKey(key string) bool {
+func (c *StringValueMap) Contains(key string) bool {
 	_, ok := c.value[key]
 	return ok
 }

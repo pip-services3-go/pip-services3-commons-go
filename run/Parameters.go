@@ -51,7 +51,7 @@ func (c *Parameters) Remove(key string) {
 	c.AnyValueMap.Remove(key)
 }
 
-func (c *Parameters) ContainsKey(key string) bool {
+func (c *Parameters) Contains(key string) bool {
 	return reflect.RecursiveObjectReader.HasProperty(c.InnerValue(), key)
 }
 
@@ -122,7 +122,7 @@ func (c *Parameters) AssignTo(value interface{}) {
 func (c *Parameters) Pick(paths ...string) *Parameters {
 	result := NewEmptyParameters()
 	for _, path := range paths {
-		if c.ContainsKey(path) {
+		if c.Contains(path) {
 			result.Put(path, c.Get(path))
 		}
 	}

@@ -65,7 +65,7 @@ func (c *AnyValueMap) Remove(key string) {
 	delete(c.value, key)
 }
 
-func (c *AnyValueMap) ContainsKey(key string) bool {
+func (c *AnyValueMap) Contains(key string) bool {
 	_, ok := c.value[key]
 	return ok
 }

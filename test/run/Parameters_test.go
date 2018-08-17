@@ -24,20 +24,20 @@ func TestGetParams(t *testing.T) {
 	value = params.Get("value2")
 	assert.NotNil(t, value)
 
-	boolVal := params.ContainsKey("value3")
+	boolVal := params.Contains("value3")
 	assert.False(t, boolVal)
 
 	value = params.GetAsInteger("value2.value21")
 	assert.NotNil(t, value)
 	assert.Equal(t, 111, value)
 
-	boolVal = params.ContainsKey("value2.value31")
+	boolVal = params.Contains("value2.value31")
 	assert.False(t, boolVal)
 
-	boolVal = params.ContainsKey("value2.value21.value211")
+	boolVal = params.Contains("value2.value21.value211")
 	assert.False(t, boolVal)
 
-	boolVal = params.ContainsKey("valueA.valueB.valueC")
+	boolVal = params.Contains("valueA.valueB.valueC")
 	assert.False(t, boolVal)
 }
 
@@ -45,28 +45,28 @@ func TestParamsContainKey(t *testing.T) {
 	obj := convert.JsonConverter.ToMap("{ \"value1\": 123, \"value2\": { \"value21\": 111, \"value22\": 222 } }")
 	params := run.NewParametersFromValue(obj)
 
-	has := params.ContainsKey("")
+	has := params.Contains("")
 	assert.False(t, has)
 
-	has = params.ContainsKey("value1")
+	has = params.Contains("value1")
 	assert.True(t, has)
 
-	has = params.ContainsKey("value2")
+	has = params.Contains("value2")
 	assert.True(t, has)
 
-	has = params.ContainsKey("value3")
+	has = params.Contains("value3")
 	assert.False(t, has)
 
-	has = params.ContainsKey("value2.value21")
+	has = params.Contains("value2.value21")
 	assert.True(t, has)
 
-	has = params.ContainsKey("value2.value31")
+	has = params.Contains("value2.value31")
 	assert.False(t, has)
 
-	has = params.ContainsKey("value2.value21.value211")
+	has = params.Contains("value2.value21.value211")
 	assert.False(t, has)
 
-	has = params.ContainsKey("valueA.valueB.valueC")
+	has = params.Contains("valueA.valueB.valueC")
 	assert.False(t, has)
 }
 
