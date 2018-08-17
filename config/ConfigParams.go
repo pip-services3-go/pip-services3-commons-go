@@ -55,7 +55,7 @@ func NewConfigParamsFromMaps(maps ...map[string]string) *ConfigParams {
 func (c *ConfigParams) GetSectionNames() []string {
 	sections := []string{}
 
-	for key := range c.Values() {
+	for key := range c.Value() {
 		pos := strings.Index(key, ".")
 		section := key
 		if pos > 0 {
@@ -83,7 +83,7 @@ func (c *ConfigParams) GetSection(section string) *ConfigParams {
 	result := NewEmptyConfigParams()
 	prefix := section + "."
 
-	for key := range (*c).Values() {
+	for key := range c.Value() {
 		// Prevents exception on the next line
 		if len(key) < len(prefix) {
 			continue
@@ -93,7 +93,7 @@ func (c *ConfigParams) GetSection(section string) *ConfigParams {
 		keyPrefix := key[0:len(prefix)]
 		if keyPrefix == prefix {
 			sectionKey := key[len(prefix):]
-			result.Put(sectionKey, (*c).Get(key))
+			result.Put(sectionKey, c.Get(key))
 		}
 	}
 
@@ -106,7 +106,7 @@ func (c *ConfigParams) AddSection(section string, sectionParams *ConfigParams) {
 	}
 
 	if sectionParams != nil {
-		for key := range sectionParams.Values() {
+		for key := range sectionParams.Value() {
 			sectionKey := key
 
 			if len(sectionKey) > 0 {
@@ -117,15 +117,15 @@ func (c *ConfigParams) AddSection(section string, sectionParams *ConfigParams) {
 
 			value := (*sectionParams).Get(key)
 
-			(*c).Put(sectionKey, value)
+			c.Put(sectionKey, value)
 		}
 	}
 }
 
 func (c *ConfigParams) Override(configParams *ConfigParams) *ConfigParams {
-	return NewConfigParamsFromMaps(c.Values(), configParams.Values())
+	return NewConfigParamsFromMaps(c.Value(), configParams.Value())
 }
 
 func (c *ConfigParams) SetDefaults(defaults *ConfigParams) *ConfigParams {
-	return NewConfigParamsFromMaps(defaults.Values(), c.Values())
+	return NewConfigParamsFromMaps(defaults.Value(), c.Value())
 }

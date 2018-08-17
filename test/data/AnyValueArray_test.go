@@ -9,20 +9,20 @@ import (
 
 func TestAnyValueArrayCreate(t *testing.T) {
 	array := data.NewEmptyAnyValueArray()
-	assert.Equal(t, 0, array.Length())
+	assert.Equal(t, 0, array.Len())
 
 	array = data.NewAnyValueArray([]interface{}{1, 2, 3})
-	assert.Equal(t, 3, array.Length())
+	assert.Equal(t, 3, array.Len())
 	assert.Equal(t, "1,2,3", array.String())
 
 	array = data.NewAnyValueArrayFromString("Fatal,Error,Info,", ",", true)
-	assert.Equal(t, 3, array.Length())
+	assert.Equal(t, 3, array.Len())
 
 	array = data.NewAnyValueArray([]interface{}{1, 2, 3})
-	assert.Equal(t, 3, array.Length())
+	assert.Equal(t, 3, array.Len())
 	assert.True(t, array.Contains(1))
 
 	array = data.NewAnyValueArrayFromValue([]interface{}{1, 2, 3})
-	assert.Equal(t, 3, array.Length())
+	assert.Equal(t, 3, array.Len())
 	assert.Equal(t, int64(1), array.Get(0))
 }

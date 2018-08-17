@@ -10,52 +10,52 @@ import (
 )
 
 type StringValueMap struct {
-	values map[string]string
+	value map[string]string
 }
 
 func NewEmptyStringValueMap() *StringValueMap {
 	c := &StringValueMap{}
-	(*c).values = map[string]string{}
+	c.value = map[string]string{}
 	return c
 }
 
-func NewStringValueMap(values map[string]string) *StringValueMap {
+func NewStringValueMap(value map[string]string) *StringValueMap {
 	c := &StringValueMap{}
-	(*c).values = map[string]string{}
-	c.Append(values)
+	c.value = map[string]string{}
+	c.Append(value)
 	return c
 }
 
 func (c *StringValueMap) InnerValue() interface{} {
-	return c.values
+	return c.value
+}
+
+func (c *StringValueMap) Value() map[string]string {
+	return c.value
 }
 
 func (c *StringValueMap) Get(key string) string {
-	return c.values[key]
+	return c.value[key]
 }
 
 func (c *StringValueMap) Keys() []string {
 	keys := []string{}
-	for key := range (*c).values {
+	for key := range c.value {
 		keys = append(keys, key)
 	}
 	return keys
 }
 
-func (c *StringValueMap) Values() map[string]string {
-	return c.values
-}
-
 func (c *StringValueMap) Put(key string, value interface{}) {
-	c.values[key] = convert.StringConverter.ToString(value)
+	c.value[key] = convert.StringConverter.ToString(value)
 }
 
 func (c *StringValueMap) Remove(key string) {
-	delete(c.values, key)
+	delete(c.value, key)
 }
 
 func (c *StringValueMap) ContainsKey(key string) bool {
-	_, ok := c.values[key]
+	_, ok := c.value[key]
 	return ok
 }
 
@@ -65,7 +65,7 @@ func (c *StringValueMap) Append(values map[string]string) {
 	}
 
 	for key := range values {
-		(*c).values[key] = values[key]
+		c.value[key] = values[key]
 	}
 }
 
@@ -75,16 +75,16 @@ func (c *StringValueMap) AppendAny(values map[string]interface{}) {
 	}
 
 	for key := range values {
-		(*c).values[key] = convert.StringConverter.ToString(values[key])
+		c.value[key] = convert.StringConverter.ToString(values[key])
 	}
 }
 
 func (c *StringValueMap) Clear() {
-	(*c).values = map[string]string{}
+	c.value = map[string]string{}
 }
 
-func (c *StringValueMap) Length() int {
-	return len((*c).values)
+func (c *StringValueMap) Len() int {
+	return len(c.value)
 }
 
 func (c *StringValueMap) GetAsSingleObject() interface{} {
@@ -273,8 +273,8 @@ func (c *StringValueMap) String() string {
 	builder := ""
 
 	// Todo: User encoder
-	for key := range (*c).values {
-		value := (*c).values[key]
+	for key := range c.value {
+		value := c.value[key]
 
 		if len(builder) > 0 {
 			builder = builder + ";"
@@ -291,11 +291,11 @@ func (c *StringValueMap) String() string {
 }
 
 func (c *StringValueMap) Clone() interface{} {
-	return NewStringValueMap((*c).values)
+	return NewStringValueMap(c.value)
 }
 
 func (c *StringValueMap) MarshalJSON() ([]byte, error) {
-	return json.Marshal((*c).values)
+	return json.Marshal(c.value)
 }
 
 func (c *StringValueMap) UnmarshalJSON(data []byte) error {

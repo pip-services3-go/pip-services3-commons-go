@@ -18,7 +18,7 @@ func NewProjectionParamsFromStrings(values []string) *ProjectionParams {
 	c := &ProjectionParams{
 		values: make([]string, len(values)),
 	}
-	copy((*c).values, values)
+	copy(c.values, values)
 	return c
 }
 
@@ -28,63 +28,63 @@ func NewProjectionParamsFromAnyArray(values *AnyValueArray) *ProjectionParams {
 	}
 
 	c := &ProjectionParams{
-		values: make([]string, 0, values.Length()),
+		values: make([]string, 0, values.Len()),
 	}
 
-	for index := 0; index < values.Length(); index++ {
+	for index := 0; index < values.Len(); index++ {
 		value := values.GetAsString(index)
 		if value != "" {
-			(*c).values = append((*c).values, value)
+			c.values = append(c.values, value)
 		}
 	}
 
 	return c
 }
 
-func (c *ProjectionParams) Values() []string {
-	return (*c).values
+func (c *ProjectionParams) Value() []string {
+	return c.values
 }
 
-func (c *ProjectionParams) Length() int {
-	return len((*c).values)
+func (c *ProjectionParams) Len() int {
+	return len(c.values)
 }
 
 func (c *ProjectionParams) Get(index int) string {
-	return (*c).values[index]
+	return c.values[index]
 }
 
 func (c *ProjectionParams) Put(index int, value string) {
-	if cap((*c).values)+1 < index {
+	if cap(c.values)+1 < index {
 		a := make([]string, index+1, (index+1)*2)
-		copy(a, (*c).values)
-		(*c).values = a
+		copy(a, c.values)
+		c.values = a
 	}
 
-	(*c).values[index] = value
+	c.values[index] = value
 }
 
 func (c *ProjectionParams) Remove(index int) {
-	(*c).values = append((*c).values[:index], (*c).values[index+1:]...)
+	c.values = append(c.values[:index], c.values[index+1:]...)
 }
 
 func (c *ProjectionParams) Push(value string) {
-	(*c).values = append((*c).values, value)
+	c.values = append(c.values, value)
 }
 
 func (c *ProjectionParams) Append(elements []string) {
 	if elements != nil {
-		(*c).values = append((*c).values, elements...)
+		c.values = append(c.values, elements...)
 	}
 }
 
 func (c *ProjectionParams) Clear() {
-	(*c).values = make([]string, 0, 10)
+	c.values = make([]string, 0, 10)
 }
 
 func (c *ProjectionParams) String() string {
 	builder := ""
 
-	for index := 0; index < c.Length(); index++ {
+	for index := 0; index < c.Len(); index++ {
 		if index > 0 {
 			builder = builder + ","
 		}

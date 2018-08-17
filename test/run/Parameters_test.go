@@ -74,21 +74,21 @@ func TestSetParams(t *testing.T) {
 	params := run.NewEmptyParameters()
 
 	params.Put("", 123)
-	assert.Equal(t, 0, params.Length())
+	assert.Equal(t, 0, params.Len())
 
 	params.Put("field1", 123)
-	assert.Equal(t, 1, params.Length())
+	assert.Equal(t, 1, params.Len())
 	assert.Equal(t, 123, params.GetAsInteger("field1"))
 
 	params.Put("field2", "ABC")
-	assert.Equal(t, 2, params.Length())
+	assert.Equal(t, 2, params.Len())
 	assert.Equal(t, "ABC", params.Get("field2"))
 
 	params.Put("field2.field1", 123)
 	assert.Equal(t, "ABC", params.Get("field2"))
 
 	// params.Put("field3.field31", 456)
-	// assert.Equal(t, 3, params.Length())
+	// assert.Equal(t, 3, params.Len())
 	// subConfig := params.GetAsMap("field3")
 	// assert.NotNil(t, subConfig)
 	// assert.Equal(t, 456, subConfig.GetAsInteger("field31"))
@@ -107,7 +107,7 @@ func TestParamsDefaults(t *testing.T) {
 		"value3", 345,
 	)
 	result = result.SetDefaults(defaults, false)
-	assert.Equal(t, 3, result.Length())
+	assert.Equal(t, 3, result.Len())
 	assert.Equal(t, 123, result.Get("value1"))
 	assert.Equal(t, 234, result.Get("value2"))
 	assert.Equal(t, 345, result.Get("value3"))
@@ -120,12 +120,12 @@ func TestParamsOverrideRecursive(t *testing.T) {
 	defaults := run.NewParametersFromValue(obj)
 	result = result.SetDefaults(defaults, true)
 
-	assert.Equal(t, 3, result.Length())
+	assert.Equal(t, 3, result.Len())
 	assert.Equal(t, float64(123), result.Get("value1"))
 	assert.Equal(t, float64(345), result.Get("value3"))
 
 	deepResult := result.GetAsMap("value2")
-	assert.Equal(t, 3, deepResult.Length())
+	assert.Equal(t, 3, deepResult.Len())
 	assert.Equal(t, 111, deepResult.GetAsInteger("value21"))
 	assert.Equal(t, 222, deepResult.GetAsInteger("value22"))
 	assert.Equal(t, 333, deepResult.GetAsInteger("value23"))
@@ -136,7 +136,7 @@ func TestParamsOverrideNulls(t *testing.T) {
 	result := run.NewParametersFromValue(obj)
 	result = result.Override(nil, true)
 
-	assert.Equal(t, 2, result.Length())
+	assert.Equal(t, 2, result.Len())
 	assert.Equal(t, float64(123), result.Get("value1"))
 	assert.Equal(t, float64(234), result.Get("value2"))
 }
@@ -161,11 +161,11 @@ func TestParamsFromConfig(t *testing.T) {
 	)
 
 	parameters := run.NewParametersFromConfig(params)
-	assert.Equal(t, 2, parameters.Length())
+	assert.Equal(t, 2, parameters.Len())
 	assert.Equal(t, "ABC", parameters.Get("field2"))
 
 	value := parameters.GetAsMap("field1")
-	assert.Equal(t, 2, value.Length())
+	assert.Equal(t, 2, value.Len())
 	assert.Equal(t, "123", value.Get("field11"))
 	assert.Equal(t, "XYZ", value.Get("field12"))
 }

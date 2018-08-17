@@ -14,7 +14,7 @@ func TestFilterParamsCreate(t *testing.T) {
 		"value2", "ABC",
 	)
 
-	assert.Equal(t, 2, filter.Length())
+	assert.Equal(t, 2, filter.Len())
 }
 
 func TestFilterParamsJsonSerialization(t *testing.T) {

@@ -8,13 +8,13 @@ import (
 )
 
 type AnyValueMap struct {
-	values map[string]interface{}
-	base   IMap
+	value map[string]interface{}
+	base  IMap
 }
 
 func NewEmptyAnyValueMap() *AnyValueMap {
 	c := &AnyValueMap{
-		values: map[string]interface{}{},
+		value: map[string]interface{}{},
 	}
 	c.base = c
 	return c
@@ -22,79 +22,79 @@ func NewEmptyAnyValueMap() *AnyValueMap {
 
 func InheritAnyValueMap(base IMap) *AnyValueMap {
 	c := &AnyValueMap{
-		values: map[string]interface{}{},
+		value: map[string]interface{}{},
 	}
 	c.base = base
 	return c
 }
 
-func NewAnyValueMap(values map[string]interface{}) *AnyValueMap {
+func NewAnyValueMap(value map[string]interface{}) *AnyValueMap {
 	c := &AnyValueMap{
-		values: map[string]interface{}{},
+		value: map[string]interface{}{},
 	}
 	c.base = c
-	c.Append(values)
+	c.Append(value)
 	return c
 }
 
 func (c *AnyValueMap) InnerValue() interface{} {
-	return c.values
+	return c.value
+}
+
+func (c *AnyValueMap) Value() map[string]interface{} {
+	return c.value
 }
 
 func (c *AnyValueMap) Get(key string) interface{} {
-	return c.values[key]
+	return c.value[key]
 }
 
 func (c *AnyValueMap) Keys() []string {
 	keys := []string{}
-	for key := range (*c).values {
+	for key := range c.value {
 		keys = append(keys, key)
 	}
 	return keys
 }
 
-func (c *AnyValueMap) Values() map[string]interface{} {
-	return c.values
-}
-
 func (c *AnyValueMap) Put(key string, value interface{}) {
-	c.values[key] = value
+	c.value[key] = value
 }
 
 func (c *AnyValueMap) Remove(key string) {
-	delete(c.values, key)
+	delete(c.value, key)
 }
 
 func (c *AnyValueMap) ContainsKey(key string) bool {
-	_, ok := c.values[key]
+	_, ok := c.value[key]
 	return ok
 }
 
-func (c *AnyValueMap) Append(values map[string]interface{}) {
-	if values == nil {
+func (c *AnyValueMap) Append(value map[string]interface{}) {
+	if value == nil {
 		return
 	}
 
-	for key := range values {
-		c.values[key] = values[key]
+	for key := range value {
+		c.value[key] = value[key]
 	}
 }
 
 func (c *AnyValueMap) Clear() {
-	c.values = map[string]interface{}{}
+	c.value = map[string]interface{}{}
 }
 
-func (c *AnyValueMap) Length() int {
-	return len(c.values)
+func (c *AnyValueMap) Len() int {
+	return len(c.value)
 }
 
 func (c *AnyValueMap) GetAsSingleObject() interface{} {
-	return c.values
+	return c.value
 }
 
 func (c *AnyValueMap) SetAsSingleObject(value interface{}) {
 	a := convert.ToMap(value)
-	c.values = a
+	c.value = a
 }
 
 func (c *AnyValueMap) GetAsObject(key string) interface{} {
@@ -286,7 +286,7 @@ func (c *AnyValueMap) String() string {
 	builder := ""
 
 	// Todo: User encoder
-	for key := range c.Values() {
+	for key := range c.Value() {
 		value := c.base.Get(key)
 
 		if len(builder) > 0 {
@@ -304,7 +304,7 @@ func (c *AnyValueMap) String() string {
 }
 
 func (c *AnyValueMap) Clone() interface{} {
-	return NewAnyValueMap((*c).values)
+	return NewAnyValueMap(c.value)
 }
 
 func NewAnyValueMapFromValue(value interface{}) *AnyValueMap {

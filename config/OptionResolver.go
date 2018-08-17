@@ -12,7 +12,7 @@ func (c *TOptionsResolver) Resolve(config *ConfigParams) *ConfigParams {
 func (c *TOptionsResolver) ResolveWithDefault(config *ConfigParams) *ConfigParams {
 	var options = c.Resolve(config)
 
-	if options.Length() == 0 {
+	if options.Len() == 0 {
 		options = config
 	}
 

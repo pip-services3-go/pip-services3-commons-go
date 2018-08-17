@@ -8,65 +8,65 @@ import (
 )
 
 type AnyValueArray struct {
-	values []interface{}
+	value []interface{}
 }
 
 func NewEmptyAnyValueArray() *AnyValueArray {
 	return &AnyValueArray{
-		values: make([]interface{}, 0, 10),
+		value: make([]interface{}, 0, 10),
 	}
 }
 
 func NewAnyValueArray(values []interface{}) *AnyValueArray {
 	c := &AnyValueArray{
-		values: make([]interface{}, len(values)),
+		value: make([]interface{}, len(values)),
 	}
-	copy((*c).values, values)
+	copy(c.value, values)
 	return c
 }
 
 func (c *AnyValueArray) InnerValue() interface{} {
-	return c.values
+	return c.value
 }
 
-func (c *AnyValueArray) Values() []interface{} {
-	return (*c).values
+func (c *AnyValueArray) Value() []interface{} {
+	return c.value
 }
 
-func (c *AnyValueArray) Length() int {
-	return len((*c).values)
+func (c *AnyValueArray) Len() int {
+	return len(c.value)
 }
 
 func (c *AnyValueArray) Get(index int) interface{} {
-	return (*c).values[index]
+	return c.value[index]
 }
 
 func (c *AnyValueArray) Put(index int, value interface{}) {
-	if cap((*c).values)+1 < index {
+	if cap(c.value)+1 < index {
 		a := make([]interface{}, index+1, (index+1)*2)
-		copy(a, (*c).values)
-		(*c).values = a
+		copy(a, c.value)
+		c.value = a
 	}
 
-	(*c).values[index] = value
+	c.value[index] = value
 }
 
 func (c *AnyValueArray) Remove(index int) {
-	(*c).values = append((*c).values[:index], (*c).values[index+1:]...)
+	c.value = append(c.value[:index], c.value[index+1:]...)
 }
 
 func (c *AnyValueArray) Push(value interface{}) {
-	(*c).values = append((*c).values, value)
+	c.value = append(c.value, value)
 }
 
 func (c *AnyValueArray) Append(elements []interface{}) {
 	if elements != nil {
-		(*c).values = append((*c).values, elements...)
+		c.value = append(c.value, elements...)
 	}
 }
 
 func (c *AnyValueArray) Clear() {
-	(*c).values = make([]interface{}, 0, 10)
+	c.value = make([]interface{}, 0, 10)
 }
 
 func (c *AnyValueArray) GetAsSingleObject() interface{} {
@@ -75,7 +75,7 @@ func (c *AnyValueArray) GetAsSingleObject() interface{} {
 
 func (c *AnyValueArray) SetAsSingleObject(value interface{}) {
 	a := convert.ToArray(value)
-	(*c).values = a
+	c.value = a
 }
 
 func (c *AnyValueArray) GetAsObject(index int) interface{} {
@@ -264,7 +264,7 @@ func (c *AnyValueArray) GetAsMapWithDefault(index int, defaultValue *AnyValueMap
 }
 
 func (c *AnyValueArray) Contains(value interface{}) bool {
-	for index := 0; index < c.Length(); index++ {
+	for index := 0; index < c.Len(); index++ {
 		element := c.Get(index)
 
 		if value == nil && element == nil {
@@ -284,7 +284,7 @@ func (c *AnyValueArray) Contains(value interface{}) bool {
 func (c *AnyValueArray) ContainsAsType(typ convert.TypeCode, value interface{}) bool {
 	typedValue := convert.TypeConverter.ToType(typ, value)
 
-	for index := 0; index < c.Length(); index++ {
+	for index := 0; index < c.Len(); index++ {
 		thisTypedValue := convert.TypeConverter.ToType(typ, c.Get(index))
 
 		if typedValue == thisTypedValue {
@@ -296,12 +296,12 @@ func (c *AnyValueArray) ContainsAsType(typ convert.TypeCode, value interface{}) 
 }
 
 func (c *AnyValueArray) Clone() interface{} {
-	return NewAnyValueArray((*c).values)
+	return NewAnyValueArray(c.value)
 }
 
 func (c *AnyValueArray) String() string {
 	builder := ""
-	for index := 0; index < c.Length(); index++ {
+	for index := 0; index < c.Len(); index++ {
 		if index > 0 {
 			builder += ","
 		}

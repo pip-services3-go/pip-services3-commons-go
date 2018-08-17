@@ -27,6 +27,10 @@ func (c *AnyValue) InnerValue() interface{} {
 	return c.value
 }
 
+func (c *AnyValue) Value() interface{} {
+	return c.value
+}
+
 func (c *AnyValue) TypeCode() convert.TypeCode {
 	return convert.TypeConverter.ToTypeCode(c.value)
 }
