@@ -1,8 +1,8 @@
 package commands
 
 import (
-	"github.com/pip-services-go/pip-services-commons-go/run"
-	"github.com/pip-services-go/pip-services-commons-go/validate"
+	"github.com/pip-services3-go/pip-services3-commons-go/run"
+	"github.com/pip-services3-go/pip-services3-commons-go/validate"
 )
 
 type ICommandInterceptor interface {

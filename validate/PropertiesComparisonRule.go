@@ -1,6 +1,6 @@
 package validate
 
-import "github.com/pip-services-go/pip-services-commons-go/reflect"
+import "github.com/pip-services3-go/pip-services3-commons-go/reflect"
 
 type PropertiesComparisonRule struct {
 	property1 string

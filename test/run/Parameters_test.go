@@ -3,10 +3,10 @@ package test_run
 import (
 	"testing"
 
-	"github.com/pip-services-go/pip-services-commons-go/config"
-	"github.com/pip-services-go/pip-services-commons-go/convert"
-	"github.com/pip-services-go/pip-services-commons-go/run"
-	"github.com/pip-services-go/pip-services-commons-go/test/reflect"
+	"github.com/pip-services3-go/pip-services3-commons-go/config"
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
+	"github.com/pip-services3-go/pip-services3-commons-go/run"
+	"github.com/pip-services3-go/pip-services3-commons-go/test/reflect"
 	"github.com/stretchr/testify/assert"
 )
 

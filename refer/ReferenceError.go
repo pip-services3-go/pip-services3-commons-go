@@ -3,7 +3,7 @@ package refer
 import (
 	"fmt"
 
-	"github.com/pip-services-go/pip-services-commons-go/errors"
+	"github.com/pip-services3-go/pip-services3-commons-go/errors"
 )
 
 func NewReferenceError(correlationId string, locator interface{}) *errors.ApplicationError {

@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pip-services-go/pip-services-commons-go/convert"
-	"github.com/pip-services-go/pip-services-commons-go/data"
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
+	"github.com/pip-services3-go/pip-services3-commons-go/data"
 	"github.com/stretchr/testify/assert"
 )
 

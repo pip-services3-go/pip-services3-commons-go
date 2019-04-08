@@ -4,8 +4,8 @@ import (
 	refl "reflect"
 	"strconv"
 
-	"github.com/pip-services-go/pip-services-commons-go/convert"
-	"github.com/pip-services-go/pip-services-commons-go/reflect"
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
+	"github.com/pip-services3-go/pip-services3-commons-go/reflect"
 )
 
 type ArraySchema struct {

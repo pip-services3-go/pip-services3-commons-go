@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	cerrors "github.com/pip-services-go/pip-services-commons-go/errors"
+	cerrors "github.com/pip-services3-go/pip-services3-commons-go/errors"
 	"github.com/stretchr/testify/assert"
 )
 

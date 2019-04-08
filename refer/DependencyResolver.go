@@ -1,8 +1,8 @@
 package refer
 
 import (
-	conf "github.com/pip-services-go/pip-services-commons-go/config"
-	convert "github.com/pip-services-go/pip-services-commons-go/convert"
+	conf "github.com/pip-services3-go/pip-services3-commons-go/config"
+	convert "github.com/pip-services3-go/pip-services3-commons-go/convert"
 )
 
 type DependencyResolver struct {

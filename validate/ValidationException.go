@@ -3,7 +3,7 @@ package validate
 import (
 	"strings"
 
-	"github.com/pip-services-go/pip-services-commons-go/errors"
+	"github.com/pip-services3-go/pip-services3-commons-go/errors"
 )
 
 func NewValidationError(correlationId string, message string, results []*ValidationResult) *errors.ApplicationError {

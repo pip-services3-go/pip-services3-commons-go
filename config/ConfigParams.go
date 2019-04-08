@@ -3,7 +3,7 @@ package config
 import (
 	"strings"
 
-	"github.com/pip-services-go/pip-services-commons-go/data"
+	"github.com/pip-services3-go/pip-services3-commons-go/data"
 )
 
 type ConfigParams struct {

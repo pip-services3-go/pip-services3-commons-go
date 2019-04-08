@@ -1,6 +1,6 @@
 package validate
 
-import "github.com/pip-services-go/pip-services-commons-go/convert"
+import "github.com/pip-services3-go/pip-services3-commons-go/convert"
 
 type ValueComparisonRule struct {
 	value     interface{}

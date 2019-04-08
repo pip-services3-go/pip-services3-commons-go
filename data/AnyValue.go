@@ -3,7 +3,7 @@ package data
 import (
 	"time"
 
-	"github.com/pip-services-go/pip-services-commons-go/convert"
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
 )
 
 type AnyValue struct {

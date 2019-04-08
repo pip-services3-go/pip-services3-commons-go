@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	"github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 )
 
 type TIdGenerator struct{}
@@ -18,6 +18,6 @@ func (c *TIdGenerator) NextShort() string {
 }
 
 func (c *TIdGenerator) NextLong() string {
-	value, _ := uuid.NewV4()
+	value := uuid.NewV4()
 	return hex.EncodeToString(([]byte)(value[:]))
 }

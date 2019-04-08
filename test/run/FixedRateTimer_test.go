@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pip-services-go/pip-services-commons-go/run"
+	"github.com/pip-services3-go/pip-services3-commons-go/run"
 	"github.com/stretchr/testify/assert"
 )
 
