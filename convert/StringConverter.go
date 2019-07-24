@@ -2,6 +2,7 @@ package convert
 
 import (
 	"fmt"
+	refl "reflect"
 	"strconv"
 	"time"
 )
@@ -56,6 +57,18 @@ func ToNullableString(value interface{}) *string {
 		return &r
 
 	default:
+		val := refl.ValueOf(value)
+		if val.Kind() == refl.Slice || val.Kind() == refl.Array {
+			r := ""
+			for index := 0; index < val.Len(); index++ {
+				if len(r) > 0 {
+					r += ","
+				}
+				r += fmt.Sprint(val.Index(index).Interface())
+			}
+			return &r
+		}
+
 		r := fmt.Sprint(value)
 		return &r
 	}

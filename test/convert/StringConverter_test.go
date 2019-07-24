@@ -17,5 +17,11 @@ func TestToString(t *testing.T) {
 	value := struct{ prop string }{"xyz"}
 	assert.Equal(t, "{xyz}", convert.ToString(value))
 
+	array1 := []string{"A", "B", "C"}
+	assert.Equal(t, "A,B,C", convert.ToString(array1))
+
+	array2 := []int32{1, 2, 3}
+	assert.Equal(t, "1,2,3", convert.ToString(array2))
+
 	assert.Equal(t, "xyz", convert.ToStringWithDefault(nil, "xyz"))
 }
