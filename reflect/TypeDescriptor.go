@@ -2,6 +2,8 @@ package reflect
 
 import (
 	"strings"
+
+	"github.com/pip-services3-go/pip-services3-commons-go/errors"
 )
 
 type TypeDescriptor struct {
@@ -52,18 +54,18 @@ func (c *TypeDescriptor) String() string {
 	return builder.String()
 }
 
-func ParseTypeDescriptorFromString(value string) (*TypeDescriptor, bool) {
+func ParseTypeDescriptorFromString(value string) (*TypeDescriptor, error) {
 	if value == "" {
-		return nil, false
+		return nil, nil
 	}
 
 	tokens := strings.Split(value, ",")
 
 	if len(tokens) == 1 {
-		return NewTypeDescriptor(strings.Trim(tokens[0], " "), ""), true
+		return NewTypeDescriptor(strings.Trim(tokens[0], " "), ""), nil
 	} else if len(tokens) == 2 {
-		return NewTypeDescriptor(strings.Trim(tokens[0], " "), strings.Trim(tokens[1], " ")), true
+		return NewTypeDescriptor(strings.Trim(tokens[0], " "), strings.Trim(tokens[1], " ")), nil
 	}
 
-	return nil, false
+	return nil, errors.NewConfigError("", "BAD_DESCRIPTOR", "Type descriptor "+value+" is in wrong format")
 }

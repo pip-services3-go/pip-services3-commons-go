@@ -43,15 +43,15 @@ func TestDescriptorToString(t *testing.T) {
 }
 
 func TestDescriptorFromString(t *testing.T) {
-	descriptor, ok := refer.ParseDescriptorFromString("")
-	assert.False(t, ok)
+	descriptor, err := refer.ParseDescriptorFromString("")
+	assert.Nil(t, err)
 	assert.Nil(t, descriptor)
 
-	descriptor, ok = refer.ParseDescriptorFromString("pip-dummies:controller:default:default:1.0")
-	assert.True(t, ok)
+	descriptor, err = refer.ParseDescriptorFromString("pip-dummies:controller:default:default:1.0")
+	assert.Nil(t, err)
 	assert.True(t, descriptor.ExactMatch(refer.NewDescriptor("pip-dummies", "controller", "default", "default", "1.0")))
 
-	descriptor, ok = refer.ParseDescriptorFromString("xxx")
-	assert.False(t, ok)
+	descriptor, err = refer.ParseDescriptorFromString("xxx")
+	assert.NotNil(t, err)
 	assert.Nil(t, descriptor)
 }

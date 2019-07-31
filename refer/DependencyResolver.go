@@ -40,8 +40,8 @@ func (c *DependencyResolver) Configure(config *conf.ConfigParams) {
 			continue
 		}
 
-		descriptor, ok := ParseDescriptorFromString(locator)
-		if ok {
+		descriptor, err := ParseDescriptorFromString(locator)
+		if err == nil {
 			c.dependencies[name] = descriptor
 		} else {
 			c.dependencies[name] = locator
