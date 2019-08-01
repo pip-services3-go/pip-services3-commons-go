@@ -9,7 +9,7 @@ type PagingParams struct {
 }
 
 func NewEmptyPagingParams() *PagingParams {
-	return &PagingParams{Skip: nil, Take: nil, Total: true}
+	return &PagingParams{Skip: nil, Take: nil, Total: false}
 }
 
 func NewPagingParams(skip, take, total interface{}) *PagingParams {
@@ -17,7 +17,7 @@ func NewPagingParams(skip, take, total interface{}) *PagingParams {
 
 	c.Skip = convert.LongConverter.ToNullableLong(skip)
 	c.Take = convert.LongConverter.ToNullableLong(take)
-	c.Total = convert.BooleanConverter.ToBooleanWithDefault(total, true)
+	c.Total = convert.BooleanConverter.ToBooleanWithDefault(total, false)
 
 	return &c
 }
@@ -65,7 +65,7 @@ func NewPagingParamsFromMap(value *AnyValueMap) *PagingParams {
 
 	c.Skip = value.GetAsNullableLong("skip")
 	c.Take = value.GetAsNullableLong("take")
-	c.Total = value.GetAsBooleanWithDefault("total", true)
+	c.Total = value.GetAsBooleanWithDefault("total", false)
 
 	return &c
 }
