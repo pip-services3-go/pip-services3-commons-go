@@ -88,7 +88,7 @@ func (c *References) GetAll() []interface{} {
 }
 
 func (c *References) GetOneOptional(locator interface{}) interface{} {
-	components, err := c.Find(locator, true)
+	components, err := c.Find(locator, false)
 	if err != nil || len(components) == 0 {
 		return nil
 	}
