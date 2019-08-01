@@ -55,3 +55,15 @@ func TestDescriptorFromString(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.Nil(t, descriptor)
 }
+
+func TestDescriptorEquals(t *testing.T) {
+	descriptor1 := refer.NewDescriptor("pip-commons", "controller", "", "default", "")
+	descriptor2 := refer.NewDescriptor("", "controller", "", "", "1.0")
+
+	match := descriptor1.Equals(descriptor2)
+	assert.True(t, match)
+
+	descriptor3 := refer.NewDescriptor("", "persistence", "", "", "")
+	match = descriptor1.Equals(descriptor3)
+	assert.False(t, match)
+}
