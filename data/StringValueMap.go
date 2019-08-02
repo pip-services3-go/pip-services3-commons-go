@@ -117,6 +117,12 @@ func (c *StringValueMap) GetAsString(key string) string {
 
 func (c *StringValueMap) GetAsStringWithDefault(key string, defaultValue string) string {
 	value := c.Get(key)
+
+	// A special case for Golang strings
+	if value == "" {
+		return defaultValue
+	}
+
 	return convert.StringConverter.ToStringWithDefault(value, defaultValue)
 }
 
