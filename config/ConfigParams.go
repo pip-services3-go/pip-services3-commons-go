@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/pip-services3-go/pip-services3-commons-go/data"
+	"github.com/pip-services3-go/pip-services3-commons-go/reflect"
 )
 
 type ConfigParams struct {
@@ -23,8 +24,9 @@ func NewConfigParams(values map[string]string) *ConfigParams {
 }
 
 func NewConfigParamsFromValue(value interface{}) *ConfigParams {
+	values := reflect.RecursiveObjectReader.GetProperties(value)
 	return &ConfigParams{
-		StringValueMap: *data.NewStringValueMapFromValue(value),
+		StringValueMap: *data.NewStringValueMapFromValue(values),
 	}
 }
 
