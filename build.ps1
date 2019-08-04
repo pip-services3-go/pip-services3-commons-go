@@ -5,7 +5,6 @@ $ErrorActionPreference = "Stop"
 
 # Get component data and set necessary variables
 $component = Get-Content -Path "component.json" | ConvertFrom-Json
-$repository="$($component.repository)"
 $buildImage="$($component.registry)/$($component.name):$($component.version)-$($component.build)-build"
 $container=$component.name
 
@@ -19,7 +18,7 @@ if (Test-Path "dist") {
 }
 
 # Build docker image
-docker build --build-arg REPO=$repository -f docker/Dockerfile.build -t $buildImage .
+docker build -f docker/Dockerfile.build -t $buildImage .
 
 # Create and copy compiled files, then destroy
 docker create --name $container $buildImage

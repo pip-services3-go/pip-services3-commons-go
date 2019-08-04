@@ -1,7 +1,6 @@
 {
   "name": "pip-services3-commons-go",
   "registry": "pip-services",
-  "repository": "github.com/pip-services3-go/pip-services3-commons-go",
   "version": "3.0.0",
   "build": null
 }
