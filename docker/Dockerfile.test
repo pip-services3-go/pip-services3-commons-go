@@ -12,7 +12,7 @@ ENV GO111MODULE=on
 ADD ./go.* ./
 
 # Restore dependencies
-RUN go mod vendor
+RUN go mod download
 
 # Copy the local package files to the container's workspace
 ADD . .
