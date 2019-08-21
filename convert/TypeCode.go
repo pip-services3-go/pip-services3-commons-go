@@ -1,5 +1,6 @@
 package convert
 
+// Codes for the data types that can be converted using TypeConverter.
 type TypeCode int
 
 const (

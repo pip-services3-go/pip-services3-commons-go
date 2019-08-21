@@ -4,22 +4,46 @@ import (
 	"time"
 )
 
+// Converts arbitrary values into time.Duration values.
+//
+// Example:
+//
+//  value1 := convert.DurationConverter.ToNullableDuration("123")
+//  value2 := convert.DurationConverter.ToNullableDuration(123)
+//  value3 := convert.DurationConverter.ToNullableDuration(123 * time.Second)
+//  fmt.Println(value1) // 123ms
+//  fmt.Println(value2) // 123ms
+//  fmt.Println(value3) // 2m3s
 type TDurationConverter struct{}
 
 var DurationConverter *TDurationConverter = &TDurationConverter{}
 
+// Converts value into time.Duration or returns null when conversion is not possible.
+// Parameters: "value" - the value to convert.
+// Returns: time.Duration value or null when conversion is not supported.
 func (c *TDurationConverter) ToNullableDuration(value interface{}) *time.Duration {
 	return ToNullableDuration(value)
 }
 
+// Converts value into time.Duration or returns current when conversion is not possible.
+// Parameters: "value" - the value to convert.
+// Returns: time.Duration value or current when conversion is not supported.
 func (c *TDurationConverter) ToDuration(value interface{}) time.Duration {
 	return ToDuration(value)
 }
 
+// Converts value into time.Duration or returns default when conversion is not possible.
+// Parameters: 
+// "value" - the value to convert.
+// "defaultValue" - the default value.
+// Returns: time.Duration value or default when conversion is not supported.
 func (c *TDurationConverter) ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration {
 	return ToDurationWithDefault(value, defaultValue)
 }
 
+// Converts value into time.Duration or returns null when conversion is not possible.
+// Parameters: "value" - the value to convert.
+// Returns: time.Duration value or null when conversion is not supported.
 func ToNullableDuration(value interface{}) *time.Duration {
 	if value == nil {
 		return nil
@@ -69,10 +93,18 @@ func ToNullableDuration(value interface{}) *time.Duration {
 	return &r
 }
 
+// Converts value into time.Duration or returns current when conversion is not possible.
+// Parameters: "value" - the value to convert.
+// Returns: time.Duration value or current when conversion is not supported.
 func ToDuration(value interface{}) time.Duration {
 	return ToDurationWithDefault(value, 0*time.Millisecond)
 }
 
+// Converts value into time.Duration or returns default when conversion is not possible.
+// Parameters: 
+// "value" - the value to convert.
+// "defaultValue" - the default value.
+// Returns: time.Duration value or default when conversion is not supported.
 func ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration {
 	r := ToNullableDuration(value)
 	if r == nil {

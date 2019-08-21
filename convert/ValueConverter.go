@@ -5,6 +5,9 @@ import (
 	"strconv"
 )
 
+// Converts arbitrary values into interface
+// Parameters: "value" - the reflect.Value to convert.
+// Returns: the interface of specific type.
 func valueToInterface(value reflect.Value) interface{} {
 	switch value.Kind() {
 	case reflect.Invalid:
@@ -33,15 +36,11 @@ func valueToInterface(value reflect.Value) interface{} {
 	}
 
 	return value.Interface()
-
-	// return nil
-
-	// if value.IsNil() {
-	// 	return nil
-	// }
-	// return value.Interface()
 }
 
+// Converts array values into array interface
+// Parameters: "value" - the array of reflect.Value to convert.
+// Returns: the interface array of specific type.
 func arrayToArray(value reflect.Value) []interface{} {
 	r := []interface{}{}
 
@@ -53,6 +52,9 @@ func arrayToArray(value reflect.Value) []interface{} {
 	return r
 }
 
+// Converts array values into map interface
+// Parameters: "value" - the array of reflect.Value to convert.
+// Returns: the map with values of specific types.
 func arrayToMap(value reflect.Value) map[string]interface{} {
 	r := map[string]interface{}{}
 
@@ -65,6 +67,9 @@ func arrayToMap(value reflect.Value) map[string]interface{} {
 	return r
 }
 
+// Converts map values into array interface
+// Parameters: "value" - the map to convert.
+// Returns: the interface array of specific type.
 func mapToArray(value reflect.Value) []interface{} {
 	r := []interface{}{}
 
@@ -76,6 +81,9 @@ func mapToArray(value reflect.Value) []interface{} {
 	return r
 }
 
+// Converts map values into map interface
+// Parameters: "value" - the map to convert.
+// Returns: the map with values of specific types.
 func mapToMap(value reflect.Value) map[string]interface{} {
 	r := map[string]interface{}{}
 
@@ -88,6 +96,9 @@ func mapToMap(value reflect.Value) map[string]interface{} {
 	return r
 }
 
+// Converts struct values into map interface
+// Parameters: "value" - the struct to convert.
+// Returns: the map with values of specific types.
 func structToMap(value reflect.Value) map[string]interface{} {
 	t := value.Type()
 	r := map[string]interface{}{}

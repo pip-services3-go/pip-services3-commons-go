@@ -5,22 +5,51 @@ import (
 	"time"
 )
 
+// Converts arbitrary values into long using extended conversion rules:
+// - Strings are converted to long values
+// - DateTime: total number of milliseconds since unix epoсh
+// - Boolean: 1 for true and 0 for false
+//
+// Example:
+//
+//  value1 := convert.LongConverter.ToNullableLong("ABC")
+//  value2 := convert.LongConverter.ToNullableLong("123.456")
+//  value3 := convert.LongConverter.ToNullableLong(true)
+//  value4 := convert.LongConverter.ToNullableLong(time.Now())
+//  fmt.Println(value1)  // <nil>
+//  fmt.Println(*value2) // 123
+//  fmt.Println(*value3) // 1
+//  fmt.Println(*value4) // current milliseconds (e.g. 1566333527)
 type TLongConverter struct{}
 
 var LongConverter *TLongConverter = &TLongConverter{}
 
+// Converts value into long or returns null when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: long value or null when conversion is not supported.
 func (c *TLongConverter) ToNullableLong(value interface{}) *int64 {
 	return ToNullableLong(value)
 }
 
+// Converts value into long or returns 0 when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: long value or 0 when conversion is not supported.
 func (c *TLongConverter) ToLong(value interface{}) int64 {
 	return ToLong(value)
 }
 
+// Converts value into long or returns default when conversion is not possible.
+// Parameters: 
+// "value" - the value to convert.
+// "defaultValue" - the default value..
+// Returns: long value or default when conversion is not supported.
 func (c *TLongConverter) ToLongWithDefault(value interface{}, defaultValue int64) int64 {
 	return ToLongWithDefault(value, defaultValue)
 }
 
+// Converts value into long or returns null when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: long value or null when conversion is not supported.
 func ToNullableLong(value interface{}) *int64 {
 	if value == nil {
 		return nil
@@ -78,10 +107,18 @@ func ToNullableLong(value interface{}) *int64 {
 	return &r
 }
 
+// Converts value into long or returns 0 when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: long value or 0 when conversion is not supported.
 func ToLong(value interface{}) int64 {
 	return ToLongWithDefault(value, 0)
 }
 
+// Converts value into long or returns default when conversion is not possible.
+// Parameters: 
+// "value" - the value to convert.
+// "defaultValue" - the default value..
+// Returns: long value or default when conversion is not supported.
 func ToLongWithDefault(value interface{}, defaultValue int64) int64 {
 	r := ToNullableLong(value)
 	if r == nil {
