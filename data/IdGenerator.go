@@ -18,9 +18,6 @@ func (c *TIdGenerator) NextShort() string {
 }
 
 func (c *TIdGenerator) NextLong() string {
-	value, ok := uuid.NewV4()
-	if ok != nil {
-		return IdGenerator.NextShort()
-	}
+	value := uuid.NewV4()
 	return hex.EncodeToString(([]byte)(value[:]))
 }
