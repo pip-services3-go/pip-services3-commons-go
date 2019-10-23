@@ -5,6 +5,14 @@ import (
 	"strings"
 )
 
+//Random generator for various text values like names, addresses or phone numbers.
+//
+//Example:
+//
+//			value1 := RandomText.FullName();     	// Possible result: "Segio"
+//			value2 := RandomText.Verb();      	// Possible result: "Run"
+//			value3 := RandomText.Text(50);    	// Possible result: "Run jorge. Red high scream?"
+//
 type TRandomText struct{}
 
 var RandomText *TRandomText = &TRandomText{}
@@ -71,22 +79,32 @@ var verbs = []string{
 
 var allWords = append(append(append(append(lastNames, colors...), stuffs...), adjectives...), verbs...)
 
+//Return string with random color
+//
 func (c *TRandomText) Color() string {
 	return RandomString.Pick(colors)
 }
 
+//Return string with random stuff
+//
 func (c *TRandomText) Stuff() string {
 	return RandomString.Pick(stuffs)
 }
 
+//Return string with random adjective
+//
 func (c *TRandomText) Adjective() string {
 	return RandomString.Pick(adjectives)
 }
 
+//Return string with random verb
+//
 func (c *TRandomText) Verb() string {
 	return RandomString.Pick(verbs)
 }
 
+//Return string with random phrase
+//
 func (c *TRandomText) Phrase(min int, max int) string {
 	size := RandomInteger.NextInteger(min, max)
 	if size <= 0 {
@@ -103,6 +121,8 @@ func (c *TRandomText) Phrase(min int, max int) string {
 	return builder.String()
 }
 
+//Return string with random full name
+//
 func (c *TRandomText) FullName() string {
 	builder := strings.Builder{}
 
@@ -123,10 +143,14 @@ func (c *TRandomText) FullName() string {
 	return builder.String()
 }
 
+//Return string with random word
+//
 func (c *TRandomText) Word() string {
 	return RandomString.Pick(allWords)
 }
 
+//Return string with random words
+//
 func (c *TRandomText) Words(min int, max int) string {
 	builder := strings.Builder{}
 
@@ -138,6 +162,8 @@ func (c *TRandomText) Words(min int, max int) string {
 	return builder.String()
 }
 
+//Return string with random phone
+//
 func (c *TRandomText) Phone() string {
 	builder := strings.Builder{}
 	builder.WriteString("(")
@@ -149,6 +175,8 @@ func (c *TRandomText) Phone() string {
 	return builder.String()
 }
 
+//Return string with random email
+//
 func (c *TRandomText) Email() string {
 	builder := strings.Builder{}
 	builder.WriteString(c.Words(2, 6))
@@ -158,6 +186,8 @@ func (c *TRandomText) Email() string {
 	return builder.String()
 }
 
+//Return string with random text
+//
 func (c *TRandomText) Text(min int, max int) string {
 	size := RandomInteger.NextInteger(min, max)
 
