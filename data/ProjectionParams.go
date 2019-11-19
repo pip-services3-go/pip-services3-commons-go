@@ -4,16 +4,37 @@ import (
 	"strings"
 )
 
+/*
+Defines projection parameters with list if fields to include into query results.
+The parameters support two formats: dot format and nested format.
+The dot format is the standard way to define included fields and subfields
+using dot object notation: "field1,field2.field21,field2.field22.field221".
+As alternative the nested format offers a more compact representation: "field1,field2(field21,field22(field221))".
+
+Example:
+filter := NewFilterParamsFromTuples("type", "Type1");
+paging := NewPagingParams(0, 100);
+projection = NewProjectionParamsFromString("field1,field2(field21,field22)")
+
+err, page := myDataClient.getDataByFilter(filter, paging, projection);
+*/
+
 type ProjectionParams struct {
 	values []string
 }
 
+// Creates a new instance of the projection parameters and assigns its value.
+// Returns *ProjectionParams
 func NewEmptyProjectionParams() *ProjectionParams {
 	return &ProjectionParams{
 		values: make([]string, 0, 10),
 	}
 }
 
+// Creates a new instance of the projection parameters and assigns its from string value.
+// Parameters:
+// 			- values []string
+// Returns *ProjectionParams
 func NewProjectionParamsFromStrings(values []string) *ProjectionParams {
 	c := &ProjectionParams{
 		values: make([]string, len(values)),
@@ -22,6 +43,10 @@ func NewProjectionParamsFromStrings(values []string) *ProjectionParams {
 	return c
 }
 
+// Creates a new instance of the projection parameters and assigns its from AnyValueArray values.
+// Parameters:
+// 			- values *AnyValueArray
+// Returns *ProjectionParams
 func NewProjectionParamsFromAnyArray(values *AnyValueArray) *ProjectionParams {
 	if values == nil {
 		return NewEmptyProjectionParams()
@@ -41,18 +66,32 @@ func NewProjectionParamsFromAnyArray(values *AnyValueArray) *ProjectionParams {
 	return c
 }
 
+// Return raw values []string
 func (c *ProjectionParams) Value() []string {
 	return c.values
 }
 
+// Gets or sets the length of the array. This is a number one
+// higher than the highest element defined in an array.
 func (c *ProjectionParams) Len() int {
 	return len(c.values)
 }
 
+// Get value by index
+// Parameters:
+//			 - index int
+//           an index of element
+// Return string
 func (c *ProjectionParams) Get(index int) string {
 	return c.values[index]
 }
 
+// Set value in index position
+// Parameters:
+// 			 - index int
+//			 an index of element
+// 			 - value string
+//           value
 func (c *ProjectionParams) Put(index int, value string) {
 	if cap(c.values)+1 < index {
 		a := make([]string, index+1, (index+1)*2)
@@ -63,24 +102,37 @@ func (c *ProjectionParams) Put(index int, value string) {
 	c.values[index] = value
 }
 
+// Remove element by index
+// Parameters:
+//			 - index int
+//			 an index of remove element
 func (c *ProjectionParams) Remove(index int) {
 	c.values = append(c.values[:index], c.values[index+1:]...)
 }
 
+// Appends new element to an array.
+// Parameters:
+// 			  - value string
 func (c *ProjectionParams) Push(value string) {
 	c.values = append(c.values, value)
 }
 
+// Appends new elements to an array.
+// Parameters:
+// 			  - value []string
 func (c *ProjectionParams) Append(elements []string) {
 	if elements != nil {
 		c.values = append(c.values, elements...)
 	}
 }
 
+// Clear elements
 func (c *ProjectionParams) Clear() {
 	c.values = make([]string, 0, 10)
 }
 
+// Returns a string representation of an array.
+// Returns string
 func (c *ProjectionParams) String() string {
 	builder := ""
 
@@ -95,11 +147,24 @@ func (c *ProjectionParams) String() string {
 	return builder
 }
 
+// Converts specified value into ProjectionParams.
+// see
+// AnyValueArray.fromValue
+// Parameters:
+// 			 - value interface{}
+// 			value to be converted
+// Returns *ProjectionParams
+// a newly created ProjectionParams.
 func NewProjectionParamsFromValue(value interface{}) *ProjectionParams {
 	values := NewAnyValueArrayFromValue(value)
 	return NewProjectionParamsFromAnyArray(values)
 }
 
+// Create new ProjectionParams and set values from values
+// Parameters:
+// 			 - values ...string
+// 			 an values to parce
+// Return *ProjectionParams
 func ParseProjectionParams(values ...string) *ProjectionParams {
 	c := NewEmptyProjectionParams()
 
@@ -110,6 +175,14 @@ func ParseProjectionParams(values ...string) *ProjectionParams {
 	return c
 }
 
+// Add parce value into exist ProjectionParams and add prefix
+// Parameters:
+// 			 - prefix string
+//           prefix value
+//           - c *ProjectionParams
+//           ProjectionParams instance wheare need to add value
+//			 - value string
+// 			 an values to parce
 func parseProjectionParamValue(prefix string, c *ProjectionParams, value string) {
 	if value != "" {
 		value = strings.Trim(value, " \t\n\r")
