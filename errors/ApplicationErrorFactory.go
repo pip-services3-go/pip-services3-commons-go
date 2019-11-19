@@ -1,13 +1,35 @@
 package errors
 
+/*
+Factory to recreate exceptions from ErrorDescription values passed through the wire.
+see
+ErrorDescription
+see
+ApplicationError
+*/
+
 type TApplicationErrorFactory struct{}
 
 var ApplicationErrorFactory *TApplicationErrorFactory = &TApplicationErrorFactory{}
 
+// Recreates ApplicationError object from serialized ErrorDescription.
+// It tries to restore original exception type using type or error category fields.
+// Parameters:
+// 			- description: ErrorDescription
+// 			a serialized error description received as a result of remote call
+
+// Returns *ApplicationError
 func (c *TApplicationErrorFactory) Create(description *ErrorDescription) *ApplicationError {
 	return NewErrorFromDescription(description)
 }
 
+// Recreates ApplicationError object from description.
+// It tries to restore original exception type using type or error category fields.
+// Parameters:
+// 			- description: ErrorDescription
+// 			a serialized error description received as a result of remote call
+
+// Returns *ApplicationError
 func NewErrorFromDescription(description *ErrorDescription) *ApplicationError {
 	if description == nil {
 		return nil
