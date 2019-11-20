@@ -6,6 +6,11 @@ import (
 	"github.com/pip-services3-go/pip-services3-commons-go/convert"
 )
 
+/*
+Helper class to perform property introspection and dynamic writing.
+
+It is similar to ObjectWriter but writes properties recursively through the entire object graph. Nested property names are defined using dot notation as "object.subobject.property"
+*/
 type TRecursiveObjectWriter struct{}
 
 var RecursiveObjectWriter = &TRecursiveObjectWriter{}
@@ -43,6 +48,17 @@ func (c *TRecursiveObjectWriter) performSetProperty(obj interface{}, names []str
 	}
 }
 
+// Recursively sets value of object and its subobjects property specified by its name.
+// The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
+// If the property does not exist or introspection fails this method doesn't do anything and doesn't any throw errors.
+// Parameters:
+// 				- obj interface{}
+// 				an object to write property to.
+// 				- name string
+// 				a name of the property to set.
+// 				- value interface{}
+// 				a new value for the property to set.
+
 func (c *TRecursiveObjectWriter) SetProperty(obj interface{}, name string, value interface{}) {
 	if obj == nil || name == "" {
 		return
@@ -56,6 +72,16 @@ func (c *TRecursiveObjectWriter) SetProperty(obj interface{}, name string, value
 	c.performSetProperty(obj, names, 0, value)
 }
 
+// Recursively sets values of some (all) object and its subobjects properties.
+// The object can be a user defined object, map or array. Property values correspondently are object properties, map key-pairs or array elements with their indexes.
+// If some properties do not exist or introspection fails they are just silently skipped and no errors thrown.
+// see
+// SetProperty
+// Parameters:
+// 			- obj interface{}
+// 			an object to write properties to.
+// 			- values map[atring]inteerface{}
+// 			a map, containing property names and their values.
 func (c *TRecursiveObjectWriter) SetProperties(obj interface{}, values map[string]interface{}) {
 	if values == nil || len(values) == 0 {
 		return
@@ -66,6 +92,12 @@ func (c *TRecursiveObjectWriter) SetProperties(obj interface{}, values map[strin
 	}
 }
 
+// Copies content of one object to another object by recursively reading all properties from source object and then recursively writing them to destination object.
+// Parameters:
+// 			- dest interface{}
+// 			a destination object to write properties to.
+// 			- src interface{}
+// 			a source object to read properties from
 func (c *TRecursiveObjectWriter) CopyProperties(dest interface{}, src interface{}) {
 	if dest == nil || src == nil {
 		return

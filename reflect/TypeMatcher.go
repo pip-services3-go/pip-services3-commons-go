@@ -8,10 +8,23 @@ import (
 	"github.com/pip-services3-go/pip-services3-commons-go/convert"
 )
 
+/*
+Helper class matches value types for equality.
+
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+*/
 type TTypeMatcher struct{}
 
 var TypeMatcher = &TTypeMatcher{}
 
+// Matches expected type to a type of a value. The expected type can be specified by a type, type name or TypeCode.
+// Parameters:
+// 			- expectedType interface{}
+// 			an expected type to match.
+// 			- actualValue interface{}
+// 			a value to match its type to the expected one.
+// Returns bool
+// true if types are matching and false if they don't.
 func (c *TTypeMatcher) MatchValue(expectedType interface{}, actualValue interface{}) bool {
 	if expectedType == nil {
 		return true
@@ -24,6 +37,14 @@ func (c *TTypeMatcher) MatchValue(expectedType interface{}, actualValue interfac
 	return c.MatchType(expectedType, refl.TypeOf(actualValue))
 }
 
+// Matches expected type to a type of a value.
+// Parameters:
+// 			- expectedType string
+// 			an expected type name to match.
+// 			- actualValue interface{}
+// 			a value to match its type to the expected one.
+// Returns bool
+// true if types are matching and false if they don't.
 func (c *TTypeMatcher) MatchValueByName(expectedType string, actualValue interface{}) bool {
 	if expectedType == "" {
 		return true
@@ -36,6 +57,14 @@ func (c *TTypeMatcher) MatchValueByName(expectedType string, actualValue interfa
 	return c.MatchTypeByName(expectedType, refl.TypeOf(actualValue))
 }
 
+// Matches expected type to an actual type. The types can be specified as types, type names or TypeCode.
+// Parameters:
+// 			- expectedType interface{}
+// 			an expected type to match.
+// 			- actualType refl.Type
+// 			n actual type to match.
+// Returns bool
+// true if types are matching and false if they don't.
 func (c *TTypeMatcher) MatchType(expectedType interface{}, actualType refl.Type) bool {
 	if expectedType == nil {
 		return true
@@ -81,6 +110,14 @@ func (c *TTypeMatcher) MatchType(expectedType interface{}, actualType refl.Type)
 	return false
 }
 
+// Matches expected type to an actual type.
+// Parameters:
+// 			- expectedType string
+// 			an expected type name to match.
+// 			- actualType refl.Type
+// 			an actual type to match defined by type code.
+// Returns bool
+// true if types are matching and false if they don't.
 func (c *TTypeMatcher) MatchTypeByName(expectedType string, actualType refl.Type) bool {
 	if expectedType == "" {
 		return true

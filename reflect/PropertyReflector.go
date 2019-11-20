@@ -7,6 +7,21 @@ import (
 	"unicode/utf8"
 )
 
+/*
+Helper class to perform property introspection and dynamic reading and writing.
+
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+
+Because all languages have different casing and case sensitivity rules, this PropertyReflector treats all property names as case insensitive.
+
+Example:
+myObj := MyObject{}
+
+properties := PropertyReflector.GetPropertyNames()
+PropertyReflector.HasProperty(myObj, "myProperty")
+value := PropertyReflector.GetProperty(myObj, "myProperty")
+PropertyReflector.SetProperty(myObj, "myProperty", 123)
+*/
 type TPropertyReflector struct{}
 
 var PropertyReflector = &TPropertyReflector{}
@@ -61,6 +76,14 @@ func (c *TPropertyReflector) matchPropertySetter(property refl.Method, name stri
 		strings.ToLower(property.Name) == strings.ToLower(name)
 }
 
+// Checks if object has a property with specified name..
+// Parameters:
+// 			- obj interface{}
+// 			an object to introspect.
+// 			- name string
+//    		a name of the property to check.
+// Returns bool
+// true if the object has the property and false if it doesn't.
 func (c *TPropertyReflector) HasProperty(obj interface{}, name string) bool {
 	if obj == nil {
 		panic("Object cannot be nil")
@@ -90,6 +113,14 @@ func (c *TPropertyReflector) HasProperty(obj interface{}, name string) bool {
 	return false
 }
 
+//Gets value of object property specified by its name.
+// Parameters:
+// 			- obj interface{}
+// 			an object to read property from.
+// 			- name string
+// 			a name of the property to get.
+// Returns interface{}
+// the property value or null if property doesn't exist or introspection failed.
 func (c *TPropertyReflector) GetProperty(obj interface{}, name string) interface{} {
 	if obj == nil {
 		panic("Object cannot be nil")
@@ -129,6 +160,12 @@ func (c *TPropertyReflector) GetProperty(obj interface{}, name string) interface
 	return nil
 }
 
+// Gets names of all properties implemented in specified object.
+// Parameters:
+// 			- obj interface{}
+// 			an object to introspect.
+// Returns []string
+// a list with property names.
 func (c *TPropertyReflector) GetPropertyNames(obj interface{}) []string {
 	if obj == nil {
 		panic("Object cannot be nil")
@@ -157,6 +194,12 @@ func (c *TPropertyReflector) GetPropertyNames(obj interface{}) []string {
 	return properties
 }
 
+// Get values of all properties in specified object and returns them as a map.
+// Parameters:
+// 			- obj interface{}
+// 			an object to get properties from.
+// Returns map[string]interface{}
+// a map, containing the names of the object's properties and their values.
 func (c *TPropertyReflector) GetProperties(obj interface{}) map[string]interface{} {
 	if obj == nil {
 		panic("Object cannot be nil")
@@ -195,6 +238,15 @@ func (c *TPropertyReflector) GetProperties(obj interface{}) map[string]interface
 	return properties
 }
 
+// Sets value of object property specified by its name.
+// If the property does not exist or introspection fails this method doesn't do anything and doesn't any throw errors.
+// Parameters:
+// 			- obj interface{}
+// 			an object to write property to.
+// 			name string
+// 			a name of the property to set.
+// 			- value interface{}
+// 			a new value for the property to set.
 func (c *TPropertyReflector) SetProperty(obj interface{}, name string, value interface{}) {
 	if obj == nil {
 		panic("Object cannot be nil")
@@ -233,6 +285,15 @@ func (c *TPropertyReflector) SetProperty(obj interface{}, name string, value int
 	}
 }
 
+// Sets values of some (all) object properties.
+// If some properties do not exist or introspection fails they are just silently skipped and no errors thrown.
+// see
+// SetProperty
+// Parameters:
+// 				- obj interface{}
+// 				an object to write properties to.
+// 				- values map[string]interface{}
+// 				a map, containing property names and their values.
 func (c *TPropertyReflector) SetProperties(obj interface{}, values map[string]interface{}) {
 	if values == nil || len(values) == 0 {
 		return
