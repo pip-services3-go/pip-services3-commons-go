@@ -1,15 +1,45 @@
 package validate
 
+/*
+Validation rule negate another rule. When embedded rule returns no errors, than this rule return an error. When embedded rule return errors, than the rule returns no errors.
+
+see
+IValidationRule
+
+Example
+var schema = NewSchema()
+    .WithRule(NewNotRule(
+        NewValueComparisonRule("EQ", 1)
+    ));
+
+schema.Validate(1);          // Result: error
+schema.Validate(5);          // Result: no error
+*/
 type NotRule struct {
 	rule IValidationRule
 }
 
+// Creates a new validation rule and sets its values
+// Parameters:
+// 			- rule IValidationRule
+// 			a rule to be negated.
+// Returns *NotRule
 func NewNotRule(rule IValidationRule) *NotRule {
 	return &NotRule{
 		rule: rule,
 	}
 }
 
+// Validates a given value against this rule.
+// Parameters:
+// 			- path string
+// 			a dot notation path to the value.
+// 			- schema ISchema
+// 			a schema this rule is called from
+// 			- value interface{}
+// 			a value to be validated.
+// Returns []*ValidationResult
+// a list with validation results to add new results.
 func (c *NotRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult {
 	if c.rule == nil {
 		return nil

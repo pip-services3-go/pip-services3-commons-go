@@ -7,12 +7,33 @@ import (
 	"github.com/pip-services3-go/pip-services3-commons-go/reflect"
 )
 
+/*
+Schema to validate maps.
+
+Example
+var schema = NewMapSchema(TypeCode.String, TypeCode.Integer);
+
+schema.Validate({ "key1": "A", "key2": "B" });       // Result: no errors
+schema.Validate({ "key1": 1, "key2": 2 });           // Result: element type mismatch
+schema.Validate([ 1, 2, 3 ]);                        // Result: type mismatch
+*/
 type MapSchema struct {
 	Schema
 	keyType   interface{}
 	valueType interface{}
 }
 
+// Creates a new instance of validation schema and sets its values.
+// see
+// IValidationRule
+// see
+// TypeCode
+// Parameters:
+// 			- keyType interface{}
+// 			a type of map keys. Null means that keys may have any type.
+// 			- valueType interface{}
+// 			a type of map values. Null means that values may have any type.
+// Returns *MapSchema
 func NewMapSchema(keyType interface{}, valueType interface{}) *MapSchema {
 	c := &MapSchema{
 		keyType:   keyType,
@@ -22,6 +43,21 @@ func NewMapSchema(keyType interface{}, valueType interface{}) *MapSchema {
 	return c
 }
 
+// Creates a new instance of validation schema and sets its values.
+// see
+// IValidationRule
+// see
+// TypeCode
+// Parameters:
+// 			 - keyType interface{}
+// 			 a type of map keys. Null means that keys may have any type.
+// 			 - valueType interface{}
+// 			 a type of map values. Null means that values may have any type.
+// 			 - required: boolean
+// 			 true to always require non-null values.
+// 			 - rules: []IValidationRule
+// 			 a list with validation rules.
+// Returns *MapSchema
 func NewMapSchemaWithRules(keyType interface{}, valueType interface{}, required bool, rules []IValidationRule) *MapSchema {
 	c := &MapSchema{
 		keyType:   keyType,
@@ -31,22 +67,44 @@ func NewMapSchemaWithRules(keyType interface{}, valueType interface{}, required 
 	return c
 }
 
+// Gets the type of map keys. Null means that keys may have any type.
+// Returns interface{}
+// the type of map keys.
 func (c *MapSchema) KeyType() interface{} {
 	return c.keyType
 }
 
+// Sets the type of map keys. Null means that keys may have any type.
+// Parameters:
+// 			- value interface{}
+// 			a type of map keys.
 func (c *MapSchema) SetKeyType(value interface{}) {
 	c.keyType = value
 }
 
+// Gets the type of map values. Null means that values may have any type.
+// Returns interface{}
+// the type of map values.
 func (c *MapSchema) ValueType() interface{} {
 	return c.valueType
 }
 
+// Sets the type of map values. Null means that values may have any type.
+// Parameters:
+// 			- value interface{}
+// 			a type of map values.
 func (c *MapSchema) SetValueType(value interface{}) {
 	c.valueType = value
 }
 
+// Validates a given value against the schema and configured validation rules.
+// Parameters:
+// 			 - path string
+// 			 a dot notation path to the value.
+// 			 - value interface{}
+// 			 a value to be validated.
+// REturns  []*ValidationResult[]
+// a list with validation results to add new results.
 func (c *MapSchema) PerformValidation(path string, value interface{}) []*ValidationResult {
 	value = reflect.ObjectReader.GetValue(value)
 

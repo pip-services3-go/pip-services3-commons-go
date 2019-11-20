@@ -8,11 +8,29 @@ import (
 	"github.com/pip-services3-go/pip-services3-commons-go/reflect"
 )
 
+/*
+Schema to validate arrays.
+
+Example:
+schema := NewArraySchema(TypeCode.String);
+
+schema.Validate(["A", "B", "C"]);    // Result: no errors
+schema.Validate([1, 2, 3]);          // Result: element type mismatch
+schema.Validate("A");                // Result: type mismatch
+*/
 type ArraySchema struct {
 	Schema
 	valueType interface{}
 }
 
+// Creates a new instance of validation schema and sets its values.
+// see
+// TypeCode
+// Parameters:
+// 			 - valueType interface{}
+// 			 a type of array elements. Null means that elements may have any type.
+
+// Returns *ArraySchema
 func NewArraySchema(valueType interface{}) *ArraySchema {
 	c := &ArraySchema{
 		valueType: valueType,
@@ -21,14 +39,29 @@ func NewArraySchema(valueType interface{}) *ArraySchema {
 	return c
 }
 
+// Gets the type of array elements. Null means that elements may have any type.
+// Returns interface{}
+// the type of array elements.
 func (c *ArraySchema) ValueType() interface{} {
 	return c.valueType
 }
 
+// Sets the type of array elements. Null means that elements may have any type.
+// Parameters
+// value interface{}
+// a type of array elements.
 func (c *ArraySchema) SetValueType(value interface{}) {
 	c.valueType = value
 }
 
+// Validates a given value against the schema and configured validation rules.
+// Parameters:
+// 			- path string
+// 			a dot notation path to the value.
+//			- value interface{}
+// 			a value to be validated.
+// Return []*ValidationResult
+// a list with validation results to add new results.
 func (c *ArraySchema) PerformValidation(path string, value interface{}) []*ValidationResult {
 	name := path
 	if name == "" {

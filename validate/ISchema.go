@@ -2,6 +2,9 @@ package validate
 
 import "github.com/pip-services3-go/pip-services3-commons-go/errors"
 
+/*
+Validation schema interface
+*/
 type ISchema interface {
 	Validate(value interface{}) []*ValidationResult
 	ValidateAndReturnError(correlationId string, value interface{}, strict bool) *errors.ApplicationError
