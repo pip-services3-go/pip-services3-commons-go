@@ -31,4 +31,4 @@ Quick Links:
 
 The library is created and maintained by **Sergey Seroukhov**.
 
-The documentation is written by **Danyil Tretiakov**.
+The documentation is written by **Danyil Tretiakov** and **Levichev Dmitry**.
