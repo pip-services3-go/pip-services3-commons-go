@@ -1,4 +1,4 @@
-# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Portable Abstractions and Patterns for Node.js
+# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Portable Abstractions and Patterns for Golang
 
 This framework is part of the [Pip.Services](https://github.com/pip-services/pip-services) project.
 It provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services.

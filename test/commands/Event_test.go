@@ -3,8 +3,8 @@ package test_commands
 import (
 	"testing"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/commands"
-	"github.com/pip-services3-go/pip-services3-commons-go/run"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/commands"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/run"
 	"github.com/stretchr/testify/assert"
 )
 

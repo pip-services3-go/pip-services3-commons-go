@@ -1,6 +1,6 @@
 package validate
 
-import "github.com/pip-services3-go/pip-services3-commons-go/reflect"
+import "github.com/pip-services3-go/pip-services3-commons-go/v3/reflect"
 
 /*
 Validation rule that compares two object properties.

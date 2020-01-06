@@ -1,10 +1,10 @@
 package commands
 
 import (
-	"github.com/pip-services3-go/pip-services3-commons-go/data"
-	"github.com/pip-services3-go/pip-services3-commons-go/errors"
-	"github.com/pip-services3-go/pip-services3-commons-go/run"
-	"github.com/pip-services3-go/pip-services3-commons-go/validate"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/data"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/errors"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/run"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/validate"
 )
 
 /*

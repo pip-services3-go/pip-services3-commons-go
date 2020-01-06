@@ -1,6 +1,6 @@
 package data
 
-import "github.com/pip-services3-go/pip-services3-commons-go/convert"
+import "github.com/pip-services3-go/pip-services3-commons-go/v3/convert"
 
 /*
 Data transfer object to pass paging parameters for queries.

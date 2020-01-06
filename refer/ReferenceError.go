@@ -6,7 +6,7 @@ Error when required component dependency cannot be found.
 import (
 	"fmt"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/errors"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/errors"
 )
 
 // Creates an error instance and assigns its values.

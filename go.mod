@@ -1,4 +1,4 @@
-module github.com/pip-services3-go/pip-services3-commons-go
+module github.com/pip-services3-go/pip-services3-commons-go/v3
 
 go 1.12
 

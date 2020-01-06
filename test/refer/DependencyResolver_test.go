@@ -3,8 +3,8 @@ package test_refer
 import (
 	"testing"
 
-	conf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	"github.com/pip-services3-go/pip-services3-commons-go/refer"
+	conf "github.com/pip-services3-go/pip-services3-commons-go/v3/config"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/refer"
 	"github.com/stretchr/testify/assert"
 )
 

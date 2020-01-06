@@ -29,7 +29,7 @@ you may need to install database servers:
 
 After your environment is ready you can check out source code from the Github repository:
 ```bash
-git clone git@github.com:pip-services/pip-services-container-go.git
+git clone git@github.com:pip-services/pip-services-commons-go.git
 ```
 
 If you worked with the microservice before you can check out latest changes and update the dependencies:

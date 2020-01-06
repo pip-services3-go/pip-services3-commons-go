@@ -8,7 +8,7 @@ Validation errors are usually generated based in ValidationResult. If using stri
 import (
 	"strings"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/errors"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/errors"
 )
 
 // Creates a new instance of validation exception and assigns its values.

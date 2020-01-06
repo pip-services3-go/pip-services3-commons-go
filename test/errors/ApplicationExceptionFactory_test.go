@@ -3,7 +3,7 @@ package test_errors
 import (
 	"testing"
 
-	cerrors "github.com/pip-services3-go/pip-services3-commons-go/errors"
+	cerrors "github.com/pip-services3-go/pip-services3-commons-go/v3/errors"
 	"github.com/stretchr/testify/assert"
 )
 

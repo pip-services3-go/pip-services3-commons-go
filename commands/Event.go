@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/pip-services3-go/pip-services3-commons-go/run"
+	"github.com/pip-services3-go/pip-services3-commons-go/v3/run"
 )
 
 /*
