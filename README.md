@@ -22,9 +22,9 @@ The framework's functionality is decomposed into several packages:
 
 Quick Links:
 
-* [Downloads]
+* [Downloads] (https://github.com/pip-services3-go/pip-services3-go/pip-services3-commons-go/blob/master/docs/Downloads.md)
 * [API Reference](https://godoc.org/github.com/pip-services3-go/pip-services3-commons-go)
-* [Building and Testing]
+* [Building and Testing] (https://github.com/pip-services3-go/pip-services3-go/pip-services3-commons-go/blob/master/docs/Development.md)
 * [Contributing]
 
 ## Acknowledgements
