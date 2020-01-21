@@ -1,0 +1,21 @@
+# golang image where workspace (GOPATH) configured at /go.
+FROM golang:1.12
+
+# Setting up working directory
+WORKDIR /app
+
+# Copy project dependencies
+ENV GO111MODULE=on
+ADD ./go.* ./
+
+# Restore dependencies
+RUN go mod download
+
+# Copy the local package files to the container's workspace
+ADD . .
+
+# Build the main binary
+RUN go build -o /go/bin/run .
+
+
+
