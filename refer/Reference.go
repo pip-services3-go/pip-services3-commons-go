@@ -1,6 +1,6 @@
 package refer
 
-import "github.com/pip-services3-go/pip-services3-commons-go/v3/data"
+import "github.com/pip-services3-go/pip-services3-commons-go/data"
 
 /*
 Contains a reference to a component and locator to find it. It is used by References to store registered component references.

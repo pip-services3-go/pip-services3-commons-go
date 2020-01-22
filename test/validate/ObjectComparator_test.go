@@ -3,7 +3,7 @@ package test_validate
 import (
 	"testing"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/v3/validate"
+	"github.com/pip-services3-go/pip-services3-commons-go/validate"
 	"github.com/stretchr/testify/assert"
 )
 

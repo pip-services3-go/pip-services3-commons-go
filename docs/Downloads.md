@@ -7,7 +7,7 @@ To use the commons you can either include dependency into your go file:
 
     ...
     import (
-        cref "github.com/pip-services3-go/pip-services3-commons-go/v3/reflect"
+        cref "github.com/pip-services3-go/pip-services3-commons-go/reflect"
     )
 
 ``` 

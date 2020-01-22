@@ -1,6 +1,6 @@
 package commands
 
-import "github.com/pip-services3-go/pip-services3-commons-go/v3/run"
+import "github.com/pip-services3-go/pip-services3-commons-go/run"
 
 /*
 An interface for listener objects that receive notifications on fired events.

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/v3/convert"
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
 )
 
 /*

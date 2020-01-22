@@ -3,7 +3,7 @@ package data
 import (
 	"time"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/v3/convert"
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
 )
 
 // Cross-language implementation of dynamic object what can hold value of any type.

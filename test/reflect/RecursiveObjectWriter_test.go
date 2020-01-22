@@ -3,8 +3,8 @@ package test_reflect
 import (
 	"testing"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/v3/convert"
-	"github.com/pip-services3-go/pip-services3-commons-go/v3/reflect"
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
+	"github.com/pip-services3-go/pip-services3-commons-go/reflect"
 	"github.com/stretchr/testify/assert"
 )
 

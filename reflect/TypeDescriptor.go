@@ -3,7 +3,7 @@ package reflect
 import (
 	"strings"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/v3/errors"
+	"github.com/pip-services3-go/pip-services3-commons-go/errors"
 )
 
 /*

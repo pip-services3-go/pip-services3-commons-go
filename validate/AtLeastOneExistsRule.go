@@ -3,7 +3,7 @@ package validate
 import (
 	"strings"
 
-	"github.com/pip-services3-go/pip-services3-commons-go/v3/reflect"
+	"github.com/pip-services3-go/pip-services3-commons-go/reflect"
 )
 
 /*
