@@ -104,7 +104,31 @@ func (c *TTypeMatcher) MatchType(expectedType interface{}, actualType refl.Type)
 	// For typecodes compare them
 	typeCode, ok3 := expectedType.(convert.TypeCode)
 	if ok3 {
-		return convert.TypeConverter.ToTypeCode(actualType) == typeCode
+		//return convert.TypeConverter.ToTypeCode(actualType) == typeCode
+		actualTypeCode := convert.TypeConverter.ToTypeCode(actualType)
+		if typeCode == actualTypeCode {
+			return true
+		}
+		// Special provisions for dynamic data
+		if typeCode == convert.Integer &&
+			(actualTypeCode == convert.Long || actualTypeCode == convert.Float || actualTypeCode == convert.Double) {
+			return true
+		}
+		if typeCode == convert.Long &&
+			(actualTypeCode == convert.Integer || actualTypeCode == convert.Float || actualTypeCode == convert.Double) {
+			return true
+		}
+		if typeCode == convert.Float &&
+			(actualTypeCode == convert.Integer || actualTypeCode == convert.Long || actualTypeCode == convert.Double) {
+			return true
+		}
+		if typeCode == convert.Double &&
+			(actualTypeCode == convert.Integer || actualTypeCode == convert.Long || actualTypeCode == convert.Float) {
+			return true
+		}
+		if typeCode == convert.DateTime && actualTypeCode == convert.String {
+			return true
+		}
 	}
 
 	return false

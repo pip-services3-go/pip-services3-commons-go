@@ -5,8 +5,8 @@ import (
 	"time"
 )
 
-// Converts arbitrary values into objects specific by TypeCodes. 
-// For each TypeCode this class calls corresponding converter 
+// Converts arbitrary values into objects specific by TypeCodes.
+// For each TypeCode this class calls corresponding converter
 // which applies extended conversion rules to convert the values.
 //
 // Example:
@@ -39,25 +39,25 @@ func (c *TTypeConverter) ToNullableType(typ TypeCode, value interface{}) interfa
 	return ToNullableType(typ, value)
 }
 
-// Converts value into an object type specified by Type Code 
+// Converts value into an object type specified by Type Code
 // or returns default value when conversion is not possible.
-// Parameters: 
+// Parameters:
 // "typ" - the TypeCode for the data type into which 'value' is to be converted.
 // "value" - the value to convert.
-// Returns: object value of type corresponding to TypeCode, or default value when 
+// Returns: object value of type corresponding to TypeCode, or default value when
 // conversion is not supported
 func (c *TTypeConverter) ToType(typ TypeCode, value interface{}) interface{} {
 	return ToType(typ, value)
 }
 
-// Converts value into an object type specified by Type Code 
+// Converts value into an object type specified by Type Code
 // or returns default value when conversion is not possible.
-// Parameters: 
+// Parameters:
 // "typ" - the TypeCode for the data type into which 'value' is to be converted.
 // "value" - the value to convert.
 // "defaultValue" - the default value to return if conversion is not possible
 // (returns null).
-// Returns: object value of type corresponding to TypeCode, or default value when 
+// Returns: object value of type corresponding to TypeCode, or default value when
 // conversion is not supported
 func (c *TTypeConverter) ToTypeWithDefault(typ TypeCode, value interface{}, defaultValue interface{}) interface{} {
 	return ToTypeWithDefault(typ, value, defaultValue)
@@ -192,12 +192,12 @@ func ToNullableType(typ TypeCode, value interface{}) interface{} {
 	}
 }
 
-// Converts value into an object type specified by Type Code 
+// Converts value into an object type specified by Type Code
 // or returns default value when conversion is not possible.
-// Parameters: 
+// Parameters:
 // "typ" - the TypeCode for the data type into which 'value' is to be converted.
 // "value" - the value to convert.
-// Returns: object value of type corresponding to TypeCode, or default value when 
+// Returns: object value of type corresponding to TypeCode, or default value when
 // conversion is not supported
 func ToType(typ TypeCode, value interface{}) interface{} {
 	if value == nil {
@@ -230,14 +230,14 @@ func ToType(typ TypeCode, value interface{}) interface{} {
 	}
 }
 
-// Converts value into an object type specified by Type Code 
+// Converts value into an object type specified by Type Code
 // or returns default value when conversion is not possible.
-// Parameters: 
+// Parameters:
 // "typ" - the TypeCode for the data type into which 'value' is to be converted.
 // "value" - the value to convert.
 // "defaultValue" - the default value to return if conversion is not possible
 // (returns null).
-// Returns: object value of type corresponding to TypeCode, or default value when 
+// Returns: object value of type corresponding to TypeCode, or default value when
 // conversion is not supported
 func ToTypeWithDefault(typ TypeCode, value interface{}, defaultValue interface{}) interface{} {
 	if value == nil {

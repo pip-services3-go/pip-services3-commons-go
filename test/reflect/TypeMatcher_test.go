@@ -5,6 +5,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/pip-services3-go/pip-services3-commons-go/convert"
+
 	"github.com/pip-services3-go/pip-services3-commons-go/reflect"
 	"github.com/stretchr/testify/assert"
 )
@@ -17,7 +19,15 @@ func TestMatchInteger(t *testing.T) {
 
 func TestMatchLong(t *testing.T) {
 	assert.True(t, reflect.TypeMatcher.MatchValueByName("long", int64(123)))
+	assert.True(t, reflect.TypeMatcher.MatchValueByName("Long", int64(123)))
 	assert.True(t, reflect.TypeMatcher.MatchValue(refl.TypeOf(int64(1)), int64(123)))
+
+	assert.True(t, reflect.TypeMatcher.MatchType(convert.Long, refl.TypeOf(int8(1))))
+	assert.True(t, reflect.TypeMatcher.MatchType(convert.Long, refl.TypeOf(int16(1))))
+	assert.True(t, reflect.TypeMatcher.MatchType(convert.Long, refl.TypeOf(int32(1))))
+	assert.True(t, reflect.TypeMatcher.MatchType(convert.Long, refl.TypeOf(int64(1))))
+	assert.True(t, reflect.TypeMatcher.MatchType(convert.Long, refl.TypeOf(float32(1))))
+	assert.True(t, reflect.TypeMatcher.MatchType(convert.Long, refl.TypeOf(float64(1))))
 }
 
 func TestMatchBoolean(t *testing.T) {
