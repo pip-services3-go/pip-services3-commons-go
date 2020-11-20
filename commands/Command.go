@@ -132,3 +132,8 @@ func (c *Command) Validate(args *run.Parameters) []*validate.ValidationResult {
 
 	return []*validate.ValidationResult{}
 }
+
+// GetSchema methods return validation schema for this command
+func (c *Command) GetSchema() validate.ISchema {
+	return c.schema
+}
