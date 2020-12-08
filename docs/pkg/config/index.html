@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>config - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package config
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "config"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#ConfigParams">type ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConfigParams">func NewConfigParams(values map[string]string) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConfigParamsFromMaps">func NewConfigParamsFromMaps(maps ...map[string]string) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConfigParamsFromString">func NewConfigParamsFromString(line string) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConfigParamsFromTuples">func NewConfigParamsFromTuples(tuples ...interface{}) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConfigParamsFromTuplesArray">func NewConfigParamsFromTuplesArray(tuples []interface{}) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewConfigParamsFromValue">func NewConfigParamsFromValue(value interface{}) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmptyConfigParams">func NewEmptyConfigParams() *ConfigParams</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConfigParams.AddSection">func (c *ConfigParams) AddSection(section string, sectionParams *ConfigParams)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConfigParams.GetSection">func (c *ConfigParams) GetSection(section string) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConfigParams.GetSectionNames">func (c *ConfigParams) GetSectionNames() []string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConfigParams.Override">func (c *ConfigParams) Override(configParams *ConfigParams) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ConfigParams.SetDefaults">func (c *ConfigParams) SetDefaults(defaults *ConfigParams) *ConfigParams</a></dd>
+				
+			
+				
+				<dd><a href="index.html#IConfigurable">type IConfigurable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IReconfigurable">type IReconfigurable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TNameResolver">type TNameResolver</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TNameResolver.Resolve">func (c *TNameResolver) Resolve(config *ConfigParams) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TNameResolver.ResolveWithDefault">func (c *TNameResolver) ResolveWithDefault(config *ConfigParams, defaultName string) string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TOptionsResolver">type TOptionsResolver</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TOptionsResolver.Resolve">func (c *TOptionsResolver) Resolve(config *ConfigParams) *ConfigParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TOptionsResolver.ResolveWithDefault">func (c *TOptionsResolver) ResolveWithDefault(config *ConfigParams) *ConfigParams</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/config/ConfigParams.go">ConfigParams.go</a>
+			
+				<a href="http://localhost:6060/src/config/IConfigurable.go">IConfigurable.go</a>
+			
+				<a href="http://localhost:6060/src/config/IReconfigurable.go">IReconfigurable.go</a>
+			
+				<a href="http://localhost:6060/src/config/NameResolver.go">NameResolver.go</a>
+			
+				<a href="http://localhost:6060/src/config/OptionResolver.go">OptionResolver.go</a>
+			
+				<a href="http://localhost:6060/src/config/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="ConfigParams">type <a href="http://localhost:6060/src/config/ConfigParams.go?s=1412:1461#L31">ConfigParams</a>
+				<a class="permalink" href="index.html#ConfigParams">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Contains a key-value map with configuration parameters. All values stored as strings and can be serialized
+as JSON or string forms. When retrieved the values can be automatically converted on read using GetAsXXX methods.
+The keys are case-sensitive, so it is recommended to use consistent C-style as: &#34;my_param&#34;
+</p>
+<p>
+Configuration parameters can be broken into sections and subsections using dot notation as:
+&#34;section1.subsection1.param1&#34;. Using GetSection method all parameters from specified section can be extracted from a ConfigMap.
+</p>
+<p>
+The ConfigParams supports serialization from/to plain strings as: &#34;key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z&#34;
+</p>
+<p>
+ConfigParams are used to pass configurations to IConfigurable objects. They also serve as a basis for more concrete configurations such as ConnectionParams or CredentialParams (in the Pip.Services components package).
+</p>
+<p>
+see
+IConfigurable
+</p>
+<p>
+see
+StringValueMap
+</p>
+<p>
+Example:
+</p>
+<pre>config := NewConfigParamsFromTuples(
+    &#34;section1.key1&#34;, &#34;AAA&#34;,
+    &#34;section1.key2&#34;, 123,
+    &#34;section2.key1&#34;, true
+);
+
+config.GetAsString(&#34;section1.key1&#34;); // Result: AAA
+config.GetAsInteger(&#34;section1.key1&#34;); // Result: 0
+
+section1 = config.GetSection(&#34;section2&#34;);
+section1.GetAsString(&#34;key1&#34;); // Result: true
+</pre>
+
+			<pre>type ConfigParams struct {
+    <a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/data/">data</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/data/#StringValueMap">StringValueMap</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewConfigParams">func <a href="http://localhost:6060/src/config/ConfigParams.go?s=1838:1898#L49">NewConfigParams</a>
+					<a class="permalink" href="index.html#NewConfigParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConfigParams(values map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Creates a new ConfigParams from map.
+Parameters:
+</p>
+<pre>- values ...map[string]string
+</pre>
+<p>
+Returns *ConfigParams
+a newly created ConfigParams.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewConfigParamsFromMaps">func <a href="http://localhost:6060/src/config/ConfigParams.go?s=4288:4357#L119">NewConfigParamsFromMaps</a>
+					<a class="permalink" href="index.html#NewConfigParamsFromMaps">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConfigParamsFromMaps(maps ...map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Creates a new ConfigParams by merging two or more maps.
+Maps defined later in the list override values from previously defined maps.
+Parameters:
+</p>
+<pre>- maps ...map[string]string
+an array of maps to be merged
+</pre>
+<p>
+Returns *ConfigParams
+a newly created ConfigParams.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewConfigParamsFromString">func <a href="http://localhost:6060/src/config/ConfigParams.go?s=3862:3919#L106">NewConfigParamsFromString</a>
+					<a class="permalink" href="index.html#NewConfigParamsFromString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConfigParamsFromString(line <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Creates a new ConfigParams object filled with key-value pairs serialized as a string.
+see
+StringValueMap.fromString
+Parameters:
+</p>
+<pre>- line: string
+a string with serialized key-value pairs as &#34;key1=value1;key2=value2;...&#34;
+Example: &#34;Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z&#34;
+</pre>
+<p>
+Returns *ConfigParams
+a new ConfigParams object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewConfigParamsFromTuples">func <a href="http://localhost:6060/src/config/ConfigParams.go?s=2811:2878#L78">NewConfigParamsFromTuples</a>
+					<a class="permalink" href="index.html#NewConfigParamsFromTuples">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConfigParamsFromTuples(tuples ...interface{}) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Returns ConfigParams
+a new ConfigParams object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewConfigParamsFromTuplesArray">func <a href="http://localhost:6060/src/config/ConfigParams.go?s=3339:3410#L91">NewConfigParamsFromTuplesArray</a>
+					<a class="permalink" href="index.html#NewConfigParamsFromTuplesArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConfigParamsFromTuplesArray(tuples []interface{}) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Creates a new StringValueMap from a list of key-value pairs called tuples.
+The method is similar to fromTuples but tuples are passed as array instead of parameters.
+Parameters:
+</p>
+<pre>- tuples []interface{}
+a list of values where odd elements are keys and the following even elements are values
+</pre>
+<p>
+Returns *ConfigParams
+a newly created ConfigParams.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewConfigParamsFromValue">func <a href="http://localhost:6060/src/config/ConfigParams.go?s=2237:2299#L61">NewConfigParamsFromValue</a>
+					<a class="permalink" href="index.html#NewConfigParamsFromValue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConfigParamsFromValue(value interface{}) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Creates a new ConfigParams object filled with key-value pairs from specified object.
+Parameters:
+</p>
+<pre>- value interface{}
+an object with key-value pairs used to initialize a new ConfigParams.
+</pre>
+<p>
+Returns *ConfigParams
+a new ConfigParams object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewEmptyConfigParams">func <a href="http://localhost:6060/src/config/ConfigParams.go?s=1568:1609#L38">NewEmptyConfigParams</a>
+					<a class="permalink" href="index.html#NewEmptyConfigParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmptyConfigParams() *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Creates a new empty ConfigParams object.
+Returns *ConfigParams
+a new empty ConfigParams object.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ConfigParams.AddSection">func (*ConfigParams) <a href="http://localhost:6060/src/config/ConfigParams.go?s=6078:6156#L190">AddSection</a>
+					<a class="permalink" href="index.html#ConfigParams.AddSection">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ConfigParams">ConfigParams</a>) AddSection(section <a href="http://localhost:6060/pkg/builtin/#string">string</a>, sectionParams *<a href="index.html#ConfigParams">ConfigParams</a>)</pre>
+				<p>
+Adds parameters into this ConfigParams under specified section.
+Keys for the new parameters are appended with section dot prefix.
+Parameters:
+</p>
+<pre>- section: string
+name of the section where add new parameters
+- sectionParams: *ConfigParams
+new parameters to be added.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="ConfigParams.GetSection">func (*ConfigParams) <a href="http://localhost:6060/src/config/ConfigParams.go?s=5351:5414#L162">GetSection</a>
+					<a class="permalink" href="index.html#ConfigParams.GetSection">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ConfigParams">ConfigParams</a>) GetSection(section <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Gets parameters from specific section stored in this ConfigMap. The section name is removed from parameter keys.
+Parameters:
+</p>
+<pre>- section: string
+name of the section to retrieve configuration parameters from.
+</pre>
+<p>
+Returns *ConfigParams
+all configuration parameters that belong to the section named &#39;section&#39;.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConfigParams.GetSectionNames">func (*ConfigParams) <a href="http://localhost:6060/src/config/ConfigParams.go?s=4572:4621#L129">GetSectionNames</a>
+					<a class="permalink" href="index.html#ConfigParams.GetSectionNames">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ConfigParams">ConfigParams</a>) GetSectionNames() []<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ConfigParams.Override">func (*ConfigParams) <a href="http://localhost:6060/src/config/ConfigParams.go?s=6802:6875#L220">Override</a>
+					<a class="permalink" href="index.html#ConfigParams.Override">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ConfigParams">ConfigParams</a>) Override(configParams *<a href="index.html#ConfigParams">ConfigParams</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Overrides parameters with new values from specified ConfigParams and returns a new ConfigParams object.
+see
+setDefaults
+Parameters:
+</p>
+<pre>- configParams: *ConfigParams
+ConfigMap with parameters to override the current values.
+</pre>
+<p>
+Returns *ConfigParams
+a new ConfigParams object.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ConfigParams.SetDefaults">func (*ConfigParams) <a href="http://localhost:6060/src/config/ConfigParams.go?s=7210:7282#L232">SetDefaults</a>
+					<a class="permalink" href="index.html#ConfigParams.SetDefaults">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ConfigParams">ConfigParams</a>) SetDefaults(defaults *<a href="index.html#ConfigParams">ConfigParams</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Set default values from specified ConfigParams and returns a new ConfigParams object.
+see
+override
+Parameters:
+</p>
+<pre>- defaultConfigParams: *ConfigParams
+ConfigMap with default parameter values.
+</pre>
+<p>
+Returns *ConfigParams
+a new ConfigParams object.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="IConfigurable">type <a href="http://localhost:6060/src/config/IConfigurable.go?s=334:545#L1">IConfigurable</a>
+				<a class="permalink" href="index.html#IConfigurable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+An interface to set configuration parameters to an object.
+</p>
+<p>
+It can be added to any existing class by implementing a single configure() method.
+</p>
+<p>
+If you need to emphasis the fact that configure() method can be called multiple
+times to change object configuration in runtime, use IReconfigurable interface instead.
+</p>
+
+			<pre>type IConfigurable interface {
+
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - config: ConfigParams</span>
+    <span class="comment">//  configuration parameters to be set.</span>
+    Configure(config *<a href="index.html#ConfigParams">ConfigParams</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IReconfigurable">type <a href="http://localhost:6060/src/config/IReconfigurable.go?s=244:293#L1">IReconfigurable</a>
+				<a class="permalink" href="index.html#IReconfigurable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+An interface to set configuration parameters to an object.
+</p>
+<p>
+It is similar to IConfigurable interface, but emphasises the fact
+that Configure() method can be called more than once to change object configuration in runtime.
+</p>
+
+			<pre>type IReconfigurable interface {
+    <a href="index.html#IConfigurable">IConfigurable</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TNameResolver">type <a href="http://localhost:6060/src/config/NameResolver.go?s=425:452#L7">TNameResolver</a>
+				<a class="permalink" href="index.html#TNameResolver">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+A helper class that allows to extract component name from configuration parameters.
+The name can be defined in &#34;id&#34;, &#34;name&#34; parameters or inside a component descriptor.
+Example:
+</p>
+<pre>config := NewConfigParamsFromTuples(
+    &#34;descriptor&#34;, &#34;myservice:connector:aws:connector1:1.0&#34;,
+    &#34;param1&#34;, &#34;ABC&#34;,
+    &#34;param2&#34;, 123
+);
+
+name := NameResolver.Resolve(config); // Result: connector1
+</pre>
+
+			<pre>type TNameResolver struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="NameResolver">NameResolver</span> *<a href="index.html#TNameResolver">TNameResolver</a> = &amp;<a href="index.html#TNameResolver">TNameResolver</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TNameResolver.Resolve">func (*TNameResolver) <a href="http://localhost:6060/src/config/NameResolver.go?s=888:948#L18">Resolve</a>
+					<a class="permalink" href="index.html#TNameResolver.Resolve">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TNameResolver">TNameResolver</a>) Resolve(config *<a href="index.html#ConfigParams">ConfigParams</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Resolves a component name from configuration parameters. The name can be stored in &#34;id&#34;,
+&#34;name&#34; fields or inside a component descriptor. If name cannot be determined it returns a empty string.
+Parameters:
+</p>
+<pre>- config: ConfigParams
+configuration parameters that may contain a component name.
+</pre>
+<p>
+Returns string
+resolved name or &#34;&#34; if the name cannot be determined.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TNameResolver.ResolveWithDefault">func (*TNameResolver) <a href="http://localhost:6060/src/config/NameResolver.go?s=1444:1535#L31">ResolveWithDefault</a>
+					<a class="permalink" href="index.html#TNameResolver.ResolveWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TNameResolver">TNameResolver</a>) ResolveWithDefault(config *<a href="index.html#ConfigParams">ConfigParams</a>, defaultName <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Resolves a component name from configuration parameters. The name can be stored in &#34;id&#34;,
+&#34;name&#34; fields or inside a component descriptor. If name cannot be determined it returns a defaultName.
+Parameters:
+</p>
+<pre>- config: ConfigParams
+configuration parameters that may contain a component name.
+- defaultName: string
+a default component name.
+</pre>
+<p>
+Returns string
+resolved name or default name if the name cannot be determined.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TOptionsResolver">type <a href="http://localhost:6060/src/config/OptionResolver.go?s=287:317#L5">TOptionsResolver</a>
+				<a class="permalink" href="index.html#TOptionsResolver">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+A helper class to parameters from &#34;options&#34; configuration section.
+</p>
+<p>
+Example:
+</p>
+<pre>config := NewConfigParamsFromTuples(
+    ...
+    &#34;options.param1&#34;, &#34;ABC&#34;,
+    &#34;options.param2&#34;, 123
+);
+
+options := OptionsResolver.resolve(config); // Result: param1=ABC;param2=123
+</pre>
+
+			<pre>type TOptionsResolver struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="OptionsResolver">OptionsResolver</span> *<a href="index.html#TOptionsResolver">TOptionsResolver</a> = &amp;<a href="index.html#TOptionsResolver">TOptionsResolver</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TOptionsResolver.Resolve">func (*TOptionsResolver) <a href="http://localhost:6060/src/config/OptionResolver.go?s=603:673#L15">Resolve</a>
+					<a class="permalink" href="index.html#TOptionsResolver.Resolve">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TOptionsResolver">TOptionsResolver</a>) Resolve(config *<a href="index.html#ConfigParams">ConfigParams</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Resolves configuration section from component configuration parameters.
+Parameters:
+</p>
+<pre>- config: ConfigParams
+ configuration parameters
+</pre>
+<p>
+Returns *ConfigParams
+configuration parameters from &#34;options&#34; section
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TOptionsResolver.ResolveWithDefault">func (*TOptionsResolver) <a href="http://localhost:6060/src/config/OptionResolver.go?s=1122:1203#L28">ResolveWithDefault</a>
+					<a class="permalink" href="index.html#TOptionsResolver.ResolveWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TOptionsResolver">TOptionsResolver</a>) ResolveWithDefault(config *<a href="index.html#ConfigParams">ConfigParams</a>) *<a href="index.html#ConfigParams">ConfigParams</a></pre>
+				<p>
+Resolves an &#34;options&#34; configuration section from component configuration parameters.
+Parameters:
+</p>
+<pre> - config: ConfigParams
+ configuration parameters
+ - configAsDefault: boolean
+When set true the method returns the entire parameter set when &#34;options&#34; section is not found. Default: false
+</pre>
+<p>
+Returns *ConfigParams
+configuration parameters from &#34;options&#34; section
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

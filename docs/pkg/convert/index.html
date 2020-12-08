@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>convert - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package convert
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "convert"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#FromJson">func FromJson(value string) (interface{}, error)</a></dd>
+			
+				
+				<dd><a href="index.html#JsonToMap">func JsonToMap(value string) map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#JsonToMapWithDefault">func JsonToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#JsonToNullableMap">func JsonToNullableMap(value string) *map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ListToArray">func ListToArray(value interface{}) []interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToArray">func ToArray(value interface{}) []interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToArrayWithDefault">func ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToBoolean">func ToBoolean(value interface{}) bool</a></dd>
+			
+				
+				<dd><a href="index.html#ToBooleanWithDefault">func ToBooleanWithDefault(value interface{}, defaultValue bool) bool</a></dd>
+			
+				
+				<dd><a href="index.html#ToDateTime">func ToDateTime(value interface{}) time.Time</a></dd>
+			
+				
+				<dd><a href="index.html#ToDateTimeWithDefault">func ToDateTimeWithDefault(value interface{}, defaultValue time.Time) time.Time</a></dd>
+			
+				
+				<dd><a href="index.html#ToDouble">func ToDouble(value interface{}) float64</a></dd>
+			
+				
+				<dd><a href="index.html#ToDoubleWithDefault">func ToDoubleWithDefault(value interface{}, defaultValue float64) float64</a></dd>
+			
+				
+				<dd><a href="index.html#ToDuration">func ToDuration(value interface{}) time.Duration</a></dd>
+			
+				
+				<dd><a href="index.html#ToDurationWithDefault">func ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration</a></dd>
+			
+				
+				<dd><a href="index.html#ToFloat">func ToFloat(value interface{}) float32</a></dd>
+			
+				
+				<dd><a href="index.html#ToFloatWithDefault">func ToFloatWithDefault(value interface{}, defaultValue float32) float32</a></dd>
+			
+				
+				<dd><a href="index.html#ToInteger">func ToInteger(value interface{}) int</a></dd>
+			
+				
+				<dd><a href="index.html#ToIntegerWithDefault">func ToIntegerWithDefault(value interface{}, defaultValue int) int</a></dd>
+			
+				
+				<dd><a href="index.html#ToJson">func ToJson(value interface{}) (string, error)</a></dd>
+			
+				
+				<dd><a href="index.html#ToLong">func ToLong(value interface{}) int64</a></dd>
+			
+				
+				<dd><a href="index.html#ToLongWithDefault">func ToLongWithDefault(value interface{}, defaultValue int64) int64</a></dd>
+			
+				
+				<dd><a href="index.html#ToMap">func ToMap(value interface{}) map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToMapWithDefault">func ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableArray">func ToNullableArray(value interface{}) *[]interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableBoolean">func ToNullableBoolean(value interface{}) *bool</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableDateTime">func ToNullableDateTime(value interface{}) *time.Time</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableDouble">func ToNullableDouble(value interface{}) *float64</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableDuration">func ToNullableDuration(value interface{}) *time.Duration</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableFloat">func ToNullableFloat(value interface{}) *float32</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableInteger">func ToNullableInteger(value interface{}) *int</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableLong">func ToNullableLong(value interface{}) *int64</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableMap">func ToNullableMap(value interface{}) *map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableString">func ToNullableString(value interface{}) *string</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableType">func ToNullableType(typ TypeCode, value interface{}) interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToString">func ToString(value interface{}) string</a></dd>
+			
+				
+				<dd><a href="index.html#ToStringWithDefault">func ToStringWithDefault(value interface{}, defaultValue string) string</a></dd>
+			
+				
+				<dd><a href="index.html#ToType">func ToType(typ TypeCode, value interface{}) interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToTypeWithDefault">func ToTypeWithDefault(typ TypeCode, value interface{}, defaultValue interface{}) interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#TypeCodeToString">func TypeCodeToString(typ TypeCode) string</a></dd>
+			
+			
+				
+				<dd><a href="index.html#TArrayConverter">type TArrayConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TArrayConverter.ListToArray">func (c *TArrayConverter) ListToArray(value interface{}) []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TArrayConverter.ToArray">func (c *TArrayConverter) ToArray(value interface{}) []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TArrayConverter.ToArrayWithDefault">func (c *TArrayConverter) ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TArrayConverter.ToNullableArray">func (c *TArrayConverter) ToNullableArray(value interface{}) *[]interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TBooleanConverter">type TBooleanConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TBooleanConverter.ToBoolean">func (c *TBooleanConverter) ToBoolean(value interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TBooleanConverter.ToBooleanWithDefault">func (c *TBooleanConverter) ToBooleanWithDefault(value interface{}, defaultValue bool) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TBooleanConverter.ToNullableBoolean">func (c *TBooleanConverter) ToNullableBoolean(value interface{}) *bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TDateTimeConverter">type TDateTimeConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDateTimeConverter.ToDateTime">func (c *TDateTimeConverter) ToDateTime(value interface{}) time.Time</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDateTimeConverter.ToDateTimeWithDefault">func (c *TDateTimeConverter) ToDateTimeWithDefault(value interface{}, defaultValue time.Time) time.Time</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDateTimeConverter.ToNullableDateTime">func (c *TDateTimeConverter) ToNullableDateTime(value interface{}) *time.Time</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TDoubleConverter">type TDoubleConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDoubleConverter.ToDouble">func (c *TDoubleConverter) ToDouble(value interface{}) float64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDoubleConverter.ToDoubleWithDefault">func (c *TDoubleConverter) ToDoubleWithDefault(value interface{}, defaultValue float64) float64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDoubleConverter.ToNullableDouble">func (c *TDoubleConverter) ToNullableDouble(value interface{}) *float64</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TDurationConverter">type TDurationConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDurationConverter.ToDuration">func (c *TDurationConverter) ToDuration(value interface{}) time.Duration</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDurationConverter.ToDurationWithDefault">func (c *TDurationConverter) ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TDurationConverter.ToNullableDuration">func (c *TDurationConverter) ToNullableDuration(value interface{}) *time.Duration</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TFloatConverter">type TFloatConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TFloatConverter.ToFloat">func (c *TFloatConverter) ToFloat(value interface{}) float32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TFloatConverter.ToFloatWithDefault">func (c *TFloatConverter) ToFloatWithDefault(value interface{}, defaultValue float32) float32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TFloatConverter.ToNullableFloat">func (c *TFloatConverter) ToNullableFloat(value interface{}) *float32</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TIntegerConverter">type TIntegerConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TIntegerConverter.ToInteger">func (c *TIntegerConverter) ToInteger(value interface{}) int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TIntegerConverter.ToIntegerWithDefault">func (c *TIntegerConverter) ToIntegerWithDefault(value interface{}, defaultValue int) int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TIntegerConverter.ToNullableInteger">func (c *TIntegerConverter) ToNullableInteger(value interface{}) *int</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TJsonConverter">type TJsonConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TJsonConverter.ToMap">func (c *TJsonConverter) ToMap(value string) map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TJsonConverter.ToMapWithDefault">func (c *TJsonConverter) ToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TJsonConverter.ToNullableMap">func (c *TJsonConverter) ToNullableMap(value string) *map[string]interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TLongConverter">type TLongConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TLongConverter.ToLong">func (c *TLongConverter) ToLong(value interface{}) int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TLongConverter.ToLongWithDefault">func (c *TLongConverter) ToLongWithDefault(value interface{}, defaultValue int64) int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TLongConverter.ToNullableLong">func (c *TLongConverter) ToNullableLong(value interface{}) *int64</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TMapConverter">type TMapConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TMapConverter.ToMap">func (c *TMapConverter) ToMap(value interface{}) map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TMapConverter.ToMapWithDefault">func (c *TMapConverter) ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TMapConverter.ToNullableMap">func (c *TMapConverter) ToNullableMap(value interface{}) *map[string]interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TStringConverter">type TStringConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TStringConverter.ToNullableString">func (c *TStringConverter) ToNullableString(value interface{}) *string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TStringConverter.ToString">func (c *TStringConverter) ToString(value interface{}) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TStringConverter.ToStringWithDefault">func (c *TStringConverter) ToStringWithDefault(value interface{}, defaultValue string) string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TTypeConverter">type TTypeConverter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeConverter.ToNullableType">func (c *TTypeConverter) ToNullableType(typ TypeCode, value interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeConverter.ToString">func (c *TTypeConverter) ToString(typ TypeCode) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeConverter.ToType">func (c *TTypeConverter) ToType(typ TypeCode, value interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeConverter.ToTypeCode">func (c *TTypeConverter) ToTypeCode(value interface{}) TypeCode</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeConverter.ToTypeWithDefault">func (c *TTypeConverter) ToTypeWithDefault(typ TypeCode, value interface{}, defaultValue interface{}) interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TypeCode">type TypeCode</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ToTypeCode">func ToTypeCode(value interface{}) TypeCode</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/convert/ArrayConverter.go">ArrayConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/BooleanConverter.go">BooleanConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/DateTimeConverter.go">DateTimeConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/DoubleConverter.go">DoubleConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/DurationConverter.go">DurationConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/FloatConverter.go">FloatConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/IntegerConverter.go">IntegerConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/JsonConverter.go">JsonConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/LongConverter.go">LongConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/MapConverter.go">MapConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/RecursiveMapConverter.go">RecursiveMapConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/StringConverter.go">StringConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/TypeCode.go">TypeCode.go</a>
+			
+				<a href="http://localhost:6060/src/convert/TypeConverter.go">TypeConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/ValueConverter.go">ValueConverter.go</a>
+			
+				<a href="http://localhost:6060/src/convert/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="FromJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=197:245#L1">FromJson</a>
+				<a class="permalink" href="index.html#FromJson">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FromJson(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Converts value from JSON string
+Parameters: &#34;value&#34; - the JSON string to convert.
+Returns: converted object value or null when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="JsonToMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2877:2928#L78">JsonToMap</a>
+				<a class="permalink" href="index.html#JsonToMap">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func JsonToMap(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+			<p>
+Converts JSON string into map object or returns empty map when conversion is not possible.
+Parameters: &#34;value&#34; - the JSON string to convert.
+Returns: Map object value or empty map when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="JsonToMapWithDefault">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3268:3367#L87">JsonToMapWithDefault</a>
+				<a class="permalink" href="index.html#JsonToMapWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func JsonToMapWithDefault(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>, defaultValue map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+			<p>
+Converts JSON string into map object or returns default map when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the JSON string to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: Map object value or default map when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="JsonToNullableMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2507:2567#L67">JsonToNullableMap</a>
+				<a class="permalink" href="index.html#JsonToNullableMap">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func JsonToNullableMap(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+			<p>
+Converts JSON string into map object or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the JSON string to convert.
+Returns: Map object value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ListToArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=3513:3562#L101">ListToArray</a>
+				<a class="permalink" href="index.html#ListToArray">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ListToArray(value interface{}) []interface{}</pre>
+			<p>
+Converts value into array object with empty array as default.
+Strings with comma-delimited values are split into array of strings.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the list to convert.
+</pre>
+<p>
+Returns: array object or empty array when value is null
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=2708:2753#L79">ToArray</a>
+				<a class="permalink" href="index.html#ToArray">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToArray(value interface{}) []interface{}</pre>
+			<p>
+Converts value into array object with empty array as default. Single values
+are converted into arrays with single element.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+</pre>
+<p>
+Returns: array object or empty array when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToArrayWithDefault">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=3093:3177#L89">ToArrayWithDefault</a>
+				<a class="permalink" href="index.html#ToArrayWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{}</pre>
+			<p>
+Converts value into array object with empty array as default. Single values
+are converted into arrays with single element.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - default array object.
+</pre>
+<p>
+Returns: array object or empty array when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToBoolean">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=2829:2867#L83">ToBoolean</a>
+				<a class="permalink" href="index.html#ToBoolean">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToBoolean(value interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+			<p>
+Converts value into boolean or returns false when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: boolean value or false when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToBooleanWithDefault">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=3166:3234#L92">ToBooleanWithDefault</a>
+				<a class="permalink" href="index.html#ToBooleanWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToBooleanWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+			<p>
+Converts value into boolean or returns default value when conversion is not possible
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: boolean value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToDateTime">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=3116:3160#L94">ToDateTime</a>
+				<a class="permalink" href="index.html#ToDateTime">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToDateTime(value interface{}) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+			<p>
+Converts value into Date or returns current when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: Date value or current when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToDateTimeWithDefault">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=3455:3534#L103">ToDateTimeWithDefault</a>
+				<a class="permalink" href="index.html#ToDateTimeWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToDateTimeWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+			<p>
+Converts value into Date or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: Date value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToDouble">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=3151:3191#L103">ToDouble</a>
+				<a class="permalink" href="index.html#ToDouble">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToDouble(value interface{}) <a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+			<p>
+Converts value into doubles or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: double value or 0 when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToDoubleWithDefault">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=3480:3553#L112">ToDoubleWithDefault</a>
+				<a class="permalink" href="index.html#ToDoubleWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToDoubleWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#float64">float64</a>) <a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+			<p>
+Converts value into doubles or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: double value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToDuration">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=3171:3219#L89">ToDuration</a>
+				<a class="permalink" href="index.html#ToDuration">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToDuration(value interface{}) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a></pre>
+			<p>
+Converts value into time.Duration or returns current when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: time.Duration value or current when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToDurationWithDefault">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=3540:3627#L98">ToDurationWithDefault</a>
+				<a class="permalink" href="index.html#ToDurationWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToDurationWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a>) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a></pre>
+			<p>
+Converts value into time.Duration or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: time.Duration value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToFloat">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=2243:2282#L50">ToFloat</a>
+				<a class="permalink" href="index.html#ToFloat">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToFloat(value interface{}) <a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+			<p>
+Converts value into float or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: float value or 0 when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToFloatWithDefault">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=2567:2639#L59">ToFloatWithDefault</a>
+				<a class="permalink" href="index.html#ToFloatWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToFloatWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#float32">float32</a>) <a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+			<p>
+Converts value into float or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: float value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=2272:2309#L50">ToInteger</a>
+				<a class="permalink" href="index.html#ToInteger">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToInteger(value interface{}) <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+			<p>
+Converts value into integer or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or 0 when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToIntegerWithDefault">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=2600:2666#L59">ToIntegerWithDefault</a>
+				<a class="permalink" href="index.html#ToIntegerWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToIntegerWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+			<p>
+Converts value into integer or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: integer value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=540:586#L15">ToJson</a>
+				<a class="permalink" href="index.html#ToJson">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToJson(value interface{}) (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Converts value into JSON string.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: JSON string or null when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToLong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=3014:3050#L103">ToLong</a>
+				<a class="permalink" href="index.html#ToLong">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToLong(value interface{}) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+			<p>
+Converts value into long or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or 0 when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToLongWithDefault">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=3333:3400#L112">ToLongWithDefault</a>
+				<a class="permalink" href="index.html#ToLongWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToLongWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+			<p>
+Converts value into long or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value..
+</pre>
+<p>
+Returns: long value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToMap">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=2574:2626#L72">ToMap</a>
+				<a class="permalink" href="index.html#ToMap">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToMap(value interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+			<p>
+Converts value into map object or returns empty map when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: map object or empty map when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToMapWithDefault">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=2942:3042#L81">ToMapWithDefault</a>
+				<a class="permalink" href="index.html#ToMapWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToMapWithDefault(value interface{}, defaultValue map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+			<p>
+Converts value into map object or returns default map when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: map object or default map when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=2113:2167#L50">ToNullableArray</a>
+				<a class="permalink" href="index.html#ToNullableArray">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableArray(value interface{}) *[]interface{}</pre>
+			<p>
+Converts value into array object. Single values are converted into arrays with a single element.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+</pre>
+<p>
+Returns: array object or null when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableBoolean">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=2057:2104#L43">ToNullableBoolean</a>
+				<a class="permalink" href="index.html#ToNullableBoolean">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableBoolean(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+			<p>
+Converts value into boolean or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: boolean value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableDateTime">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1891:1944#L39">ToNullableDateTime</a>
+				<a class="permalink" href="index.html#ToNullableDateTime">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableDateTime(value interface{}) *<a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+			<p>
+Converts value into Date or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: Date value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableDouble">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1979:2028#L43">ToNullableDouble</a>
+				<a class="permalink" href="index.html#ToNullableDouble">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableDouble(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+			<p>
+Converts value into doubles or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: double value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableDuration">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1796:1853#L37">ToNullableDuration</a>
+				<a class="permalink" href="index.html#ToNullableDuration">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableDuration(value interface{}) *<a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a></pre>
+			<p>
+Converts value into time.Duration or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: time.Duration value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableFloat">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1914:1962#L38">ToNullableFloat</a>
+				<a class="permalink" href="index.html#ToNullableFloat">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableFloat(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+			<p>
+Converts value into float or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: float value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1948:1994#L38">ToNullableInteger</a>
+				<a class="permalink" href="index.html#ToNullableInteger">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableInteger(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+			<p>
+Converts value into integer or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableLong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=1895:1940#L43">ToNullableLong</a>
+				<a class="permalink" href="index.html#ToNullableLong">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableLong(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+			<p>
+Converts value into long or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableMap">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=1883:1944#L37">ToNullableMap</a>
+				<a class="permalink" href="index.html#ToNullableMap">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableMap(value interface{}) *map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+			<p>
+Converts value into map object or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: map object or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableString">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=1930:1978#L47">ToNullableString</a>
+				<a class="permalink" href="index.html#ToNullableString">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableString(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+			<p>
+Converts value into string or returns null when value is null.
+Parameters: &#34;value&#34; - the value to convert
+Returns: string value or null when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableType">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=4447:4511#L154">ToNullableType</a>
+				<a class="permalink" href="index.html#ToNullableType">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableType(typ <a href="index.html#TypeCode">TypeCode</a>, value interface{}) interface{}</pre>
+			<p>
+Converts value into an object type specified by Type Code or returns null
+when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;typ&#34; - the TypeCode for the data type.
+&#34;value&#34; - the value to convert.
+</pre>
+<p>
+Returns: object value of type corresponding to TypeCode, or null when
+conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToString">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=3030:3069#L101">ToString</a>
+				<a class="permalink" href="index.html#ToString">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToString(value interface{}) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+			<p>
+Converts value into string or returns &#34;&#34; when value is null.
+Parameters: &#34;value&#34; - the value to convert
+Returns: string value or &#34;&#34; when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToStringWithDefault">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=3331:3402#L110">ToStringWithDefault</a>
+				<a class="permalink" href="index.html#ToStringWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToStringWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+			<p>
+Converts value into string or returns default when value is null.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: string value or default when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToType">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=5724:5780#L192">ToType</a>
+				<a class="permalink" href="index.html#ToType">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToType(typ <a href="index.html#TypeCode">TypeCode</a>, value interface{}) interface{}</pre>
+			<p>
+Converts value into an object type specified by Type Code
+or returns default value when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;typ&#34; - the TypeCode for the data type into which &#39;value&#39; is to be converted.
+&#34;value&#34; - the value to convert.
+</pre>
+<p>
+Returns: object value of type corresponding to TypeCode, or default value when
+conversion is not supported
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToTypeWithDefault">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=7014:7107#L232">ToTypeWithDefault</a>
+				<a class="permalink" href="index.html#ToTypeWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToTypeWithDefault(typ <a href="index.html#TypeCode">TypeCode</a>, value interface{}, defaultValue interface{}) interface{}</pre>
+			<p>
+Converts value into an object type specified by Type Code
+or returns default value when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;typ&#34; - the TypeCode for the data type into which &#39;value&#39; is to be converted.
+&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value to return if conversion is not possible
+(returns null).
+</pre>
+<p>
+Returns: object value of type corresponding to TypeCode, or default value when
+conversion is not supported
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TypeCodeToString">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=8413:8455#L266">TypeCodeToString</a>
+				<a class="permalink" href="index.html#TypeCodeToString">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TypeCodeToString(typ <a href="index.html#TypeCode">TypeCode</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+			<p>
+Converts a TypeCode into its string name.
+Parameters: &#34;typ&#34; - the TypeCode to convert into a string.
+Returns: the name of the TypeCode passed as a string value.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="TArrayConverter">type <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=384:413#L8">TArrayConverter</a>
+				<a class="permalink" href="index.html#TArrayConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into array objects.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.ArrayConverter.ToArray([...]int{1, 2})
+value2 := convert.ArrayConverter.ToArray(1)
+value3 := convert.ArrayConverter.ListToArray(&#34;1,2,3&#34;)
+fmt.Println(value1) // [1 2]
+fmt.Println(value2) // [1]
+fmt.Println(value3) // [1 2 3]
+</pre>
+
+			<pre>type TArrayConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="ArrayConverter">ArrayConverter</span> *<a href="index.html#TArrayConverter">TArrayConverter</a> = &amp;<a href="index.html#TArrayConverter">TArrayConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TArrayConverter.ListToArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1805:1875#L42">ListToArray</a>
+					<a class="permalink" href="index.html#TArrayConverter.ListToArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TArrayConverter">TArrayConverter</a>) ListToArray(value interface{}) []interface{}</pre>
+				<p>
+Converts value into array object with empty array as default.
+Strings with comma-delimited values are split into array of strings.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the list to convert.
+</pre>
+<p>
+Returns: array object or empty array when value is null
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TArrayConverter.ToArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1021:1087#L23">ToArray</a>
+					<a class="permalink" href="index.html#TArrayConverter.ToArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TArrayConverter">TArrayConverter</a>) ToArray(value interface{}) []interface{}</pre>
+				<p>
+Converts value into array object with empty array as default. Single values
+are converted into arrays with single element.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: array object or empty array when value is null.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TArrayConverter.ToArrayWithDefault">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1399:1504#L33">ToArrayWithDefault</a>
+					<a class="permalink" href="index.html#TArrayConverter.ToArrayWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TArrayConverter">TArrayConverter</a>) ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{}</pre>
+				<p>
+Converts value into array object with empty array as default. Single values
+are converted into arrays with single element.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - default array object.
+</pre>
+<p>
+Returns: array object or empty array when value is null.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TArrayConverter.ToNullableArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=673:748#L15">ToNullableArray</a>
+					<a class="permalink" href="index.html#TArrayConverter.ToNullableArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TArrayConverter">TArrayConverter</a>) ToNullableArray(value interface{}) *[]interface{}</pre>
+				<p>
+Converts value into array object. Single values are converted into arrays with a single element.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: array object or null when value is null.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TBooleanConverter">type <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=781:812#L14">TBooleanConverter</a>
+				<a class="permalink" href="index.html#TBooleanConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values to boolean values using extended conversion rules:
+- Numbers: above 0, less more 0 are true; equal to 0 are false
+- Strings: &#34;true&#34;, &#34;yes&#34;, &#34;T&#34;, &#34;Y&#34;, &#34;1&#34; are true, &#34;false&#34;, &#34;no&#34;, &#34;F&#34;, &#34;N&#34; are false
+- DateTime: above 0, less more 0 total milliseconds are true, equal to 0 are false
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.BooleanConverter.ToNullableBoolean(true)
+value2 := convert.BooleanConverter.ToNullableBoolean(&#34;yes&#34;)
+value3 := convert.BooleanConverter.ToNullableBoolean(1)
+value4 := convert.BooleanConverter.ToNullableBoolean(struct{}{})
+fmt.Println(*value1) // true
+fmt.Println(*value2) // true
+fmt.Println(*value3) // true
+fmt.Println(value4)  // &lt;nil&gt;
+</pre>
+
+			<pre>type TBooleanConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="BooleanConverter">BooleanConverter</span> *<a href="index.html#TBooleanConverter">TBooleanConverter</a> = &amp;<a href="index.html#TBooleanConverter">TBooleanConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TBooleanConverter.ToBoolean">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1379:1440#L28">ToBoolean</a>
+					<a class="permalink" href="index.html#TBooleanConverter.ToBoolean">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TBooleanConverter">TBooleanConverter</a>) ToBoolean(value interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Converts value into boolean or returns false when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: boolean value or false when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TBooleanConverter.ToBooleanWithDefault">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1715:1806#L36">ToBooleanWithDefault</a>
+					<a class="permalink" href="index.html#TBooleanConverter.ToBooleanWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TBooleanConverter">TBooleanConverter</a>) ToBooleanWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Converts value into boolean or returns default value when conversion is not possible
+Parameters:&#34;value&#34; - the value to convert.
+</p>
+<pre>&#34;defaultValue&#34; - the default value
+</pre>
+<p>
+Returns: boolean value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TBooleanConverter.ToNullableBoolean">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1073:1143#L21">ToNullableBoolean</a>
+					<a class="permalink" href="index.html#TBooleanConverter.ToNullableBoolean">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TBooleanConverter">TBooleanConverter</a>) ToNullableBoolean(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Converts value into boolean or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: boolean value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TDateTimeConverter">type <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=602:634#L9">TDateTimeConverter</a>
+				<a class="permalink" href="index.html#TDateTimeConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into Date values using extended conversion rules:
+- Strings: converted using ISO time format
+- Numbers: converted using milliseconds since unix epoch
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.DateTimeConverter.ToNullableDateTime(&#34;ABC&#34;)
+value2 := convert.DateTimeConverter.ToNullableDateTime(&#34;2019-01-01T11:30:00.0Z&#34;)
+value3 := convert.DateTimeConverter.ToNullableDateTime(123)
+fmt.Println(value1) // &lt;nil&gt;
+fmt.Println(value2) // 2019-01-01 11:30:00 +0000 UTC
+fmt.Println(value3) // 1970-01-01 02:02:03 +0200 EET
+</pre>
+
+			<pre>type TDateTimeConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="DateTimeConverter">DateTimeConverter</span> *<a href="index.html#TDateTimeConverter">TDateTimeConverter</a> = &amp;<a href="index.html#TDateTimeConverter">TDateTimeConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TDateTimeConverter.ToDateTime">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1204:1272#L23">ToDateTime</a>
+					<a class="permalink" href="index.html#TDateTimeConverter.ToDateTime">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDateTimeConverter">TDateTimeConverter</a>) ToDateTime(value interface{}) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+				<p>
+Converts value into Date or returns current when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: Date value or current when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TDateTimeConverter.ToDateTimeWithDefault">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1542:1645#L32">ToDateTimeWithDefault</a>
+					<a class="permalink" href="index.html#TDateTimeConverter.ToDateTimeWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDateTimeConverter">TDateTimeConverter</a>) ToDateTimeWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+				<p>
+Converts value into Date or returns default when conversion is not possible.
+Parameters:
+&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+Returns: Date value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TDateTimeConverter.ToNullableDateTime">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=892:969#L16">ToNullableDateTime</a>
+					<a class="permalink" href="index.html#TDateTimeConverter.ToNullableDateTime">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDateTimeConverter">TDateTimeConverter</a>) ToNullableDateTime(value interface{}) *<a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+				<p>
+Converts value into Date or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: Date value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TDoubleConverter">type <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=715:745#L13">TDoubleConverter</a>
+				<a class="permalink" href="index.html#TDoubleConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into double using extended conversion rules:
+- Strings are converted to double values
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.DoubleConverter.ToNullableDouble(&#34;ABC&#34;)
+value2 := convert.DoubleConverter.ToNullableDouble(&#34;123.456&#34;)
+value3 := convert.DoubleConverter.ToNullableDouble(true)
+value4 := convert.DoubleConverter.ToNullableDouble(time.Now())
+fmt.Println(value1)  // &lt;nil&gt;
+fmt.Println(*value2) // 123.456
+fmt.Println(*value3) // 1
+fmt.Println(*value4) // current milliseconds (e.g. 1.566333114e+09)
+</pre>
+
+			<pre>type TDoubleConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="DoubleConverter">DoubleConverter</span> *<a href="index.html#TDoubleConverter">TDoubleConverter</a> = &amp;<a href="index.html#TDoubleConverter">TDoubleConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TDoubleConverter.ToDouble">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1299:1361#L27">ToDouble</a>
+					<a class="permalink" href="index.html#TDoubleConverter.ToDouble">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDoubleConverter">TDoubleConverter</a>) ToDouble(value interface{}) <a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+				<p>
+Converts value into doubles or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: double value or 0 when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TDoubleConverter.ToDoubleWithDefault">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1635:1730#L36">ToDoubleWithDefault</a>
+					<a class="permalink" href="index.html#TDoubleConverter.ToDoubleWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDoubleConverter">TDoubleConverter</a>) ToDoubleWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#float64">float64</a>) <a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+				<p>
+Converts value into doubles or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value
+</pre>
+<p>
+Returns: double value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TDoubleConverter.ToNullableDouble">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1002:1073#L20">ToNullableDouble</a>
+					<a class="permalink" href="index.html#TDoubleConverter.ToNullableDouble">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDoubleConverter">TDoubleConverter</a>) ToNullableDouble(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+				<p>
+Converts value into doubles or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: double value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TDurationConverter">type <a href="http://localhost:6060/src/convert/DurationConverter.go?s=417:449#L7">TDurationConverter</a>
+				<a class="permalink" href="index.html#TDurationConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into time.Duration values.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.DurationConverter.ToNullableDuration(&#34;123&#34;)
+value2 := convert.DurationConverter.ToNullableDuration(123)
+value3 := convert.DurationConverter.ToNullableDuration(123 * time.Second)
+fmt.Println(value1) // 123ms
+fmt.Println(value2) // 123ms
+fmt.Println(value3) // 2m3s
+</pre>
+
+			<pre>type TDurationConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="DurationConverter">DurationConverter</span> *<a href="index.html#TDurationConverter">TDurationConverter</a> = &amp;<a href="index.html#TDurationConverter">TDurationConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TDurationConverter.ToDuration">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1059:1131#L21">ToDuration</a>
+					<a class="permalink" href="index.html#TDurationConverter.ToDuration">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDurationConverter">TDurationConverter</a>) ToDuration(value interface{}) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a></pre>
+				<p>
+Converts value into time.Duration or returns current when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: time.Duration value or current when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TDurationConverter.ToDurationWithDefault">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1421:1532#L30">ToDurationWithDefault</a>
+					<a class="permalink" href="index.html#TDurationConverter.ToDurationWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDurationConverter">TDurationConverter</a>) ToDurationWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a>) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a></pre>
+				<p>
+Converts value into time.Duration or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: time.Duration value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TDurationConverter.ToNullableDuration">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=725:806#L14">ToNullableDuration</a>
+					<a class="permalink" href="index.html#TDurationConverter.ToNullableDuration">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TDurationConverter">TDurationConverter</a>) ToNullableDuration(value interface{}) *<a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Duration">Duration</a></pre>
+				<p>
+Converts value into time.Duration or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: time.Duration value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TFloatConverter">type <a href="http://localhost:6060/src/convert/FloatConverter.go?s=674:703#L8">TFloatConverter</a>
+				<a class="permalink" href="index.html#TFloatConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into float using extended conversion rules:
+- Strings are converted to float values
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.FloatConverter.ToNullableFloat(&#34;ABC&#34;)
+value2 := convert.FloatConverter.ToNullableFloat(&#34;123.456&#34;)
+value3 := convert.FloatConverter.ToNullableFloat(true)
+value4 := convert.FloatConverter.ToNullableFloat(time.Now())
+fmt.Println(value1)  // &lt;nil&gt;
+fmt.Println(*value2) // 123.456
+fmt.Println(*value3) // 1
+fmt.Println(*value4) // current milliseconds (e.g. 1.566333114e+09)
+</pre>
+
+			<pre>type TFloatConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="FloatConverter">FloatConverter</span> *<a href="index.html#TFloatConverter">TFloatConverter</a> = &amp;<a href="index.html#TFloatConverter">TFloatConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TFloatConverter.ToFloat">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1245:1305#L22">ToFloat</a>
+					<a class="permalink" href="index.html#TFloatConverter.ToFloat">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TFloatConverter">TFloatConverter</a>) ToFloat(value interface{}) <a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+				<p>
+Converts value into float or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: float value or 0 when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TFloatConverter.ToFloatWithDefault">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1576:1669#L31">ToFloatWithDefault</a>
+					<a class="permalink" href="index.html#TFloatConverter.ToFloatWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TFloatConverter">TFloatConverter</a>) ToFloatWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#float32">float32</a>) <a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+				<p>
+Converts value into float or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: float value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TFloatConverter.ToNullableFloat">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=954:1023#L15">ToNullableFloat</a>
+					<a class="permalink" href="index.html#TFloatConverter.ToNullableFloat">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TFloatConverter">TFloatConverter</a>) ToNullableFloat(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+				<p>
+Converts value into float or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert.
+Returns: float value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TIntegerConverter">type <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=685:716#L8">TIntegerConverter</a>
+				<a class="permalink" href="index.html#TIntegerConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into integer using extended conversion rules:
+- Strings are converted to integer values
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.IntegerConverter.ToNullableInteger(&#34;ABC&#34;)
+value2 := convert.IntegerConverter.ToNullableInteger(&#34;123.456&#34;)
+value3 := convert.IntegerConverter.ToNullableInteger(true)
+value4 := convert.IntegerConverter.ToNullableInteger(time.Now())
+fmt.Println(value1)  // &lt;nil&gt;
+fmt.Println(*value2) // 123
+fmt.Println(*value3) // 1
+fmt.Println(*value4) // current milliseconds (e.g. 1566333428)
+</pre>
+
+			<pre>type TIntegerConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="IntegerConverter">IntegerConverter</span> *<a href="index.html#TIntegerConverter">TIntegerConverter</a> = &amp;<a href="index.html#TIntegerConverter">TIntegerConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TIntegerConverter.ToInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1272:1332#L22">ToInteger</a>
+					<a class="permalink" href="index.html#TIntegerConverter.ToInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TIntegerConverter">TIntegerConverter</a>) ToInteger(value interface{}) <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				<p>
+Converts value into integer or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or 0 when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TIntegerConverter.ToIntegerWithDefault">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1609:1698#L31">ToIntegerWithDefault</a>
+					<a class="permalink" href="index.html#TIntegerConverter.ToIntegerWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TIntegerConverter">TIntegerConverter</a>) ToIntegerWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				<p>
+Converts value into integer or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: integer value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TIntegerConverter.ToNullableInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=976:1045#L15">ToNullableInteger</a>
+					<a class="permalink" href="index.html#TIntegerConverter.ToNullableInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TIntegerConverter">TIntegerConverter</a>) ToNullableInteger(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				<p>
+Converts value into integer or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TJsonConverter">type <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1117:1145#L37">TJsonConverter</a>
+				<a class="permalink" href="index.html#TJsonConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values from and to JSON (JavaScript Object Notation) strings.
+</p>
+<p>
+Example:
+</p>
+<pre>value1, _ := convert.FromJson(&#34;{\&#34;key\&#34;:123}&#34;)
+value2 := convert.JsonConverter.ToMap(&#34;{\&#34;key\&#34;:123}&#34;)
+value3, _ := convert.ToJson(map[string]int{&#34;key&#34;: 123})
+fmt.Println(value1) // map[key:123]
+fmt.Println(value2) // map[key:123]
+fmt.Println(value3) // {&#34;key&#34;:123}
+</pre>
+
+			<pre>type TJsonConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="JsonConverter">JsonConverter</span> *<a href="index.html#TJsonConverter">TJsonConverter</a> = &amp;<a href="index.html#TJsonConverter">TJsonConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TJsonConverter.ToMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1753:1820#L51">ToMap</a>
+					<a class="permalink" href="index.html#TJsonConverter.ToMap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TJsonConverter">TJsonConverter</a>) ToMap(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Converts JSON string into map object or returns empty map when conversion is not possible.
+Parameters: &#34;value&#34; - the JSON string to convert.
+Returns: Map object value or empty map when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TJsonConverter.ToMapWithDefault">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2123:2238#L60">ToMapWithDefault</a>
+					<a class="permalink" href="index.html#TJsonConverter.ToMapWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TJsonConverter">TJsonConverter</a>) ToMapWithDefault(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>, defaultValue map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Converts JSON string into map object or returns default map when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the JSON string to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: Map object value or default map when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TJsonConverter.ToNullableMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1415:1491#L44">ToNullableMap</a>
+					<a class="permalink" href="index.html#TJsonConverter.ToNullableMap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TJsonConverter">TJsonConverter</a>) ToNullableMap(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Converts JSON string into map object or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the JSON string to convert.
+Returns: Map object value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TLongConverter">type <a href="http://localhost:6060/src/convert/LongConverter.go?s=686:714#L13">TLongConverter</a>
+				<a class="permalink" href="index.html#TLongConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into long using extended conversion rules:
+- Strings are converted to long values
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.LongConverter.ToNullableLong(&#34;ABC&#34;)
+value2 := convert.LongConverter.ToNullableLong(&#34;123.456&#34;)
+value3 := convert.LongConverter.ToNullableLong(true)
+value4 := convert.LongConverter.ToNullableLong(time.Now())
+fmt.Println(value1)  // &lt;nil&gt;
+fmt.Println(*value2) // 123
+fmt.Println(*value3) // 1
+fmt.Println(*value4) // current milliseconds (e.g. 1566333527)
+</pre>
+
+			<pre>type TLongConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="LongConverter">LongConverter</span> *<a href="index.html#TLongConverter">TLongConverter</a> = &amp;<a href="index.html#TLongConverter">TLongConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TLongConverter.ToLong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=1242:1298#L27">ToLong</a>
+					<a class="permalink" href="index.html#TLongConverter.ToLong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TLongConverter">TLongConverter</a>) ToLong(value interface{}) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Converts value into long or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or 0 when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TLongConverter.ToLongWithDefault">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=1567:1654#L36">ToLongWithDefault</a>
+					<a class="permalink" href="index.html#TLongConverter.ToLongWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TLongConverter">TLongConverter</a>) ToLongWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Converts value into long or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value..
+</pre>
+<p>
+Returns: long value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TLongConverter.ToNullableLong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=959:1024#L20">ToNullableLong</a>
+					<a class="permalink" href="index.html#TLongConverter.ToNullableLong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TLongConverter">TLongConverter</a>) ToNullableLong(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Converts value into long or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TMapConverter">type <a href="http://localhost:6060/src/convert/MapConverter.go?s=574:601#L7">TMapConverter</a>
+				<a class="permalink" href="index.html#TMapConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into map objects using extended conversion rules:
+- Objects: property names as keys, property values as values
+- Arrays: element indexes as keys, elements as values
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.MapConverter.ToNullableMap(&#34;ABC&#34;)
+value2 := convert.MapConverter.ToNullableMap(map[string]int{&#34;key&#34;: 123})
+value3 := convert.MapConverter.ToNullableMap([...]int{1, 2, 3})
+fmt.Println(value1)  // &lt;nil&gt;
+fmt.Println(*value2) // map[key:123]
+fmt.Println(*value3) // map[0:1 1:2 2:3]
+</pre>
+
+			<pre>type TMapConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="MapConverter">MapConverter</span> *<a href="index.html#TMapConverter">TMapConverter</a> = &amp;<a href="index.html#TMapConverter">TMapConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TMapConverter.ToMap">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=1168:1239#L21">ToMap</a>
+					<a class="permalink" href="index.html#TMapConverter.ToMap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TMapConverter">TMapConverter</a>) ToMap(value interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Converts value into map object or returns empty map when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: map object or empty map when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TMapConverter.ToMapWithDefault">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=1518:1637#L30">ToMapWithDefault</a>
+					<a class="permalink" href="index.html#TMapConverter.ToMapWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TMapConverter">TMapConverter</a>) ToMapWithDefault(value interface{}, defaultValue map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Converts value into map object or returns default map when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: map object or default map when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TMapConverter.ToNullableMap">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=849:929#L14">ToNullableMap</a>
+					<a class="permalink" href="index.html#TMapConverter.ToNullableMap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TMapConverter">TMapConverter</a>) ToNullableMap(value interface{}) *map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Converts value into map object or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: map object or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TStringConverter">type <a href="http://localhost:6060/src/convert/StringConverter.go?s=782:812#L17">TStringConverter</a>
+				<a class="permalink" href="index.html#TStringConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into strings using extended conversion rules:
+- Numbers: are converted with &#39;.&#39; as decimal point
+- DateTime: using ISO format
+- Boolean: &#34;true&#34; for true and &#34;false&#34; for false
+- Arrays: as comma-separated list
+- Other objects: using toString() method
+</p>
+<p>
+Example:
+</p>
+<pre>var value1 = convert.StringConverter.ToString(123.456)
+var value2 = convert.StringConverter.ToString(true)
+var value3 = convert.StringConverter.ToString(time.Now())
+var value4 = convert.StringConverter.ToString([...]int{1, 2, 3})
+fmt.Println(value1) // 123.456
+fmt.Println(value2) // true
+fmt.Println(value3) // 2019-08-20T23:54:47+03:00
+fmt.Println(value4) // 1,2,3
+</pre>
+
+			<pre>type TStringConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="StringConverter">StringConverter</span> *<a href="index.html#TStringConverter">TStringConverter</a> = &amp;<a href="index.html#TStringConverter">TStringConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TStringConverter.ToNullableString">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1040:1110#L24">ToNullableString</a>
+					<a class="permalink" href="index.html#TStringConverter.ToNullableString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TStringConverter">TStringConverter</a>) ToNullableString(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Converts value into string or returns null when value is null.
+Parameters: &#34;value&#34; - the value to convert
+Returns: string value or null when value is null.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TStringConverter.ToString">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1309:1370#L31">ToString</a>
+					<a class="permalink" href="index.html#TStringConverter.ToString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TStringConverter">TStringConverter</a>) ToString(value interface{}) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Converts value into string or returns &#34;&#34; when value is null.
+Parameters: &#34;value&#34; - the value to convert
+Returns: string value or &#34;&#34; when value is null.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TStringConverter.ToStringWithDefault">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1617:1710#L40">ToStringWithDefault</a>
+					<a class="permalink" href="index.html#TStringConverter.ToStringWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TStringConverter">TStringConverter</a>) ToStringWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Converts value into string or returns default when value is null.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: string value or default when value is null.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TTypeConverter">type <a href="http://localhost:6060/src/convert/TypeConverter.go?s=582:610#L10">TTypeConverter</a>
+				<a class="permalink" href="index.html#TTypeConverter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Converts arbitrary values into objects specific by TypeCodes.
+For each TypeCode this class calls corresponding converter
+which applies extended conversion rules to convert the values.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := convert.TypeConverter.ToType(convert.Integer, &#34;123.456&#34;)
+value2 := convert.TypeConverter.ToType(convert.DateTime, 123)
+value3 := convert.TypeConverter.ToType(convert.Boolean, &#34;F&#34;)
+fmt.Println(value1) // 123
+fmt.Println(value2) // 1970-01-01 02:02:03 +0200 EET
+fmt.Println(value3) // false
+</pre>
+
+			<pre>type TTypeConverter struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="TypeConverter">TypeConverter</span> *<a href="index.html#TTypeConverter">TTypeConverter</a> = &amp;<a href="index.html#TTypeConverter">TTypeConverter</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TTypeConverter.ToNullableType">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=1248:1332#L28">ToNullableType</a>
+					<a class="permalink" href="index.html#TTypeConverter.ToNullableType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeConverter">TTypeConverter</a>) ToNullableType(typ <a href="index.html#TypeCode">TypeCode</a>, value interface{}) interface{}</pre>
+				<p>
+Converts value into an object type specified by Type Code or returns null
+when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;typ&#34; - the TypeCode for the data type.
+&#34;value&#34; - the value to convert.
+</pre>
+<p>
+Returns: object value of type corresponding to TypeCode, or null when
+conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeConverter.ToString">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2658:2712#L59">ToString</a>
+					<a class="permalink" href="index.html#TTypeConverter.ToString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeConverter">TTypeConverter</a>) ToString(typ <a href="index.html#TypeCode">TypeCode</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Converts a TypeCode into its string name.
+Parameters: &#34;typ&#34; - the TypeCode to convert into a string.
+Returns: the name of the TypeCode passed as a string value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeConverter.ToType">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=1741:1817#L39">ToType</a>
+					<a class="permalink" href="index.html#TTypeConverter.ToType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeConverter">TTypeConverter</a>) ToType(typ <a href="index.html#TypeCode">TypeCode</a>, value interface{}) interface{}</pre>
+				<p>
+Converts value into an object type specified by Type Code
+or returns default value when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;typ&#34; - the TypeCode for the data type into which &#39;value&#39; is to be converted.
+&#34;value&#34; - the value to convert.
+</pre>
+<p>
+Returns: object value of type corresponding to TypeCode, or default value when
+conversion is not supported
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeConverter.ToTypeCode">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=840:903#L17">ToTypeCode</a>
+					<a class="permalink" href="index.html#TTypeConverter.ToTypeCode">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeConverter">TTypeConverter</a>) ToTypeCode(value interface{}) <a href="index.html#TypeCode">TypeCode</a></pre>
+				<p>
+Gets TypeCode for specific value.
+Parameters: &#34;value&#34; - value whose TypeCode is to be resolved.
+Returns: the TypeCode that corresponds to the passed object&#39;s type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeConverter.ToTypeWithDefault">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2317:2430#L52">ToTypeWithDefault</a>
+					<a class="permalink" href="index.html#TTypeConverter.ToTypeWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeConverter">TTypeConverter</a>) ToTypeWithDefault(typ <a href="index.html#TypeCode">TypeCode</a>, value interface{}, defaultValue interface{}) interface{}</pre>
+				<p>
+Converts value into an object type specified by Type Code
+or returns default value when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;typ&#34; - the TypeCode for the data type into which &#39;value&#39; is to be converted.
+&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value to return if conversion is not possible
+(returns null).
+</pre>
+<p>
+Returns: object value of type corresponding to TypeCode, or default value when
+conversion is not supported
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TypeCode">type <a href="http://localhost:6060/src/convert/TypeCode.go?s=88:105#L1">TypeCode</a>
+				<a class="permalink" href="index.html#TypeCode">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Codes for the data types that can be converted using TypeConverter.
+</p>
+
+			<pre>type TypeCode <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="Unknown">Unknown</span>  <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="String">String</span>   <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Boolean">Boolean</span>  <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Integer">Integer</span>  <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Long">Long</span>     <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Float">Float</span>    <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Double">Double</span>   <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="DateTime">DateTime</span> <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Duration">Duration</span> <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Object">Object</span>   <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Enum">Enum</span>     <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Array">Array</span>    <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Map">Map</span>      <a href="index.html#TypeCode">TypeCode</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="ToTypeCode">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2921:2964#L66">ToTypeCode</a>
+					<a class="permalink" href="index.html#ToTypeCode">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ToTypeCode(value interface{}) <a href="index.html#TypeCode">TypeCode</a></pre>
+				<p>
+Gets TypeCode for specific value.
+Parameters: &#34;value&#34; - value whose TypeCode is to be resolved.
+Returns: the TypeCode that corresponds to the passed object&#39;s type.
+</p>
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>refer - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package refer
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "refer"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="index.html#NewReferenceError">func NewReferenceError(correlationId string, locator interface{}) *errors.ApplicationError</a></dd>
+			
+			
+				
+				<dd><a href="index.html#DependencyResolver">type DependencyResolver</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDependencyResolver">func NewDependencyResolver() *DependencyResolver</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDependencyResolverFromTuples">func NewDependencyResolverFromTuples(tuples ...interface{}) *DependencyResolver</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDependencyResolverWithParams">func NewDependencyResolverWithParams(config *conf.ConfigParams, references IReferences) *DependencyResolver</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.Configure">func (c *DependencyResolver) Configure(config *conf.ConfigParams)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.Find">func (c *DependencyResolver) Find(name string, required bool) ([]interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.GetOneOptional">func (c *DependencyResolver) GetOneOptional(name string) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.GetOneRequired">func (c *DependencyResolver) GetOneRequired(name string) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.GetOptional">func (c *DependencyResolver) GetOptional(name string) []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.GetRequired">func (c *DependencyResolver) GetRequired(name string) ([]interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.Locate">func (c *DependencyResolver) Locate(name string) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.Put">func (c *DependencyResolver) Put(name string, locator interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#DependencyResolver.SetReferences">func (c *DependencyResolver) SetReferences(references IReferences)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Descriptor">type Descriptor</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewDescriptor">func NewDescriptor(group string, typ string, kind string, name string, version string) *Descriptor</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ParseDescriptorFromString">func ParseDescriptorFromString(value string) (*Descriptor, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.Equals">func (c *Descriptor) Equals(value interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.ExactMatch">func (c *Descriptor) ExactMatch(descriptor *Descriptor) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.Group">func (c *Descriptor) Group() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.IsComplete">func (c *Descriptor) IsComplete() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.Kind">func (c *Descriptor) Kind() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.Match">func (c *Descriptor) Match(descriptor *Descriptor) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.Name">func (c *Descriptor) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.String">func (c *Descriptor) String() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.Type">func (c *Descriptor) Type() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Descriptor.Version">func (c *Descriptor) Version() string</a></dd>
+				
+			
+				
+				<dd><a href="index.html#IReferenceable">type IReferenceable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IReferences">type IReferences</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IUnreferenceable">type IUnreferenceable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Reference">type Reference</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewReference">func NewReference(locator interface{}, component interface{}) *Reference</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Reference.Component">func (c *Reference) Component() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Reference.Locator">func (c *Reference) Locator() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Reference.Match">func (c *Reference) Match(locator interface{}) bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#References">type References</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmptyReferences">func NewEmptyReferences() *References</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewReferences">func NewReferences(tuples []interface{}) *References</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewReferencesFromTuples">func NewReferencesFromTuples(tuples ...interface{}) *References</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.Find">func (c *References) Find(locator interface{}, required bool) ([]interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.GetAll">func (c *References) GetAll() []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.GetAllLocators">func (c *References) GetAllLocators() []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.GetOneOptional">func (c *References) GetOneOptional(locator interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.GetOneRequired">func (c *References) GetOneRequired(locator interface{}) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.GetOptional">func (c *References) GetOptional(locator interface{}) []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.GetRequired">func (c *References) GetRequired(locator interface{}) ([]interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.Put">func (c *References) Put(locator interface{}, component interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.Remove">func (c *References) Remove(locator interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#References.RemoveAll">func (c *References) RemoveAll(locator interface{}) []interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TReferencer">type TReferencer</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TReferencer.SetReferences">func (c *TReferencer) SetReferences(references IReferences, components []interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TReferencer.SetReferencesForOne">func (c *TReferencer) SetReferencesForOne(references IReferences, component interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TReferencer.UnsetReferences">func (c *TReferencer) UnsetReferences(components []interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TReferencer.UnsetReferencesForOne">func (c *TReferencer) UnsetReferencesForOne(component interface{})</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/refer/DependencyResolver.go">DependencyResolver.go</a>
+			
+				<a href="http://localhost:6060/src/refer/Descriptor.go">Descriptor.go</a>
+			
+				<a href="http://localhost:6060/src/refer/IReferenceable.go">IReferenceable.go</a>
+			
+				<a href="http://localhost:6060/src/refer/IReferences.go">IReferences.go</a>
+			
+				<a href="http://localhost:6060/src/refer/IUnreferenceable.go">IUnreferenceable.go</a>
+			
+				<a href="http://localhost:6060/src/refer/Reference.go">Reference.go</a>
+			
+				<a href="http://localhost:6060/src/refer/ReferenceError.go">ReferenceError.go</a>
+			
+				<a href="http://localhost:6060/src/refer/Referencer.go">Referencer.go</a>
+			
+				<a href="http://localhost:6060/src/refer/References.go">References.go</a>
+			
+				<a href="http://localhost:6060/src/refer/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="NewReferenceError">func <a href="http://localhost:6060/src/refer/ReferenceError.go?s=377:467#L8">NewReferenceError</a>
+				<a class="permalink" href="index.html#NewReferenceError">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewReferenceError(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, locator interface{}) *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/">errors</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/#ApplicationError">ApplicationError</a></pre>
+			<p>
+Creates an error instance and assigns its values.
+Parameters:
+</p>
+<pre>- correlationId string
+- locator interface{}
+the locator to find reference to dependent component.
+</pre>
+<p>
+Returns *errors.ApplicationError
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="DependencyResolver">type <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=1017:1114#L17">DependencyResolver</a>
+				<a class="permalink" href="index.html#DependencyResolver">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class for resolving component dependencies.
+</p>
+<p>
+The resolver is configured to resolve named dependencies by specific locator. During deployment the dependency locator can be changed.
+</p>
+<p>
+This mechanism can be used to clarify specific dependency among several alternatives. Typically components are configured to retrieve the first dependency that matches logical group, type and version. But if container contains more than one instance and resolution has to be specific about those instances, they can be given a unique name and dependency resolvers can be reconfigured to retrieve dependencies by their name.
+</p>
+<p>
+Configuration parameters
+</p>
+<pre>dependencies:
+
+ [dependency name 1]: Dependency 1 locator (descriptor)
+ ...
+ [dependency name N]: Dependency N locator (descriptor)
+</pre>
+<p>
+References
+References must match configured dependencies.
+</p>
+<p>
+Example:
+</p>
+
+			<pre>type DependencyResolver struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewDependencyResolver">func <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=1201:1249#L24">NewDependencyResolver</a>
+					<a class="permalink" href="index.html#NewDependencyResolver">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDependencyResolver() *<a href="index.html#DependencyResolver">DependencyResolver</a></pre>
+				<p>
+Creates a new instance of the dependency resolver.
+Returns *DependencyResolver
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewDependencyResolverFromTuples">func <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=6555:6634#L224">NewDependencyResolverFromTuples</a>
+					<a class="permalink" href="index.html#NewDependencyResolverFromTuples">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDependencyResolverFromTuples(tuples ...interface{}) *<a href="index.html#DependencyResolver">DependencyResolver</a></pre>
+				<p>
+Creates a new DependencyResolver from a list of key-value pairs
+called tuples where key is dependency name and value the depedency locator (descriptor).
+see
+NewDependencyResolverFromTuplesArray
+Parameters:
+</p>
+<pre>- tuples ...interface{}
+a list of values where odd elements are dependency name and
+the following even elements are dependency locator (descriptor)
+</pre>
+<p>
+Returns *DependencyResolver
+a newly created DependencyResolver.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewDependencyResolverWithParams">func <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=1722:1829#L46">NewDependencyResolverWithParams</a>
+					<a class="permalink" href="index.html#NewDependencyResolverWithParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDependencyResolverWithParams(config *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/config/">conf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/config/#ConfigParams">ConfigParams</a>, references <a href="index.html#IReferences">IReferences</a>) *<a href="index.html#DependencyResolver">DependencyResolver</a></pre>
+				<p>
+Creates a new instance of the dependency resolver.
+see
+ConfigParams
+see
+configure
+see
+IReferences
+see
+setReferences
+Parameters:
+</p>
+<pre>- config ConfigParams
+ default configuration where key is dependency name and value is locator (descriptor)
+- references IReferences
+ default component references
+</pre>
+<p>
+Returns *DependencyResolver
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="DependencyResolver.Configure">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=2141:2206#L66">Configure</a>
+					<a class="permalink" href="index.html#DependencyResolver.Configure">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) Configure(config *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/config/">conf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/config/#ConfigParams">ConfigParams</a>)</pre>
+				<p>
+Configures the component with specified parameters.
+see
+ConfigParams
+Parameters:
+</p>
+<pre>- config *conf.ConfigParams
+configuration parameters to set.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.Find">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=5745:5829#L197">Find</a>
+					<a class="permalink" href="index.html#DependencyResolver.Find">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) Find(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) ([]interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Finds all matching dependencies by their name.
+throws
+a ReferenceError of required is true and no dependencies found.
+Parameters:
+</p>
+<pre>- name string
+the dependency name to locate.
+- required bool
+true to raise an exception when no dependencies are found.
+</pre>
+<p>
+Returns []interface{}, error
+a list of found dependencies and error
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.GetOneOptional">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=4636:4704#L160">GetOneOptional</a>
+					<a class="permalink" href="index.html#DependencyResolver.GetOneOptional">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) GetOneOptional(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) interface{}</pre>
+				<p>
+Gets one optional dependency by its name.
+Parameters:
+</p>
+<pre>  - name string
+	 the dependency name to locate.
+</pre>
+<p>
+Returns interface{}
+a dependency reference or nil of the dependency was not found
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.GetOneRequired">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=5155:5232#L178">GetOneRequired</a>
+					<a class="permalink" href="index.html#DependencyResolver.GetOneRequired">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) GetOneRequired(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.GetOptional">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=3660:3727#L127">GetOptional</a>
+					<a class="permalink" href="index.html#DependencyResolver.GetOptional">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) GetOptional(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) []interface{}</pre>
+				<p>
+Gets all optional dependencies by their name.
+Parameters:
+</p>
+<pre>- name string
+</pre>
+<p>
+the dependency name to locate.
+Returns []interface{}
+a list with found dependencies or empty list of no dependencies was found.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.GetRequired">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=4190:4266#L144">GetRequired</a>
+					<a class="permalink" href="index.html#DependencyResolver.GetRequired">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) GetRequired(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) ([]interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Gets all required dependencies by their name. At least one dependency must be present.
+If no dependencies was found it throws a ReferenceError
+throws
+a ReferenceError if no dependencies were found.
+Parameters:
+</p>
+<pre> - name string
+	 the dependency name to locate.
+</pre>
+<p>
+Returns []interface{}
+a list with found dependencies.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.Locate">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=3217:3277#L109">Locate</a>
+					<a class="permalink" href="index.html#DependencyResolver.Locate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) Locate(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) interface{}</pre>
+				<p>
+Locate dependency by name
+Parameters:
+</p>
+<pre>- name string
+dependency name
+</pre>
+<p>
+Returns interface{}
+located dependency
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.Put">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=2986:3052#L99">Put</a>
+					<a class="permalink" href="index.html#DependencyResolver.Put">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) Put(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, locator interface{})</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="DependencyResolver.SetReferences">func (*DependencyResolver) <a href="http://localhost:6060/src/refer/DependencyResolver.go?s=2710:2776#L88">SetReferences</a>
+					<a class="permalink" href="index.html#DependencyResolver.SetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#DependencyResolver">DependencyResolver</a>) SetReferences(references <a href="index.html#IReferences">IReferences</a>)</pre>
+				<p>
+Sets the component references. References must match configured dependencies.
+Parameters:
+</p>
+<pre>- references IReferences
+references to set.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Descriptor">type <a href="http://localhost:6060/src/refer/Descriptor.go?s=1212:1318#L20">Descriptor</a>
+				<a class="permalink" href="index.html#Descriptor">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Locator type that most often used in PipServices toolkit. It locates components using several fields:
+</p>
+<p>
+Group: a package or just named group of components like &#34;pip-services&#34;
+Type: logical component type that defines it&#39;s contract like &#34;persistence&#34;
+Kind: physical implementation type like &#34;mongodb&#34;
+Name: unique component name like &#34;default&#34;
+Version: version of the component contract like &#34;1.0&#34;
+The locator matching can be done by all or only few selected fields. The fields that shall be excluded from the matching must be set to &#34;*&#34; or null. That approach allows to implement many interesting scenarios. For instance:
+</p>
+<p>
+Locate all loggers (match by type and version)
+Locate persistence components for a microservice (match by group and type)
+Locate specific component by its name (match by name)
+Example
+</p>
+<pre>locator1 := NewDescriptor(&#34;mygroup&#34;, &#34;connector&#34;, &#34;aws&#34;, &#34;default&#34;, &#34;1.0&#34;);
+locator2 := NewDescriptorFromString(&#34;mygroup:connector:*:*:1.0&#34;);
+
+locator1.Match(locator2);        // Result: true
+locator1.Equal(locator2);        // Result: true
+locator1.ExactMatch(locator2);    // Result: false
+</pre>
+
+			<pre>type Descriptor struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewDescriptor">func <a href="http://localhost:6060/src/refer/Descriptor.go?s=1672:1770#L42">NewDescriptor</a>
+					<a class="permalink" href="index.html#NewDescriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewDescriptor(group <a href="http://localhost:6060/pkg/builtin/#string">string</a>, typ <a href="http://localhost:6060/pkg/builtin/#string">string</a>, kind <a href="http://localhost:6060/pkg/builtin/#string">string</a>, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, version <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#Descriptor">Descriptor</a></pre>
+				
+				
+				
+			
+				
+				<h3 id="ParseDescriptorFromString">func <a href="http://localhost:6060/src/refer/Descriptor.go?s=6034:6099#L208">ParseDescriptorFromString</a>
+					<a class="permalink" href="index.html#ParseDescriptorFromString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ParseDescriptorFromString(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="index.html#Descriptor">Descriptor</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Parses colon-separated list of descriptor fields and returns them as a Descriptor.
+throws
+a ConfigError if the descriptor string is of a wrong format.
+Parameters:
+</p>
+<pre>- value string
+colon-separated descriptor fields to initialize Descriptor.
+</pre>
+<p>
+Returns *Descriptor
+a newly created Descriptor.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Descriptor.Equals">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=4923:4974#L159">Equals</a>
+					<a class="permalink" href="index.html#Descriptor.Equals">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) Equals(value interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Compares this descriptor to a value. If value is a Descriptor it tries to match them, otherwise the method returns false.
+see
+Match
+Parameters:
+</p>
+<pre>- value interface{}
+the value to match against this descriptor.
+</pre>
+<p>
+Returns bool
+true if the value is matching descriptor and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.ExactMatch">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=3949:4009#L135">ExactMatch</a>
+					<a class="permalink" href="index.html#Descriptor.ExactMatch">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) ExactMatch(descriptor *<a href="index.html#Descriptor">Descriptor</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Matches this descriptor to another descriptor by all fields. No exceptions are made.
+see
+Match
+Parameters:
+</p>
+<pre>- descriptor *Descriptor
+the descriptor to match this one against.
+</pre>
+<p>
+Returns bool
+true if descriptors match and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.Group">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=2124:2159#L65">Group</a>
+					<a class="permalink" href="index.html#Descriptor.Group">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) Group() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the component&#39;s logical group.
+Returns string
+the component&#39;s logical group
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.IsComplete">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=4476:4514#L146">IsComplete</a>
+					<a class="permalink" href="index.html#Descriptor.IsComplete">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) IsComplete() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks whether all descriptor fields are set. If descriptor has at least one &#34;*&#34; or null field it is considered &#34;incomplete&#34;,
+Returns bool
+true if all descriptor fields are defined and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.Kind">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=2427:2461#L79">Kind</a>
+					<a class="permalink" href="index.html#Descriptor.Kind">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) Kind() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the component&#39;s implementation type.
+Returns string
+the component&#39;s implementation type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.Match">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=3208:3263#L109">Match</a>
+					<a class="permalink" href="index.html#Descriptor.Match">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) Match(descriptor *<a href="index.html#Descriptor">Descriptor</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Partially matches this descriptor to another descriptor. Fields that contain &#34;*&#34; or null are excluded from the match.
+see
+exactMatch
+Parameters:
+</p>
+<pre>- descriptor *Descriptor
+the descriptor to match this one against.
+</pre>
+<p>
+Returns bool
+true if descriptors match and false otherwise
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.Name">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=2569:2603#L86">Name</a>
+					<a class="permalink" href="index.html#Descriptor.Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the unique component&#39;s name.
+Returns string
+the unique component&#39;s name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.String">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=5278:5314#L170">String</a>
+					<a class="permalink" href="index.html#Descriptor.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets a string representation of the object. The result is a colon-separated list of descriptor fields as &#34;mygroup:connector:aws:default:1.0&#34;
+Returns string
+a string representation of the object.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.Type">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=2270:2304#L72">Type</a>
+					<a class="permalink" href="index.html#Descriptor.Type">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) Type() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the component&#39;s logical type.
+Returns string
+the component&#39;s logical type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Descriptor.Version">func (*Descriptor) <a href="http://localhost:6060/src/refer/Descriptor.go?s=2733:2770#L93">Version</a>
+					<a class="permalink" href="index.html#Descriptor.Version">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Descriptor">Descriptor</a>) Version() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the component&#39;s implementation version.
+Returns string
+the component&#39;s implementation version.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="IReferenceable">type <a href="http://localhost:6060/src/refer/IReferenceable.go?s=548:790#L20">IReferenceable</a>
+				<a class="permalink" href="index.html#IReferenceable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for components that depends on other components.
+</p>
+<p>
+If component requires explicit notification to unset references it shall additionally implement IUnreferenceable interface.
+</p>
+<p>
+see
+IReferences
+</p>
+<p>
+see
+IUnreferenceable
+</p>
+<p>
+see
+Referencer
+</p>
+<p>
+Example
+</p>
+<pre>type MyController {
+	_persistence IPersistence
+}
+
+    func (mc* MyController) setReferences(references IReferences) {
+        mc._persistence = references.getOneRequired(
+            NewDescriptor(&#34;mygroup&#34;, &#34;persistence&#34;, &#34;*&#34;, &#34;*&#34;, &#34;1.0&#34;))
+        );
+    }
+    ...
+}
+</pre>
+
+			<pre>type IReferenceable interface {
+    <span class="comment">// 	Sets references to dependent components.</span>
+    <span class="comment">// see</span>
+    <span class="comment">// IReferences</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - references IReferences</span>
+    <span class="comment">//  references to locate the component dependencies.</span>
+    SetReferences(references <a href="index.html#IReferences">IReferences</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IReferences">type <a href="http://localhost:6060/src/refer/IReferences.go?s=709:3855#L1">IReferences</a>
+				<a class="permalink" href="index.html#IReferences">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type IReferences interface {
+    <span class="comment">// Puts a new reference into this reference map.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - locator interface{}</span>
+    <span class="comment">//  a locator to find the reference by.</span>
+    <span class="comment">//  - component interface{}</span>
+    <span class="comment">//  a component reference to be added.</span>
+    <span class="comment">// Returns interface{}</span>
+    Put(locator interface{}, component interface{})
+    <span class="comment">// 	Removes a previously added reference that matches specified locator. If many references match the locator, it removes only the first one. When all references shall be removed, use removeAll method instead.</span>
+    <span class="comment">// see</span>
+    <span class="comment">// RemoveAll</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - locator interface{}</span>
+    <span class="comment">//  a locator to remove reference</span>
+    <span class="comment">// Returns interface{}</span>
+    <span class="comment">// the removed component reference.</span>
+    Remove(locator interface{}) interface{}
+    <span class="comment">// 	Removes all component references that match the specified locator.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - locator interface{}</span>
+    <span class="comment">//  the locator to remove references by.</span>
+    <span class="comment">// Returns []interface{}</span>
+    <span class="comment">// a list, containing all removed references.</span>
+    RemoveAll(locator interface{}) []interface{}
+    <span class="comment">// 	Gets locators for all registered component references in this reference map.</span>
+    <span class="comment">// Returns []interface{}</span>
+    <span class="comment">// a list with component locators.</span>
+    GetAllLocators() []interface{}
+    <span class="comment">// Gets all component references registered in this reference map.</span>
+    <span class="comment">// Returns []interface{}</span>
+    <span class="comment">// a list with component references.</span>
+    GetAll() []interface{}
+    <span class="comment">// Gets all component references that match specified locator.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - locator interface{}</span>
+    <span class="comment">//  the locator to find references by.</span>
+    <span class="comment">// Returns []interface{}</span>
+    <span class="comment">// a list with matching component references or empty list if nothing was found.</span>
+    GetOptional(locator interface{}) []interface{}
+    <span class="comment">// 	Gets all component references that match specified locator. At least one component reference must be present. If it doesn&#39;t the method throws an error.</span>
+    <span class="comment">// throws</span>
+    <span class="comment">// a ReferenceException when no references found.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - locator interface{}</span>
+    <span class="comment">//  the locator to find references by.</span>
+    <span class="comment">// Returns []interface{}</span>
+    <span class="comment">// a list with matching component references.</span>
+    GetRequired(locator interface{}) ([]interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    <span class="comment">// 	Gets an optional component reference that matches specified locator.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - locator interface{}</span>
+    <span class="comment">//  the locator to find references by.</span>
+    <span class="comment">// Returns interface{}</span>
+    <span class="comment">// a matching component reference or nil if nothing was found.</span>
+    GetOneOptional(locator interface{}) interface{}
+    <span class="comment">// Gets a required component reference that matches specified locator.</span>
+    <span class="comment">// throws</span>
+    <span class="comment">// a ReferenceError when no references found.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - locator interface{}</span>
+    <span class="comment">//  the locator to find a reference by.</span>
+    <span class="comment">// Returns interface{}</span>
+    <span class="comment">// a matching component reference.</span>
+    GetOneRequired(locator interface{}) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+    <span class="comment">// 	Gets all component references that match specified locator.</span>
+    <span class="comment">// throws</span>
+    <span class="comment">// a ReferenceError when required is set to true but no references found.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">// 	 - locator interface{}</span>
+    <span class="comment">// 	 the locator to find a reference by.</span>
+    <span class="comment">// 	 - required bool</span>
+    <span class="comment">// 	 forces to raise an exception if no reference is found.</span>
+    <span class="comment">// Returns []interface{}</span>
+    <span class="comment">// a list with matching component references.</span>
+    Find(locator interface{}, required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) ([]interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IUnreferenceable">type <a href="http://localhost:6060/src/refer/IUnreferenceable.go?s=494:618#L19">IUnreferenceable</a>
+				<a class="permalink" href="index.html#IUnreferenceable">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type IUnreferenceable interface {
+    <span class="comment">//Unsets (clears) previously set references to dependent components.</span>
+    UnsetReferences()
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Reference">type <a href="http://localhost:6060/src/refer/Reference.go?s=216:287#L1">Reference</a>
+				<a class="permalink" href="index.html#Reference">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Contains a reference to a component and locator to find it. It is used by References to store registered component references.
+</p>
+
+			<pre>type Reference struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewReference">func <a href="http://localhost:6060/src/refer/Reference.go?s=491:563#L9">NewReference</a>
+					<a class="permalink" href="index.html#NewReference">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewReference(locator interface{}, component interface{}) *<a href="index.html#Reference">Reference</a></pre>
+				<p>
+Create a new instance of the reference object and assigns its values.
+Parameters:
+</p>
+<pre>- locator interface{}
+a locator to find the reference.
+- component interface {}
+</pre>
+<p>
+Returns *Reference
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Reference.Component">func (*Reference) <a href="http://localhost:6060/src/refer/Reference.go?s=787:830#L23">Component</a>
+					<a class="permalink" href="index.html#Reference.Component">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Reference">Reference</a>) Component() interface{}</pre>
+				<p>
+Gets the stored component reference.
+Returns any
+the component&#39;s references.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reference.Locator">func (*Reference) <a href="http://localhost:6060/src/refer/Reference.go?s=937:978#L30">Locator</a>
+					<a class="permalink" href="index.html#Reference.Locator">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Reference">Reference</a>) Locator() interface{}</pre>
+				<p>
+Gets the stored component locator.
+Returns any
+the component&#39;s locator.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reference.Match">func (*Reference) <a href="http://localhost:6060/src/refer/Reference.go?s=1318:1369#L43">Match</a>
+					<a class="permalink" href="index.html#Reference.Match">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Reference">Reference</a>) Match(locator interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Matches locator to this reference locator.
+Descriptors are matched using equal method. All other locator types are matched using direct comparison.
+see
+Descriptor
+Parameters:
+</p>
+<pre>- locator interface{}
+the locator to match.
+</pre>
+<p>
+Returns bool
+true if locators are matching and false it they don&#39;t.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="References">type <a href="http://localhost:6060/src/refer/References.go?s=721:772#L20">References</a>
+				<a class="permalink" href="index.html#References">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+The most basic implementation of IReferences to store and locate component references.
+</p>
+<p>
+see
+IReferences
+</p>
+<p>
+Example:
+</p>
+<pre>type MyController  {
+	_persistence IMyPersistence;
+}
+
+func (mc *MyController) setReferences(references IReferences) {
+    mc._persistence = references.GetOneRequired(
+        NewDescriptor(&#34;mygroup&#34;, &#34;persistence&#34;, &#34;*&#34;, &#34;*&#34;, &#34;1.0&#34;)
+    );
+}
+
+persistence := NewMyMongoDbPersistence();
+
+controller := MyController();
+
+references := NewReferencesFromTuples(
+    new Descriptor(&#34;mygroup&#34;, &#34;persistence&#34;, &#34;mongodb&#34;, &#34;default&#34;, &#34;1.0&#34;), persistence,
+    new Descriptor(&#34;mygroup&#34;, &#34;controller&#34;, &#34;default&#34;, &#34;default&#34;, &#34;1.0&#34;), controller
+);
+controller.setReferences(references);
+</pre>
+
+			<pre>type References struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmptyReferences">func <a href="http://localhost:6060/src/refer/References.go?s=873:910#L26">NewEmptyReferences</a>
+					<a class="permalink" href="index.html#NewEmptyReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmptyReferences() *<a href="index.html#References">References</a></pre>
+				<p>
+Creates a new instance of references and initializes it with references.
+Returns *References
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewReferences">func <a href="http://localhost:6060/src/refer/References.go?s=1232:1284#L37">NewReferences</a>
+					<a class="permalink" href="index.html#NewReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewReferences(tuples []interface{}) *<a href="index.html#References">References</a></pre>
+				<p>
+Creates a new instance of references and initializes it with references.
+Parameters:
+</p>
+<pre>- tuples []interface{}
+a list of values where odd elements are locators and the following even elements are component references
+</pre>
+<p>
+Returns *References
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewReferencesFromTuples">func <a href="http://localhost:6060/src/refer/References.go?s=7025:7088#L233">NewReferencesFromTuples</a>
+					<a class="permalink" href="index.html#NewReferencesFromTuples">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewReferencesFromTuples(tuples ...interface{}) *<a href="index.html#References">References</a></pre>
+				<p>
+Creates a new References from a list of key-value pairs called tuples.
+Parameters:
+</p>
+<pre>- tuples  ...interface{}
+a list of values where odd elements are locators and the following even elements are component references
+</pre>
+<p>
+Returns *References
+a newly created References.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="References.Find">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=6176:6260#L203">Find</a>
+					<a class="permalink" href="index.html#References.Find">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) Find(locator interface{}, required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) ([]interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Gets all component references that match specified locator.
+throws
+a ReferenceError when required is set to true but no references found.
+Parameters:
+</p>
+<pre>- locator interface{}
+the locator to find a reference by.
+- required bool
+forces to raise an exception if no reference is found.
+</pre>
+<p>
+Returns []interface{}
+a list with matching component references.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.GetAll">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=3792:3835#L130">GetAll</a>
+					<a class="permalink" href="index.html#References.GetAll">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) GetAll() []interface{}</pre>
+				<p>
+Gets all component references registered in this reference map.
+Returns []interface{}
+a list with component references.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.GetAllLocators">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=3421:3472#L117">GetAllLocators</a>
+					<a class="permalink" href="index.html#References.GetAllLocators">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) GetAllLocators() []interface{}</pre>
+				<p>
+Gets locators for all registered component references in this reference map.
+Returns []interface{}
+a list with component locators.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.GetOneOptional">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=4266:4334#L146">GetOneOptional</a>
+					<a class="permalink" href="index.html#References.GetOneOptional">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) GetOneOptional(locator interface{}) interface{}</pre>
+				<p>
+Gets an optional component reference that matches specified locator.
+Parameters:
+</p>
+<pre>- locator interface{}
+the locator to find references by.
+</pre>
+<p>
+Returns interface{}
+a matching component reference or nil if nothing was found.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.GetOneRequired">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=4728:4805#L162">GetOneRequired</a>
+					<a class="permalink" href="index.html#References.GetOneRequired">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) GetOneRequired(locator interface{}) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Gets a required component reference that matches specified locator.
+throws
+a ReferenceError when no references found.
+Parameters:
+</p>
+<pre>- locator interface{}
+the locator to find a reference by.
+</pre>
+<p>
+Returns interface{}
+a matching component reference.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.GetOptional">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=5191:5258#L176">GetOptional</a>
+					<a class="permalink" href="index.html#References.GetOptional">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) GetOptional(locator interface{}) []interface{}</pre>
+				<p>
+Gets all component references that match specified locator.
+Parameters:
+</p>
+<pre>- locator interface{}
+the locator to find references by.
+</pre>
+<p>
+Returns []interface{}
+a list with matching component references or empty list if nothing was found.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.GetRequired">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=5686:5762#L189">GetRequired</a>
+					<a class="permalink" href="index.html#References.GetRequired">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) GetRequired(locator interface{}) ([]interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Gets all component references that match specified locator. At least one component reference must be present. If it doesn&#39;t the method throws an error.
+throws
+a ReferenceError when no references found.
+Parameters:
+</p>
+<pre>- locator interface{}
+the locator to find references by.
+</pre>
+<p>
+Returns []interface{}
+a list with matching component references.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.Put">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=1664:1732#L57">Put</a>
+					<a class="permalink" href="index.html#References.Put">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) Put(locator interface{}, component interface{})</pre>
+				<p>
+Puts a new reference into this reference map.
+Parameters:
+</p>
+<pre>- locator interface{}
+a locator to find the reference by.
+- component interface{}
+a component reference to be added.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="References.Remove">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=2259:2319#L74">Remove</a>
+					<a class="permalink" href="index.html#References.Remove">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) Remove(locator interface{}) interface{}</pre>
+				<p>
+Removes a previously added reference that matches specified locator. If many references match the locator, it removes only the first one. When all references shall be removed, use removeAll method instead.
+see
+RemoveAll
+Parameters:
+</p>
+<pre>- locator interface{}
+a locator to remove reference
+</pre>
+<p>
+Returns interface{}
+the removed component reference.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="References.RemoveAll">func (*References) <a href="http://localhost:6060/src/refer/References.go?s=2838:2903#L96">RemoveAll</a>
+					<a class="permalink" href="index.html#References.RemoveAll">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#References">References</a>) RemoveAll(locator interface{}) []interface{}</pre>
+				<p>
+Removes all component references that match the specified locator.
+Parameters:
+</p>
+<pre>- locator interface{}
+the locator to remove references by.
+</pre>
+<p>
+Returns []interface{}
+a list, containing all removed references.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TReferencer">type <a href="http://localhost:6060/src/refer/Referencer.go?s=81:106#L1">TReferencer</a>
+				<a class="permalink" href="index.html#TReferencer">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class that sets and unsets references to components.
+</p>
+
+			<pre>type TReferencer struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="Referencer">Referencer</span> *<a href="index.html#TReferencer">TReferencer</a> = &amp;<a href="index.html#TReferencer">TReferencer</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TReferencer.SetReferences">func (*TReferencer) <a href="http://localhost:6060/src/refer/Referencer.go?s=1020:1105#L25">SetReferences</a>
+					<a class="permalink" href="index.html#TReferencer.SetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TReferencer">TReferencer</a>) SetReferences(references <a href="index.html#IReferences">IReferences</a>, components []interface{})</pre>
+				<p>
+Sets references to multiple components.
+To set references components must implement IReferenceable interface. If they don&#39;t the call to this method has no effect.
+see
+IReferenceable
+Parameters:
+</p>
+<pre>- references IReferences
+the references to be set.
+- components []interface{}
+a list of components to set the references to.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TReferencer.SetReferencesForOne">func (*TReferencer) <a href="http://localhost:6060/src/refer/Referencer.go?s=489:577#L9">SetReferencesForOne</a>
+					<a class="permalink" href="index.html#TReferencer.SetReferencesForOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TReferencer">TReferencer</a>) SetReferencesForOne(references <a href="index.html#IReferences">IReferences</a>, component interface{})</pre>
+				<p>
+Sets references to specific component.
+To set references components must implement IReferenceable interface. If they don&#39;t the call to this method has no effect.
+see
+IReferenceable
+Parameters:
+</p>
+<pre>- references IReferences
+the references to be set.
+- component interface{}
+the component to set references to.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TReferencer.UnsetReferences">func (*TReferencer) <a href="http://localhost:6060/src/refer/Referencer.go?s=1958:2021#L52">UnsetReferences</a>
+					<a class="permalink" href="index.html#TReferencer.UnsetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TReferencer">TReferencer</a>) UnsetReferences(components []interface{})</pre>
+				<p>
+Unsets references in multiple components.
+To unset references components must implement IUnreferenceable interface. If they don&#39;t the call to this method has no effect.
+see
+IUnreferenceable
+Parameters:
+</p>
+<pre>- components [] interface{}
+the list of components, whose references must be cleared.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TReferencer.UnsetReferencesForOne">func (*TReferencer) <a href="http://localhost:6060/src/refer/Referencer.go?s=1496:1562#L38">UnsetReferencesForOne</a>
+					<a class="permalink" href="index.html#TReferencer.UnsetReferencesForOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TReferencer">TReferencer</a>) UnsetReferencesForOne(component interface{})</pre>
+				<p>
+Unsets references in specific component.
+To unset references components must implement IUnreferenceable interface. If they don&#39;t the call to this method has no effect.
+see
+IUnreferenceable
+Parameters:
+</p>
+<pre>			 - component interface{}
+          the component to unset references.
+</pre>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

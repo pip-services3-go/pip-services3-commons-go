@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>random - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package random
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "random"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Random package contains implementation of random value generators that are used for
+functional as well as non-functional testing. Used to generate random objects
+and fill databases with unique objects.
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#TRandomArray">type TRandomArray</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomArray.Pick">func (c *TRandomArray) Pick(value interface{}) interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomBoolean">type TRandomBoolean</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomBoolean.Chance">func (c *TRandomBoolean) Chance(chances int, maxChances int) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomBoolean.NextBoolean">func (c *TRandomBoolean) NextBoolean() bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomDateTime">type TRandomDateTime</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomDateTime.NextDate">func (c *TRandomDateTime) NextDate(min time.Time, max time.Time) time.Time</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomDateTime.NextDateTime">func (c *TRandomDateTime) NextDateTime(min time.Time, max time.Time) time.Time</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomDateTime.UpdateDateTime">func (c *TRandomDateTime) UpdateDateTime(value time.Time, interval int64) time.Time</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomDouble">type TRandomDouble</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomDouble.NextDouble">func (c *TRandomDouble) NextDouble(min float64, max float64) float64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomDouble.UpdateDouble">func (c *TRandomDouble) UpdateDouble(value float64, interval float64) float64</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomFloat">type TRandomFloat</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomFloat.NextFloat">func (c *TRandomFloat) NextFloat(min float32, max float32) float32</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomFloat.UpdateFloat">func (c *TRandomFloat) UpdateFloat(value float32, interval float32) float32</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomInteger">type TRandomInteger</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomInteger.NextInteger">func (c *TRandomInteger) NextInteger(min int, max int) int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomInteger.Sequence">func (c *TRandomInteger) Sequence(min int, max int) []int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomInteger.UpdateInteger">func (c *TRandomInteger) UpdateInteger(value int, interval int) int</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomLong">type TRandomLong</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomLong.NextLong">func (c *TRandomLong) NextLong(min int64, max int64) int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomLong.Sequence">func (c *TRandomLong) Sequence(min int64, max int64) []int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomLong.UpdateLong">func (c *TRandomLong) UpdateLong(value int64, interval int64) int64</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomString">type TRandomString</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomString.Distort">func (c *TRandomString) Distort(value string) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomString.NextAlphaChar">func (c *TRandomString) NextAlphaChar() byte</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomString.NextString">func (c *TRandomString) NextString(minLength int, maxLength int) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomString.Pick">func (c *TRandomString) Pick(values []string) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomString.PickChar">func (c *TRandomString) PickChar(values string) byte</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRandomText">type TRandomText</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Adjective">func (c *TRandomText) Adjective() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Color">func (c *TRandomText) Color() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Email">func (c *TRandomText) Email() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.FullName">func (c *TRandomText) FullName() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Phone">func (c *TRandomText) Phone() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Phrase">func (c *TRandomText) Phrase(min int, max int) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Stuff">func (c *TRandomText) Stuff() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Text">func (c *TRandomText) Text(min int, max int) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Verb">func (c *TRandomText) Verb() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Word">func (c *TRandomText) Word() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRandomText.Words">func (c *TRandomText) Words(min int, max int) string</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/random/RandomArray.go">RandomArray.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomBoolean.go">RandomBoolean.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomDateTime.go">RandomDateTime.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomDouble.go">RandomDouble.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomFloat.go">RandomFloat.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomInteger.go">RandomInteger.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomLong.go">RandomLong.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomString.go">RandomString.go</a>
+			
+				<a href="http://localhost:6060/src/random/RandomText.go">RandomText.go</a>
+			
+				<a href="http://localhost:6060/src/random/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="TRandomArray">type <a href="http://localhost:6060/src/random/RandomArray.go?s=170:196#L4">TRandomArray</a>
+				<a class="permalink" href="index.html#TRandomArray">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for array objects.
+</p>
+<p>
+Examples:
+</p>
+<pre>value1 := RandomArray.pick([1, 2, 3, 4]); // Possible result: 3
+</pre>
+
+			<pre>type TRandomArray struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomArray">RandomArray</span> *<a href="index.html#TRandomArray">TRandomArray</a> = &amp;<a href="index.html#TRandomArray">TRandomArray</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomArray.Pick">func (*TRandomArray) <a href="http://localhost:6060/src/random/RandomArray.go?s=391:449#L15">Pick</a>
+					<a class="permalink" href="index.html#TRandomArray.Pick">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomArray">TRandomArray</a>) Pick(value interface{}) interface{}</pre>
+				<p>
+Picks a random element from specified array.
+Parameters:
+</p>
+<pre>- values: an array of any interface
+</pre>
+<p>
+Returns a randomly picked item.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomBoolean">type <a href="http://localhost:6060/src/random/RandomBoolean.go?s=240:268#L3">TRandomBoolean</a>
+				<a class="permalink" href="index.html#TRandomBoolean">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for boolean values.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := RandomBoolean.nextBoolean();    // Possible result: true
+value2 := RandomBoolean.chance(1,3);      // Possible result: false
+</pre>
+
+			<pre>type TRandomBoolean struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomBoolean">RandomBoolean</span> *<a href="index.html#TRandomBoolean">TRandomBoolean</a> = &amp;<a href="index.html#TRandomBoolean">TRandomBoolean</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomBoolean.Chance">func (*TRandomBoolean) <a href="http://localhost:6060/src/random/RandomBoolean.go?s=537:602#L12">Chance</a>
+					<a class="permalink" href="index.html#TRandomBoolean.Chance">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomBoolean">TRandomBoolean</a>) Chance(chances <a href="http://localhost:6060/pkg/builtin/#int">int</a>, maxChances <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Calculates &#34;chance&#34; out of &#34;max chances&#34;. Example: 1 chance out of 3 chances (or 33.3%)
+</p>
+<pre>- chance: number  - a chance proportional to maxChances.
+- maxChances: number - a maximum number of chances
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomBoolean.NextBoolean">func (*TRandomBoolean) <a href="http://localhost:6060/src/random/RandomBoolean.go?s=962:1005#L33">NextBoolean</a>
+					<a class="permalink" href="index.html#TRandomBoolean.NextBoolean">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomBoolean">TRandomBoolean</a>) NextBoolean() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Generates a random boolean value.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomDateTime">type <a href="http://localhost:6060/src/random/RandomDateTime.go?s=528:557#L5">TRandomDateTime</a>
+				<a class="permalink" href="index.html#TRandomDateTime">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for Date time values.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := RandomDateTime.nextDate(time.Parse(shortForm, &#34;2007-Jan-01&#34;), time.Parse(shortForm, &#34;2010-Jan-01&#34;));    // Possible result: 2008-01-03
+value2 := RandomDateTime.nextDateTime(time.Parse(shortForm, &#34;2006-Jan-01&#34;), time.Parse(shortForm, &#34;2017-Jan-01&#34;));// Possible result: 2007-03-11 11:20:32
+value3 := RandomDateTime.updateDateTime(time.Parse(shortForm, &#34;2010-Jan-01&#34;), );// Possible result: 2010-02-05 11:33:23
+</pre>
+
+			<pre>type TRandomDateTime struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomDateTime">RandomDateTime</span> *<a href="index.html#TRandomDateTime">TRandomDateTime</a> = &amp;<a href="index.html#TRandomDateTime">TRandomDateTime</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomDateTime.NextDate">func (*TRandomDateTime) <a href="http://localhost:6060/src/random/RandomDateTime.go?s=904:978#L19">NextDate</a>
+					<a class="permalink" href="index.html#TRandomDateTime.NextDate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomDateTime">TRandomDateTime</a>) NextDate(min <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>, max <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+				<p>
+Generates a random Date in the range [&#39;minYear&#39;, &#39;maxYear&#39;].
+This method generate dates without time (or time set to 00:00:00)
+</p>
+<p>
+Parameters:
+</p>
+<pre>- min: time.Time - minimum range value
+- max: time.Time - maximum range value
+</pre>
+<p>
+Returns time.Time  - a random Date value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomDateTime.NextDateTime">func (*TRandomDateTime) <a href="http://localhost:6060/src/random/RandomDateTime.go?s=1526:1604#L40">NextDateTime</a>
+					<a class="permalink" href="index.html#TRandomDateTime.NextDateTime">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomDateTime">TRandomDateTime</a>) NextDateTime(min <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>, max <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+				<p>
+Generates a random Date and time in the range [&#39;minYear&#39;, &#39;maxYear&#39;].
+This method generate dates without time (or time set to 00:00:00)
+</p>
+<p>
+Parameters:
+</p>
+<pre>- min: time.Time  minimum range value
+- max: time.Time - maximum range value
+</pre>
+<p>
+Returns time.Time a random Date and Time value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomDateTime.UpdateDateTime">func (*TRandomDateTime) <a href="http://localhost:6060/src/random/RandomDateTime.go?s=1989:2072#L58">UpdateDateTime</a>
+					<a class="permalink" href="index.html#TRandomDateTime.UpdateDateTime">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomDateTime">TRandomDateTime</a>) UpdateDateTime(value <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a>, interval <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/time/">time</a>.<a href="http://localhost:6060/pkg/time/#Time">Time</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomDouble">type <a href="http://localhost:6060/src/random/RandomDouble.go?s=318:345#L4">TRandomDouble</a>
+				<a class="permalink" href="index.html#TRandomDouble">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for double values.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := RandomDouble.nextDouble(5, 10);     // Possible result: 7.3
+value2 := RandomDouble.nextDouble(10);        // Possible result: 3.7
+value3 := RandomDouble.updateDouble(10, 3);   // Possible result: 9.2
+</pre>
+
+			<pre>type TRandomDouble struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomDouble">RandomDouble</span> *<a href="index.html#TRandomDouble">TRandomDouble</a> = &amp;<a href="index.html#TRandomDouble">TRandomDouble</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomDouble.NextDouble">func (*TRandomDouble) <a href="http://localhost:6060/src/random/RandomDouble.go?s=600:668#L16">NextDouble</a>
+					<a class="permalink" href="index.html#TRandomDouble.NextDouble">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomDouble">TRandomDouble</a>) NextDouble(min <a href="http://localhost:6060/pkg/builtin/#float64">float64</a>, max <a href="http://localhost:6060/pkg/builtin/#float64">float64</a>) <a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+				<p>
+Generates a random double value in the range [&#39;min&#39;, &#39;max&#39;].
+Parameters:
+</p>
+<pre>- min: float64 - minimum range value
+- max: float64 - max range value
+</pre>
+<p>
+Returns: float64 - a random value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomDouble.UpdateDouble">func (*TRandomDouble) <a href="http://localhost:6060/src/random/RandomDouble.go?s=964:1041#L32">UpdateDouble</a>
+					<a class="permalink" href="index.html#TRandomDouble.UpdateDouble">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomDouble">TRandomDouble</a>) UpdateDouble(value <a href="http://localhost:6060/pkg/builtin/#float64">float64</a>, interval <a href="http://localhost:6060/pkg/builtin/#float64">float64</a>) <a href="http://localhost:6060/pkg/builtin/#float64">float64</a></pre>
+				<p>
+Updates (drifts) a double value within specified range defined
+Parameters:
+</p>
+<pre>- value: float64 - value to drift.
+- interval: float64 - a range to drift. Default: 10% of the value
+</pre>
+<p>
+Returns float64
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomFloat">type <a href="http://localhost:6060/src/random/RandomFloat.go?s=315:341#L5">TRandomFloat</a>
+				<a class="permalink" href="index.html#TRandomFloat">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for float values.
+</p>
+<p>
+Examples:
+</p>
+<pre>value1 := RandomFloat.nextFloat(5, 10);     // Possible result: 7.3
+value2 := RandomFloat.nextFloat(10);        // Possible result: 3.7
+value3 := RandomFloat.updateFloat(10, 3);   // Possible result: 9.2
+</pre>
+
+			<pre>type TRandomFloat struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomFloat">RandomFloat</span> *<a href="index.html#TRandomFloat">TRandomFloat</a> = &amp;<a href="index.html#TRandomFloat">TRandomFloat</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomFloat.NextFloat">func (*TRandomFloat) <a href="http://localhost:6060/src/random/RandomFloat.go?s=828:894#L20">NextFloat</a>
+					<a class="permalink" href="index.html#TRandomFloat.NextFloat">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomFloat">TRandomFloat</a>) NextFloat(min <a href="http://localhost:6060/pkg/builtin/#float32">float32</a>, max <a href="http://localhost:6060/pkg/builtin/#float32">float32</a>) <a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+				<p>
+Generates a float in the range [&#39;min&#39;, &#39;max&#39;]. If &#39;max&#39; is omitted,
+then the range will be set to [0, &#39;min&#39;].
+</p>
+<p>
+Parameters:
+</p>
+<pre>- min: float32 - minimum value of the float that will be generated.
+If &#39;max&#39; is omitted, then &#39;max&#39; is set to &#39;min&#39; and &#39;min&#39; is set to 0.
+- max: float32 - maximum value of the float that will be generated.
+Defaults to &#39;min&#39; if omitted.
+</pre>
+<p>
+Returns generated random float32 value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomFloat.UpdateFloat">func (*TRandomFloat) <a href="http://localhost:6060/src/random/RandomFloat.go?s=1182:1257#L36">UpdateFloat</a>
+					<a class="permalink" href="index.html#TRandomFloat.UpdateFloat">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomFloat">TRandomFloat</a>) UpdateFloat(value <a href="http://localhost:6060/pkg/builtin/#float32">float32</a>, interval <a href="http://localhost:6060/pkg/builtin/#float32">float32</a>) <a href="http://localhost:6060/pkg/builtin/#float32">float32</a></pre>
+				<p>
+Updates (drifts) a float value within specified range defined
+Parameters:
+</p>
+<pre>- value: float32 - value to drift.
+- interval: float32 - a range. Default: 10% of the value
+</pre>
+<p>
+Returns float32
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomInteger">type <a href="http://localhost:6060/src/random/RandomInteger.go?s=327:355#L5">TRandomInteger</a>
+				<a class="permalink" href="index.html#TRandomInteger">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for integer values.
+Example:
+</p>
+<pre>value1 := RandomInteger.nextInteger(5, 10);     // Possible result: 7
+value2 := RandomInteger.nextInteger(10);        // Possible result: 3
+value3 := RandomInteger.updateInteger(10, 3);   // Possible result: 9
+</pre>
+
+			<pre>type TRandomInteger struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomInteger">RandomInteger</span> *<a href="index.html#TRandomInteger">TRandomInteger</a> = &amp;<a href="index.html#TRandomInteger">TRandomInteger</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomInteger.NextInteger">func (*TRandomInteger) <a href="http://localhost:6060/src/random/RandomInteger.go?s=841:899#L22">NextInteger</a>
+					<a class="permalink" href="index.html#TRandomInteger.NextInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomInteger">TRandomInteger</a>) NextInteger(min <a href="http://localhost:6060/pkg/builtin/#int">int</a>, max <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TRandomInteger.Sequence">func (*TRandomInteger) <a href="http://localhost:6060/src/random/RandomInteger.go?s=1819:1876#L59">Sequence</a>
+					<a class="permalink" href="index.html#TRandomInteger.Sequence">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomInteger">TRandomInteger</a>) Sequence(min <a href="http://localhost:6060/pkg/builtin/#int">int</a>, max <a href="http://localhost:6060/pkg/builtin/#int">int</a>) []<a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				<p>
+Generates a random sequence of integers starting from 0 like: [0,1,2,3...??]
+</p>
+<p>
+Parameters:
+</p>
+<pre>- min: int - minimum value of the integer that will be generated. If &#39;max&#39;
+is omitted, then &#39;max&#39; is set to &#39;min&#39; and &#39;min&#39; is set to 0.
+- max: int - maximum value of the int that will be generated. Defaults to &#39;min&#39; if omitted.
+</pre>
+<p>
+Returns generated array of integers.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomInteger.UpdateInteger">func (*TRandomInteger) <a href="http://localhost:6060/src/random/RandomInteger.go?s=1181:1248#L39">UpdateInteger</a>
+					<a class="permalink" href="index.html#TRandomInteger.UpdateInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomInteger">TRandomInteger</a>) UpdateInteger(value <a href="http://localhost:6060/pkg/builtin/#int">int</a>, interval <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				<p>
+Updates (drifts) a integer value within specified range defined
+</p>
+<p>
+Parameters:
+</p>
+<pre>- value: int - a integer value to drift.
+- interval:int - a range. Default: 10% of the value
+</pre>
+<p>
+Returns int
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomLong">type <a href="http://localhost:6060/src/random/RandomLong.go?s=309:334#L5">TRandomLong</a>
+				<a class="permalink" href="index.html#TRandomLong">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for integer values.
+Example:
+</p>
+<pre>value1 := RandomLong.nextLong(5, 10);     // Possible result: 7
+value2 := RandomLong.nextLong(10);        // Possible result: 3
+value3 := RandomLong.updateLong(10, 3);   // Possible result: 9
+</pre>
+
+			<pre>type TRandomLong struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomLong">RandomLong</span> *<a href="index.html#TRandomLong">TRandomLong</a> = &amp;<a href="index.html#TRandomLong">TRandomLong</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomLong.NextLong">func (*TRandomLong) <a href="http://localhost:6060/src/random/RandomLong.go?s=812:870#L21">NextLong</a>
+					<a class="permalink" href="index.html#TRandomLong.NextLong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomLong">TRandomLong</a>) NextLong(min <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, max <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Generates a integer in the range [&#39;min&#39;, &#39;max&#39;]. If &#39;max&#39; is omitted, then the range
+will be set to [0, &#39;min&#39;].
+</p>
+<p>
+Parameters:
+</p>
+<pre>- min: int64 - minimum value of the integer that will be generated. If &#39;max&#39; is omitted,
+then &#39;max&#39; is set to &#39;min&#39; and &#39;min&#39; is set to 0.
+- max: int64 - maximum value of the int that will be generated. Defaults to &#39;min&#39; if omitted.
+</pre>
+<p>
+Returns generated random int64 value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomLong.Sequence">func (*TRandomLong) <a href="http://localhost:6060/src/random/RandomLong.go?s=1792:1852#L58">Sequence</a>
+					<a class="permalink" href="index.html#TRandomLong.Sequence">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomLong">TRandomLong</a>) Sequence(min <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, max <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) []<a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Generates a random sequence of integers starting from 0 like: [0,1,2,3...??]
+</p>
+<p>
+Parameters:
+</p>
+<pre>- min: int64 - minimum value of the integer that will be generated. If &#39;max&#39;
+is omitted, then &#39;max&#39; is set to &#39;min&#39; and &#39;min&#39; is set to 0.
+- max: int64 - maximum value of the int that will be generated. Defaults to &#39;min&#39; if omitted.
+</pre>
+<p>
+Returns generated array of int64.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomLong.UpdateLong">func (*TRandomLong) <a href="http://localhost:6060/src/random/RandomLong.go?s=1154:1221#L38">UpdateLong</a>
+					<a class="permalink" href="index.html#TRandomLong.UpdateLong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomLong">TRandomLong</a>) UpdateLong(value <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>, interval <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Updates (drifts) a integer value within specified range defined
+</p>
+<p>
+Parameters:
+</p>
+<pre>- value: int - a integer value to drift.
+- interval:int - a range. Default: 10% of the value
+</pre>
+<p>
+Returns int
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomString">type <a href="http://localhost:6060/src/random/RandomString.go?s=267:294#L5">TRandomString</a>
+				<a class="permalink" href="index.html#TRandomString">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for string values.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := RandomString.pickChar(&#34;ABC&#34;);     // Possible result: &#34;C&#34;
+value2 := RandomString.pick([&#34;A&#34;,&#34;B&#34;,&#34;C&#34;]); // Possible result: &#34;gBW&#34;
+</pre>
+
+			<pre>type TRandomString struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomString">RandomString</span> *<a href="index.html#TRandomString">TRandomString</a> = &amp;<a href="index.html#TRandomString">TRandomString</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomString.Distort">func (*TRandomString) <a href="http://localhost:6060/src/random/RandomString.go?s=1528:1580#L62">Distort</a>
+					<a class="permalink" href="index.html#TRandomString.Distort">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomString">TRandomString</a>) Distort(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TRandomString.NextAlphaChar">func (*TRandomString) <a href="http://localhost:6060/src/random/RandomString.go?s=2082:2126#L88">NextAlphaChar</a>
+					<a class="permalink" href="index.html#TRandomString.NextAlphaChar">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomString">TRandomString</a>) NextAlphaChar() <a href="http://localhost:6060/pkg/builtin/#byte">byte</a></pre>
+				<p>
+Generates random alpha characted [A-Za-z]
+</p>
+<p>
+Returns a random characted.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomString.NextString">func (*TRandomString) <a href="http://localhost:6060/src/random/RandomString.go?s=2515:2586#L103">NextString</a>
+					<a class="permalink" href="index.html#TRandomString.NextString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomString">TRandomString</a>) NextString(minLength <a href="http://localhost:6060/pkg/builtin/#int">int</a>, maxLength <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Generates a random string, consisting of upper and lower case letters (of the English alphabet), digits (0-9), and symbols (&#34;_,.:-/.[].{},#-!,$=%.+^.&amp;*-() &#34;).
+</p>
+<p>
+Parameters:
+</p>
+<pre>- minLength: int - minimum string length.
+- maxLength: int - maximum string length.
+</pre>
+<p>
+Returns a random string.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomString.Pick">func (*TRandomString) <a href="http://localhost:6060/src/random/RandomString.go?s=1178:1230#L43">Pick</a>
+					<a class="permalink" href="index.html#TRandomString.Pick">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomString">TRandomString</a>) Pick(values []<a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Picks a random string from an array of string.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- values: string[] strings to pick from.
+</pre>
+<p>
+Returns a randomly picked string.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomString.PickChar">func (*TRandomString) <a href="http://localhost:6060/src/random/RandomString.go?s=848:900#L25">PickChar</a>
+					<a class="permalink" href="index.html#TRandomString.PickChar">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomString">TRandomString</a>) PickChar(values <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#byte">byte</a></pre>
+				<p>
+Picks a random character from a string.
+</p>
+<p>
+Parameters:
+</p>
+<pre>- values: string to pick a char from
+</pre>
+<p>
+Returnsa randomly picked char.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRandomText">type <a href="http://localhost:6060/src/random/RandomText.go?s=374:399#L5">TRandomText</a>
+				<a class="permalink" href="index.html#TRandomText">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Random generator for various text values like names, addresses or phone numbers.
+</p>
+<p>
+Example:
+</p>
+<pre>value1 := RandomText.FullName();     	// Possible result: &#34;Segio&#34;
+value2 := RandomText.Verb();      	// Possible result: &#34;Run&#34;
+value3 := RandomText.Text(50);    	// Possible result: &#34;Run jorge. Red high scream?&#34;
+</pre>
+
+			<pre>type TRandomText struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="RandomText">RandomText</span> *<a href="index.html#TRandomText">TRandomText</a> = &amp;<a href="index.html#TRandomText">TRandomText</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRandomText.Adjective">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=7230:7270#L85">Adjective</a>
+					<a class="permalink" href="index.html#TRandomText.Adjective">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Adjective() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random adjective
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Color">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=7000:7036#L73">Color</a>
+					<a class="permalink" href="index.html#TRandomText.Color">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Color() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random color
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Email">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=9204:9240#L169">Email</a>
+					<a class="permalink" href="index.html#TRandomText.Email">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Email() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random email
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.FullName">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=7871:7910#L115">FullName</a>
+					<a class="permalink" href="index.html#TRandomText.FullName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) FullName() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random full name
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Phone">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=8773:8809#L156">Phone</a>
+					<a class="permalink" href="index.html#TRandomText.Phone">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Phone() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random phone
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Phrase">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=7462:7515#L97">Phrase</a>
+					<a class="permalink" href="index.html#TRandomText.Phrase">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Phrase(min <a href="http://localhost:6060/pkg/builtin/#int">int</a>, max <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random phrase
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Stuff">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=7113:7149#L79">Stuff</a>
+					<a class="permalink" href="index.html#TRandomText.Stuff">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Stuff() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random stuff
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Text">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=9464:9515#L180">Text</a>
+					<a class="permalink" href="index.html#TRandomText.Text">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Text(min <a href="http://localhost:6060/pkg/builtin/#int">int</a>, max <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random text
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Verb">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=7350:7385#L91">Verb</a>
+					<a class="permalink" href="index.html#TRandomText.Verb">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Verb() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random verb
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Word">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=8377:8412#L137">Word</a>
+					<a class="permalink" href="index.html#TRandomText.Word">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Word() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random word
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRandomText.Words">func (*TRandomText) <a href="http://localhost:6060/src/random/RandomText.go?s=8491:8543#L143">Words</a>
+					<a class="permalink" href="index.html#TRandomText.Words">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRandomText">TRandomText</a>) Words(min <a href="http://localhost:6060/pkg/builtin/#int">int</a>, max <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Return string with random words
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
