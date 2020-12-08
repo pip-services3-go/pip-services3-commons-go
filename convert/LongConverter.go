@@ -40,8 +40,8 @@ func (c *TLongConverter) ToLong(value interface{}) int64 {
 
 // Converts value into long or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value..
+//  "value" - the value to convert.
+//  "defaultValue" - the default value..
 // Returns: long value or default when conversion is not supported.
 func (c *TLongConverter) ToLongWithDefault(value interface{}, defaultValue int64) int64 {
 	return ToLongWithDefault(value, defaultValue)
@@ -116,8 +116,8 @@ func ToLong(value interface{}) int64 {
 
 // Converts value into long or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value..
+//  "value" - the value to convert.
+//  "defaultValue" - the default value..
 // Returns: long value or default when conversion is not supported.
 func ToLongWithDefault(value interface{}, defaultValue int64) int64 {
 	r := ToNullableLong(value)

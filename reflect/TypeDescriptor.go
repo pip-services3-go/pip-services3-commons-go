@@ -11,7 +11,6 @@ Descriptor that points to specific object type by it's name and optional library
 
 This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
 */
-
 type TypeDescriptor struct {
 	name string
 	pkg  string
@@ -19,10 +18,10 @@ type TypeDescriptor struct {
 
 // Creates a new instance of the type descriptor and sets its values.
 // Parameters:
-// 			- name string
-// 			a name of the object type.
-// 			- library string
-// 			a library or module where this object type is implemented.
+//  - name string
+//  a name of the object type.
+//  - library string
+//  a library or module where this object type is implemented.
 // Returns *TypeDescriptor
 func NewTypeDescriptor(name string, pkg string) *TypeDescriptor {
 	return &TypeDescriptor{

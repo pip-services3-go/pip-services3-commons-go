@@ -27,18 +27,17 @@ StringValueMap
 
 Example:
  config := NewConfigParamsFromTuples(
-    "section1.key1", "AAA",
-    "section1.key2", 123,
-    "section2.key1", true
-);
-
-config.GetAsString("section1.key1"); // Result: AAA
-config.GetAsInteger("section1.key1"); // Result: 0
-
-section1 = config.GetSection("section2");
-section1.GetAsString("key1"); // Result: true
+     "section1.key1", "AAA",
+     "section1.key2", 123,
+     "section2.key1", true
+ );
+ 
+ config.GetAsString("section1.key1"); // Result: AAA
+ config.GetAsInteger("section1.key1"); // Result: 0
+ 
+ section1 = config.GetSection("section2");
+ section1.GetAsString("key1"); // Result: true
 */
-
 type ConfigParams struct {
 	data.StringValueMap
 }
@@ -54,7 +53,7 @@ func NewEmptyConfigParams() *ConfigParams {
 
 // Creates a new ConfigParams from map.
 // Parameters:
-// 			- values ...map[string]string
+//  - values ...map[string]string
 // Returns *ConfigParams
 // a newly created ConfigParams.
 func NewConfigParams(values map[string]string) *ConfigParams {
@@ -65,8 +64,8 @@ func NewConfigParams(values map[string]string) *ConfigParams {
 
 // Creates a new ConfigParams object filled with key-value pairs from specified object.
 // Parameters:
-// 			- value interface{}
-// 			an object with key-value pairs used to initialize a new ConfigParams.
+//  - value interface{}
+//  an object with key-value pairs used to initialize a new ConfigParams.
 // Returns *ConfigParams
 // a new ConfigParams object.
 func NewConfigParamsFromValue(value interface{}) *ConfigParams {
@@ -81,7 +80,7 @@ func NewConfigParamsFromValue(value interface{}) *ConfigParams {
 // see
 // StringValueMap.fromTuplesArray
 // Parameters:
-// 			- tuples ...interface{}
+//  - tuples ...interface{}
 // the tuples to fill a new ConfigParams object.
 
 // Returns ConfigParams
@@ -95,8 +94,8 @@ func NewConfigParamsFromTuples(tuples ...interface{}) *ConfigParams {
 // Creates a new StringValueMap from a list of key-value pairs called tuples.
 // The method is similar to fromTuples but tuples are passed as array instead of parameters.
 // Parameters:
-// 			 - tuples []interface{}
-// 			a list of values where odd elements are keys and the following even elements are values
+//  - tuples []interface{}
+//  a list of values where odd elements are keys and the following even elements are values
 // Returns *ConfigParams
 // a newly created ConfigParams.
 func NewConfigParamsFromTuplesArray(tuples []interface{}) *ConfigParams {
@@ -109,9 +108,9 @@ func NewConfigParamsFromTuplesArray(tuples []interface{}) *ConfigParams {
 // see
 // StringValueMap.fromString
 // Parameters:
-// 				- line: string
-// 				a string with serialized key-value pairs as "key1=value1;key2=value2;..."
-//				Example: "Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"
+//  - line: string
+//  a string with serialized key-value pairs as "key1=value1;key2=value2;..."
+//  Example: "Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"
 // Returns *ConfigParams
 // a new ConfigParams object.
 func NewConfigParamsFromString(line string) *ConfigParams {
@@ -123,8 +122,8 @@ func NewConfigParamsFromString(line string) *ConfigParams {
 // Creates a new ConfigParams by merging two or more maps.
 // Maps defined later in the list override values from previously defined maps.
 // Parameters:
-// 			  - maps ...map[string]string
-// an array of maps to be merged
+//  - maps ...map[string]string
+//  an array of maps to be merged
 // Returns *ConfigParams
 // a newly created ConfigParams.
 func NewConfigParamsFromMaps(maps ...map[string]string) *ConfigParams {
@@ -166,8 +165,8 @@ func (c *ConfigParams) GetSectionNames() []string {
 
 // Gets parameters from specific section stored in this ConfigMap. The section name is removed from parameter keys.
 // Parameters:
-// 			- section: string
-// 			name of the section to retrieve configuration parameters from.
+//  - section: string
+//  name of the section to retrieve configuration parameters from.
 // Returns *ConfigParams
 // all configuration parameters that belong to the section named 'section'.
 func (c *ConfigParams) GetSection(section string) *ConfigParams {
@@ -194,10 +193,10 @@ func (c *ConfigParams) GetSection(section string) *ConfigParams {
 // Adds parameters into this ConfigParams under specified section.
 // Keys for the new parameters are appended with section dot prefix.
 // Parameters:
-// 			- section: string
-// 			name of the section where add new parameters
-// 			- sectionParams: *ConfigParams
-// 			new parameters to be added.
+//  - section: string
+//  name of the section where add new parameters
+//  - sectionParams: *ConfigParams
+//  new parameters to be added.
 func (c *ConfigParams) AddSection(section string, sectionParams *ConfigParams) {
 	if section == "" {
 		panic("Section name cannot be empty")
@@ -224,8 +223,8 @@ func (c *ConfigParams) AddSection(section string, sectionParams *ConfigParams) {
 // see
 // setDefaults
 // Parameters:
-//  		- configParams: *ConfigParams
-// 			ConfigMap with parameters to override the current values.
+//  - configParams: *ConfigParams
+//  ConfigMap with parameters to override the current values.
 // Returns *ConfigParams
 // a new ConfigParams object.
 func (c *ConfigParams) Override(configParams *ConfigParams) *ConfigParams {
@@ -236,8 +235,8 @@ func (c *ConfigParams) Override(configParams *ConfigParams) *ConfigParams {
 // see
 // override
 // Parameters:
-// 		- defaultConfigParams: *ConfigParams
-// 			ConfigMap with default parameter values.
+//  - defaultConfigParams: *ConfigParams
+//  ConfigMap with default parameter values.
 // Returns *ConfigParams
 // a new ConfigParams object.
 func (c *ConfigParams) SetDefaults(defaults *ConfigParams) *ConfigParams {

@@ -40,8 +40,8 @@ func (c *TDoubleConverter) ToDouble(value interface{}) float64 {
 
 // Converts value into doubles or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value
+//  "value" - the value to convert.
+//  "defaultValue" - the default value
 // Returns: double value or default when conversion is not supported.
 func (c *TDoubleConverter) ToDoubleWithDefault(value interface{}, defaultValue float64) float64 {
 	return ToDoubleWithDefault(value, defaultValue)
@@ -116,8 +116,8 @@ func ToDouble(value interface{}) float64 {
 
 // Converts value into doubles or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: double value or default when conversion is not supported.
 func ToDoubleWithDefault(value interface{}, defaultValue float64) float64 {
 	r := ToNullableDouble(value)

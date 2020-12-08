@@ -8,12 +8,12 @@ Access errors caused by missing user identity (authentication error) or incorrec
 // see
 // ErrorCategory
 // Parameters:
-//          - correlation_id string
-//          a unique transaction id to trace execution through call chain.
-//          - code string
-//          a unique error code.
-//          - message string
-//          a human-readable description of the error.
+//  - correlation_id string
+//  a unique transaction id to trace execution through call chain.
+//  - code string
+//  a unique error code.
+//  - message string
+//  a human-readable description of the error.
 // Returns *ApplicationError
 func NewUnauthorizedError(correlationId, code, message string) *ApplicationError {
 	return &ApplicationError{

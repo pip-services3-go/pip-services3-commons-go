@@ -8,16 +8,15 @@ import (
 Concrete implementation of IEvent interface. It allows to send asynchronous
 notifications to multiple subscribed listeners.
 Example:
-event: = NewEvent("my_event");
-
-event.AddListener(myListener);
-
-event.Notify("123", Parameters.fromTuples(
-  "param1", "ABC",
-  "param2", 123
-));
+ event: = NewEvent("my_event");
+ 
+ event.AddListener(myListener);
+ 
+ event.Notify("123", Parameters.fromTuples(
+   "param1", "ABC",
+   "param2", 123
+ ));
 */
-
 type Event struct {
 	name      string
 	listeners []IEventListener
@@ -27,8 +26,8 @@ type Event struct {
 // throws
 // an Error if the name is null.
 // Parameters:
-// 				- name: string
-// 					the name of the event that is to be created.
+//  - name: string
+//  the name of the event that is to be created.
 // Returns Event
 
 func NewEvent(name string) *Event {
@@ -60,8 +59,8 @@ func (c *Event) Listeners() []IEventListener {
 
 // Adds a listener to receive notifications when this event is fired.
 // Parameters:
-// 				- listener: IEventListener
-// 					the listener reference to add.
+//  - listener: IEventListener
+//  	the listener reference to add.
 
 func (c *Event) AddListener(listener IEventListener) {
 	c.listeners = append(c.listeners, listener)
@@ -69,8 +68,8 @@ func (c *Event) AddListener(listener IEventListener) {
 
 // Removes a listener, so that it no longer receives notifications for this event.
 // Parameters:
-//  			- listener: IEventListener
-// 				the listener reference to remove.
+//  - listener: IEventListener
+//  	the listener reference to remove.
 
 func (c *Event) RemoveListener(listener IEventListener) {
 	for i, l := range c.listeners {
@@ -83,10 +82,10 @@ func (c *Event) RemoveListener(listener IEventListener) {
 
 // Fires this event and notifies all registred listeners.
 // Parameters:
-// 				- correlationId: string
-// 				(optional) transaction id to trace execution through call chain.
-// 				- args: Parameters
-// 				the parameters to raise this event with.
+//  - correlationId: string
+//  	(optional) transaction id to trace execution through call chain.
+//  - args: Parameters
+//  	the parameters to raise this event with.
 
 func (c *Event) Notify(correlationId string, args *run.Parameters) {
 	for _, listener := range c.listeners {

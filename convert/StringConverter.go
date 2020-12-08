@@ -44,8 +44,8 @@ func (c *TStringConverter) ToString(value interface{}) string {
 
 // Converts value into string or returns default when value is null.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: string value or default when value is null.
 func (c *TStringConverter) ToStringWithDefault(value interface{}, defaultValue string) string {
 	return ToStringWithDefault(value, defaultValue)
@@ -114,8 +114,8 @@ func ToString(value interface{}) string {
 
 // Converts value into string or returns default when value is null.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: string value or default when value is null.
 func ToStringWithDefault(value interface{}, defaultValue string) string {
 	r := ToNullableString(value)

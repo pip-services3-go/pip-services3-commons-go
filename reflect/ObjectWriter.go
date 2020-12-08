@@ -20,25 +20,24 @@ see
 PropertyReflector
 
 Example:
-myObj := MyObject{}
-
-ObjectWriter.SetProperty(myObj, "myProperty", 123)
-
-myMap := { key1: 123, key2: "ABC" }
-ObjectWriter.SetProperty(myMap, "key1", "XYZ")
-
-myArray := [1, 2, 3]
-ObjectWriter.SetProperty(myArray, "0", 123)
+ myObj := MyObject{}
+ 
+ ObjectWriter.SetProperty(myObj, "myProperty", 123)
+ 
+ myMap := { key1: 123, key2: "ABC" }
+ ObjectWriter.SetProperty(myMap, "key1", "XYZ")
+ 
+ myArray := [1, 2, 3]
+ ObjectWriter.SetProperty(myArray, "0", 123)
 */
-
 type TObjectWriter struct{}
 
 var ObjectWriter = &TObjectWriter{}
 
 // Gets a real object value. If object is a wrapper, it unwraps the value behind it. Otherwise it returns the same object value.
 // Parameters:
-// 			 - obj interface{}
-// 			an object to unwrap..
+//  - obj interface{}
+// 	an object to unwrap..
 // Returns interface{}
 // an actual (unwrapped) object value.
 func (c *TObjectWriter) GetValue(obj interface{}) interface{} {
@@ -54,12 +53,12 @@ func (c *TObjectWriter) GetValue(obj interface{}) interface{} {
 // The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
 // If the property does not exist or introspection fails this method doesn't do anything and doesn't any throw errors.
 // Parameters:
-// 			- obj interface{}
-// 			an object to write property to.
-// 			- name string
-// 			a name of the property to set.
-// 			- value interface{}
-// 			a new value for the property to set.
+//  - obj interface{}
+//  an object to write property to.
+//  - name string
+//  a name of the property to set.
+//  - value interface{}
+//  a new value for the property to set.
 func (c *TObjectWriter) SetProperty(obj interface{}, name string, value interface{}) {
 	if obj == nil || name == "" {
 		return
@@ -105,10 +104,10 @@ func (c *TObjectWriter) SetProperty(obj interface{}, name string, value interfac
 // see
 // setProperty
 // Parameters:
-// 			 - obj interface{}
-// 			an object to write properties to.
-// 			- values map[string]interface{}
-// 			a map, containing property names and their values.
+//  - obj interface{}
+//  an object to write properties to.
+//  - values map[string]interface{}
+//  a map, containing property names and their values.
 func (c *TObjectWriter) SetProperties(obj interface{}, values map[string]interface{}) {
 	if values == nil || len(values) == 0 {
 		return

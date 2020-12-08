@@ -8,17 +8,16 @@ import (
 //
 //Example:
 //
-//			value1 := RandomBoolean.nextBoolean();    // Possible result: true
-//			value2 := RandomBoolean.chance(1,3);      // Possible result: false
-//
+//  value1 := RandomBoolean.nextBoolean();    // Possible result: true
+//  value2 := RandomBoolean.chance(1,3);      // Possible result: false
 type TRandomBoolean struct{}
 
 var RandomBoolean *TRandomBoolean = &TRandomBoolean{}
 
 //Calculates "chance" out of "max chances". Example: 1 chance out of 3 chances (or 33.3%)
 //
-// 		- chance: number  - a chance proportional to maxChances.
-//		- maxChances: number - a maximum number of chances
+//  - chance: number  - a chance proportional to maxChances.
+//  - maxChances: number - a maximum number of chances
 //
 func (c *TRandomBoolean) Chance(chances int, maxChances int) bool {
 	if chances < 0 {

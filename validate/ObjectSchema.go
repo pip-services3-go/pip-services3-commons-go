@@ -10,15 +10,15 @@ import (
 // Schema to validate user defined objects.
 
 // Example
-// var schema = NewObjectSchema(false)
-//     .WithOptionalProperty("id", TypeCode.String)
-//     .WithRequiredProperty("name", TypeCode.String);
-
-// schema.validate({ id: "1", name: "ABC" });       // Result: no errors
-// schema.validate({ name: "ABC" });                // Result: no errors
-// schema.validate({ id: 1, name: "ABC" });         // Result: id type mismatch
-// schema.validate({ id: 1, _name: "ABC" });        // Result: name is missing, unexpected _name
-// schema.validate("ABC");                          // Result: type mismatch
+//  var schema = NewObjectSchema(false)
+//      .WithOptionalProperty("id", TypeCode.String)
+//      .WithRequiredProperty("name", TypeCode.String);
+ 
+//  schema.validate({ id: "1", name: "ABC" });       // Result: no errors
+//  schema.validate({ name: "ABC" });                // Result: no errors
+//  schema.validate({ id: 1, name: "ABC" });         // Result: id type mismatch
+//  schema.validate({ id: 1, _name: "ABC" });        // Result: name is missing, unexpected _name
+//  schema.validate("ABC");                          // Result: type mismatch
 */
 type ObjectSchema struct {
 	Schema
@@ -40,12 +40,12 @@ func NewObjectSchema() *ObjectSchema {
 // see
 // IValidationRule
 // Parameters:
-// 			- allowUndefined bool
-// 			true to allow properties undefines in the schema
-//          - required bool
-// 			 true to always require non-null values.
-// 			- rules []IValidationRule
-// 			 a list with validation rules.
+//  - allowUndefined bool
+//  true to allow properties undefines in the schema
+//  - required bool
+//  true to always require non-null values.
+//  - rules []IValidationRule
+//  a list with validation rules.
 // Returns *ObjectSchema
 func NewObjectSchemaWithRules(allowUndefined bool, required bool, rules []IValidationRule) *ObjectSchema {
 	c := &ObjectSchema{
@@ -68,8 +68,8 @@ func (c *ObjectSchema) Properties() []*PropertySchema {
 // see
 // PropertySchema
 // Parameters:
-// 			- value []*PropertySchema
-// 			a list of property validation schemas.
+//  - value []*PropertySchema
+//  a list of property validation schemas.
 func (c *ObjectSchema) SetProperties(value []*PropertySchema) {
 	c.properties = value
 }
@@ -83,8 +83,8 @@ func (c *ObjectSchema) UndefinedAllowed() bool {
 
 // Gets flag to allow undefined properties
 // Parameters:
-// 			- value bool
-//			true to allow undefined properties and false to disallow.
+//  - value bool
+//  true to allow undefined properties and false to disallow.
 func (c *ObjectSchema) SetUndefinedAllowed(value bool) {
 	c.allowUndefined = value
 }
@@ -92,8 +92,8 @@ func (c *ObjectSchema) SetUndefinedAllowed(value bool) {
 // Sets flag to allow undefined properties
 // This method returns reference to this exception to implement Builder pattern to chain additional calls.
 // Parameters:
-// 			- value bool
-// 			true to allow undefined properties and false to disallow.
+//  - value bool
+//  true to allow undefined properties and false to disallow.
 // Returns *ObjectSchema
 // this validation schema.
 func (c *ObjectSchema) AllowUndefined(value bool) *ObjectSchema {
@@ -106,8 +106,8 @@ func (c *ObjectSchema) AllowUndefined(value bool) *ObjectSchema {
 // see
 // PropertySchema
 // Parameters:
-// 			- schema *PropertySchema
-// 			a property validation schema to be added.
+//  - schema *PropertySchema
+//  a property validation schema to be added.
 // Returns *ObjectSchema
 // this validation schema.
 func (c *ObjectSchema) WithProperty(schema *PropertySchema) *ObjectSchema {
@@ -120,12 +120,12 @@ func (c *ObjectSchema) WithProperty(schema *PropertySchema) *ObjectSchema {
 
 // Adds a validation schema for a required object property.
 // Parameters:
-// 			- name string
-// 			a property name.
-// 			- type interface{}
-// 			a property schema or type.
-// 			- rules ...IValidationRule
-// 			a list of property validation rules.
+//  - name string
+//  a property name.
+//  - type interface{}
+//  a property schema or type.
+//  - rules ...IValidationRule
+//  a list of property validation rules.
 // Returns *ObjectSchema
 func (c *ObjectSchema) WithRequiredProperty(name string, typ interface{}, rules ...IValidationRule) *ObjectSchema {
 	schema := NewPropertySchemaWithRules(name, typ, true, rules)
@@ -134,12 +134,12 @@ func (c *ObjectSchema) WithRequiredProperty(name string, typ interface{}, rules 
 
 // Adds a validation schema for an optional object property.
 // Parameters:
-// 			- name string
-// 			a property name.
-// 			- type interface{}
-// 			a property schema or type.
-// 			- rules ...IValidationRule
-// 			 a list of property validation rules.
+//  - name string
+//  a property name.
+//  - type interface{}
+//  a property schema or type.
+//  - rules ...IValidationRule
+//   a list of property validation rules.
 // Returns *ObjectSchema
 func (c *ObjectSchema) WithOptionalProperty(name string, typ interface{}, rules ...IValidationRule) *ObjectSchema {
 	schema := NewPropertySchemaWithRules(name, typ, false, rules)
@@ -148,10 +148,10 @@ func (c *ObjectSchema) WithOptionalProperty(name string, typ interface{}, rules 
 
 // Validates a given value against the schema and configured validation rules.
 // Parameters:
-// 			- path string
-// 			a dot notation path to the value.
-// 			- value interface{}
-// 			a value to be validated.
+//  - path string
+//  a dot notation path to the value.
+//  - value interface{}
+//  a value to be validated.
 // Return []*ValidationResult
 // a list with validation results to add new results.
 func (c *ObjectSchema) PerformValidation(path string, value interface{}) []*ValidationResult {

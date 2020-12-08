@@ -9,10 +9,9 @@ import (
 //Random generator for integer values.
 //Example:
 //
-//			value1 := RandomLong.nextLong(5, 10);     // Possible result: 7
-// 			value2 := RandomLong.nextLong(10);        // Possible result: 3
-//			value3 := RandomLong.updateLong(10, 3);   // Possible result: 9
-//
+//  value1 := RandomLong.nextLong(5, 10);     // Possible result: 7
+//  value2 := RandomLong.nextLong(10);        // Possible result: 3
+//  value3 := RandomLong.updateLong(10, 3);   // Possible result: 9
 type TRandomLong struct{}
 
 var RandomLong *TRandomLong = &TRandomLong{}
@@ -23,9 +22,9 @@ var RandomLong *TRandomLong = &TRandomLong{}
 //
 //Parameters:
 //
-// 				-min: int64 - minimum value of the integer that will be generated. If 'max' is omitted,
-//				then 'max' is set to 'min' and 'min' is set to 0.
-// 				-max: int64 - maximum value of the int that will be generated. Defaults to 'min' if omitted.
+//  - min: int64 - minimum value of the integer that will be generated. If 'max' is omitted,
+//  then 'max' is set to 'min' and 'min' is set to 0.
+//  - max: int64 - maximum value of the int that will be generated. Defaults to 'min' if omitted.
 //
 //Returns generated random int64 value.
 //
@@ -41,8 +40,8 @@ func (c *TRandomLong) NextLong(min int64, max int64) int64 {
 //Updates (drifts) a integer value within specified range defined
 //
 //Parameters:
-//			- value: int - a integer value to drift.
-//			- interval:int - a range. Default: 10% of the value
+//  - value: int - a integer value to drift.
+//  - interval:int - a range. Default: 10% of the value
 //
 //Returns int
 //
@@ -60,9 +59,9 @@ func (c *TRandomLong) UpdateLong(value int64, interval int64) int64 {
 //
 //Parameters:
 //
-//		- min: int64 - minimum value of the integer that will be generated. If 'max'
-//		is omitted, then 'max' is set to 'min' and 'min' is set to 0.
-// 		- max: int64 - maximum value of the int that will be generated. Defaults to 'min' if omitted.
+//  - min: int64 - minimum value of the integer that will be generated. If 'max'
+//  is omitted, then 'max' is set to 'min' and 'min' is set to 0.
+//  - max: int64 - maximum value of the int that will be generated. Defaults to 'min' if omitted.
 //
 // Returns generated array of int64.
 //

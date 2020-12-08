@@ -7,13 +7,13 @@ see
 IValidationRule
 
 Example
-var schema = NewSchema()
-    .WithRule(NewNotRule(
-        NewValueComparisonRule("EQ", 1)
-    ));
-
-schema.Validate(1);          // Result: error
-schema.Validate(5);          // Result: no error
+ var schema = NewSchema()
+     .WithRule(NewNotRule(
+         NewValueComparisonRule("EQ", 1)
+     ));
+ 
+ schema.Validate(1);          // Result: error
+ schema.Validate(5);          // Result: no error
 */
 type NotRule struct {
 	rule IValidationRule
@@ -21,8 +21,8 @@ type NotRule struct {
 
 // Creates a new validation rule and sets its values
 // Parameters:
-// 			- rule IValidationRule
-// 			a rule to be negated.
+//  - rule IValidationRule
+//  a rule to be negated.
 // Returns *NotRule
 func NewNotRule(rule IValidationRule) *NotRule {
 	return &NotRule{
@@ -32,12 +32,12 @@ func NewNotRule(rule IValidationRule) *NotRule {
 
 // Validates a given value against this rule.
 // Parameters:
-// 			- path string
-// 			a dot notation path to the value.
-// 			- schema ISchema
-// 			a schema this rule is called from
-// 			- value interface{}
-// 			a value to be validated.
+//  - path string
+//  a dot notation path to the value.
+//  - schema ISchema
+//  a schema this rule is called from
+//  - value interface{}
+//  a value to be validated.
 // Returns []*ValidationResult
 // a list with validation results to add new results.
 func (c *NotRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult {

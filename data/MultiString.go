@@ -7,10 +7,10 @@ When translation for specified language does not exists it defaults to English (
 When English does not exists it falls back to the first defined language.
 
 Example:
-values := MultiString.fromTuples(
-    "en", "Hello World!",
-    "ru", "Привет мир!"
-);
+ values := MultiString.fromTuples(
+     "en", "Hello World!",
+     "ru", "Привет мир!"
+ );
 
  value1 := values.get('ru'); // Result: "Привет мир!"
  value2 := values.get('pt'); // Result: "Hello World!"

@@ -6,16 +6,16 @@ The commandable object exposes its functonality as commands and events groupped 
 
 This interface is typically implemented by controllers and is used to auto generate external interfaces.
 
-type MyDataController {
+ type MyDataController {
   _commandSet  CommandSet;
-}
-  func (dc *MyDataController) getCommandSet() CommandSet {
-    if (dc._commandSet == nil)
-      dc._commandSet = NewDataCommandSet();
-    return dc._commandSet;
-  }
-
-*/
+ }
+   func (dc *MyDataController) getCommandSet() CommandSet {
+     if (dc._commandSet == nil)
+       dc._commandSet = NewDataCommandSet();
+     return dc._commandSet;
+   }
+ 
+ */
 
 type ICommandable interface {
 	// 	Gets a command set with all supported commands and events.

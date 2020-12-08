@@ -35,8 +35,8 @@ func (c *TFloatConverter) ToFloat(value interface{}) float32 {
 
 // Converts value into float or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: float value or default when conversion is not supported.
 func (c *TFloatConverter) ToFloatWithDefault(value interface{}, defaultValue float32) float32 {
 	return ToFloatWithDefault(value, defaultValue)
@@ -63,8 +63,8 @@ func ToFloat(value interface{}) float32 {
 
 // Converts value into float or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: float value or default when conversion is not supported.
 func ToFloatWithDefault(value interface{}, defaultValue float32) float32 {
 	r := ToNullableFloat(value)

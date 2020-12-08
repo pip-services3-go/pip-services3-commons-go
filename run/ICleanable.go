@@ -9,19 +9,19 @@ see
 Cleaner
 
 Example:
-type MyObjectWithState {
-	_state interface{}
-}
-    ...
-    func (mo * MyObjectWithState ) clear(correlationId string) {
-        mo._state = interface{}
-    }
-
+ type MyObjectWithState {
+ 	_state interface{}
+ }
+     ...
+     func (mo * MyObjectWithState ) clear(correlationId string) {
+         mo._state = interface{}
+     }
+ 
 */
 type ICleanable interface {
 	// Clears component state.
 	// Parameters:
-	// 			- correlationId string
-	// 			 transaction id to trace execution through call chain.
+	//  - correlationId string
+	//  transaction id to trace execution through call chain.
 	Clear(correlationId string) error
 }

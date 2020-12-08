@@ -10,12 +10,12 @@ This interface allows to implement custom rules.
 type IValidationRule interface {
 	// Validates a given value against this rule.
 	// Parameters:
-	// 			- path string
-	// 			a dot notation path to the value.
-	// 			- schema ISchema
-	// 			a schema this rule is called from
-	// 			- value interface{}y
-	// 			a value to be validated.
+	//  - path string
+	//  a dot notation path to the value.
+	//  - schema ISchema
+	//  a schema this rule is called from
+	//  - value interface{}y
+	//  a value to be validated.
 	// 	Returns []*ValidationResult
 	// a list with validation results to add new results.
 	Validate(path string, schema ISchema, value interface{}) []*ValidationResult

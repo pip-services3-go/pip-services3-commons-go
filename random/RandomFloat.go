@@ -9,11 +9,9 @@ import (
 //
 //Examples:
 //
-//			value1 := RandomFloat.nextFloat(5, 10);     // Possible result: 7.3
-//			value2 := RandomFloat.nextFloat(10);        // Possible result: 3.7
-//			value3 := RandomFloat.updateFloat(10, 3);   // Possible result: 9.2
-//
-
+//  value1 := RandomFloat.nextFloat(5, 10);     // Possible result: 7.3
+//  value2 := RandomFloat.nextFloat(10);        // Possible result: 3.7
+//  value3 := RandomFloat.updateFloat(10, 3);   // Possible result: 9.2
 type TRandomFloat struct{}
 
 var RandomFloat *TRandomFloat = &TRandomFloat{}

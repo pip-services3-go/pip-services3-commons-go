@@ -107,8 +107,8 @@ func ToDateTime(value interface{}) time.Time {
 
 // Converts value into Date or returns default when conversion is not possible.
 // Parameters:
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: Date value or default when conversion is not supported.
 func ToDateTimeWithDefault(value interface{}, defaultValue time.Time) time.Time {
 	r := ToNullableDateTime(value)

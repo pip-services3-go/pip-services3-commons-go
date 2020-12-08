@@ -10,9 +10,8 @@ import (
 //
 //Example:
 //
-//			value1 := RandomString.pickChar("ABC");     // Possible result: "C"
-//			value2 := RandomString.pick(["A","B","C"]); // Possible result: "gBW"
-//
+//  value1 := RandomString.pickChar("ABC");     // Possible result: "C"
+//  value2 := RandomString.pick(["A","B","C"]); // Possible result: "gBW"
 type TRandomString struct{}
 
 var RandomString *TRandomString = &TRandomString{}

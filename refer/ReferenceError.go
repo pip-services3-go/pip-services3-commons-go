@@ -11,9 +11,9 @@ import (
 
 // Creates an error instance and assigns its values.
 // Parameters:
-// 			- correlationId string
-// 			- locator interface{}
-// 			the locator to find reference to dependent component.
+//  - correlationId string
+//  - locator interface{}
+//  the locator to find reference to dependent component.
 // Returns *errors.ApplicationError
 func NewReferenceError(correlationId string, locator interface{}) *errors.ApplicationError {
 	message := fmt.Sprintf("Failed to obtain reference to %v", locator)

@@ -12,9 +12,9 @@ type Reference struct {
 
 // Create a new instance of the reference object and assigns its values.
 // Parameters:
-// 			 - locator interface{}
-// 			 a locator to find the reference.
-// 			 - component interface {}
+//  - locator interface{}
+//  a locator to find the reference.
+//  - component interface {}
 // Returns *Reference
 func NewReference(locator interface{}, component interface{}) *Reference {
 	if component == nil {
@@ -46,8 +46,8 @@ func (c *Reference) Locator() interface{} {
 // see
 // Descriptor
 // Parameters:
-// 			- locator interface{}
-// 			the locator to match.
+//  - locator interface{}
+//  the locator to match.
 // Returns bool
 // true if locators are matching and false it they don't.
 func (c *Reference) Match(locator interface{}) bool {

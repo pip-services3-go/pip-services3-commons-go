@@ -9,12 +9,12 @@ see
 IValidationRule
 
 Example
-var schema = NewObjectSchema()
-    .WithRule(NewPropertyComparisonRule("field1", "NE", "field2"));
-
-schema.Validate({ field1: 1, field2: 2 });       // Result: no errors
-schema.Validate({ field1: 1, field2: 1 });       // Result: field1 shall not be equal to field2
-schema.Validate({});                             // Result: no errors
+ var schema = NewObjectSchema()
+     .WithRule(NewPropertyComparisonRule("field1", "NE", "field2"));
+ 
+ schema.Validate({ field1: 1, field2: 2 });       // Result: no errors
+ schema.Validate({ field1: 1, field2: 1 });       // Result: field1 shall not be equal to field2
+ schema.Validate({});                             // Result: no errors
 */
 type PropertiesComparisonRule struct {
 	property1 string
@@ -26,12 +26,12 @@ type PropertiesComparisonRule struct {
 // see
 // ObjectComparator.compare
 // Parameters:
-// 			- property1 string
-// 			a name of the first property to compare.
-// 			- operation string
-// 			a comparison operation: "==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE".
-// 			property2 string
-// 			a name of the second property to compare.
+//  - property1 string
+//  a name of the first property to compare.
+//  - operation string
+//  a comparison operation: "==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE".
+//  property2 string
+//  a name of the second property to compare.
 // Returns *PropertiesComparisonRule
 func NewPropertiesComparisonRule(property1 string, operation string, property2 string) *PropertiesComparisonRule {
 	return &PropertiesComparisonRule{
@@ -43,12 +43,12 @@ func NewPropertiesComparisonRule(property1 string, operation string, property2 s
 
 // Validates a given value against this rule.
 // Parameters:
-// 			- path string
-// 			a dot notation path to the value.
-// 			- schema Schema
-// 			a schema this rule is called from
-// 			- value interface{}
-// 			a value to be validated.
+//  - path string
+//  a dot notation path to the value.
+//  - schema Schema
+//  a schema this rule is called from
+//  - value interface{}
+//  a value to be validated.
 // Return []*ValidationResult
 // a list with validation results to add new results.
 func (c *PropertiesComparisonRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult {

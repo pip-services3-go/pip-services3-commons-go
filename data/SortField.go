@@ -6,11 +6,11 @@ see
 SortParams
 
 Example:
-filter := NewFilterParamsFromTuples("type", "Type1");
-paging := NewPagingParams(0, 100);
-sorting := NewSortingParams(NewSortField("create_time", true));
+ filter := NewFilterParamsFromTuples("type", "Type1");
+ paging := NewPagingParams(0, 100);
+ sorting := NewSortingParams(NewSortField("create_time", true));
 
-err, page = myDataClient.getDataByFilter(filter, paging, sorting);
+ err, page = myDataClient.getDataByFilter(filter, paging, sorting);
 */
 type SortField struct {
 	Name      string `json:"name"`
@@ -25,10 +25,10 @@ func NewEmptySortField() SortField {
 
 // Creates a new instance and assigns its values.
 // Parameters:
-// 			 - name string
-// 			the name of the field to sort by.
-// 			 - ascending: bool
-// 			true to sort in ascending order, and false to sort in descending order.
+//  - name string
+//  the name of the field to sort by.
+//  - ascending: bool
+//  true to sort in ascending order, and false to sort in descending order.
 // Returns SortField
 func NewSortField(name string, ascending bool) SortField {
 	return SortField{

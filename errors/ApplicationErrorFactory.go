@@ -7,7 +7,6 @@ ErrorDescription
 see
 ApplicationError
 */
-
 type TApplicationErrorFactory struct{}
 
 var ApplicationErrorFactory *TApplicationErrorFactory = &TApplicationErrorFactory{}
@@ -15,8 +14,8 @@ var ApplicationErrorFactory *TApplicationErrorFactory = &TApplicationErrorFactor
 // Recreates ApplicationError object from serialized ErrorDescription.
 // It tries to restore original exception type using type or error category fields.
 // Parameters:
-// 			- description: ErrorDescription
-// 			a serialized error description received as a result of remote call
+//  - description: ErrorDescription
+//  a serialized error description received as a result of remote call
 
 // Returns *ApplicationError
 func (c *TApplicationErrorFactory) Create(description *ErrorDescription) *ApplicationError {
@@ -26,8 +25,8 @@ func (c *TApplicationErrorFactory) Create(description *ErrorDescription) *Applic
 // Recreates ApplicationError object from description.
 // It tries to restore original exception type using type or error category fields.
 // Parameters:
-// 			- description: ErrorDescription
-// 			a serialized error description received as a result of remote call
+//  - description: ErrorDescription
+//  a serialized error description received as a result of remote call
 
 // Returns *ApplicationError
 func NewErrorFromDescription(description *ErrorDescription) *ApplicationError {

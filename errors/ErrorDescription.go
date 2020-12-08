@@ -15,7 +15,6 @@ package errors
  status - HTTP status code associated with this error type
  type - Data type of the original error
 */
-
 type ErrorDescription struct {
 	Type          string                 `json:"type"`
 	Category      string                 `json:"category"`

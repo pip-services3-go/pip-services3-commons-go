@@ -64,8 +64,8 @@ func (c *TJsonConverter) ToMap(value string) map[string]interface{} {
 
 // Converts JSON string into map object or returns default map when conversion is not possible.
 // Parameters: 
-// "value" - the JSON string to convert.
-// "defaultValue" - the default value.
+//  "value" - the JSON string to convert.
+//  "defaultValue" - the default value.
 // Returns: Map object value or default map when conversion is not supported.
 func (c *TJsonConverter) ToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{} {
 	return JsonToMapWithDefault(value, defaultValue)
@@ -91,8 +91,8 @@ func JsonToMap(value string) map[string]interface{} {
 
 // Converts JSON string into map object or returns default map when conversion is not possible.
 // Parameters: 
-// "value" - the JSON string to convert.
-// "defaultValue" - the default value.
+//  "value" - the JSON string to convert.
+//  "defaultValue" - the default value.
 // Returns: Map object value or default map when conversion is not supported.
 func JsonToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{} {
 	if m := JsonToNullableMap(value); m != nil {

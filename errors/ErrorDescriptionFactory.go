@@ -18,8 +18,8 @@ var ErrorDescriptionFactory = &TErrorDescriptionFactory{}
 
 // Creates a serializable ErrorDescription from error object.
 // Parameters:
-// 			err error
-// 			an error object
+//  - err error
+//  an error object
 // Returns *ErrorDescription
 // a serializeable ErrorDescription object that describes the error.
 func (c *TErrorDescriptionFactory) Create(err interface{}) *ErrorDescription {
@@ -28,8 +28,8 @@ func (c *TErrorDescriptionFactory) Create(err interface{}) *ErrorDescription {
 
 // Creates a serializable ErrorDescription from error object.
 // Parameters:
-// 			err interface{}
-// 			an error object
+//  - err interface{}
+//  an error object
 // Returns *ErrorDescription
 // a serializeable ErrorDescription object that describes the error.
 func NewErrorDescription(err interface{}) *ErrorDescription {

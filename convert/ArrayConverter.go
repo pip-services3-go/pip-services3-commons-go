@@ -37,8 +37,8 @@ func (c *TArrayConverter) ToArray(value interface{}) []interface{} {
 // Converts value into array object with empty array as default. Single values
 // are converted into arrays with single element.
 // Parameters:
-// "value" - the value to convert.
-// "defaultValue" - default array object.
+//  "value" - the value to convert.
+//  "defaultValue" - default array object.
 // Returns: array object or empty array when value is null.
 func (c *TArrayConverter) ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{} {
 	return ToArrayWithDefault(value, defaultValue)
@@ -46,14 +46,16 @@ func (c *TArrayConverter) ToArrayWithDefault(value interface{}, defaultValue []i
 
 // Converts value into array object with empty array as default.
 // Strings with comma-delimited values are split into array of strings.
-// Parameters: "value" - the list to convert.
+// Parameters: 
+//  "value" - the list to convert.
 // Returns: array object or empty array when value is null
 func (c *TArrayConverter) ListToArray(value interface{}) []interface{} {
 	return ListToArray(value)
 }
 
 // Converts value into array object. Single values are converted into arrays with a single element.
-// Parameters: "value" - the value to convert.
+// Parameters: 
+//  "value" - the value to convert.
 // Returns: array object or null when value is null.
 func ToNullableArray(value interface{}) *[]interface{} {
 	if value == nil {
@@ -81,7 +83,8 @@ func ToNullableArray(value interface{}) *[]interface{} {
 
 // Converts value into array object with empty array as default. Single values
 // are converted into arrays with single element.
-// Parameters: "value" - the value to convert.
+// Parameters: 
+//  "value" - the value to convert.
 // Returns: array object or empty array when value is null.
 func ToArray(value interface{}) []interface{} {
 	return ToArrayWithDefault(value, []interface{}{})
@@ -90,8 +93,8 @@ func ToArray(value interface{}) []interface{} {
 // Converts value into array object with empty array as default. Single values
 // are converted into arrays with single element.
 // Parameters:
-// "value" - the value to convert.
-// "defaultValue" - default array object.
+//  "value" - the value to convert.
+//  "defaultValue" - default array object.
 // Returns: array object or empty array when value is null.
 func ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{} {
 	if m := ToNullableArray(value); m != nil {
@@ -102,7 +105,8 @@ func ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interfa
 
 // Converts value into array object with empty array as default.
 // Strings with comma-delimited values are split into array of strings.
-// Parameters: "value" - the list to convert.
+// Parameters: 
+//  "value" - the list to convert.
 // Returns: array object or empty array when value is null
 func ListToArray(value interface{}) []interface{} {
 	if value == nil {

@@ -10,12 +10,12 @@ var Executor *TExecutor = &TExecutor{}
 // Executes specific component.
 // To be executed components must implement IExecutable interface. If they don't the call to this method has no effect.
 // Parameters:
-// 			- correlationId string
-// 			transaction id to trace execution through call chain.
-// 			- component interface{}
-// 			the component that is to be executed.
-// 			- args: *Parameters
-// 			execution arguments.
+//  - correlationId string
+//  transaction id to trace execution through call chain.
+//  - component interface{}
+//  the component that is to be executed.
+//  - args: *Parameters
+//  execution arguments.
 // Returns []interface{}, error
 // execution result or error
 func (c *TExecutor) ExecuteOne(correlationId string, component interface{}, args *Parameters) (interface{}, error) {
@@ -30,12 +30,12 @@ func (c *TExecutor) ExecuteOne(correlationId string, component interface{}, args
 
 // To be executed components must implement IExecutable interface. If they don't the call to this method has no effect.
 // Parameters:
-// 			 - correlationId string
-// 			 transaction id to trace execution through call chain.
-// 			 - components []interface{}
-// 			 a list of components that are to be executed.
-// 			 - args *Parameters
-// 			 execution arguments.
+//  - correlationId string
+//  transaction id to trace execution through call chain.
+//  - components []interface{}
+//  a list of components that are to be executed.
+//  - args *Parameters
+//  execution arguments.
 // Returns []interface{}, error
 // execution result or error
 func (c *TExecutor) Execute(correlationId string, components []interface{}, args *Parameters) ([]interface{}, error) {

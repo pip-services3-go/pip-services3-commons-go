@@ -9,10 +9,9 @@ import (
 //
 //Example:
 //
-//			value1 := RandomDateTime.nextDate(time.Parse(shortForm, "2007-Jan-01"), time.Parse(shortForm, "2010-Jan-01"));    // Possible result: 2008-01-03
-//			value2 := RandomDateTime.nextDateTime(time.Parse(shortForm, "2006-Jan-01"), time.Parse(shortForm, "2017-Jan-01"));// Possible result: 2007-03-11 11:20:32
-//			value3 := RandomDateTime.updateDateTime(time.Parse(shortForm, "2010-Jan-01"), );// Possible result: 2010-02-05 11:33:23
-//
+//  value1 := RandomDateTime.nextDate(time.Parse(shortForm, "2007-Jan-01"), time.Parse(shortForm, "2010-Jan-01"));    // Possible result: 2008-01-03
+//  value2 := RandomDateTime.nextDateTime(time.Parse(shortForm, "2006-Jan-01"), time.Parse(shortForm, "2017-Jan-01"));// Possible result: 2007-03-11 11:20:32
+//  value3 := RandomDateTime.updateDateTime(time.Parse(shortForm, "2010-Jan-01"), );// Possible result: 2010-02-05 11:33:23
 type TRandomDateTime struct{}
 
 var RandomDateTime *TRandomDateTime = &TRandomDateTime{}
@@ -22,8 +21,8 @@ var RandomDateTime *TRandomDateTime = &TRandomDateTime{}
 //
 //Parameters:
 //
-//			- min: time.Time - minimum range value
-//			- max: time.Time - maximum range value
+//  - min: time.Time - minimum range value
+//  - max: time.Time - maximum range value
 //
 //Returns time.Time  - a random Date value.
 //

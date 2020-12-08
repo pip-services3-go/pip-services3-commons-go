@@ -16,7 +16,6 @@ import (
 // 	value.GetAsInteger() // Result: 123
 // 	value.GetAsString()  // Result: "123.456"
 // 	value.GetAsFloat()   // Result: 123.456
-//
 type AnyValue struct {
 	value interface{}
 }
@@ -239,8 +238,8 @@ func (c *AnyValue) GetAsType(typ convert.TypeCode) interface{} {
 // Converts object value into a value defined by specied typecode. If conversion
 // is not possible it returns default value.
 // Parameters:
-// "typ" - the TypeCode that defined the type of the result;
-// "defaultValue" - the default value.
+//  "typ" - the TypeCode that defined the type of the result;
+//  "defaultValue" - the default value.
 // Returns: value defined by the typecode or type default value if conversion is not supported.
 func (c *AnyValue) GetAsTypeWithDefault(typ convert.TypeCode, defaultValue interface{}) interface{} {
 	return convert.TypeConverter.ToTypeWithDefault(typ, c.value, defaultValue)
@@ -291,8 +290,8 @@ func (c *AnyValue) Equals(obj interface{}) bool {
 // comparison gives negative results it converts values to type specified by
 // type code and compare them again.
 // Parameters:
-// "typ" - the TypeCode that defined the type of the result.
-// "obj" - the value to be compared with.
+//  "typ" - the TypeCode that defined the type of the result.
+//  "obj" - the value to be compared with.
 // Returns: true when objects are equal and false otherwise.
 func (c *AnyValue) EqualsAsType(typ convert.TypeCode, obj interface{}) bool {
 	if obj == nil && c.value == nil {

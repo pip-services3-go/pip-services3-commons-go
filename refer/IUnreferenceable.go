@@ -10,18 +10,18 @@ see
 IReferenceable
 
 Example
-type MyController  {
-    _persistence IMyPersistence;
-}
-   func (mc* MyController) setReferences(references *IReferences) {
-       mc._persistence = references.GetOneRequired(
-           NewDescriptor("mygroup", "persistence", "*", "*", "1.0")
-       );
-   }
+ type MyController  {
+     _persistence IMyPersistence;
+ }
+ func (mc* MyController) setReferences(references *IReferences) {
+     mc._persistence = references.GetOneRequired(
+         NewDescriptor("mygroup", "persistence", "*", "*", "1.0")
+     );
+ }
 
-   func (mc* MyController) UnsetReferences() {
-       mc._persistence = nil;
-   }
+ func (mc* MyController) UnsetReferences() {
+     mc._persistence = nil;
+ }
 
 
 */

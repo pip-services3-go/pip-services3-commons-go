@@ -6,11 +6,11 @@ see
 SortField
 
 Example:
-filter := NewFilterParamsFromTuples("type", "Type1");
-paging := NewPagingParams(0, 100);
-sorting := NewSortingParams(NewSortField("create_time", true));
-
-myDataClient.getDataByFilter(filter, paging, sorting, (err, page) => {...});
+ filter := NewFilterParamsFromTuples("type", "Type1");
+ paging := NewPagingParams(0, 100);
+ sorting := NewSortingParams(NewSortField("create_time", true));
+ 
+ myDataClient.getDataByFilter(filter, paging, sorting, (err, page) => {...});
 */
 
 type SortParams []SortField

@@ -12,11 +12,11 @@ import (
 Schema to validate arrays.
 
 Example:
-schema := NewArraySchema(TypeCode.String);
-
-schema.Validate(["A", "B", "C"]);    // Result: no errors
-schema.Validate([1, 2, 3]);          // Result: element type mismatch
-schema.Validate("A");                // Result: type mismatch
+ schema := NewArraySchema(TypeCode.String);
+ 
+ schema.Validate(["A", "B", "C"]);    // Result: no errors
+ schema.Validate([1, 2, 3]);          // Result: element type mismatch
+ schema.Validate("A");                // Result: type mismatch
 */
 type ArraySchema struct {
 	Schema
@@ -27,8 +27,8 @@ type ArraySchema struct {
 // see
 // TypeCode
 // Parameters:
-// 			 - valueType interface{}
-// 			 a type of array elements. Null means that elements may have any type.
+//  - valueType interface{}
+//  a type of array elements. Null means that elements may have any type.
 
 // Returns *ArraySchema
 func NewArraySchema(valueType interface{}) *ArraySchema {
@@ -56,10 +56,10 @@ func (c *ArraySchema) SetValueType(value interface{}) {
 
 // Validates a given value against the schema and configured validation rules.
 // Parameters:
-// 			- path string
-// 			a dot notation path to the value.
-//			- value interface{}
-// 			a value to be validated.
+//  - path string
+//  a dot notation path to the value.
+//  - value interface{}
+//  a value to be validated.
 // Return []*ValidationResult
 // a list with validation results to add new results.
 func (c *ArraySchema) PerformValidation(path string, value interface{}) []*ValidationResult {

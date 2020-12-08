@@ -13,21 +13,20 @@ see
 PagingParams
 
 Example:
-err, page = myDataClient.getDataByFilter(
-    "123",
-    FilterParams.fromTuples("completed": true),
-    NewPagingParams(0, 100, true)
-	};
-
-	if err != nil {
-		panic()
-	}
-	for item range page.Data {
-        fmt.Println(item);
-    }
-);
+ err, page = myDataClient.getDataByFilter(
+     "123",
+     FilterParams.fromTuples("completed": true),
+     NewPagingParams(0, 100, true)
+ 	};
+ 
+ 	if err != nil {
+ 		panic()
+ 	}
+ 	for item range page.Data {
+         fmt.Println(item);
+     }
+ );
 */
-
 type DataPage struct {
 	Total *int64        `json:"total"`
 	Data  []interface{} `json:"data"`
@@ -41,9 +40,9 @@ func NewEmptyDataPage() *DataPage {
 
 // Creates a new instance of data page and assigns its values.
 // Parameters:
-// 			- value data []interface{}
-// 			a list of items from the retrieved page.
-// 			- total int64
+//  - value data []interface{}
+//  a list of items from the retrieved page.
+//  - total int64
 // Returns *DataPage
 func NewDataPage(total *int64, data []interface{}) *DataPage {
 	return &DataPage{Total: total, Data: data}

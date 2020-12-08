@@ -10,11 +10,11 @@ see
 IValidationRule
 
 Example
-var schema = NewSchema()
-    .WithRule(NewValueComparisonRule("EQ", 1));
-
-schema.Validate(1);          // Result: no errors
-schema.Validate(2);          // Result: 2 is not equal to 1
+  var schema = NewSchema()
+      .WithRule(NewValueComparisonRule("EQ", 1));
+  
+  schema.Validate(1);          // Result: no errors
+  schema.Validate(2);          // Result: 2 is not equal to 1
 */
 type ValueComparisonRule struct {
 	value     interface{}
@@ -23,10 +23,10 @@ type ValueComparisonRule struct {
 
 // Creates a new validation rule and sets its values.
 // Parameters:
-// 			- operation string
-// 			a comparison operation: "==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE".
-// 			- value interface{}
-// 			a constant value to compare to
+//   - operation string
+//   a comparison operation: "==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE".
+//   - value interface{}
+//   a constant value to compare to
 // Returns *ValueComparisonRule
 func NewValueComparisonRule(operation string, value interface{}) *ValueComparisonRule {
 	return &ValueComparisonRule{

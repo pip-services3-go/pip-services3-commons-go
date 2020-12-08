@@ -7,25 +7,25 @@ see
 IReferences
 
 Example:
-type MyController  {
-	_persistence IMyPersistence;
-}
+ type MyController  {
+ 	_persistence IMyPersistence;
+ }
 
-    func (mc *MyController) setReferences(references IReferences) {
-        mc._persistence = references.GetOneRequired(
-            NewDescriptor("mygroup", "persistence", "*", "*", "1.0")
-        );
-    }
+ func (mc *MyController) setReferences(references IReferences) {
+     mc._persistence = references.GetOneRequired(
+         NewDescriptor("mygroup", "persistence", "*", "*", "1.0")
+     );
+ }
 
-persistence := NewMyMongoDbPersistence();
-
-controller := MyController();
-
-references := NewReferencesFromTuples(
-    new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
-    new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
-);
-controller.setReferences(references);
+ persistence := NewMyMongoDbPersistence();
+ 
+ controller := MyController();
+ 
+ references := NewReferencesFromTuples(
+     new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
+     new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
+ );
+ controller.setReferences(references);
 */
 type References struct {
 	references []*Reference
@@ -41,8 +41,8 @@ func NewEmptyReferences() *References {
 
 // Creates a new instance of references and initializes it with references.
 // Parameters:
-// 			- tuples []interface{}
-// 			a list of values where odd elements are locators and the following even elements are component references
+//  - tuples []interface{}
+//  a list of values where odd elements are locators and the following even elements are component references
 // Returns *References
 func NewReferences(tuples []interface{}) *References {
 	c := NewEmptyReferences()
@@ -60,10 +60,10 @@ func NewReferences(tuples []interface{}) *References {
 
 // Puts a new reference into this reference map.
 // Parameters:
-// 			- locator interface{}
-// 			a locator to find the reference by.
-// 			- component interface{}
-// 			a component reference to be added.
+//  - locator interface{}
+//  a locator to find the reference by.
+//  - component interface{}
+//  a component reference to be added.
 func (c *References) Put(locator interface{}, component interface{}) {
 	if component == nil {
 		panic("Component cannot be null")
@@ -77,8 +77,8 @@ func (c *References) Put(locator interface{}, component interface{}) {
 // see
 // RemoveAll
 // Parameters:
-// 			- locator interface{}
-// 			a locator to remove reference
+//  - locator interface{}
+//  a locator to remove reference
 // Returns interface{}
 // the removed component reference.
 func (c *References) Remove(locator interface{}) interface{} {
@@ -99,8 +99,8 @@ func (c *References) Remove(locator interface{}) interface{} {
 
 // Removes all component references that match the specified locator.
 // Parameters:
-// 			  - locator interface{}
-// 				the locator to remove references by.
+//  - locator interface{}
+//  the locator to remove references by.
 // Returns []interface{}
 // a list, containing all removed references.
 func (c *References) RemoveAll(locator interface{}) []interface{} {
@@ -149,8 +149,8 @@ func (c *References) GetAll() []interface{} {
 
 // Gets an optional component reference that matches specified locator.
 // Parameters:
-// 			- locator interface{}
-// 			the locator to find references by.
+//  - locator interface{}
+//  the locator to find references by.
 // Returns interface{}
 // a matching component reference or nil if nothing was found.
 func (c *References) GetOneOptional(locator interface{}) interface{} {
@@ -165,8 +165,8 @@ func (c *References) GetOneOptional(locator interface{}) interface{} {
 // throws
 // a ReferenceError when no references found.
 // Parameters:
-// 			- locator interface{}
-// 			the locator to find a reference by.
+//  - locator interface{}
+//  the locator to find a reference by.
 // Returns interface{}
 // a matching component reference.
 func (c *References) GetOneRequired(locator interface{}) (interface{}, error) {
@@ -179,8 +179,8 @@ func (c *References) GetOneRequired(locator interface{}) (interface{}, error) {
 
 // Gets all component references that match specified locator.
 // Parameters:
-// 			- locator interface{}
-// 			the locator to find references by.
+//  - locator interface{}
+//  the locator to find references by.
 // Returns []interface{}
 // a list with matching component references or empty list if nothing was found.
 func (c *References) GetOptional(locator interface{}) []interface{} {
@@ -192,8 +192,8 @@ func (c *References) GetOptional(locator interface{}) []interface{} {
 // throws
 // a ReferenceError when no references found.
 // Parameters:
-// 			- locator interface{}
-// 			the locator to find references by.
+//  - locator interface{}
+//  the locator to find references by.
 // Returns []interface{}
 // a list with matching component references.
 func (c *References) GetRequired(locator interface{}) ([]interface{}, error) {
@@ -204,10 +204,10 @@ func (c *References) GetRequired(locator interface{}) ([]interface{}, error) {
 // throws
 // a ReferenceError when required is set to true but no references found.
 // Parameters:
-// 			- locator interface{}
-// 			the locator to find a reference by.
-// 			- required bool
-// 			forces to raise an exception if no reference is found.
+//  - locator interface{}
+//  the locator to find a reference by.
+//  - required bool
+//  forces to raise an exception if no reference is found.
 // Returns []interface{}
 // a list with matching component references.
 func (c *References) Find(locator interface{}, required bool) ([]interface{}, error) {
@@ -236,8 +236,8 @@ func (c *References) Find(locator interface{}, required bool) ([]interface{}, er
 
 // Creates a new References from a list of key-value pairs called tuples.
 // Parameters:
-// 			- tuples  ...interface{}
-// 			a list of values where odd elements are locators and the following even elements are component references
+//  - tuples  ...interface{}
+//  a list of values where odd elements are locators and the following even elements are component references
 // Returns *References
 // a newly created References.
 func NewReferencesFromTuples(tuples ...interface{}) *References {

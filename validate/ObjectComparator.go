@@ -12,22 +12,21 @@ import (
 Helper class to perform comparison operations over arbitrary values.
 
 Example
-ObjectComparator.Compare(2, "GT", 1);        // Result: true
-ObjectComparator.AreEqual("A", "B");         // Result: false
+ ObjectComparator.Compare(2, "GT", 1);        // Result: true
+ ObjectComparator.AreEqual("A", "B");         // Result: false
 */
-
 type TObjectComparator struct{}
 
 var ObjectComparator = &TObjectComparator{}
 
 // Perform comparison operation over two arguments. The operation can be performed over values of any type.
 // Parameters:
-// 			- value1 interface{}
-// 			the first argument to compare
-// 			operation string
-// 			the comparison operation: "==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE".
-// 			- value2 interface{}
-// 			the second argument to compare
+//  - value1 interface{}
+//  the first argument to compare
+//  operation string
+//  the comparison operation: "==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE".
+//  - value2 interface{}
+//  the second argument to compare
 // Returns bool
 // result of the comparison operation
 func (c *TObjectComparator) Compare(value1 interface{}, operation string, value2 interface{}) bool {
@@ -60,10 +59,10 @@ func (c *TObjectComparator) Compare(value1 interface{}, operation string, value2
 
 // Checks if two values are equal. The operation can be performed over values of any type.
 // Parameters:
-// 			- value1 interface
-// 			the first value to compare
-// 			value2 interface{}
-// 			the second value to compare
+//  - value1 interface
+//  the first value to compare
+//  value2 interface{}
+//  the second value to compare
 // Returns bool
 // true if values are equal and false otherwise
 func (c *TObjectComparator) AreEqual(value1 interface{}, value2 interface{}) bool {
@@ -100,10 +99,10 @@ func (c *TObjectComparator) AreEqual(value1 interface{}, value2 interface{}) boo
 
 // Checks if two values are NOT equal The operation can be performed over values of any type.
 // Parameters:
-// 			 - value1 interface{}
-// 			 the first value to compare
-// 			 - value2 interface{}
-// 			 the second value to compare
+//  - value1 interface{}
+//  the first value to compare
+//  - value2 interface{}
+//  the second value to compare
 // Returns bool
 // true if values are NOT equal and false otherwise
 func (c *TObjectComparator) AreNotEqual(value1 interface{}, value2 interface{}) bool {
@@ -112,10 +111,10 @@ func (c *TObjectComparator) AreNotEqual(value1 interface{}, value2 interface{}) 
 
 // Checks if first value is less than the second one. The operation can be performed over numbers or strings.
 // Parameters:
-// 			- value1 interface{}
-// 			the first value to compare
-// 			- value2 interface{}
-// 			the second value to compare
+//  - value1 interface{}
+//  the first value to compare
+//  - value2 interface{}
+//  the second value to compare
 // Returns bool
 // true if the first value is less than second and false otherwise.
 func (c *TObjectComparator) IsLess(value1 interface{}, value2 interface{}) bool {
@@ -131,10 +130,10 @@ func (c *TObjectComparator) IsLess(value1 interface{}, value2 interface{}) bool 
 
 // Checks if first value is greater than the second one. The operation can be performed over numbers or strings.
 // Parameters:
-// 			- value1 interface{}
-// 			the first value to compare
-// 			- value2 interface{}
-// 			the second value to compare
+//  - value1 interface{}
+//  the first value to compare
+//  - value2 interface{}
+//  the second value to compare
 // Returns bool
 // true if the first value is greater than second and false otherwise.
 func (c *TObjectComparator) IsGreater(value1 interface{}, value2 interface{}) bool {
@@ -150,10 +149,10 @@ func (c *TObjectComparator) IsGreater(value1 interface{}, value2 interface{}) bo
 
 // Checks if string  views are matches
 // Parameters:
-// 			 - value1 interface{}
-// 			 a string value to match
-// 			 - value1 interface{}
-// 			 a string value to match
+//  - value1 interface{}
+//  a string value to match
+//  - value1 interface{}
+//  a string value to match
 // Returns bool
 // true if the value matches regular expression and false otherwise.
 func (c *TObjectComparator) Match(value1 interface{}, value2 interface{}) bool {

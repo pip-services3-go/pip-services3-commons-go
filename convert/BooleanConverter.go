@@ -40,9 +40,8 @@ func (c *TBooleanConverter) ToBoolean(value interface{}) bool {
 }
 
 // Converts value into boolean or returns default value when conversion is not possible
-// Parameters:
-// "value" - the value to convert.
-// "defaultValue" - the default value
+// Parameters:"value" - the value to convert.
+//  "defaultValue" - the default value
 // Returns: boolean value or default when conversion is not supported.
 func (c *TBooleanConverter) ToBooleanWithDefault(value interface{}, defaultValue bool) bool {
 	return ToBooleanWithDefault(value, defaultValue)
@@ -97,8 +96,8 @@ func ToBoolean(value interface{}) bool {
 
 // Converts value into boolean or returns default value when conversion is not possible
 // Parameters:
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: boolean value or default when conversion is not supported.
 func ToBooleanWithDefault(value interface{}, defaultValue bool) bool {
 	r := ToNullableBoolean(value)

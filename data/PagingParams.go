@@ -14,12 +14,11 @@ Remember: not all implementations support the total parameter because its genera
 severe performance implications.
 
 Example:
-filter := NewFilterParamsFromTuples("type", "Type1");
-paging := NewPagingParams(0, 100);
-
-err, page = myDataClient.getDataByFilter(filter, paging);
+ filter := NewFilterParamsFromTuples("type", "Type1");
+ paging := NewPagingParams(0, 100);
+ 
+ err, page = myDataClient.getDataByFilter(filter, paging);
 */
-
 type PagingParams struct {
 	Skip  *int64
 	Take  *int64
@@ -34,12 +33,12 @@ func NewEmptyPagingParams() *PagingParams {
 
 //Creates a new instance and sets its values.
 //Parameters:
-//			- skip interface{}
-//			the number of items to skip.
-//			- take interface{}
-//			the number of items to return.
-//			- total interface{}
-//			true to return the total number of items.
+// - skip interface{}
+// the number of items to skip.
+// - take interface{}
+// the number of items to return.
+// - total interface{}
+// true to return the total number of items.
 //Returns *PagingParams
 func NewPagingParams(skip, take, total interface{}) *PagingParams {
 	c := PagingParams{}
@@ -53,8 +52,8 @@ func NewPagingParams(skip, take, total interface{}) *PagingParams {
 
 // Gets the number of items to skip.
 // Parameters:
-// 			- minSkip int64
-// 			the minimum number of items to skip.
+//  - minSkip int64
+//  the minimum number of items to skip.
 // Returns int64
 // the number of items to skip.
 func (c *PagingParams) GetSkip(minSkip int64) int64 {
@@ -69,8 +68,8 @@ func (c *PagingParams) GetSkip(minSkip int64) int64 {
 
 // Gets the number of items to return in a page.
 // Parameters:
-// 			 - maxTake int64
-// 			the maximum number of items to return.
+//  - maxTake int64
+//  the maximum number of items to return.
 // Returns int64
 // the number of items to return.
 func (c *PagingParams) GetTake(maxTake int64) int64 {
@@ -88,8 +87,8 @@ func (c *PagingParams) GetTake(maxTake int64) int64 {
 
 // Converts specified value into PagingParams.
 // Parameters:
-// 			- value interface{}
-// 			value to be converted
+//  - value interface{}
+//  value to be converted
 // Returns *PagingParams
 // a newly created PagingParams.
 func NewPagingParamsFromValue(value interface{}) *PagingParams {
@@ -104,8 +103,8 @@ func NewPagingParamsFromValue(value interface{}) *PagingParams {
 
 // Creates a new PagingParams from a list of key-value pairs called tuples.
 // Parameters
-// 			- tuples ...interface{}
-// 			a list of values where odd elements are keys and the following even elements are values
+//  - tuples ...interface{}
+//  a list of values where odd elements are keys and the following even elements are values
 // Returns *PagingParams
 // a newly created PagingParams.
 func NewPagingParamsFromTuples(tuples ...interface{}) *PagingParams {
@@ -115,8 +114,8 @@ func NewPagingParamsFromTuples(tuples ...interface{}) *PagingParams {
 
 // Creates a new PagingParams and sets it parameters from the specified map
 // Parameters:
-// 			value AnyValueMap
-//			 a AnyValueMap or StringValueMap to initialize this PagingParams
+//  - value AnyValueMap
+//  a AnyValueMap or StringValueMap to initialize this PagingParams
 // Returns *PagingParams
 // a newly created PagingParams.
 func NewPagingParamsFromMap(value *AnyValueMap) *PagingParams {
