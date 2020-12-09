@@ -9,7 +9,7 @@ var Closer *TCloser = &TCloser{}
 
 // Closes specific component.
 
-// To be closed components must implement [[ICloseable]] interface. If they don't the call to this method has no effect.
+// To be closed components must implement ICloseable interface. If they don't the call to this method has no effect.
 // Parameters:
 //  - correlationId string
 //  transaction id to trace execution through call chain.
@@ -25,7 +25,7 @@ func (c *TCloser) CloseOne(correlationId string, component interface{}) error {
 }
 
 // Closes multiple components.
-// To be closed components must implement [[ICloseable]] interface. If they don't the call to this method has no effect.
+// To be closed components must implement ICloseable interface. If they don't the call to this method has no effect.
 // Parameters:
 // 			- correlationId string
 //  		transaction id to trace execution through call chain.

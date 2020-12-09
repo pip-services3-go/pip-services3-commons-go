@@ -194,7 +194,7 @@ func (c *FixedRateTimer) Stop() {
 }
 
 // Closes the timer.
-// This is required by [[ICloseable]] interface, but besides that it is identical to stop().
+// This is required by ICloseable interface, but besides that it is identical to stop().
 // Parameters:
 //  - correlationId: string
 //  transaction id to trace execution through call chain.

@@ -510,7 +510,7 @@ Returns func()
 				
 			
 				
-				<h3 id="FixedRateTimer.Close">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=4879:4937#L192">Close</a>
+				<h3 id="FixedRateTimer.Close">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=4875:4933#L192">Close</a>
 					<a class="permalink" href="index.html#FixedRateTimer.Close">&#xb6;</a>
 					
 					
@@ -518,7 +518,7 @@ Returns func()
 				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Close(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
 				<p>
 Closes the timer.
-This is required by [[ICloseable]] interface, but besides that it is identical to stop().
+This is required by ICloseable interface, but besides that it is identical to stop().
 Parameters:
 </p>
 <pre>- correlationId: string
@@ -916,7 +916,7 @@ myComponent.Notify(&#34;123&#34;, NewParametersFromTuples(&#34;event&#34;, &#34;
 		
 			
 			
-			<h2 id="IOpenable">type <a href="http://localhost:6060/src/run/IOpenable.go?s=665:1018#L27">IOpenable</a>
+			<h2 id="IOpenable">type <a href="http://localhost:6060/src/run/IOpenable.go?s=661:1014#L27">IOpenable</a>
 				<a class="permalink" href="index.html#IOpenable">&#xb6;</a>
 				
 				
@@ -925,7 +925,7 @@ myComponent.Notify(&#34;123&#34;, NewParametersFromTuples(&#34;event&#34;, &#34;
 Interface for components that require explicit opening and closing.
 </p>
 <p>
-For components that perform opening on demand consider using [[ICloseable]] interface instead.
+For components that perform opening on demand consider using ICloseable interface instead.
 </p>
 <p>
 see
@@ -1595,7 +1595,7 @@ Helper class that closes previously opened components.
 
 			
 				
-				<h3 id="TCloser.Close">func (*TCloser) <a href="http://localhost:6060/src/run/Closer.go?s=997:1074#L25">Close</a>
+				<h3 id="TCloser.Close">func (*TCloser) <a href="http://localhost:6060/src/run/Closer.go?s=989:1066#L25">Close</a>
 					<a class="permalink" href="index.html#TCloser.Close">&#xb6;</a>
 					
 					
@@ -1603,7 +1603,7 @@ Helper class that closes previously opened components.
 				<pre>func (c *<a href="index.html#TCloser">TCloser</a>) Close(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, components []interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
 				<p>
 Closes multiple components.
-To be closed components must implement [[ICloseable]] interface. If they don&#39;t the call to this method has no effect.
+To be closed components must implement ICloseable interface. If they don&#39;t the call to this method has no effect.
 Parameters:
 </p>
 <pre>			- correlationId string
@@ -1620,14 +1620,14 @@ Returns error
 				
 			
 				
-				<h3 id="TCloser.CloseOne">func (*TCloser) <a href="http://localhost:6060/src/run/Closer.go?s=468:545#L9">CloseOne</a>
+				<h3 id="TCloser.CloseOne">func (*TCloser) <a href="http://localhost:6060/src/run/Closer.go?s=464:541#L9">CloseOne</a>
 					<a class="permalink" href="index.html#TCloser.CloseOne">&#xb6;</a>
 					
 					
 				</h3>
 				<pre>func (c *<a href="index.html#TCloser">TCloser</a>) CloseOne(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, component interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
 				<p>
-To be closed components must implement [[ICloseable]] interface. If they don&#39;t the call to this method has no effect.
+To be closed components must implement ICloseable interface. If they don&#39;t the call to this method has no effect.
 Parameters:
 </p>
 <pre> - correlationId string

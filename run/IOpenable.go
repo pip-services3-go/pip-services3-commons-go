@@ -3,7 +3,7 @@ package run
 /*
 Interface for components that require explicit opening and closing.
 
-For components that perform opening on demand consider using [[ICloseable]] interface instead.
+For components that perform opening on demand consider using ICloseable interface instead.
 
 see
 IOpenable
