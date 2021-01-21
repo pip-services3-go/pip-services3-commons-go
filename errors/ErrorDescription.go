@@ -22,7 +22,7 @@ type ErrorDescription struct {
 	Code          string                 `json:"code"`
 	Message       string                 `json:"message"`
 	Details       map[string]interface{} `json:"details"`
-	CorrelationId string                 `json:"correlaion_id"`
+	CorrelationId string                 `json:"correlation_id"`
 	Cause         string                 `json:"cause"`
 	StackTrace    string                 `json:"stack_trace"`
 }
