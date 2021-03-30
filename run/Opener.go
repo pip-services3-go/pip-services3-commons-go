@@ -11,8 +11,8 @@ var Opener *TOpener = &TOpener{}
 // To be checked components must implement IOpenable interface. If they don't the call to this method returns true.
 // see
 // IOpenable
-// 			- component interface{}
-// 			the component that is to be checked.
+//  - component interface{}
+//  the component that is to be checked.
 // Returns bool
 // true if component is opened and false otherwise.
 func (c *TOpener) IsOpenOne(component interface{}) bool {

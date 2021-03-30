@@ -13,8 +13,8 @@ Helper class to generate unique object IDs. It supports two types of IDs: long a
 Long IDs are string GUIDs. They are globally unique and 32-character long.
 ShortIDs are just 9-digit random numbers. They are not guaranteed be unique.
 Example:
-IdGenerator.NextLong();      // Possible result: "234ab342c56a2b49c2ab42bf23ff991ac"
-IdGenerator.NextShort();     // Possible result: "23495247"
+ IdGenerator.NextLong();      // Possible result: "234ab342c56a2b49c2ab42bf23ff991ac"
+ IdGenerator.NextShort();     // Possible result: "23495247"
 */
 type TIdGenerator struct{}
 

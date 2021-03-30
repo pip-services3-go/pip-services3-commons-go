@@ -25,13 +25,13 @@ type IEvent interface {
 
 	// Adds a listener to receive notifications for this event.
 	// Parameters:
-	// 			- listener: IEventListener
-	// 			the listener reference to add.
+	//  - listener: IEventListener
+	//  the listener reference to add.
 	AddListener(listener IEventListener)
 
 	// Removes a listener, so that it no longer receives notifications for this event.
 	// Parameters
-	// 			- listener: IEventListener
-	// the listener reference to remove.
+	//  - listener: IEventListener
+	//  the listener reference to remove.
 	RemoveListener(listener IEventListener)
 }

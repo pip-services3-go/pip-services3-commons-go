@@ -31,10 +31,10 @@ func (c *TRecursiveObjectReader) performHasProperty(obj interface{}, names []str
 // Checks recursively if object or its subobjects has a property with specified name.
 // The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
 // Parameters:
-// 			- obj interface{}
-// 			an object to introspect.
-// 			- name string
-// 			a name of the property to check.
+//  - obj interface{}
+//  an object to introspect.
+//  - name string
+//  a name of the property to check.
 
 // Returns boolean
 // true if the object has the property and false if it doesn't.
@@ -68,10 +68,10 @@ func (c *TRecursiveObjectReader) performGetProperty(obj interface{}, names []str
 // Recursively gets value of object or its subobjects property specified by its name.
 // The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
 // Parameters:
-// 			- obj interface{}
-// 			an object to read property from.
-// 			- name string
-// 			a name of the property to get.
+//  - obj interface{}
+//  an object to read property from.
+//  - name string
+//  a name of the property to get.
 // Returns interface{}
 // the property value or null if property doesn't exist or introspection failed.
 func (c *TRecursiveObjectReader) GetProperty(obj interface{}, name string) interface{} {
@@ -141,8 +141,8 @@ func (c *TRecursiveObjectReader) performGetPropertyNames(obj interface{}, path s
 // Recursively gets names of all properties implemented in specified object and its subobjects.
 // The object can be a user defined object, map or array. Returned property name correspondently are object properties, map keys or array indexes.
 // Parameters:
-// 			- obj interface{}
-// 			an object to introspect.
+//  - obj interface{}
+//  an object to introspect.
 // Returns []string
 // a list with property names.
 func (c *TRecursiveObjectReader) GetPropertyNames(obj interface{}) []string {
@@ -196,8 +196,8 @@ func (c *TRecursiveObjectReader) performGetProperties(obj interface{}, path stri
 // Get values of all properties in specified object and its subobjects and returns them as a map.
 // The object can be a user defined object, map or array. Returned properties correspondently are object properties, map key-pairs or array elements with their indexes.
 // Parameters:
-// 			 - obj interface{}
-// 			an object to get properties from.
+//  - obj interface{}
+//  an object to get properties from.
 // Returns map[string]interface{}
 // a map, containing the names of the object's properties and their values.
 func (c *TRecursiveObjectReader) GetProperties(obj interface{}) map[string]interface{} {

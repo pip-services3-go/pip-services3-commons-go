@@ -9,10 +9,9 @@ import (
 //
 //Example:
 //
-//			value1 := RandomText.FullName();     	// Possible result: "Segio"
-//			value2 := RandomText.Verb();      	// Possible result: "Run"
-//			value3 := RandomText.Text(50);    	// Possible result: "Run jorge. Red high scream?"
-//
+//  value1 := RandomText.FullName();     	// Possible result: "Segio"
+//  value2 := RandomText.Verb();      	// Possible result: "Run"
+//  value3 := RandomText.Text(50);    	// Possible result: "Run jorge. Red high scream?"
 type TRandomText struct{}
 
 var RandomText *TRandomText = &TRandomText{}

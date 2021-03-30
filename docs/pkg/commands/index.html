@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>commands - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package commands
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "commands"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Contains implementation of Command design patterns, which can be used to implement various remote
+procedure calls (RPCs). RPCs replace unique calls with universal &#34;message transfer&#34; calls, in which the
+message itself contains the called method&#39;s signature, as well as the parameters to pass for execution.
+</p>
+<p>
+When designing calls of methods/commands using the Command design pattern,
+uniform interfaces can be used, which, in turn, allow any amount of concrete methods to be called.
+</p>
+<p>
+Command design patterns can be used for intercepting messages and for various
+logging implementations.
+</p>
+<p>
+These design patterns allow us to create Commandable Interfaces, which are completely universal.
+If an object extends ICommandable and returns a CommandSet, then we can implement, with minimal code,
+a commandable client for this object, using various technologies.
+</p>
+<p>
+Commandable Interfaces – part of the command design pattern, used to make classes with certain logic,
+which are capable of receiving and processing commands in this universal form.
+</p>
+<p>
+Command interceptors – modify the message execution pipeline. Command interceptors are used to intercept
+calls, perform a set of actions, and, optionally, cancel the command&#39;s actual execution by simply returning a result. This logic is used in aspect-oriented programming. Aspect-oriented programming contains perpendicular logic (aspects, for example: logging, caching, blocking), which can be removed from the business logic and added to these perpendicular calls. When using interceptors, a command can pass through an execution chain, consisting of interceptors, which can:
+</p>
+<p>
+simply make some note of the command, notify, log, get metrics, or do some other passive task; or
+intercept the command completely and, for example, return a previous record of the call from the cache.
+A command’s return value can also be intercepted in a similar manner: the result can be written to cache,
+so that the next call doesn’t have to be made.
+Intercepted commands are used as pattern decorators in the command design pattern. They are represented
+as regular commands, but run their own logic before calling the actual command.
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#Command">type Command</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCommand">func NewCommand(name string, schema validate.ISchema, function func(correlationId string, args *run.Parameters) (interface{}, error)) *Command</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Command.Execute">func (c *Command) Execute(correlationId string, args *run.Parameters) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Command.GetSchema">func (c *Command) GetSchema() validate.ISchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Command.Name">func (c *Command) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Command.Validate">func (c *Command) Validate(args *run.Parameters) []*validate.ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#CommandSet">type CommandSet</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCommandSet">func NewCommandSet() *CommandSet</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.AddCommand">func (c *CommandSet) AddCommand(command ICommand)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.AddCommandSet">func (c *CommandSet) AddCommandSet(commandSet *CommandSet)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.AddCommands">func (c *CommandSet) AddCommands(commands []ICommand)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.AddEvent">func (c *CommandSet) AddEvent(event IEvent)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.AddEvents">func (c *CommandSet) AddEvents(events []IEvent)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.AddInterceptor">func (c *CommandSet) AddInterceptor(interceptor ICommandInterceptor)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.AddListener">func (c *CommandSet) AddListener(listener IEventListener)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.Commands">func (c *CommandSet) Commands() []ICommand</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.Events">func (c *CommandSet) Events() []IEvent</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.Execute">func (c *CommandSet) Execute(correlationId string, commandName string, args *run.Parameters) (result interface{}, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.FindCommand">func (c *CommandSet) FindCommand(commandName string) ICommand</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.FindEvent">func (c *CommandSet) FindEvent(eventName string) IEvent</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.Notify">func (c *CommandSet) Notify(correlationId string, eventName string, args *run.Parameters)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.RemoveListener">func (c *CommandSet) RemoveListener(listener IEventListener)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandSet.Validate">func (c *CommandSet) Validate(commandName string, args *run.Parameters) []*validate.ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Event">type Event</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEvent">func NewEvent(name string) *Event</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Event.AddListener">func (c *Event) AddListener(listener IEventListener)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Event.Listeners">func (c *Event) Listeners() []IEventListener</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Event.Name">func (c *Event) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Event.Notify">func (c *Event) Notify(correlationId string, args *run.Parameters)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Event.RemoveListener">func (c *Event) RemoveListener(listener IEventListener)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ICommand">type ICommand</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ICommandInterceptor">type ICommandInterceptor</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ICommandable">type ICommandable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IEvent">type IEvent</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IEventListener">type IEventListener</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#InterceptedCommand">type InterceptedCommand</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewInterceptedCommand">func NewInterceptedCommand(interceptor ICommandInterceptor, next ICommand) *InterceptedCommand</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InterceptedCommand.Execute">func (c *InterceptedCommand) Execute(correlationId string, args *run.Parameters) (result interface{}, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InterceptedCommand.Name">func (c *InterceptedCommand) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InterceptedCommand.Validate">func (c *InterceptedCommand) Validate(args *run.Parameters) []*validate.ValidationResult</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/commands/Command.go">Command.go</a>
+			
+				<a href="http://localhost:6060/src/commands/CommandSet.go">CommandSet.go</a>
+			
+				<a href="http://localhost:6060/src/commands/Event.go">Event.go</a>
+			
+				<a href="http://localhost:6060/src/commands/ICommand.go">ICommand.go</a>
+			
+				<a href="http://localhost:6060/src/commands/ICommandInterceptor.go">ICommandInterceptor.go</a>
+			
+				<a href="http://localhost:6060/src/commands/ICommandable.go">ICommandable.go</a>
+			
+				<a href="http://localhost:6060/src/commands/IEvent.go">IEvent.go</a>
+			
+				<a href="http://localhost:6060/src/commands/IEventListener.go">IEventListener.go</a>
+			
+				<a href="http://localhost:6060/src/commands/InterceptedCommand.go">InterceptedCommand.go</a>
+			
+				<a href="http://localhost:6060/src/commands/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Command">type <a href="http://localhost:6060/src/commands/Command.go?s=855:1002#L20">Command</a>
+				<a class="permalink" href="index.html#Command">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Concrete implementation of ICommand interface. Command allows to call a
+method or function using Command pattern.
+Example:
+</p>
+<pre>command := NewCommand(&#34;add&#34;, null, func (correlationId string, args *run.Parameters)(interface{}, err) {
+	param1 := args.getAsFloat(&#34;param1&#34;);
+    param2 := args.getAsFloat(&#34;param2&#34;);
+    return (param1 + param2), nil;
+});
+
+result, err := command.Execute(&#34;123&#34;, Parameters.NewParametersFromTuples(&#34;param1&#34;, 2, &#34;param2&#34;, 2))
+if (err) {
+	fmt.Println(err)
+} else {
+	fmt.Println(&#34;2 + 2 = &#34; + result)
+}
+// Console output: 2 + 2 = 4
+</pre>
+<p>
+//
+</p>
+
+			<pre>type Command struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCommand">func <a href="http://localhost:6060/src/commands/Command.go?s=1350:1493#L35">NewCommand</a>
+					<a class="permalink" href="index.html#NewCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCommand(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ISchema">ISchema</a>,
+    function func(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)) *<a href="index.html#Command">Command</a></pre>
+				<p>
+Creates a new command object and assigns it&#39;s parameters.
+</p>
+<p>
+Parameters
+</p>
+<pre>- name: string - the command name.
+- schema: validate.ISchema the schema to validate command arguments.
+function: func(correlationId string, args *run.Parameters) (interface{}, error)
+the function to be executed by this command.
+
+Returns *Command
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Command.Execute">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=2259:2349#L67">Execute</a>
+					<a class="permalink" href="index.html#Command.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Command">Command</a>) Execute(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Executes the command. Before execution it validates args using the defined schema.
+The command execution intercepts exceptions raised by the called function and returns them as an error
+in callback.
+Parameters:
+</p>
+<pre>correlationId: string - (optional) transaction id to trace execution through call chain.
+
+args: run.Parameters - the parameters (arguments) to pass to this command for execution.
+</pre>
+<p>
+Returns (interface{}, error)
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.GetSchema">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3764:3810#L127">GetSchema</a>
+					<a class="permalink" href="index.html#Command.GetSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Command">Command</a>) GetSchema() <a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ISchema">ISchema</a></pre>
+				<p>
+GetSchema methods return validation schema for this command
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Name">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=1765:1796#L54">Name</a>
+					<a class="permalink" href="index.html#Command.Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Command">Command</a>) Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the command name.
+</p>
+<p>
+Returns string - the name of this command.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Validate">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3429:3506#L114">Validate</a>
+					<a class="permalink" href="index.html#Command.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Command">Command</a>) Validate(args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) []*<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates the command args before execution using the defined schema.
+</p>
+<p>
+Parameters:
+</p>
+<pre>args: run.Parameters - the parameters (arguments) to validate using this command&#39;s schema.
+Returns []*validate.ValidationResult an array of ValidationResults or an empty array (if no schema is set).
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CommandSet">type <a href="http://localhost:6060/src/commands/CommandSet.go?s=1385:1571#L34">CommandSet</a>
+				<a class="permalink" href="index.html#CommandSet">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Contains a set of commands and events supported by a commandable object.
+The CommandSet supports command interceptors to extend and the command call chain.
+</p>
+<p>
+CommandSets can be used as alternative commandable interface to a business object.
+It can be used to auto generate multiple external services for the business object without writing much code.
+see
+Command
+see
+Event
+see
+ICommandable
+</p>
+<p>
+Example:
+</p>
+<pre> type MyDataCommandSet {
+	CommandSet
+    _controller IMyDataController
+ }
+    func (dcs * MyDataCommandSet) CreateMyDataCommandSet(controller IMyDataController) { // Any data controller interface
+        dcs._controller = controller
+        dcs.addCommand(dcs.makeGetMyDataCommand())
+    }
+
+    func (dcs * MyDataCommandSet) makeGetMyDataCommand() ICommand {
+        return NewCommand(
+          &#39;get_mydata&#39;,
+          null,
+          (correlationId: string, args: Parameters, func (correlationId string, args *run.Parameters)(interface{}, err) {
+              let param = args.getAsString(&#39;param&#39;);
+              return dcs._controller.getMyData(correlationId, param,);
+          }
+        );
+    }
+</pre>
+
+			<pre>type CommandSet struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCommandSet">func <a href="http://localhost:6060/src/commands/CommandSet.go?s=1635:1667#L44">NewCommandSet</a>
+					<a class="permalink" href="index.html#NewCommandSet">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCommandSet() *<a href="index.html#CommandSet">CommandSet</a></pre>
+				<p>
+Creates an empty CommandSet object.
+Returns *CommandSet
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="CommandSet.AddCommand">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3392:3441#L120">AddCommand</a>
+					<a class="permalink" href="index.html#CommandSet.AddCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) AddCommand(command <a href="index.html#ICommand">ICommand</a>)</pre>
+				<p>
+Adds a command to this command set.
+see
+ICommand
+Parameters:
+</p>
+<pre>- command: ICommand
+ the command to add.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.AddCommandSet">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4411:4469#L164">AddCommandSet</a>
+					<a class="permalink" href="index.html#CommandSet.AddCommandSet">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) AddCommandSet(commandSet *<a href="index.html#CommandSet">CommandSet</a>)</pre>
+				<p>
+Adds all of the commands and events from specified command set into this one.
+Parameters:
+</p>
+<pre>- commandSet: *CommandSet
+the CommandSet to add.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.AddCommands">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3661:3714#L131">AddCommands</a>
+					<a class="permalink" href="index.html#CommandSet.AddCommands">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) AddCommands(commands []<a href="index.html#ICommand">ICommand</a>)</pre>
+				<p>
+Adds multiple commands to this command set.
+see
+ICommand
+Parameters:
+</p>
+<pre>- commands: []ICommand
+the array of commands to add.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.AddEvent">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3895:3938#L143">AddEvent</a>
+					<a class="permalink" href="index.html#CommandSet.AddEvent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) AddEvent(event <a href="index.html#IEvent">IEvent</a>)</pre>
+				<p>
+Adds an event to this command set.
+see
+IEvent
+Parameters:
+</p>
+<pre>- event: IEvent
+the event to add.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.AddEvents">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4150:4197#L154">AddEvents</a>
+					<a class="permalink" href="index.html#CommandSet.AddEvents">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) AddEvents(events []<a href="index.html#IEvent">IEvent</a>)</pre>
+				<p>
+Adds multiple events to this command set.
+see
+IEvent
+Parameters:
+</p>
+<pre>- events: []IEvent
+the array of events to add.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.AddInterceptor">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=5268:5336#L199">AddInterceptor</a>
+					<a class="permalink" href="index.html#CommandSet.AddInterceptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) AddInterceptor(interceptor <a href="index.html#ICommandInterceptor">ICommandInterceptor</a>)</pre>
+				<p>
+Adds a command interceptor to this command set.
+see
+ICommandInterceptor
+Parameters:
+</p>
+<pre>-interceptor: ICommandInterceptor
+the interceptor to add.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.AddListener">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4704:4761#L175">AddListener</a>
+					<a class="permalink" href="index.html#CommandSet.AddListener">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) AddListener(listener <a href="index.html#IEventListener">IEventListener</a>)</pre>
+				<p>
+Adds a listener to receive notifications on fired events.
+see
+IEventListener
+Parameters:
+</p>
+<pre>- listener: IEventListener
+the listener to add.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.Commands">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=1999:2041#L59">Commands</a>
+					<a class="permalink" href="index.html#CommandSet.Commands">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) Commands() []<a href="index.html#ICommand">ICommand</a></pre>
+				<p>
+Gets all commands registered in this command set.
+see
+ICommand
+Returns []ICommand
+a list of commands.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.Events">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2174:2212#L68">Events</a>
+					<a class="permalink" href="index.html#CommandSet.Events">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) Events() []<a href="index.html#IEvent">IEvent</a></pre>
+				<p>
+Gets all events registred in this command set.
+see
+IEvent
+Returns []IEvent
+a list of events.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.Execute">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=5843:5967#L220">Execute</a>
+					<a class="permalink" href="index.html#CommandSet.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) Execute(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, commandName <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) (result interface{}, err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.FindCommand">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2451:2512#L80">FindCommand</a>
+					<a class="permalink" href="index.html#CommandSet.FindCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) FindCommand(commandName <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="index.html#ICommand">ICommand</a></pre>
+				<p>
+Searches for a command by its name.
+see
+ICommand
+Parameters:
+</p>
+<pre>- commandName: string
+the name of the command to search for.
+</pre>
+<p>
+Returns ICommand
+the command, whose name matches the provided name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.FindEvent">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2781:2836#L92">FindEvent</a>
+					<a class="permalink" href="index.html#CommandSet.FindEvent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) FindEvent(eventName <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="index.html#IEvent">IEvent</a></pre>
+				<p>
+Searches for an event by its name in this command set.
+see
+IEvent
+Parameters:
+</p>
+<pre>- eventName: string
+the name of the event to search for.
+</pre>
+<p>
+Returns IEvent
+the event, whose name matches the provided name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.Notify">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=7900:7989#L290">Notify</a>
+					<a class="permalink" href="index.html#CommandSet.Notify">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) Notify(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, eventName <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>)</pre>
+				<p>
+Fires event specified by its name and notifies all registered listeners
+Parameters:
+</p>
+<pre>- correlationId: string
+(optional) transaction id to trace execution through call chain.
+- eventName: string
+the name of the event that is to be fired.
+- args: Parameters
+the event arguments (parameters).
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.RemoveListener">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4970:5030#L187">RemoveListener</a>
+					<a class="permalink" href="index.html#CommandSet.RemoveListener">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) RemoveListener(listener <a href="index.html#IEventListener">IEventListener</a>)</pre>
+				<p>
+Removes previosly added listener.
+see
+IEventListener
+Parameters:
+</p>
+<pre>- listener: IEventListener
+the listener to remove.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandSet.Validate">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=7199:7299#L263">Validate</a>
+					<a class="permalink" href="index.html#CommandSet.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandSet">CommandSet</a>) Validate(commandName <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) []*<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates args for command specified by its name using defined schema. If validation schema is
+not defined than the methods returns no errors. It returns validation error if the command is not found.
+see
+Command
+see
+Parameters
+see
+ValidationResult
+Parameters:
+</p>
+<pre>- commandName: string
+the name of the command for which the &#39;args&#39; must be validated.
+- args: Parameters
+the parameters (arguments) to validate.
+</pre>
+<p>
+Returns []ValidationResult
+an array of ValidationResults. If no command is found by the given name,
+then the returned array of ValidationResults will contain a single entry,
+whose type will be ValidationResultType.Error.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Event">type <a href="http://localhost:6060/src/commands/Event.go?s=383:450#L10">Event</a>
+				<a class="permalink" href="index.html#Event">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Concrete implementation of IEvent interface. It allows to send asynchronous
+notifications to multiple subscribed listeners.
+Example:
+</p>
+<pre>event: = NewEvent(&#34;my_event&#34;);
+
+event.AddListener(myListener);
+
+event.Notify(&#34;123&#34;, Parameters.fromTuples(
+  &#34;param1&#34;, &#34;ABC&#34;,
+  &#34;param2&#34;, 123
+));
+</pre>
+
+			<pre>type Event struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEvent">func <a href="http://localhost:6060/src/commands/Event.go?s=641:674#L23">NewEvent</a>
+					<a class="permalink" href="index.html#NewEvent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEvent(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#Event">Event</a></pre>
+				
+				
+				
+			
+
+			
+				
+				<h3 id="Event.AddListener">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1254:1306#L55">AddListener</a>
+					<a class="permalink" href="index.html#Event.AddListener">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Event">Event</a>) AddListener(listener <a href="index.html#IEventListener">IEventListener</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Event.Listeners">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1031:1075#L46">Listeners</a>
+					<a class="permalink" href="index.html#Event.Listeners">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Event">Event</a>) Listeners() []<a href="index.html#IEventListener">IEventListener</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Event.Name">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=881:910#L38">Name</a>
+					<a class="permalink" href="index.html#Event.Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Event">Event</a>) Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Event.Notify">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1961:2027#L80">Notify</a>
+					<a class="permalink" href="index.html#Event.Notify">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Event">Event</a>) Notify(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Event.RemoveListener">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1526:1581#L64">RemoveListener</a>
+					<a class="permalink" href="index.html#Event.RemoveListener">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Event">Event</a>) RemoveListener(listener <a href="index.html#IEventListener">IEventListener</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ICommand">type <a href="http://localhost:6060/src/commands/ICommand.go?s=327:789#L3">ICommand</a>
+				<a class="permalink" href="index.html#ICommand">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ICommand interface {
+    <a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#IExecutable">IExecutable</a>
+    <span class="comment">// Gets the command name.</span>
+    <span class="comment">// Returns string</span>
+    <span class="comment">// the command name.</span>
+    Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+    <span class="comment">// Validates command arguments before execution using defined schema.</span>
+    <span class="comment">// see</span>
+    <span class="comment">// Parameters</span>
+    <span class="comment">// see</span>
+    <span class="comment">// ValidationResult</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - args: Parameters</span>
+    <span class="comment">//  the parameters (arguments) to validate.</span>
+    <span class="comment">// Returns ValidationResult[]</span>
+    <span class="comment">// an array of ValidationResults.</span>
+    Validate(args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) []*<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ValidationResult">ValidationResult</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ICommandInterceptor">type <a href="http://localhost:6060/src/commands/ICommandInterceptor.go?s=375:2124#L6">ICommandInterceptor</a>
+				<a class="permalink" href="index.html#ICommandInterceptor">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+An interface for stackable command intercepters, which can extend and modify the command call chain.
+This mechanism can be used for authentication, logging, and other functions.
+see
+ICommand
+see
+InterceptedCommand
+</p>
+
+			<pre>type ICommandInterceptor interface {
+    <span class="comment">// Gets the name of the wrapped command.</span>
+    <span class="comment">// The interceptor can use this method to override the command name.</span>
+    <span class="comment">// Otherwise it shall just delegate the call to the wrapped command.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - command: ICommand</span>
+    <span class="comment">//  the next command in the call chain.</span>
+    <span class="comment">// Returns string</span>
+    <span class="comment">// the name of the wrapped command.</span>
+    Name(command <a href="index.html#ICommand">ICommand</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+
+    <span class="comment">// 	Executes the wrapped command with specified arguments.</span>
+    <span class="comment">// The interceptor can use this method to intercept and alter the command execution.</span>
+    <span class="comment">// Otherwise it shall just delete the call to the wrapped command.</span>
+    <span class="comment">// see</span>
+    <span class="comment">// Parameters</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - correlationId: string</span>
+    <span class="comment">//  (optional) transaction id to trace execution through call chain.</span>
+    <span class="comment">//  - command: ICommand</span>
+    <span class="comment">//  the next command in the call chain that is to be executed.</span>
+    <span class="comment">//  - args: Parameters</span>
+    <span class="comment">// the function that is to be called once execution is complete.</span>
+    <span class="comment">// If an exception is raised, then it will be called with the error.</span>
+    <span class="comment">// Returns:</span>
+    <span class="comment">// result: interface{}</span>
+    <span class="comment">// err: error</span>
+    Execute(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, command <a href="index.html#ICommand">ICommand</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+
+    <span class="comment">// Validates arguments of the wrapped command before its execution.</span>
+    <span class="comment">// The interceptor can use this method to intercept and alter validation of the command arguments.</span>
+    <span class="comment">// Otherwise it shall just delegate the call to the wrapped command.</span>
+    <span class="comment">// see</span>
+    <span class="comment">// Parameters</span>
+    <span class="comment">// see</span>
+    <span class="comment">// ValidationResult</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - command: ICommand</span>
+    <span class="comment">//  the next command in the call chain to be validated against.</span>
+    <span class="comment">//  - args: Parameters</span>
+    <span class="comment">//  the parameters (arguments) to validate.</span>
+    <span class="comment">// Returns []*ValidationResult</span>
+    <span class="comment">// an array of *ValidationResults.</span>
+    Validate(command <a href="index.html#ICommand">ICommand</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) []*<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ValidationResult">ValidationResult</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ICommandable">type <a href="http://localhost:6060/src/commands/ICommandable.go?s=543:758#L10">ICommandable</a>
+				<a class="permalink" href="index.html#ICommandable">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ICommandable interface {
+    <span class="comment">// 	Gets a command set with all supported commands and events.</span>
+    <span class="comment">// see</span>
+    <span class="comment">// CommandSet</span>
+    <span class="comment">// Returns *CommandSet</span>
+    <span class="comment">// a command set with commands and events.</span>
+    GetCommandSet() *<a href="index.html#CommandSet">CommandSet</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IEvent">type <a href="http://localhost:6060/src/commands/IEvent.go?s=267:912#L3">IEvent</a>
+				<a class="permalink" href="index.html#IEvent">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type IEvent interface {
+    <a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#INotifiable">INotifiable</a>
+
+    <span class="comment">// Gets the event name.</span>
+    <span class="comment">// Returns string</span>
+    <span class="comment">// the name of the event.</span>
+    Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+
+    <span class="comment">// Gets all subscribed listeners.</span>
+    <span class="comment">// Returns []IEventListener</span>
+    <span class="comment">// a list of listeners.</span>
+    Listeners() []<a href="index.html#IEventListener">IEventListener</a>
+
+    <span class="comment">// Adds a listener to receive notifications for this event.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - listener: IEventListener</span>
+    <span class="comment">//  the listener reference to add.</span>
+    AddListener(listener <a href="index.html#IEventListener">IEventListener</a>)
+
+    <span class="comment">// Removes a listener, so that it no longer receives notifications for this event.</span>
+    <span class="comment">// Parameters</span>
+    <span class="comment">//  - listener: IEventListener</span>
+    <span class="comment">//  the listener reference to remove.</span>
+    RemoveListener(listener <a href="index.html#IEventListener">IEventListener</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IEventListener">type <a href="http://localhost:6060/src/commands/IEventListener.go?s=586:961#L19">IEventListener</a>
+				<a class="permalink" href="index.html#IEventListener">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type IEventListener interface {
+
+    <span class="comment">// A method called when events this listener is subscrubed to are fired.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - correlationId: string</span>
+    <span class="comment">//  (optional) transaction id to trace execution through call chain.</span>
+    <span class="comment">//  - e: IEvent</span>
+    <span class="comment">//  a fired evemt</span>
+    <span class="comment">//  - value: *run.Parameters</span>
+    <span class="comment">//  event arguments.</span>
+    OnEvent(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, e <a href="index.html#IEvent">IEvent</a>, value *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="InterceptedCommand">type <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1079:1168#L29">InterceptedCommand</a>
+				<a class="permalink" href="index.html#InterceptedCommand">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Implements a command wrapped by an interceptor. It allows to build command call chains.
+The interceptor can alter execution and delegate calls to a next command, which can be intercepted or concrete.
+see
+ICommand
+see
+ICommandInterceptor
+</p>
+<p>
+Example:
+</p>
+<pre>type CommandLogger {
+	msg string
+}
+
+func (cl * CommandLogger) Name(command ICommand) string {
+    return command.Name();
+}
+
+func (cl * CommandLogger) Execute(correlationId string, command ICommand, args Parameters) (res interface{}, err error){
+    fmt.Println(&#34;Executed command &#34; + command.Name());
+    return command.Execute(correlationId, args);
+}
+
+func (cl * CommandLogger) Validate(command: ICommand, args: Parameters): ValidationResult[] {
+    return command.Validate(args);
+}
+
+logger := CommandLogger{mgs:&#34;CommandLoger&#34;};
+loggedCommand = NewInterceptedCommand(logger, command);
+
+// Each called command will output: Executed command &lt;command name&gt;
+</pre>
+
+			<pre>type InterceptedCommand struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewInterceptedCommand">func <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1578:1672#L42">NewInterceptedCommand</a>
+					<a class="permalink" href="index.html#NewInterceptedCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewInterceptedCommand(interceptor <a href="index.html#ICommandInterceptor">ICommandInterceptor</a>, next <a href="index.html#ICommand">ICommand</a>) *<a href="index.html#InterceptedCommand">InterceptedCommand</a></pre>
+				<p>
+Creates a new InterceptedCommand, which serves as a link in an execution chain.
+Contains information about the interceptor that is being used and the next command in the chain.
+Parameters:
+</p>
+<pre>- interceptor: ICommandInterceptor
+the interceptor that is intercepting the command.
+- next: ICommand
+(link to) the next command in the command&#39;s execution chain.
+</pre>
+<p>
+Returns *InterceptedCommand
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="InterceptedCommand.Execute">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=2273:2385#L66">Execute</a>
+					<a class="permalink" href="index.html#InterceptedCommand.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#InterceptedCommand">InterceptedCommand</a>) Execute(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) (result interface{}, err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Executes the next command in the execution chain using the given parameters (arguments).
+see
+Parameters
+Parameters:
+</p>
+<pre>- correlationId: string
+	unique transaction id to trace calls across components.
+- args: Parameters
+	the parameters (arguments) to pass to the command for execution.
+</pre>
+<p>
+Returns:
+err: error
+result: interface{}
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="InterceptedCommand.Name">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1831:1873#L51">Name</a>
+					<a class="permalink" href="index.html#InterceptedCommand.Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#InterceptedCommand">InterceptedCommand</a>) Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Returns string
+the name of the command that is being intercepted.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="InterceptedCommand.Validate">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=2781:2869#L80">Validate</a>
+					<a class="permalink" href="index.html#InterceptedCommand.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#InterceptedCommand">InterceptedCommand</a>) Validate(args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) []*<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates the parameters (arguments) that are to be passed to the command that is next in the execution chain.
+see
+Parameters
+see
+ValidationResult
+Parameters:
+</p>
+<pre>- args: Parameters
+the parameters (arguments) to validate for the next command.
+</pre>
+<p>
+Returns []*ValidationResult
+an array of *ValidationResults.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

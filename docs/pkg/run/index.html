@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>run - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package run
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "run"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Contains design patterns for the standard lifecycle of objects (opened, closed, openable, closable, runnable). Helper classes for lifecycle provisioning.
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#FixedRateTimer">type FixedRateTimer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFixedRateTimer">func NewFixedRateTimer() *FixedRateTimer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFixedRateTimerFromCallback">func NewFixedRateTimerFromCallback(callback func(), interval int, delay int) *FixedRateTimer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFixedRateTimerFromTask">func NewFixedRateTimerFromTask(task INotifiable, interval int, delay int) *FixedRateTimer</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.Callback">func (c *FixedRateTimer) Callback() func()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.Close">func (c *FixedRateTimer) Close(correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.Delay">func (c *FixedRateTimer) Delay() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.Interval">func (c *FixedRateTimer) Interval() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.IsStarted">func (c *FixedRateTimer) IsStarted() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.SetCallback">func (c *FixedRateTimer) SetCallback(value func())</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.SetDelay">func (c *FixedRateTimer) SetDelay(value int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.SetInterval">func (c *FixedRateTimer) SetInterval(value int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.SetTask">func (c *FixedRateTimer) SetTask(value INotifiable)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.Start">func (c *FixedRateTimer) Start()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.Stop">func (c *FixedRateTimer) Stop()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#FixedRateTimer.Task">func (c *FixedRateTimer) Task() INotifiable</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ICleanable">type ICleanable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IClosable">type IClosable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IExecutable">type IExecutable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#INotifiable">type INotifiable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IOpenable">type IOpenable</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IParameterized">type IParameterized</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Parameters">type Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmptyParameters">func NewEmptyParameters() *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewParameters">func NewParameters(values map[string]interface{}) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewParametersFromConfig">func NewParametersFromConfig(config *config.ConfigParams) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewParametersFromMaps">func NewParametersFromMaps(maps ...map[string]interface{}) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewParametersFromTuples">func NewParametersFromTuples(tuples ...interface{}) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewParametersFromTuplesArray">func NewParametersFromTuplesArray(tuples []interface{}) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewParametersFromValue">func NewParametersFromValue(value interface{}) *Parameters</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.AssignTo">func (c *Parameters) AssignTo(value interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Clone">func (c *Parameters) Clone() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Contains">func (c *Parameters) Contains(key string) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Get">func (c *Parameters) Get(key string) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.GetAsNullableParameters">func (c *Parameters) GetAsNullableParameters(key string) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.GetAsParameters">func (c *Parameters) GetAsParameters(key string) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.GetAsParametersWithDefault">func (c *Parameters) GetAsParametersWithDefault(key string, defaultValue *Parameters) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Omit">func (c *Parameters) Omit(paths ...string) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Override">func (c *Parameters) Override(parameters *Parameters, recursive bool) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Pick">func (c *Parameters) Pick(paths ...string) *Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Put">func (c *Parameters) Put(key string, value interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.Remove">func (c *Parameters) Remove(key string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Parameters.SetDefaults">func (c *Parameters) SetDefaults(defaultParameters *Parameters, recursive bool) *Parameters</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TCleaner">type TCleaner</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TCleaner.Clear">func (c *TCleaner) Clear(correlationId string, components []interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TCleaner.ClearOne">func (c *TCleaner) ClearOne(correlationId string, component interface{}) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TCloser">type TCloser</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TCloser.Close">func (c *TCloser) Close(correlationId string, components []interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TCloser.CloseOne">func (c *TCloser) CloseOne(correlationId string, component interface{}) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TExecutor">type TExecutor</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TExecutor.Execute">func (c *TExecutor) Execute(correlationId string, components []interface{}, args *Parameters) ([]interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TExecutor.ExecuteOne">func (c *TExecutor) ExecuteOne(correlationId string, component interface{}, args *Parameters) (interface{}, error)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TNotifier">type TNotifier</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TNotifier.Notify">func (c *TNotifier) Notify(correlationId string, components []interface{}, args *Parameters)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TNotifier.NotifyOne">func (c *TNotifier) NotifyOne(correlationId string, component interface{}, args *Parameters)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TOpener">type TOpener</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TOpener.IsOpen">func (c *TOpener) IsOpen(components []interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TOpener.IsOpenOne">func (c *TOpener) IsOpenOne(component interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TOpener.Open">func (c *TOpener) Open(correlationId string, components []interface{}) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TOpener.OpenOne">func (c *TOpener) OpenOne(correlationId string, component interface{}) error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/run/Cleaner.go">Cleaner.go</a>
+			
+				<a href="http://localhost:6060/src/run/Closer.go">Closer.go</a>
+			
+				<a href="http://localhost:6060/src/run/Executor.go">Executor.go</a>
+			
+				<a href="http://localhost:6060/src/run/FixedRateTimer.go">FixedRateTimer.go</a>
+			
+				<a href="http://localhost:6060/src/run/ICleanable.go">ICleanable.go</a>
+			
+				<a href="http://localhost:6060/src/run/IClosable.go">IClosable.go</a>
+			
+				<a href="http://localhost:6060/src/run/IExecutable.go">IExecutable.go</a>
+			
+				<a href="http://localhost:6060/src/run/INotifiable.go">INotifiable.go</a>
+			
+				<a href="http://localhost:6060/src/run/IOpenable.go">IOpenable.go</a>
+			
+				<a href="http://localhost:6060/src/run/IParameterized.go">IParameterized.go</a>
+			
+				<a href="http://localhost:6060/src/run/Notifier.go">Notifier.go</a>
+			
+				<a href="http://localhost:6060/src/run/Opener.go">Opener.go</a>
+			
+				<a href="http://localhost:6060/src/run/Parameters.go">Parameters.go</a>
+			
+				<a href="http://localhost:6060/src/run/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="FixedRateTimer">type <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=630:750#L24">FixedRateTimer</a>
+				<a class="permalink" href="index.html#FixedRateTimer">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Timer that is triggered in equal time intervals.
+</p>
+<p>
+It has summetric cross-language implementation and is often used by Pip.Services toolkit to perform periodic processing and cleanup in microservices.
+</p>
+<p>
+see
+INotifiable
+</p>
+<p>
+Example:
+</p>
+<pre>type MyComponent {
+	timer FixedRateTimer
+}
+    ...
+    func (mc* MyComponent) open(correlationId string) {
+		...
+		mc.timer = NewFixedRateTimerFromCallback(() =&gt; { this.cleanup }, 60000, 0);
+        mc.timer.start();
+        ...
+    }
+
+    func (mc* MyComponent) open(correlationId: string){
+        ...
+        mc.timer.stop();
+        ...
+    }
+</pre>
+
+			<pre>type FixedRateTimer struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewFixedRateTimer">func <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=837:877#L34">NewFixedRateTimer</a>
+					<a class="permalink" href="index.html#NewFixedRateTimer">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFixedRateTimer() *<a href="index.html#FixedRateTimer">FixedRateTimer</a></pre>
+				<p>
+Creates new instance of the timer and sets its values.
+Returns *FixedRateTimer
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewFixedRateTimerFromCallback">func <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=1229:1321#L47">NewFixedRateTimerFromCallback</a>
+					<a class="permalink" href="index.html#NewFixedRateTimerFromCallback">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFixedRateTimerFromCallback(callback func(), interval <a href="http://localhost:6060/pkg/builtin/#int">int</a>, delay <a href="http://localhost:6060/pkg/builtin/#int">int</a>) *<a href="index.html#FixedRateTimer">FixedRateTimer</a></pre>
+				<p>
+Creates new instance of the timer and sets its values.
+Parameters:
+</p>
+<pre>- callback func()
+ callback function to call when timer is triggered.
+- interval int
+an interval to trigger timer in milliseconds.
+- delay int
+a delay before the first triggering in milliseconds.
+</pre>
+<p>
+Returns *FixedRateTimer
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewFixedRateTimerFromTask">func <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=1742:1831#L64">NewFixedRateTimerFromTask</a>
+					<a class="permalink" href="index.html#NewFixedRateTimerFromTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFixedRateTimerFromTask(task <a href="index.html#INotifiable">INotifiable</a>, interval <a href="http://localhost:6060/pkg/builtin/#int">int</a>, delay <a href="http://localhost:6060/pkg/builtin/#int">int</a>) *<a href="index.html#FixedRateTimer">FixedRateTimer</a></pre>
+				<p>
+Creates new instance of the timer and sets its values.
+Parameters:
+</p>
+<pre>- callback INotifiable
+Notifiable object to call when timer is triggered.
+- interval int
+an interval to trigger timer in milliseconds.
+- delay int
+a delay before the first triggering in milliseconds.
+</pre>
+<p>
+Returns *FixedRateTimer
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="FixedRateTimer.Callback">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=2612:2654#L95">Callback</a>
+					<a class="permalink" href="index.html#FixedRateTimer.Callback">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Callback() func()</pre>
+				<p>
+Gets the callback function that is called when this timer is triggered.
+Returns function
+the callback function or null if it is not set.
+Returns func()
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.Close">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=4875:4933#L192">Close</a>
+					<a class="permalink" href="index.html#FixedRateTimer.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Close(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Closes the timer.
+This is required by ICloseable interface, but besides that it is identical to stop().
+Parameters:
+</p>
+<pre>- correlationId: string
+transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns error
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.Delay">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=3038:3074#L111">Delay</a>
+					<a class="permalink" href="index.html#FixedRateTimer.Delay">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Delay() <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				<p>
+Gets initial delay before the timer is triggered for the first time.
+Returns number
+the delay in milliseconds.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.Interval">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=3389:3428#L126">Interval</a>
+					<a class="permalink" href="index.html#FixedRateTimer.Interval">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Interval() <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+				<p>
+Gets periodic timer triggering interval.
+Returns number
+the interval in milliseconds
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.IsStarted">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=3745:3786#L141">IsStarted</a>
+					<a class="permalink" href="index.html#FixedRateTimer.IsStarted">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) IsStarted() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if the timer is started.
+Returns bool
+true if the timer is started and false if it is stopped.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.SetCallback">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=2828:2878#L103">SetCallback</a>
+					<a class="permalink" href="index.html#FixedRateTimer.SetCallback">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) SetCallback(value func())</pre>
+				<p>
+Sets the callback function that is called when this timer is triggered.
+Parameters:
+</p>
+<pre>- value func()
+the callback function to be called.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.SetDelay">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=3228:3272#L119">SetDelay</a>
+					<a class="permalink" href="index.html#FixedRateTimer.SetDelay">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) SetDelay(value <a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Sets initial delay before the timer is triggered for the first time.
+Parameters:
+</p>
+<pre>- value int
+a delay in milliseconds.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.SetInterval">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=3561:3608#L134">SetInterval</a>
+					<a class="permalink" href="index.html#FixedRateTimer.SetInterval">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) SetInterval(value <a href="http://localhost:6060/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Sets periodic timer triggering interval.
+Parameters:
+</p>
+<pre>- value int
+an interval in milliseconds.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.SetTask">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=2302:2353#L84">SetTask</a>
+					<a class="permalink" href="index.html#FixedRateTimer.SetTask">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) SetTask(value <a href="index.html#INotifiable">INotifiable</a>)</pre>
+				<p>
+Sets a new INotifiable object to receive notifications from this timer.
+Parameters:
+</p>
+<pre>- value INotifiable
+a INotifiable object to be triggered.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.Start">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=3949:3981#L147">Start</a>
+					<a class="permalink" href="index.html#FixedRateTimer.Start">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Start()</pre>
+				<p>
+Starts the timer.
+Initially the timer is triggered after delay. After that it is triggered after interval until it is stopped.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.Stop">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=4498:4529#L177">Stop</a>
+					<a class="permalink" href="index.html#FixedRateTimer.Stop">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Stop()</pre>
+				<p>
+Stops the timer.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FixedRateTimer.Task">func (*FixedRateTimer) <a href="http://localhost:6060/src/run/FixedRateTimer.go?s=2082:2125#L76">Task</a>
+					<a class="permalink" href="index.html#FixedRateTimer.Task">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#FixedRateTimer">FixedRateTimer</a>) Task() <a href="index.html#INotifiable">INotifiable</a></pre>
+				<p>
+Gets the INotifiable object that receives notifications from this timer.
+Returns INotifiable
+the INotifiable object or null if it is not set.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ICleanable">type <a href="http://localhost:6060/src/run/ICleanable.go?s=379:574#L11">ICleanable</a>
+				<a class="permalink" href="index.html#ICleanable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for components that should clean their state.
+</p>
+<p>
+Cleaning state most often is used during testing. But there may be situations when it can be done in production.
+</p>
+<p>
+see
+Cleaner
+</p>
+<p>
+Example:
+</p>
+<pre>type MyObjectWithState {
+	_state interface{}
+}
+    ...
+    func (mo * MyObjectWithState ) clear(correlationId string) {
+        mo._state = interface{}
+    }
+</pre>
+
+			<pre>type ICleanable interface {
+    <span class="comment">// Clears component state.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - correlationId string</span>
+    <span class="comment">//  transaction id to trace execution through call chain.</span>
+    Clear(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IClosable">type <a href="http://localhost:6060/src/run/IClosable.go?s=475:538#L19">IClosable</a>
+				<a class="permalink" href="index.html#IClosable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for components that require explicit closure.
+</p>
+<p>
+For components that require opening as well as closing use IOpenable interface instead.
+</p>
+<p>
+see
+IOpenable
+</p>
+<p>
+see
+Closer
+</p>
+<p>
+Example:
+</p>
+<pre>type MyConnector {
+    _client interface{}
+}
+    ... // The _client can be lazy created
+
+    func (mc *MyConnector) Close(correlationId: string):error {
+        if (mc._client != nil) {
+            mc._client.Close()
+			mc._client = nil
+			return nil
+		}
+    }
+</pre>
+
+			<pre>type IClosable interface {
+    Close(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IExecutable">type <a href="http://localhost:6060/src/run/IExecutable.go?s=445:843#L8">IExecutable</a>
+				<a class="permalink" href="index.html#IExecutable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for components that can be called to execute work.
+</p>
+<p>
+Example:
+</p>
+<pre>type EchoComponent {}
+    ...
+    func  (ec* EchoComponent) Execute(correlationId: string, args: Parameters) (result interface{}, err error) {
+        return nil, result = args.getAsObject(&#34;message&#34;)
+    }
+
+echo := EchoComponent{};
+message = &#34;Test&#34;;
+res, err = echo.Execute(&#34;123&#34;, NewParametersFromTuples(&#34;message&#34;, message));
+fmt.Println(res);
+</pre>
+
+			<pre>type IExecutable interface {
+    <span class="comment">// 	Executes component with arguments and receives execution result.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - correlationId string</span>
+    <span class="comment">//  transaction id to trace execution through call chain.</span>
+    <span class="comment">//  - args *Parameters</span>
+    <span class="comment">//  execution arguments.</span>
+    <span class="comment">// Return interface{}, error</span>
+    <span class="comment">// result or execution and error</span>
+    Execute(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="index.html#Parameters">Parameters</a>) (result interface{}, err <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="INotifiable">type <a href="http://localhost:6060/src/run/INotifiable.go?s=494:776#L13">INotifiable</a>
+				<a class="permalink" href="index.html#INotifiable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for components that can be asynchronously notified. The notification may include optional argument that describe the occured event.
+</p>
+<p>
+see
+Notifier
+</p>
+<p>
+see
+IExecutable
+</p>
+<p>
+Example:
+</p>
+<pre>type MyComponent {}
+    ...
+    func (mc *MyComponent)Notify(correlationId: string, args: Parameters){
+        fmt.Println(&#34;Occured event &#34; + args.GetAsString(&#34;event&#34;));
+    }
+
+myComponent := MyComponent{};
+
+myComponent.Notify(&#34;123&#34;, NewParametersFromTuples(&#34;event&#34;, &#34;Test Event&#34;));
+</pre>
+
+			<pre>type INotifiable interface {
+    <span class="comment">// Notifies the component about occured event.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - correlationId string</span>
+    <span class="comment">//  transaction id to trace execution through call chain.</span>
+    <span class="comment">//  - args *Parameters</span>
+    <span class="comment">//  notification arguments.</span>
+    Notify(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="index.html#Parameters">Parameters</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IOpenable">type <a href="http://localhost:6060/src/run/IOpenable.go?s=661:1014#L27">IOpenable</a>
+				<a class="permalink" href="index.html#IOpenable">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for components that require explicit opening and closing.
+</p>
+<p>
+For components that perform opening on demand consider using ICloseable interface instead.
+</p>
+<p>
+see
+IOpenable
+</p>
+<p>
+see
+Opener
+</p>
+<p>
+Example:
+</p>
+<pre>type MyPersistence {
+	_client interface{}
+}
+
+    func (mp* MyPersistence)IsOpen() bool {
+        return mp._client != nil;
+    }
+
+    (mp* MyPersistence) Open(correlationId: string) error {
+        if (mp.isOpen()) {
+            return nil;
+        }
+    }
+
+    (mp* MyPersistence) Close(correlationId: string) {
+        if (mp._client != nil) {
+            mp._client.close();
+            mp._client = nil;
+        }
+    }
+</pre>
+
+			<pre>type IOpenable interface {
+    <a href="index.html#IClosable">IClosable</a>
+    <span class="comment">// Checks if the component is opened.</span>
+    <span class="comment">// Returns bool</span>
+    <span class="comment">// true if the component has been opened and false otherwise.</span>
+    IsOpen() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>
+    <span class="comment">// Opens the component.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - correlationId: string</span>
+    <span class="comment">//  transaction id to trace execution through call chain.</span>
+    <span class="comment">// Return error</span>
+    Open(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IParameterized">type <a href="http://localhost:6060/src/run/IParameterized.go?s=79:251#L1">IParameterized</a>
+				<a class="permalink" href="index.html#IParameterized">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for components that require execution parameters.
+</p>
+
+			<pre>type IParameterized interface {
+    <span class="comment">// Sets execution parameters.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">// parameters *Parameters</span>
+    <span class="comment">// execution parameters.</span>
+    SetParameters(parameters *<a href="index.html#Parameters">Parameters</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Parameters">type <a href="http://localhost:6060/src/run/Parameters.go?s=644:688#L9">Parameters</a>
+				<a class="permalink" href="index.html#Parameters">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Contains map with execution parameters.
+</p>
+<p>
+In general, this map may contain non-serializable values. And in contrast with other maps, its getters and setters support dot notation and able to access properties in the entire object graph.
+</p>
+<p>
+This class is often use to pass execution and notification arguments, and parameterize classes before execution.
+</p>
+
+			<pre>type Parameters struct {
+    <a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/data/">data</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/data/#AnyValueMap">AnyValueMap</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmptyParameters">func <a href="http://localhost:6060/src/run/Parameters.go?s=773:810#L15">NewEmptyParameters</a>
+					<a class="permalink" href="index.html#NewEmptyParameters">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmptyParameters() *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Creates a new instance of the map and assigns its value.
+Returns *Parameters
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewParameters">func <a href="http://localhost:6060/src/run/Parameters.go?s=1025:1086#L25">NewParameters</a>
+					<a class="permalink" href="index.html#NewParameters">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewParameters(values map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Creates a new instance of the map and assigns its value.
+Parameters:
+</p>
+<pre>- values map[string]interface{}
+</pre>
+<p>
+Returns *Parameters
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewParametersFromConfig">func <a href="http://localhost:6060/src/run/Parameters.go?s=9829:9898#L302">NewParametersFromConfig</a>
+					<a class="permalink" href="index.html#NewParametersFromConfig">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewParametersFromConfig(config *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/config/">config</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/config/#ConfigParams">ConfigParams</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Returns Parameters
+a new Parameters object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewParametersFromMaps">func <a href="http://localhost:6060/src/run/Parameters.go?s=9388:9458#L283">NewParametersFromMaps</a>
+					<a class="permalink" href="index.html#NewParametersFromMaps">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewParametersFromMaps(maps ...map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Creates a new Parameters by merging two or more maps. Maps defined later in the list override values from previously defined maps.
+Parameters:
+</p>
+<pre>- maps ...map[string]interface{}
+an array of maps to be merged
+</pre>
+<p>
+Returns *Parameters
+a newly created Parameters.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewParametersFromTuples">func <a href="http://localhost:6060/src/run/Parameters.go?s=8258:8321#L247">NewParametersFromTuples</a>
+					<a class="permalink" href="index.html#NewParametersFromTuples">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewParametersFromTuples(tuples ...interface{}) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Creates a new Parameters object filled with provided key-value pairs called tuples. Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
+see
+AnyValueMapFromTuplesArray
+Parameters:
+</p>
+<pre>- tuples ...interface{}
+the tuples to fill a new Parameters object.
+</pre>
+<p>
+Returns *Parameters
+a new Parameters object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewParametersFromTuplesArray">func <a href="http://localhost:6060/src/run/Parameters.go?s=8725:8792#L257">NewParametersFromTuplesArray</a>
+					<a class="permalink" href="index.html#NewParametersFromTuplesArray">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewParametersFromTuplesArray(tuples []interface{}) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Creates a new AnyValueMap from a list of key-value pairs called tuples. The method is similar to fromTuples but tuples are passed as array instead of parameters.
+Parameters:
+</p>
+<pre>- tuples []interface{}
+a list of values where odd elements are keys and the following even elements are values
+</pre>
+<p>
+Returns *Parameters
+a newly created Parameters.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewParametersFromValue">func <a href="http://localhost:6060/src/run/Parameters.go?s=7769:7827#L233">NewParametersFromValue</a>
+					<a class="permalink" href="index.html#NewParametersFromValue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewParametersFromValue(value interface{}) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Creates a new Parameters object filled with key-value pairs from specified object.
+Parameters:
+</p>
+<pre>- value interface{}
+an object with key-value pairs used to initialize a new Parameters.
+</pre>
+<p>
+Returns *Parameters
+a new Parameters object.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Parameters.AssignTo">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=6501:6549#L190">AssignTo</a>
+					<a class="permalink" href="index.html#Parameters.AssignTo">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) AssignTo(value interface{})</pre>
+				<p>
+Assigns (copies over) properties from the specified value to this map.
+Parameters:
+</p>
+<pre>- value interface{}
+value whose properties shall be copied over.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Clone">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=4311:4351#L130">Clone</a>
+					<a class="permalink" href="index.html#Parameters.Clone">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Clone() interface{}</pre>
+				<p>
+Creates a binary clone of this object.
+Returns interface{}
+a clone of this object.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Contains">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=2740:2786#L82">Contains</a>
+					<a class="permalink" href="index.html#Parameters.Contains">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Contains(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if this map contains an element with specified key.
+The key can be defined using dot notation and allows to recursively access elements of elements.
+Parameters:
+</p>
+<pre>- key string
+a key to be checked
+</pre>
+<p>
+Returns bool
+true if this map contains the key or false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Get">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=1450:1498#L39">Get</a>
+					<a class="permalink" href="index.html#Parameters.Get">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Get(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) interface{}</pre>
+				<p>
+Gets a map element specified by its key.
+The key can be defined using dot notation and allows to recursively access elements of elements.
+Parameters:
+</p>
+<pre>- key string
+a key of the element to get.
+</pre>
+<p>
+Returns interface{}
+the value of the map element.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.GetAsNullableParameters">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=3111:3179#L92">GetAsNullableParameters</a>
+					<a class="permalink" href="index.html#Parameters.GetAsNullableParameters">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) GetAsNullableParameters(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Converts map element into an Parameters or returns nil if conversion is not possible.
+Parameters:
+</p>
+<pre>- key: string
+a key of element to get.
+</pre>
+<p>
+Returns *Parameters
+Parameters value of the element or nil if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.GetAsParameters">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=3565:3625#L106">GetAsParameters</a>
+					<a class="permalink" href="index.html#Parameters.GetAsParameters">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) GetAsParameters(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Converts map element into an Parameters or returns empty Parameters if conversion is not possible.
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+</pre>
+<p>
+Returns *Parameters
+Parameters value of the element or empty Parameters if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.GetAsParametersWithDefault">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=4014:4111#L119">GetAsParametersWithDefault</a>
+					<a class="permalink" href="index.html#Parameters.GetAsParametersWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) GetAsParametersWithDefault(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>, defaultValue *<a href="index.html#Parameters">Parameters</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Converts map element into an Parameters or returns default value if conversion is not possible.
+Parameters:
+</p>
+<pre>-key string
+a key of element to get.
+- defaultValue *Parameters
+the default value
+</pre>
+<p>
+Returns *Parameters
+Parameters value of the element or default value if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Omit">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=7341:7395#L219">Omit</a>
+					<a class="permalink" href="index.html#Parameters.Omit">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Omit(paths ...<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Omits selected parameters from this Parameters and returns the rest as a new Parameters object.
+Parameters:
+</p>
+<pre>- paths ...string
+keys to be omitted from copying over to new Parameters.
+</pre>
+<p>
+Returns *Parameters
+a new Parameters object.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Override">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=4789:4870#L144">Override</a>
+					<a class="permalink" href="index.html#Parameters.Override">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Override(parameters *<a href="index.html#Parameters">Parameters</a>, recursive <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Overrides parameters with new values from specified Parameters and returns a new Parameters object.
+see
+setDefaults
+Parameters:
+</p>
+<pre>- parameters: Parameters
+Parameters with parameters to override the current values.
+- recursive bool
+true to perform deep copy, and false for shallow copy. Default: false
+</pre>
+<p>
+Returns *Parameters
+a new Parameters object.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Pick">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=6893:6947#L203">Pick</a>
+					<a class="permalink" href="index.html#Parameters.Pick">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Pick(paths ...<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Picks select parameters from this Parameters and returns them as a new Parameters object.
+Parameters:
+</p>
+<pre>- paths ...string
+keys to be picked and copied over to new Parameters.
+</pre>
+<p>
+Returns *Parameters
+a new Parameters object.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Put">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=1972:2027#L56">Put</a>
+					<a class="permalink" href="index.html#Parameters.Put">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Put(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{})</pre>
+				<p>
+Puts a new value into map element specified by its key.
+The key can be defined using dot notation and allows to recursively access elements of elements.
+Parameters:
+</p>
+<pre>- key string
+a key of the element to put.
+- value interface{}
+a new value for map element.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.Remove">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=2340:2379#L70">Remove</a>
+					<a class="permalink" href="index.html#Parameters.Remove">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) Remove(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Removes a map element specified by its key
+Parameters:
+</p>
+<pre>- key string
+a key of the element to remove.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Parameters.SetDefaults">func (*Parameters) <a href="http://localhost:6060/src/run/Parameters.go?s=5722:5813#L170">SetDefaults</a>
+					<a class="permalink" href="index.html#Parameters.SetDefaults">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Parameters">Parameters</a>) SetDefaults(defaultParameters *<a href="index.html#Parameters">Parameters</a>, recursive <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) *<a href="index.html#Parameters">Parameters</a></pre>
+				<p>
+Set default values from specified Parameters and returns a new Parameters object.
+see
+Override
+Parameters:
+</p>
+<pre>- defaultParameters *Parameters
+Parameters with default parameter values.
+- recursive bool
+true to perform deep copy, and false for shallow copy. Default: false
+</pre>
+<p>
+Returns *Parameters
+a new Parameters object.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TCleaner">type <a href="http://localhost:6060/src/run/Cleaner.go?s=65:87#L1">TCleaner</a>
+				<a class="permalink" href="index.html#TCleaner">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class that cleans stored object state.
+</p>
+
+			<pre>type TCleaner struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="Cleaner">Cleaner</span> *<a href="index.html#TCleaner">TCleaner</a> = &amp;<a href="index.html#TCleaner">TCleaner</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TCleaner.Clear">func (*TCleaner) <a href="http://localhost:6060/src/run/Cleaner.go?s=1011:1089#L24">Clear</a>
+					<a class="permalink" href="index.html#TCleaner.Clear">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TCleaner">TCleaner</a>) Clear(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, components []interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Clears state of multiple components.
+To be cleaned state components must implement ICleanable interface. If they don&#39;t the call to this method has no effect.
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+- components []interface{}
+</pre>
+<p>
+the list of components that are to be cleaned.
+Returns error
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TCleaner.ClearOne">func (*TCleaner) <a href="http://localhost:6060/src/run/Cleaner.go?s=476:554#L8">ClearOne</a>
+					<a class="permalink" href="index.html#TCleaner.ClearOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TCleaner">TCleaner</a>) ClearOne(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, component interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Clears state of specific component.
+To be cleaned state components must implement ICleanable interface. If they don&#39;t the call to this method has no effect.
+Parameters:
+</p>
+<pre>- correlationId: string
+transaction id to trace execution through call chain.
+- component interface{}
+the component that is to be cleaned.
+</pre>
+<p>
+Returns error
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TCloser">type <a href="http://localhost:6060/src/run/Closer.go?s=74:95#L1">TCloser</a>
+				<a class="permalink" href="index.html#TCloser">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class that closes previously opened components.
+</p>
+
+			<pre>type TCloser struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="Closer">Closer</span> *<a href="index.html#TCloser">TCloser</a> = &amp;<a href="index.html#TCloser">TCloser</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TCloser.Close">func (*TCloser) <a href="http://localhost:6060/src/run/Closer.go?s=989:1066#L25">Close</a>
+					<a class="permalink" href="index.html#TCloser.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TCloser">TCloser</a>) Close(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, components []interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Closes multiple components.
+To be closed components must implement ICloseable interface. If they don&#39;t the call to this method has no effect.
+Parameters:
+</p>
+<pre>			- correlationId string
+ 		transaction id to trace execution through call chain.
+			- components []interface{}
+			the list of components that are to be closed.
+</pre>
+<p>
+Returns error
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TCloser.CloseOne">func (*TCloser) <a href="http://localhost:6060/src/run/Closer.go?s=464:541#L9">CloseOne</a>
+					<a class="permalink" href="index.html#TCloser.CloseOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TCloser">TCloser</a>) CloseOne(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, component interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+To be closed components must implement ICloseable interface. If they don&#39;t the call to this method has no effect.
+Parameters:
+</p>
+<pre> - correlationId string
+ transaction id to trace execution through call chain.
+ - component interface{}
+	the component that is to be closed.
+</pre>
+<p>
+Returns error
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TExecutor">type <a href="http://localhost:6060/src/run/Executor.go?s=59:82#L1">TExecutor</a>
+				<a class="permalink" href="index.html#TExecutor">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class that executes components.
+</p>
+
+			<pre>type TExecutor struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="Executor">Executor</span> *<a href="index.html#TExecutor">TExecutor</a> = &amp;<a href="index.html#TExecutor">TExecutor</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TExecutor.Execute">func (*TExecutor) <a href="http://localhost:6060/src/run/Executor.go?s=1223:1339#L31">Execute</a>
+					<a class="permalink" href="index.html#TExecutor.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TExecutor">TExecutor</a>) Execute(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, components []interface{}, args *<a href="index.html#Parameters">Parameters</a>) ([]interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+To be executed components must implement IExecutable interface. If they don&#39;t the call to this method has no effect.
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+- components []interface{}
+a list of components that are to be executed.
+- args *Parameters
+execution arguments.
+</pre>
+<p>
+Returns []interface{}, error
+execution result or error
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TExecutor.ExecuteOne">func (*TExecutor) <a href="http://localhost:6060/src/run/Executor.go?s=556:670#L11">ExecuteOne</a>
+					<a class="permalink" href="index.html#TExecutor.ExecuteOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TExecutor">TExecutor</a>) ExecuteOne(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, component interface{}, args *<a href="index.html#Parameters">Parameters</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Executes specific component.
+To be executed components must implement IExecutable interface. If they don&#39;t the call to this method has no effect.
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+- component interface{}
+the component that is to be executed.
+- args: *Parameters
+execution arguments.
+</pre>
+<p>
+Returns []interface{}, error
+execution result or error
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TNotifier">type <a href="http://localhost:6060/src/run/Notifier.go?s=58:81#L1">TNotifier</a>
+				<a class="permalink" href="index.html#TNotifier">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class that notifies components.
+</p>
+
+			<pre>type TNotifier struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="Notifier">Notifier</span> *<a href="index.html#TNotifier">TNotifier</a> = &amp;<a href="index.html#TNotifier">TNotifier</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TNotifier.Notify">func (*TNotifier) <a href="http://localhost:6060/src/run/Notifier.go?s=1132:1224#L31">Notify</a>
+					<a class="permalink" href="index.html#TNotifier.Notify">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TNotifier">TNotifier</a>) Notify(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, components []interface{}, args *<a href="index.html#Parameters">Parameters</a>)</pre>
+				<p>
+Notifies multiple components.
+To be notified components must implement INotifiable interface. If they don&#39;t the call to this method has no effect.
+see
+NotifyOne
+see
+INotifiable
+Parameters:
+</p>
+<pre>- correlationId string
+ transaction id to trace execution through call chain.
+- components []interface{}
+a list of components that are to be notified.
+- args *Parameters
+notification arguments.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TNotifier.NotifyOne">func (*TNotifier) <a href="http://localhost:6060/src/run/Notifier.go?s=516:608#L11">NotifyOne</a>
+					<a class="permalink" href="index.html#TNotifier.NotifyOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TNotifier">TNotifier</a>) NotifyOne(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, component interface{}, args *<a href="index.html#Parameters">Parameters</a>)</pre>
+				<p>
+Notifies specific component.
+To be notiied components must implement INotifiable interface. If they don&#39;t the call to this method has no effect.
+see
+INotifiable
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+- component interface{}
+the component that is to be notified.
+- args *Parameters
+notifiation arguments.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TOpener">type <a href="http://localhost:6060/src/run/Opener.go?s=55:76#L1">TOpener</a>
+				<a class="permalink" href="index.html#TOpener">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class that opens components.
+</p>
+
+			<pre>type TOpener struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="Opener">Opener</span> *<a href="index.html#TOpener">TOpener</a> = &amp;<a href="index.html#TOpener">TOpener</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TOpener.IsOpen">func (*TOpener) <a href="http://localhost:6060/src/run/Opener.go?s=962:1017#L27">IsOpen</a>
+					<a class="permalink" href="index.html#TOpener.IsOpen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TOpener">TOpener</a>) IsOpen(components []interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if all components are opened.
+To be checked components must implement IOpenable interface. If they don&#39;t the call to this method returns true.
+see
+isOpenOne
+see
+IOpenable
+Parameters:
+</p>
+<pre>- components []interface{}
+a list of components that are to be checked.
+</pre>
+<p>
+Returns bool
+true if all components are opened and false if at least one component is closed.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TOpener.IsOpenOne">func (*TOpener) <a href="http://localhost:6060/src/run/Opener.go?s=429:484#L8">IsOpenOne</a>
+					<a class="permalink" href="index.html#TOpener.IsOpenOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TOpener">TOpener</a>) IsOpenOne(component interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if specified component is opened.
+To be checked components must implement IOpenable interface. If they don&#39;t the call to this method returns true.
+see
+IOpenable
+</p>
+<pre>- component interface{}
+the component that is to be checked.
+</pre>
+<p>
+Returns bool
+true if component is opened and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TOpener.Open">func (*TOpener) <a href="http://localhost:6060/src/run/Opener.go?s=2104:2180#L69">Open</a>
+					<a class="permalink" href="index.html#TOpener.Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TOpener">TOpener</a>) Open(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, components []interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Opens multiple components.
+To be opened components must implement IOpenable interface. If they don&#39;t the call to this method has no effect.
+see
+OpenOne
+see
+IOpenable
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+components []interface{}
+the list of components that are to be closed.
+</pre>
+<p>
+Returns error
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TOpener.OpenOne">func (*TOpener) <a href="http://localhost:6060/src/run/Opener.go?s=1547:1623#L49">OpenOne</a>
+					<a class="permalink" href="index.html#TOpener.OpenOne">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TOpener">TOpener</a>) OpenOne(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, component interface{}) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Opens specific component.
+To be opened components must implement IOpenable interface. If they don&#39;t the call to this method has no effect.
+see
+IOpenable
+Parameters:
+</p>
+<pre>- correlationId string
+(optional) transaction id to trace execution through call chain.
+- component interface{}
+the component that is to be opened.
+</pre>
+<p>
+Returns error
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

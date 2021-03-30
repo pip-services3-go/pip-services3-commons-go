@@ -17,9 +17,9 @@ see
 TypeDescriptor
 
 Example:
-descriptor := NewTypeDescriptor("MyObject", "mylibrary");
-TypeReflector.GetTypeByDescriptor(descriptor);
-myObj = TypeReflector.CreateInstanceByDescriptor(descriptor);
+ descriptor := NewTypeDescriptor("MyObject", "mylibrary");
+ TypeReflector.GetTypeByDescriptor(descriptor);
+ myObj = TypeReflector.CreateInstanceByDescriptor(descriptor);
 
 */
 type TTypeReflector struct{}
@@ -28,10 +28,10 @@ var TypeReflector *TTypeReflector = &TTypeReflector{}
 
 // Gets object type by its name and library where it is defined.
 // Parameters:
-// 			 - name string
-// 			an object type name.
-// 			pkg string
-// 			a package where the type is defined
+//  - name string
+//  an object type name.
+//  pkg string
+//  a package where the type is defined
 // Returns refl.Type
 // the object type or nil is the type wasn't found.
 func (c *TTypeReflector) GetType(name string, pkg string) refl.Type {
@@ -42,8 +42,8 @@ func (c *TTypeReflector) GetType(name string, pkg string) refl.Type {
 
 // Gets object type by type descriptor.
 // Parameters:
-// 			- descriptor *TypeDescriptor
-// 			a type descriptor that points to an object type
+//  - descriptor *TypeDescriptor
+//  a type descriptor that points to an object type
 // Returns refl.Type
 // the object type or nil is the type wasn't found.
 func (c *TTypeReflector) GetTypeByDescriptor(typ *TypeDescriptor) refl.Type {
@@ -56,10 +56,10 @@ func (c *TTypeReflector) GetTypeByDescriptor(typ *TypeDescriptor) refl.Type {
 
 // Creates an instance of an object type.
 // Parameters:
-// 			- type refl.Type
-// 			an object type (factory function) to create.
-// 			args ...interface{}
-// 			arguments for the object constructor.
+//  - type refl.Type
+//  an object type (factory function) to create.
+//  args ...interface{}
+//  arguments for the object constructor.
 // Returns interface{}, error
 // the created object instance and error.
 func (c *TTypeReflector) CreateInstanceByType(typ refl.Type, args ...interface{}) (interface{}, error) {
@@ -81,12 +81,12 @@ func (c *TTypeReflector) CreateInstanceByType(typ refl.Type, args ...interface{}
 
 // Creates an instance of an object type specified by its name and library where it is defined.
 // Parameters:
-// 				- name string
-// 				an object type name.
-// 				- pkg: string
-// 				a package (module) where object type is defined.
-// 				- args ...interface{}
-// 				rguments for the object constructor.
+//  - name string
+//  an object type name.
+//  - pkg: string
+//  a package (module) where object type is defined.
+//  - args ...interface{}
+//  rguments for the object constructor.
 // Returns any
 // the created object instance.
 func (c *TTypeReflector) CreateInstance(name string, pkg string, args ...interface{}) (interface{}, error) {
@@ -104,10 +104,10 @@ func (c *TTypeReflector) CreateInstance(name string, pkg string, args ...interfa
 
 // Creates an instance of an object type specified by type descriptor.
 // Parameters:
-// 			 - descriptor *TypeDescriptor
-// 			a type descriptor that points to an object type
-// 			- args ...interface{}
-// 			arguments for the object constructor.
+//  - descriptor *TypeDescriptor
+//  a type descriptor that points to an object type
+//  - args ...interface{}
+//  arguments for the object constructor.
 
 // Returns interface{}, error
 // the created object instance and error.

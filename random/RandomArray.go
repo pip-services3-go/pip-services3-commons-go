@@ -7,9 +7,9 @@ import (
 //
 //Random generator for array objects.
 //
-//Examples:
+// Examples:
 //
-//			value1 := RandomArray.pick([1, 2, 3, 4]); // Possible result: 3
+//  value1 := RandomArray.pick([1, 2, 3, 4]); // Possible result: 3
 //
 type TRandomArray struct{}
 
@@ -18,7 +18,7 @@ var RandomArray *TRandomArray = &TRandomArray{}
 //Picks a random element from specified array.
 //Parameters:
 //
-//			- values: an array of any interface
+//  - values: an array of any interface
 //
 //Returns a randomly picked item.
 //

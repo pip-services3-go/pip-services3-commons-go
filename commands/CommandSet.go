@@ -21,10 +21,10 @@ see
 ICommandable
 
 Example:
-type MyDataCommandSet {
+ type MyDataCommandSet {
 	CommandSet
     _controller IMyDataController
-}
+ }
     func (dcs * MyDataCommandSet) CreateMyDataCommandSet(controller IMyDataController) { // Any data controller interface
         dcs._controller = controller
         dcs.addCommand(dcs.makeGetMyDataCommand())
@@ -83,8 +83,8 @@ func (c *CommandSet) Events() []IEvent {
 // see
 // ICommand
 // Parameters:
-// 			- commandName: string
-// 			the name of the command to search for.
+//  - commandName: string
+//  the name of the command to search for.
 // Returns ICommand
 // the command, whose name matches the provided name.
 func (c *CommandSet) FindCommand(commandName string) ICommand {
@@ -95,8 +95,8 @@ func (c *CommandSet) FindCommand(commandName string) ICommand {
 // see
 // IEvent
 // Parameters:
-//  		- eventName: string
-// 			the name of the event to search for.
+//  - eventName: string
+//  the name of the event to search for.
 // Returns IEvent
 // the event, whose name matches the provided name.
 func (c *CommandSet) FindEvent(eventName string) IEvent {
@@ -125,8 +125,8 @@ func (c *CommandSet) rebuildAllCommandChains() {
 // see
 // ICommand
 // Parameters:
-// 			- command: ICommand
-// 			 the command to add.
+//  - command: ICommand
+//   the command to add.
 func (c *CommandSet) AddCommand(command ICommand) {
 	c.commands = append(c.commands, command)
 	c.buildCommandChain(command)
@@ -136,8 +136,8 @@ func (c *CommandSet) AddCommand(command ICommand) {
 // see
 // ICommand
 // Parameters:
-// 			 - commands: []ICommand
-// 			the array of commands to add.
+// 	- commands: []ICommand
+// 	the array of commands to add.
 func (c *CommandSet) AddCommands(commands []ICommand) {
 	for _, command := range commands {
 		c.AddCommand(command)
@@ -148,8 +148,8 @@ func (c *CommandSet) AddCommands(commands []ICommand) {
 // see
 // IEvent
 // Parameters:
-// 				- event: IEvent
-// 				the event to add.
+//  - event: IEvent
+//  the event to add.
 func (c *CommandSet) AddEvent(event IEvent) {
 	c.events = append(c.events, event)
 	c.eventsByName[event.Name()] = event
@@ -159,8 +159,8 @@ func (c *CommandSet) AddEvent(event IEvent) {
 // see
 // IEvent
 // Parameters:
-// 			- events: []IEvent
-// 			the array of events to add.
+//  - events: []IEvent
+//  the array of events to add.
 func (c *CommandSet) AddEvents(events []IEvent) {
 	for _, event := range events {
 		c.AddEvent(event)
@@ -169,8 +169,8 @@ func (c *CommandSet) AddEvents(events []IEvent) {
 
 // Adds all of the commands and events from specified command set into this one.
 // Parameters:
-// 			- commandSet: *CommandSet
-// 			the CommandSet to add.
+//  - commandSet: *CommandSet
+//  the CommandSet to add.
 func (c *CommandSet) AddCommandSet(commandSet *CommandSet) {
 	c.AddCommands(commandSet.Commands())
 	c.AddEvents(commandSet.Events())
@@ -180,8 +180,8 @@ func (c *CommandSet) AddCommandSet(commandSet *CommandSet) {
 // see
 // IEventListener
 // Parameters:
-// 			 - listener: IEventListener
-// 				the listener to add.
+//  - listener: IEventListener
+//  the listener to add.
 func (c *CommandSet) AddListener(listener IEventListener) {
 	for _, event := range c.events {
 		event.AddListener(listener)
@@ -192,8 +192,8 @@ func (c *CommandSet) AddListener(listener IEventListener) {
 // see
 // IEventListener
 // Parameters:
-// 			- listener: IEventListener
-// 			the listener to remove.
+//  - listener: IEventListener
+//  the listener to remove.
 func (c *CommandSet) RemoveListener(listener IEventListener) {
 	for _, event := range c.events {
 		event.RemoveListener(listener)
@@ -204,8 +204,8 @@ func (c *CommandSet) RemoveListener(listener IEventListener) {
 // see
 // ICommandInterceptor
 // Parameters:
-// 			-interceptor: ICommandInterceptor
-// 			the interceptor to add.
+//  -interceptor: ICommandInterceptor
+//  the interceptor to add.
 func (c *CommandSet) AddInterceptor(interceptor ICommandInterceptor) {
 	c.interceptors = append(c.interceptors, interceptor)
 	c.rebuildAllCommandChains()
@@ -217,12 +217,12 @@ func (c *CommandSet) AddInterceptor(interceptor ICommandInterceptor) {
 // see
 // Parameters
 // Parameters:
-// 			 - correlationId: string
-// 			 (optional) transaction id to trace execution through call chain.
-// 			 - commandName: string
-// 			 the name of that command that is to be executed.
-//           - args: Parameters
-// 			  the parameters (arguments) to pass to the command for execution.
+//  - correlationId: string
+//  (optional) transaction id to trace execution through call chain.
+//  - commandName: string
+//  the name of that command that is to be executed.
+//  - args: Parameters
+//   the parameters (arguments) to pass to the command for execution.
 // return
 // result: interface{}
 // err: error
@@ -262,10 +262,10 @@ func (c *CommandSet) Execute(correlationId string, commandName string, args *run
 // see
 // ValidationResult
 // Parameters:
-// 				- commandName: string
-// 				the name of the command for which the 'args' must be validated.
-//  			- args: Parameters
-// 				the parameters (arguments) to validate.
+//  - commandName: string
+//  the name of the command for which the 'args' must be validated.
+//  - args: Parameters
+//  the parameters (arguments) to validate.
 // Returns []ValidationResult
 // an array of ValidationResults. If no command is found by the given name,
 // then the returned array of ValidationResults will contain a single entry,
@@ -291,12 +291,12 @@ func (c *CommandSet) Validate(commandName string, args *run.Parameters) []*valid
 
 // Fires event specified by its name and notifies all registered listeners
 // Parameters:
-// 				- correlationId: string
-// 				(optional) transaction id to trace execution through call chain.
-// 				- eventName: string
-// 				the name of the event that is to be fired.
-// 				- args: Parameters
-// 				the event arguments (parameters).
+//  - correlationId: string
+//  (optional) transaction id to trace execution through call chain.
+//  - eventName: string
+//  the name of the event that is to be fired.
+//  - args: Parameters
+//  the event arguments (parameters).
 func (c *CommandSet) Notify(correlationId string, eventName string, args *run.Parameters) {
 	event := c.FindEvent(eventName)
 

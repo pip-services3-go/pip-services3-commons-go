@@ -11,25 +11,25 @@ The IReferences object is a simple map, where keys are locators and values are c
 type IReferences interface {
 	// Puts a new reference into this reference map.
 	// Parameters:
-	// 			- locator interface{}
-	// 			a locator to find the reference by.
-	// 			- component interface{}
-	// 			a component reference to be added.
+	//  - locator interface{}
+	//  a locator to find the reference by.
+	//  - component interface{}
+	//  a component reference to be added.
 	// Returns interface{}
 	Put(locator interface{}, component interface{})
 	// 	Removes a previously added reference that matches specified locator. If many references match the locator, it removes only the first one. When all references shall be removed, use removeAll method instead.
 	// see
 	// RemoveAll
 	// Parameters:
-	// 			- locator interface{}
-	// 			a locator to remove reference
+	//  - locator interface{}
+	//  a locator to remove reference
 	// Returns interface{}
 	// the removed component reference.
 	Remove(locator interface{}) interface{}
 	// 	Removes all component references that match the specified locator.
 	// Parameters:
-	// 			- locator interface{}
-	// 			the locator to remove references by.
+	//  - locator interface{}
+	//  the locator to remove references by.
 	// Returns []interface{}
 	// a list, containing all removed references.
 	RemoveAll(locator interface{}) []interface{}
@@ -43,8 +43,8 @@ type IReferences interface {
 	GetAll() []interface{}
 	// Gets all component references that match specified locator.
 	// Parameters:
-	// 		- locator interface{}
-	// 		the locator to find references by.
+	//  - locator interface{}
+	//  the locator to find references by.
 	// Returns []interface{}
 	// a list with matching component references or empty list if nothing was found.
 	GetOptional(locator interface{}) []interface{}
@@ -52,15 +52,15 @@ type IReferences interface {
 	// throws
 	// a ReferenceException when no references found.
 	// Parameters:
-	// 			 - locator interface{}
-	// 			the locator to find references by.
+	//  - locator interface{}
+	//  the locator to find references by.
 	// Returns []interface{}
 	// a list with matching component references.
 	GetRequired(locator interface{}) ([]interface{}, error)
 	// 	Gets an optional component reference that matches specified locator.
 	// Parameters:
-	// 		- locator interface{}
-	// 		the locator to find references by.
+	//  - locator interface{}
+	//  the locator to find references by.
 	// Returns interface{}
 	// a matching component reference or nil if nothing was found.
 	GetOneOptional(locator interface{}) interface{}
@@ -68,8 +68,8 @@ type IReferences interface {
 	// throws
 	// a ReferenceError when no references found.
 	// Parameters:
-	// 			- locator interface{}
-	// 			the locator to find a reference by.
+	//  - locator interface{}
+	//  the locator to find a reference by.
 	// Returns interface{}
 	// a matching component reference.
 	GetOneRequired(locator interface{}) (interface{}, error)
@@ -77,10 +77,10 @@ type IReferences interface {
 	// throws
 	// a ReferenceError when required is set to true but no references found.
 	// Parameters:
-	// 			- locator interface{}
-	// 			the locator to find a reference by.
-	// 			- required bool
-	// 			forces to raise an exception if no reference is found.
+	// 	 - locator interface{}
+	// 	 the locator to find a reference by.
+	// 	 - required bool
+	// 	 forces to raise an exception if no reference is found.
 	// Returns []interface{}
 	// a list with matching component references.
 	Find(locator interface{}, required bool) ([]interface{}, error)

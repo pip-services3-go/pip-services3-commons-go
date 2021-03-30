@@ -12,7 +12,7 @@ type IConfigurable interface {
 	// 	Configures object by passing configuration parameters.
 
 	// Parameters:
-	// 			 - config: ConfigParams
-	// 				configuration parameters to be set.
+	//  - config: ConfigParams
+	//  configuration parameters to be set.
 	Configure(config *ConfigParams)
 }

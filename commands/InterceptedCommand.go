@@ -14,28 +14,28 @@ see
 ICommandInterceptor
 
 Example:
-type CommandLogger {
-	msg string
-}
-    func (cl * CommandLogger) Name(command ICommand) string {
-        return command.Name();
-    }
+ type CommandLogger {
+ 	msg string
+ }
 
-    func (cl * CommandLogger) Execute(correlationId string, command ICommand, args Parameters) (res interface{}, err error){
-        fmt.Println("Executed command " + command.Name());
-        return command.Execute(correlationId, args);
-    }
+ func (cl * CommandLogger) Name(command ICommand) string {
+     return command.Name();
+ }
 
-    func (cl * CommandLogger) Validate(command: ICommand, args: Parameters): ValidationResult[] {
-        return command.Validate(args);
-    }
+ func (cl * CommandLogger) Execute(correlationId string, command ICommand, args Parameters) (res interface{}, err error){
+     fmt.Println("Executed command " + command.Name());
+     return command.Execute(correlationId, args);
+ }
+
+ func (cl * CommandLogger) Validate(command: ICommand, args: Parameters): ValidationResult[] {
+     return command.Validate(args);
+ }
 
  logger := CommandLogger{mgs:"CommandLoger"};
  loggedCommand = NewInterceptedCommand(logger, command);
-
-// Each called command will output: Executed command <command name>
+ 
+ // Each called command will output: Executed command <command name>
 */
-
 type InterceptedCommand struct {
 	interceptor ICommandInterceptor
 	next        ICommand
@@ -44,10 +44,10 @@ type InterceptedCommand struct {
 // Creates a new InterceptedCommand, which serves as a link in an execution chain.
 // Contains information about the interceptor that is being used and the next command in the chain.
 // Parameters:
-// 			 - interceptor: ICommandInterceptor
-// 				the interceptor that is intercepting the command.
-// 			 - next: ICommand
-// 				(link to) the next command in the command's execution chain.
+//  - interceptor: ICommandInterceptor
+//  the interceptor that is intercepting the command.
+//  - next: ICommand
+//  (link to) the next command in the command's execution chain.
 // Returns *InterceptedCommand
 func NewInterceptedCommand(interceptor ICommandInterceptor, next ICommand) *InterceptedCommand {
 	return &InterceptedCommand{
@@ -66,10 +66,10 @@ func (c *InterceptedCommand) Name() string {
 // see
 // Parameters
 // Parameters:
-// 			- correlationId: string
-// 			unique transaction id to trace calls across components.
-// 			- args: Parameters
-// 			the parameters (arguments) to pass to the command for execution.
+//  - correlationId: string
+//  	unique transaction id to trace calls across components.
+//  - args: Parameters
+//  	the parameters (arguments) to pass to the command for execution.
 // Returns:
 // err: error
 // result: interface{}
@@ -83,8 +83,8 @@ func (c *InterceptedCommand) Execute(correlationId string, args *run.Parameters)
 // see
 // ValidationResult
 // Parameters:
-// 			 - args: Parameters
-// 			the parameters (arguments) to validate for the next command.
+//  - args: Parameters
+//  the parameters (arguments) to validate for the next command.
 // Returns []*ValidationResult
 // an array of *ValidationResults.
 func (c *InterceptedCommand) Validate(args *run.Parameters) []*validate.ValidationResult {

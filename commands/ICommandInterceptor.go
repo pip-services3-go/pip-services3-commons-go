@@ -18,8 +18,8 @@ type ICommandInterceptor interface {
 	// The interceptor can use this method to override the command name.
 	// Otherwise it shall just delegate the call to the wrapped command.
 	// Parameters:
-	// 				- command: ICommand
-	// the next command in the call chain.
+	//  - command: ICommand
+	//  the next command in the call chain.
 	// Returns string
 	// the name of the wrapped command.
 	Name(command ICommand) string
@@ -30,11 +30,11 @@ type ICommandInterceptor interface {
 	// see
 	// Parameters
 	// Parameters:
-	// 			- correlationId: string
-	// 			(optional) transaction id to trace execution through call chain.
-	// 			- command: ICommand
-	// 			the next command in the call chain that is to be executed.
-	// 			- args: Parameters
+	//  - correlationId: string
+	//  (optional) transaction id to trace execution through call chain.
+	//  - command: ICommand
+	//  the next command in the call chain that is to be executed.
+	//  - args: Parameters
 	// the function that is to be called once execution is complete.
 	// If an exception is raised, then it will be called with the error.
 	// Returns:
@@ -50,10 +50,10 @@ type ICommandInterceptor interface {
 	// see
 	// ValidationResult
 	// Parameters:
-	// 				- command: ICommand
-	// 				the next command in the call chain to be validated against.
-	// 				- args: Parameters
-	// 				the parameters (arguments) to validate.
+	//  - command: ICommand
+	//  the next command in the call chain to be validated against.
+	//  - args: Parameters
+	//  the parameters (arguments) to validate.
 	// Returns []*ValidationResult
 	// an array of *ValidationResults.
 	Validate(command ICommand, args *run.Parameters) []*validate.ValidationResult

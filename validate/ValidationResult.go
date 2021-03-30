@@ -16,18 +16,18 @@ type ValidationResult struct {
 // see
 // ValidationResultType
 // Parameters:
-//			- path string
-// 			a dot notation path of the validated element.
-//			- type: ValidationResultType
-// 			a type of the validation result: Information, Warning, or Error.
-//			- code string
-// 			an error code.
-//			- message string
-// 			a human readable message.
-//			- expected interface{}
-// 			an value expected by schema validation.
-//			- actual interface{}
-// 			an actual value found by schema validation.
+//   - path string
+//   a dot notation path of the validated element.
+//   - type: ValidationResultType
+//   a type of the validation result: Information, Warning, or Error.
+//   - code string
+//   an error code.
+//   - message string
+//   a human readable message.
+//   - expected interface{}
+//   an value expected by schema validation.
+//   - actual interface{}
+//   an actual value found by schema validation.
 // Returns *ValidationResult
 func NewValidationResult(path string, typ ValidationResultType, code string, message string,
 	expected interface{}, actual interface{}) *ValidationResult {

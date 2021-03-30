@@ -9,10 +9,9 @@ import (
 //Random generator for integer values.
 //Example:
 //
-//			value1 := RandomInteger.nextInteger(5, 10);     // Possible result: 7
-// 			value2 := RandomInteger.nextInteger(10);        // Possible result: 3
-//			value3 := RandomInteger.updateInteger(10, 3);   // Possible result: 9
-//
+//  value1 := RandomInteger.nextInteger(5, 10);     // Possible result: 7
+//  value2 := RandomInteger.nextInteger(10);        // Possible result: 3
+//  value3 := RandomInteger.updateInteger(10, 3);   // Possible result: 9
 type TRandomInteger struct{}
 
 var RandomInteger *TRandomInteger = &TRandomInteger{}
@@ -23,9 +22,9 @@ var RandomInteger *TRandomInteger = &TRandomInteger{}
 //
 //Parameters:
 //
-// 				-min: int - minimum value of the integer that will be generated. If 'max' is omitted,
-//				then 'max' is set to 'min' and 'min' is set to 0.
-// 				-max: int - maximum value of the int that will be generated. Defaults to 'min' if omitted.
+//  - min: int - minimum value of the integer that will be generated. If 'max' is omitted,
+//  then 'max' is set to 'min' and 'min' is set to 0.
+//  - max: int - maximum value of the int that will be generated. Defaults to 'min' if omitted.
 //
 //Returns generated random integer value.
 //
@@ -42,8 +41,8 @@ func (c *TRandomInteger) NextInteger(min int, max int) int {
 //Updates (drifts) a integer value within specified range defined
 //
 //Parameters:
-//			- value: int - a integer value to drift.
-//			- interval:int - a range. Default: 10% of the value
+//  - value: int - a integer value to drift.
+//  - interval:int - a range. Default: 10% of the value
 //
 //Returns int
 //
@@ -61,9 +60,9 @@ func (c *TRandomInteger) UpdateInteger(value int, interval int) int {
 //
 //Parameters:
 //
-//		- min: int - minimum value of the integer that will be generated. If 'max'
-//		is omitted, then 'max' is set to 'min' and 'min' is set to 0.
-// 		- max: int - maximum value of the int that will be generated. Defaults to 'min' if omitted.
+//  - min: int - minimum value of the integer that will be generated. If 'max'
+//  is omitted, then 'max' is set to 'min' and 'min' is set to 0.
+//  - max: int - maximum value of the int that will be generated. Defaults to 'min' if omitted.
 //
 // Returns generated array of integers.
 //

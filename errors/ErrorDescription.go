@@ -15,7 +15,6 @@ package errors
  status - HTTP status code associated with this error type
  type - Data type of the original error
 */
-
 type ErrorDescription struct {
 	Type          string                 `json:"type"`
 	Category      string                 `json:"category"`
@@ -23,7 +22,7 @@ type ErrorDescription struct {
 	Code          string                 `json:"code"`
 	Message       string                 `json:"message"`
 	Details       map[string]interface{} `json:"details"`
-	CorrelationId string                 `json:"correlaion_id"`
+	CorrelationId string                 `json:"correlation_id"`
 	Cause         string                 `json:"cause"`
 	StackTrace    string                 `json:"stack_trace"`
 }

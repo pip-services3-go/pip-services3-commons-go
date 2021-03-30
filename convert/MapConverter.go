@@ -34,8 +34,8 @@ func (c *TMapConverter) ToMap(value interface{}) map[string]interface{} {
 
 // Converts value into map object or returns default map when conversion is not possible.
 // Parameters:
-// "value" - the value to convert
-// "defaultValue" - the default value.
+//  "value" - the value to convert
+//  "defaultValue" - the default value.
 // Returns: map object or default map when conversion is not supported.
 func (c *TMapConverter) ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{} {
 	return ToMapWithDefault(value, defaultValue)
@@ -85,8 +85,8 @@ func ToMap(value interface{}) map[string]interface{} {
 
 // Converts value into map object or returns default map when conversion is not possible.
 // Parameters:
-// "value" - the value to convert
-// "defaultValue" - the default value.
+//  "value" - the value to convert
+//  "defaultValue" - the default value.
 // Returns: map object or default map when conversion is not supported.
 func ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{} {
 	if m := ToNullableMap(value); m != nil {

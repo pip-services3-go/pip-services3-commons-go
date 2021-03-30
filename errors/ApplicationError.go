@@ -27,7 +27,6 @@ ErrorCategory
 see
 ErrorDescription
 */
-
 type ApplicationError struct {
 	Message       string                 `json:"message"`
 	Category      string                 `json:"category"`
@@ -47,8 +46,8 @@ func (e *ApplicationError) Error() string {
 
 //Add code to ApplicationError
 //Parameters:
-// 			- code string
-//			a error code
+// - code string
+// a error code
 // Return *ApplicationError
 func (e *ApplicationError) WithCode(code string) *ApplicationError {
 	e.Code = code
@@ -57,8 +56,8 @@ func (e *ApplicationError) WithCode(code string) *ApplicationError {
 
 //Add status to ApplicationError
 //Parameters:
-// 			- status int
-//			a status code
+// - status int
+// a status code
 // Return *ApplicationError
 func (e *ApplicationError) WithStatus(status int) *ApplicationError {
 	e.Status = status
@@ -67,10 +66,10 @@ func (e *ApplicationError) WithStatus(status int) *ApplicationError {
 
 //Add error details to ApplicationError
 //Parameters:
-// 			- key string
-//			a detail key word
-// 			- value interface{}
-//			an value of detail object
+// - key string
+// a detail key word
+// - value interface{}
+// an value of detail object
 // Return *ApplicationError
 func (e *ApplicationError) WithDetails(key string, value interface{}) *ApplicationError {
 	if e.Details == nil {
@@ -82,8 +81,8 @@ func (e *ApplicationError) WithDetails(key string, value interface{}) *Applicati
 
 //Add cause to ApplicationError
 //Parameters:
-// 			- cause error
-//			a cause error object
+// - cause error
+// a cause error object
 // Return *ApplicationError
 func (e *ApplicationError) WithCause(cause error) *ApplicationError {
 	e.Cause = cause.Error()
@@ -92,8 +91,8 @@ func (e *ApplicationError) WithCause(cause error) *ApplicationError {
 
 //Add cause to ApplicationError
 //Parameters:
-// 			- cause string
-//			a cause string describe an error
+// - cause string
+// a cause string describe an error
 // Return *ApplicationError
 func (e *ApplicationError) WithCauseString(cause string) *ApplicationError {
 	e.Cause = cause
@@ -102,8 +101,8 @@ func (e *ApplicationError) WithCauseString(cause string) *ApplicationError {
 
 //Add Correlation Id to ApplicationError
 //Parameters:
-// 			- correlationId string
-//			a correlation string
+// - correlationId string
+// a correlation string
 // Return *ApplicationError
 func (e *ApplicationError) WithCorrelationId(correlationId string) *ApplicationError {
 	e.CorrelationId = correlationId
@@ -112,8 +111,8 @@ func (e *ApplicationError) WithCorrelationId(correlationId string) *ApplicationE
 
 //Wrap error by ApplicationError struct
 //Parameters:
-//			- err error
-// 			an error what neet to wrap
+//  - err error
+//  an error what neet to wrap
 // Return *ApplicationError
 func (e *ApplicationError) Wrap(err error) *ApplicationError {
 	if er, ok := err.(*ApplicationError); ok == true {
@@ -126,10 +125,10 @@ func (e *ApplicationError) Wrap(err error) *ApplicationError {
 
 //Wrap error by ApplicationError struct and sets message
 //Parameters:
-//			- err error
-// 			an error what neet to wrap
-// 			- message string
-//			error message
+// - err error
+// an error what neet to wrap
+// - message string
+// error message
 // Return *ApplicationError
 func WrapError(err error, message string) *ApplicationError {
 	if e, ok := err.(*ApplicationError); ok == true {
@@ -141,8 +140,8 @@ func WrapError(err error, message string) *ApplicationError {
 
 // Creates a new instance of application error and assigns its message.
 // Parameters:
-//			- message string
-//			an error message
+//  - message string
+//  an error message
 // Return *ApplicationError
 // generated new ApplicationError
 func NewError(message string) *ApplicationError {

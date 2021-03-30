@@ -34,8 +34,8 @@ func (c *TDurationConverter) ToDuration(value interface{}) time.Duration {
 
 // Converts value into time.Duration or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: time.Duration value or default when conversion is not supported.
 func (c *TDurationConverter) ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration {
 	return ToDurationWithDefault(value, defaultValue)
@@ -102,8 +102,8 @@ func ToDuration(value interface{}) time.Duration {
 
 // Converts value into time.Duration or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: time.Duration value or default when conversion is not supported.
 func ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration {
 	r := ToNullableDuration(value)

@@ -1,0 +1,3133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>validate - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package validate
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "validate"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="index.html#NewValidationError">func NewValidationError(correlationId string, message string, results []*ValidationResult) *errors.ApplicationError</a></dd>
+			
+				
+				<dd><a href="index.html#NewValidationErrorFromResults">func NewValidationErrorFromResults(correlationId string, results []*ValidationResult, strict bool) *errors.ApplicationError</a></dd>
+			
+				
+				<dd><a href="index.html#ThrowValidationErrorIfNeeded">func ThrowValidationErrorIfNeeded(correlationId string, results []*ValidationResult, strict bool)</a></dd>
+			
+			
+				
+				<dd><a href="index.html#AndRule">type AndRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewAndRule">func NewAndRule(rules ...IValidationRule) *AndRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AndRule.Validate">func (c *AndRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ArraySchema">type ArraySchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewArraySchema">func NewArraySchema(valueType interface{}) *ArraySchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewProjectionParamsSchema">func NewProjectionParamsSchema() *ArraySchema</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ArraySchema.PerformValidation">func (c *ArraySchema) PerformValidation(path string, value interface{}) []*ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ArraySchema.SetValueType">func (c *ArraySchema) SetValueType(value interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ArraySchema.ValueType">func (c *ArraySchema) ValueType() interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#AtLeastOneExistsRule">type AtLeastOneExistsRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewAtLeastOneExistsRule">func NewAtLeastOneExistsRule(properties ...string) *AtLeastOneExistsRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AtLeastOneExistsRule.Validate">func (c *AtLeastOneExistsRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ExcludedRule">type ExcludedRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewExcludedRule">func NewExcludedRule(values ...interface{}) *ExcludedRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ExcludedRule.Validate">func (c *ExcludedRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ISchema">type ISchema</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ISchemaBase">type ISchemaBase</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IValidationRule">type IValidationRule</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#IncludedRule">type IncludedRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewIncludedRule">func NewIncludedRule(values ...interface{}) *IncludedRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#IncludedRule.Validate">func (c *IncludedRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#MapSchema">type MapSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewFilterParamsSchema">func NewFilterParamsSchema() *MapSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMapSchema">func NewMapSchema(keyType interface{}, valueType interface{}) *MapSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewMapSchemaWithRules">func NewMapSchemaWithRules(keyType interface{}, valueType interface{}, required bool, rules []IValidationRule) *MapSchema</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MapSchema.KeyType">func (c *MapSchema) KeyType() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MapSchema.PerformValidation">func (c *MapSchema) PerformValidation(path string, value interface{}) []*ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MapSchema.SetKeyType">func (c *MapSchema) SetKeyType(value interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MapSchema.SetValueType">func (c *MapSchema) SetValueType(value interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#MapSchema.ValueType">func (c *MapSchema) ValueType() interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#NotRule">type NotRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewNotRule">func NewNotRule(rule IValidationRule) *NotRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NotRule.Validate">func (c *NotRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ObjectSchema">type ObjectSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewObjectSchema">func NewObjectSchema() *ObjectSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewObjectSchemaWithRules">func NewObjectSchemaWithRules(allowUndefined bool, required bool, rules []IValidationRule) *ObjectSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPagingParamsSchema">func NewPagingParamsSchema() *ObjectSchema</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.AllowUndefined">func (c *ObjectSchema) AllowUndefined(value bool) *ObjectSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.PerformValidation">func (c *ObjectSchema) PerformValidation(path string, value interface{}) []*ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.Properties">func (c *ObjectSchema) Properties() []*PropertySchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.SetProperties">func (c *ObjectSchema) SetProperties(value []*PropertySchema)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.SetUndefinedAllowed">func (c *ObjectSchema) SetUndefinedAllowed(value bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.UndefinedAllowed">func (c *ObjectSchema) UndefinedAllowed() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.WithOptionalProperty">func (c *ObjectSchema) WithOptionalProperty(name string, typ interface{}, rules ...IValidationRule) *ObjectSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.WithProperty">func (c *ObjectSchema) WithProperty(schema *PropertySchema) *ObjectSchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ObjectSchema.WithRequiredProperty">func (c *ObjectSchema) WithRequiredProperty(name string, typ interface{}, rules ...IValidationRule) *ObjectSchema</a></dd>
+				
+			
+				
+				<dd><a href="index.html#OnlyOneExistsRule">type OnlyOneExistsRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewOnlyOneExistsRule">func NewOnlyOneExistsRule(properties ...string) *OnlyOneExistsRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OnlyOneExistsRule.Validate">func (c *OnlyOneExistsRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#OrRule">type OrRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewOrRule">func NewOrRule(rules ...IValidationRule) *OrRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#OrRule.Validate">func (c *OrRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#PropertiesComparisonRule">type PropertiesComparisonRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPropertiesComparisonRule">func NewPropertiesComparisonRule(property1 string, operation string, property2 string) *PropertiesComparisonRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PropertiesComparisonRule.Validate">func (c *PropertiesComparisonRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+				
+				<dd><a href="index.html#PropertySchema">type PropertySchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPropertySchema">func NewPropertySchema() *PropertySchema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewPropertySchemaWithRules">func NewPropertySchemaWithRules(name string, typ interface{}, required bool, rules []IValidationRule) *PropertySchema</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PropertySchema.Name">func (c *PropertySchema) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PropertySchema.PerformValidation">func (c *PropertySchema) PerformValidation(path string, value interface{}) []*ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PropertySchema.SetName">func (c *PropertySchema) SetName(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PropertySchema.SetType">func (c *PropertySchema) SetType(value interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#PropertySchema.Type">func (c *PropertySchema) Type() interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#Schema">type Schema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InheritSchema">func InheritSchema(base ISchemaBase) *Schema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InheritSchemaWithRules">func InheritSchemaWithRules(base ISchemaBase, required bool, rules []IValidationRule) *Schema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewSchema">func NewSchema() *Schema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewSchemaWithRules">func NewSchemaWithRules(required bool, rules []IValidationRule) *Schema</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.MakeOptional">func (c *Schema) MakeOptional() *Schema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.MakeRequired">func (c *Schema) MakeRequired() *Schema</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.PerformTypeValidation">func (c *Schema) PerformTypeValidation(path string, typ interface{}, value interface{}) []*ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.PerformValidation">func (c *Schema) PerformValidation(path string, value interface{}) []*ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.Required">func (c *Schema) Required() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.Rules">func (c *Schema) Rules() []IValidationRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.SetRequired">func (c *Schema) SetRequired(value bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.SetRules">func (c *Schema) SetRules(value []IValidationRule)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.Validate">func (c *Schema) Validate(value interface{}) []*ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.ValidateAndReturnError">func (c *Schema) ValidateAndReturnError(correlationId string, value interface{}, strict bool) *errors.ApplicationError</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.ValidateAndThrowError">func (c *Schema) ValidateAndThrowError(correlationId string, value interface{}, strict bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Schema.WithRule">func (c *Schema) WithRule(rule IValidationRule) *Schema</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TObjectComparator">type TObjectComparator</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectComparator.AreEqual">func (c *TObjectComparator) AreEqual(value1 interface{}, value2 interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectComparator.AreNotEqual">func (c *TObjectComparator) AreNotEqual(value1 interface{}, value2 interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectComparator.Compare">func (c *TObjectComparator) Compare(value1 interface{}, operation string, value2 interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectComparator.IsGreater">func (c *TObjectComparator) IsGreater(value1 interface{}, value2 interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectComparator.IsLess">func (c *TObjectComparator) IsLess(value1 interface{}, value2 interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectComparator.Match">func (c *TObjectComparator) Match(value1 interface{}, value2 interface{}) bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ValidationResult">type ValidationResult</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewValidationResult">func NewValidationResult(path string, typ ValidationResultType, code string, message string, expected interface{}, actual interface{}) *ValidationResult</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ValidationResult.Actual">func (c *ValidationResult) Actual() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ValidationResult.Code">func (c *ValidationResult) Code() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ValidationResult.Expected">func (c *ValidationResult) Expected() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ValidationResult.Message">func (c *ValidationResult) Message() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ValidationResult.Path">func (c *ValidationResult) Path() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ValidationResult.Type">func (c *ValidationResult) Type() ValidationResultType</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ValidationResultType">type ValidationResultType</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#ValueComparisonRule">type ValueComparisonRule</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewValueComparisonRule">func NewValueComparisonRule(operation string, value interface{}) *ValueComparisonRule</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ValueComparisonRule.Validate">func (c *ValueComparisonRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/validate/AndRule.go">AndRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ArraySchema.go">ArraySchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go">AtLeastOneExistsRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ExcludedRule.go">ExcludedRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/FilterParamsSchema.go">FilterParamsSchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ISchema.go">ISchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ISchemaBase.go">ISchemaBase.go</a>
+			
+				<a href="http://localhost:6060/src/validate/IValidationRule.go">IValidationRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/IncludedRule.go">IncludedRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/MapSchema.go">MapSchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/NotRule.go">NotRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ObjectComparator.go">ObjectComparator.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ObjectSchema.go">ObjectSchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go">OnlyOneExistsRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/OrRule.go">OrRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/PagingParamsSchema.go">PagingParamsSchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ProjectionParamsSchema.go">ProjectionParamsSchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go">PropertiesComparisonRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/PropertySchema.go">PropertySchema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/Schema.go">Schema.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ValidationException.go">ValidationException.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ValidationResult.go">ValidationResult.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ValidationResultType.go">ValidationResultType.go</a>
+			
+				<a href="http://localhost:6060/src/validate/ValueComparisonRule.go">ValueComparisonRule.go</a>
+			
+				<a href="http://localhost:6060/src/validate/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="ObjectComparator">ObjectComparator</span> = &amp;<a href="index.html#TObjectComparator">TObjectComparator</a>{}</pre>
+			
+		
+		
+			
+			
+			<h2 id="NewValidationError">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=592:707#L14">NewValidationError</a>
+				<a class="permalink" href="index.html#NewValidationError">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewValidationError(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, message <a href="http://localhost:6060/pkg/builtin/#string">string</a>, results []*<a href="index.html#ValidationResult">ValidationResult</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/">errors</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/#ApplicationError">ApplicationError</a></pre>
+			<p>
+Creates a new instance of validation exception and assigns its values.
+see
+ValidationResult
+Parameters:
+</p>
+<pre>- correlationId string
+- message string
+a human-readable description of the error.
+- results: []*ValidationResult
+</pre>
+<p>
+a list of validation results
+Returns *errors.ApplicationError
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NewValidationErrorFromResults">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=2163:2286#L71">NewValidationErrorFromResults</a>
+				<a class="permalink" href="index.html#NewValidationErrorFromResults">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func NewValidationErrorFromResults(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, results []*<a href="index.html#ValidationResult">ValidationResult</a>, strict <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/">errors</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/#ApplicationError">ApplicationError</a></pre>
+			<p>
+Creates a new ValidationError based on errors in validation results. If validation results have no errors, than null is returned.
+see
+ValidationResult
+Parameters:
+</p>
+<pre> - correlationId string
+ transaction id to trace execution through call chain.
+ - results []*ValidationResult
+ list of validation results that may contain errors
+ strict boolean
+ true to treat warnings as errors.
+	Returns *errors.ApplicationError
+</pre>
+<p>
+a newly created ValidationException or null if no errors in found.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ThrowValidationErrorIfNeeded">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=2998:3095#L103">ThrowValidationErrorIfNeeded</a>
+				<a class="permalink" href="index.html#ThrowValidationErrorIfNeeded">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ThrowValidationErrorIfNeeded(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, results []*<a href="index.html#ValidationResult">ValidationResult</a>, strict <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+Throws ValidationException based on errors in validation results. If validation results have no errors, than no exception is thrown.
+see
+ValidationResult
+see
+ValidationException
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+- results []*ValidationResult
+list of validation results that may contain errors
+- strict bool
+true to treat warnings as errors.
+</pre>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="AndRule">type <a href="http://localhost:6060/src/validate/AndRule.go?s=579:627#L8">AndRule</a>
+				<a class="permalink" href="index.html#AndRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule to combine rules with AND logical operation. When all rules returns no errors, than this rule also returns no errors.
+When one of the rules return errors, than the rules returns all errors.
+</p>
+<p>
+Example
+</p>
+<pre>schema = NewSchema()
+    .WithRule(NewAndRule(
+        NewValueComparisonRule(&#34;GTE&#34;, 1),
+        NewValueComparisonRule(&#34;LTE&#34;, 10)
+    ));
+
+schema.Validate(0);          // Result: 0 must be greater or equal to 1
+schema.Validate(5);          // Result: no error
+schema.Validate(20);         // Result: 20 must be letter or equal 10
+</pre>
+
+			<pre>type AndRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAndRule">func <a href="http://localhost:6060/src/validate/AndRule.go?s=795:845#L17">NewAndRule</a>
+					<a class="permalink" href="index.html#NewAndRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewAndRule(rules ...<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#AndRule">AndRule</a></pre>
+				<p>
+Creates a new validation rule and sets its values.
+Parameters:
+</p>
+<pre>- rules ...IValidationRule
+a list of rules to join with AND operator
+</pre>
+<p>
+Returns *AndRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="AndRule.Validate">func (*AndRule) <a href="http://localhost:6060/src/validate/AndRule.go?s=1201:1295#L33">Validate</a>
+					<a class="permalink" href="index.html#AndRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AndRule">AndRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against this rule.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- schema ISchema
+a schema this rule is called from
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Return []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ArraySchema">type <a href="http://localhost:6060/src/validate/ArraySchema.go?s=468:526#L11">ArraySchema</a>
+				<a class="permalink" href="index.html#ArraySchema">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Schema to validate arrays.
+</p>
+<p>
+Example:
+</p>
+<pre>schema := NewArraySchema(TypeCode.String);
+
+schema.Validate([&#34;A&#34;, &#34;B&#34;, &#34;C&#34;]);    // Result: no errors
+schema.Validate([1, 2, 3]);          // Result: element type mismatch
+schema.Validate(&#34;A&#34;);                // Result: type mismatch
+</pre>
+
+			<pre>type ArraySchema struct {
+    <a href="index.html#Schema">Schema</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewArraySchema">func <a href="http://localhost:6060/src/validate/ArraySchema.go?s=757:812#L24">NewArraySchema</a>
+					<a class="permalink" href="index.html#NewArraySchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewArraySchema(valueType interface{}) *<a href="index.html#ArraySchema">ArraySchema</a></pre>
+				<p>
+Returns *ArraySchema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewProjectionParamsSchema">func <a href="http://localhost:6060/src/validate/ProjectionParamsSchema.go?s=203:248#L1">NewProjectionParamsSchema</a>
+					<a class="permalink" href="index.html#NewProjectionParamsSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewProjectionParamsSchema() *<a href="index.html#ArraySchema">ArraySchema</a></pre>
+				<p>
+Creates a new instance of validation schema.
+Returns *ArraySchema
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ArraySchema.PerformValidation">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1621:1712#L55">PerformValidation</a>
+					<a class="permalink" href="index.html#ArraySchema.PerformValidation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ArraySchema">ArraySchema</a>) PerformValidation(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against the schema and configured validation rules.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Return []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ArraySchema.SetValueType">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1254:1307#L43">SetValueType</a>
+					<a class="permalink" href="index.html#ArraySchema.SetValueType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ArraySchema">ArraySchema</a>) SetValueType(value interface{})</pre>
+				<p>
+Sets the type of array elements. Null means that elements may have any type.
+Parameters
+value interface{}
+a type of array elements.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ArraySchema.ValueType">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1039:1084#L35">ValueType</a>
+					<a class="permalink" href="index.html#ArraySchema.ValueType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ArraySchema">ArraySchema</a>) ValueType() interface{}</pre>
+				<p>
+Gets the type of array elements. Null means that elements may have any type.
+Returns interface{}
+the type of array elements.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="AtLeastOneExistsRule">type <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=568:625#L13">AtLeastOneExistsRule</a>
+				<a class="permalink" href="index.html#AtLeastOneExistsRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule that check that at least one of the object properties is not null.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example:
+</p>
+<pre>schema := NewSchema()
+    .WithRule(NewAtLeastOneExistsRule(&#34;field1&#34;, &#34;field2&#34;));
+
+schema.Validate({ field1: 1, field2: &#34;A&#34; });     // Result: no errors
+schema.Validate({ field1: 1 });                  // Result: no errors
+schema.Validate({ });                            // Result: at least one of properties field1, field2 must exist
+</pre>
+
+			<pre>type AtLeastOneExistsRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewAtLeastOneExistsRule">func <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=821:893#L22">NewAtLeastOneExistsRule</a>
+					<a class="permalink" href="index.html#NewAtLeastOneExistsRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewAtLeastOneExistsRule(properties ...<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#AtLeastOneExistsRule">AtLeastOneExistsRule</a></pre>
+				<p>
+Creates a new validation rule and sets its values
+Parameters:
+</p>
+<pre>properties ...string
+a list of property names where at least one property must exist
+</pre>
+<p>
+Returns *AtLeastOneExistsRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="AtLeastOneExistsRule.Validate">func (*AtLeastOneExistsRule) <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=1272:1379#L38">Validate</a>
+					<a class="permalink" href="index.html#AtLeastOneExistsRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AtLeastOneExistsRule">AtLeastOneExistsRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against this rule.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- schema ISchema
+a schema this rule is called from
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Return []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ExcludedRule">type <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=399:449#L12">ExcludedRule</a>
+				<a class="permalink" href="index.html#ExcludedRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule to check that value is excluded from the list of constants.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example:
+</p>
+<pre>schema := NewSchema()
+    .WithRule(NewExcludedRule(1, 2, 3));
+
+schema.Validate(2);      // Result: 2 must not be one of 1, 2, 3
+schema.Validate(10);     // Result: no errors
+</pre>
+
+			<pre>type ExcludedRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewExcludedRule">func <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=628:685#L21">NewExcludedRule</a>
+					<a class="permalink" href="index.html#NewExcludedRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewExcludedRule(values ...interface{}) *<a href="index.html#ExcludedRule">ExcludedRule</a></pre>
+				<p>
+Creates a new validation rule and sets its values.
+Parameters:
+</p>
+<pre>values ...interface{}
+a list of constants that value must be excluded from
+</pre>
+<p>
+Returns *ExcludedRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ExcludedRule.Validate">func (*ExcludedRule) <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=1162:1261#L37">Validate</a>
+					<a class="permalink" href="index.html#ExcludedRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ExcludedRule">ExcludedRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates the given value. None of the values set in this ExcludedRule object must exist in the value that is given for validation to pass.
+Parameters:
+</p>
+<pre>-path string
+the dot notation path to the value that is to be validated.
+- schema ISchema
+(not used in this implementation).
+- value interface{}
+the value that is to be validated.
+</pre>
+<p>
+Return  [*]ValidationResult
+the results of the validation.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ISchema">type <a href="http://localhost:6060/src/validate/ISchema.go?s=122:377#L1">ISchema</a>
+				<a class="permalink" href="index.html#ISchema">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation schema interface
+</p>
+
+			<pre>type ISchema interface {
+    Validate(value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a>
+    ValidateAndReturnError(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}, strict <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/">errors</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/#ApplicationError">ApplicationError</a>
+    ValidateAndThrowError(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}, strict <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ISchemaBase">type <a href="http://localhost:6060/src/validate/ISchemaBase.go?s=18:119#L1">ISchemaBase</a>
+				<a class="permalink" href="index.html#ISchemaBase">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ISchemaBase interface {
+    PerformValidation(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IValidationRule">type <a href="http://localhost:6060/src/validate/IValidationRule.go?s=285:723#L1">IValidationRule</a>
+				<a class="permalink" href="index.html#IValidationRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Interface for validation rules.
+</p>
+<p>
+Vlidation rule can validate one or multiple values against complex rules like: value is in range, one property is less than another property, enforce enumerated values and more.
+</p>
+<p>
+This interface allows to implement custom rules.
+</p>
+
+			<pre>type IValidationRule interface {
+    <span class="comment">// Validates a given value against this rule.</span>
+    <span class="comment">// Parameters:</span>
+    <span class="comment">//  - path string</span>
+    <span class="comment">//  a dot notation path to the value.</span>
+    <span class="comment">//  - schema ISchema</span>
+    <span class="comment">//  a schema this rule is called from</span>
+    <span class="comment">//  - value interface{}y</span>
+    <span class="comment">//  a value to be validated.</span>
+    <span class="comment">// 	Returns []*ValidationResult</span>
+    <span class="comment">// a list with validation results to add new results.</span>
+    Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="IncludedRule">type <a href="http://localhost:6060/src/validate/IncludedRule.go?s=398:448#L12">IncludedRule</a>
+				<a class="permalink" href="index.html#IncludedRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule to check that value is included into the list of constants.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example
+</p>
+<pre>var schema = NewSchema()
+    .WithRule(NewIncludedRule(1, 2, 3));
+
+schema.Validate(2);      // Result: no errors
+schema.Validate(10);     // Result: 10 must be one of 1, 2, 3
+</pre>
+
+			<pre>type IncludedRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewIncludedRule">func <a href="http://localhost:6060/src/validate/IncludedRule.go?s=632:689#L21">NewIncludedRule</a>
+					<a class="permalink" href="index.html#NewIncludedRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewIncludedRule(values ...interface{}) *<a href="index.html#IncludedRule">IncludedRule</a></pre>
+				<p>
+Creates a new validation rule and sets its values.
+Parameters:
+</p>
+<pre> - values ...interface{}
+a list of constants that value must be included to
+</pre>
+<p>
+Returns *IncludedRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="IncludedRule.Validate">func (*IncludedRule) <a href="http://localhost:6060/src/validate/IncludedRule.go?s=1067:1166#L37">Validate</a>
+					<a class="permalink" href="index.html#IncludedRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#IncludedRule">IncludedRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against this rule.
+Parameters:
+</p>
+<pre>		- path string
+		a dot notation path to the value.
+		- schema ISchema
+		a schema this rule is called from
+		- value interface{}y
+		a value to be validated.
+Returns []*ValidationResult
+</pre>
+<p>
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MapSchema">type <a href="http://localhost:6060/src/validate/MapSchema.go?s=521:600#L10">MapSchema</a>
+				<a class="permalink" href="index.html#MapSchema">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Schema to validate maps.
+</p>
+<p>
+Example
+</p>
+<pre>var schema = NewMapSchema(TypeCode.String, TypeCode.Integer);
+
+schema.Validate({ &#34;key1&#34;: &#34;A&#34;, &#34;key2&#34;: &#34;B&#34; });       // Result: no errors
+schema.Validate({ &#34;key1&#34;: 1, &#34;key2&#34;: 2 });           // Result: element type mismatch
+schema.Validate([ 1, 2, 3 ]);                        // Result: type mismatch
+</pre>
+
+			<pre>type MapSchema struct {
+    <a href="index.html#Schema">Schema</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewFilterParamsSchema">func <a href="http://localhost:6060/src/validate/FilterParamsSchema.go?s=198:237#L1">NewFilterParamsSchema</a>
+					<a class="permalink" href="index.html#NewFilterParamsSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewFilterParamsSchema() *<a href="index.html#MapSchema">MapSchema</a></pre>
+				<p>
+Creates a new instance of validation schema.
+Returns *MapSchema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewMapSchema">func <a href="http://localhost:6060/src/validate/MapSchema.go?s=946:1018#L27">NewMapSchema</a>
+					<a class="permalink" href="index.html#NewMapSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMapSchema(keyType interface{}, valueType interface{}) *<a href="index.html#MapSchema">MapSchema</a></pre>
+				<p>
+Creates a new instance of validation schema and sets its values.
+see
+IValidationRule
+see
+TypeCode
+Parameters:
+</p>
+<pre>- keyType interface{}
+a type of map keys. Null means that keys may have any type.
+- valueType interface{}
+a type of map values. Null means that values may have any type.
+</pre>
+<p>
+Returns *MapSchema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewMapSchemaWithRules">func <a href="http://localhost:6060/src/validate/MapSchema.go?s=1624:1745#L51">NewMapSchemaWithRules</a>
+					<a class="permalink" href="index.html#NewMapSchemaWithRules">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewMapSchemaWithRules(keyType interface{}, valueType interface{}, required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, rules []<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#MapSchema">MapSchema</a></pre>
+				<p>
+Creates a new instance of validation schema and sets its values.
+see
+IValidationRule
+see
+TypeCode
+Parameters:
+</p>
+<pre>- keyType interface{}
+a type of map keys. Null means that keys may have any type.
+- valueType interface{}
+a type of map values. Null means that values may have any type.
+- required: boolean
+true to always require non-null values.
+- rules: []IValidationRule
+a list with validation rules.
+</pre>
+<p>
+Returns *MapSchema
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="MapSchema.KeyType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2002:2043#L63">KeyType</a>
+					<a class="permalink" href="index.html#MapSchema.KeyType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MapSchema">MapSchema</a>) KeyType() interface{}</pre>
+				<p>
+Gets the type of map keys. Null means that keys may have any type.
+Returns interface{}
+the type of map keys.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="MapSchema.PerformValidation">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2995:3084#L98">PerformValidation</a>
+					<a class="permalink" href="index.html#MapSchema.PerformValidation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MapSchema">MapSchema</a>) PerformValidation(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against the schema and configured validation rules.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+REturns  []*ValidationResult[]
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="MapSchema.SetKeyType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2204:2253#L71">SetKeyType</a>
+					<a class="permalink" href="index.html#MapSchema.SetKeyType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MapSchema">MapSchema</a>) SetKeyType(value interface{})</pre>
+				<p>
+Sets the type of map keys. Null means that keys may have any type.
+Parameters:
+</p>
+<pre>- value interface{}
+a type of map keys.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="MapSchema.SetValueType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2614:2665#L86">SetValueType</a>
+					<a class="permalink" href="index.html#MapSchema.SetValueType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MapSchema">MapSchema</a>) SetValueType(value interface{})</pre>
+				<p>
+Sets the type of map values. Null means that values may have any type.
+Parameters:
+</p>
+<pre>- value interface{}
+a type of map values.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="MapSchema.ValueType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2402:2445#L78">ValueType</a>
+					<a class="permalink" href="index.html#MapSchema.ValueType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#MapSchema">MapSchema</a>) ValueType() interface{}</pre>
+				<p>
+Gets the type of map values. Null means that values may have any type.
+Returns interface{}
+the type of map values.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="NotRule">type <a href="http://localhost:6060/src/validate/NotRule.go?s=430:475#L8">NotRule</a>
+				<a class="permalink" href="index.html#NotRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule negate another rule. When embedded rule returns no errors, than this rule return an error. When embedded rule return errors, than the rule returns no errors.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example
+</p>
+<pre>var schema = NewSchema()
+    .WithRule(NewNotRule(
+        NewValueComparisonRule(&#34;EQ&#34;, 1)
+    ));
+
+schema.Validate(1);          // Result: error
+schema.Validate(5);          // Result: no error
+</pre>
+
+			<pre>type NotRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewNotRule">func <a href="http://localhost:6060/src/validate/NotRule.go?s=618:664#L17">NewNotRule</a>
+					<a class="permalink" href="index.html#NewNotRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewNotRule(rule <a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#NotRule">NotRule</a></pre>
+				<p>
+Creates a new validation rule and sets its values
+Parameters:
+</p>
+<pre>- rule IValidationRule
+a rule to be negated.
+</pre>
+<p>
+Returns *NotRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="NotRule.Validate">func (*NotRule) <a href="http://localhost:6060/src/validate/NotRule.go?s=1019:1113#L33">Validate</a>
+					<a class="permalink" href="index.html#NotRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#NotRule">NotRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against this rule.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- schema ISchema
+a schema this rule is called from
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Returns []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ObjectSchema">type <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=724:815#L13">ObjectSchema</a>
+				<a class="permalink" href="index.html#ObjectSchema">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+// Schema to validate user defined objects.
+</p>
+<p>
+// Example
+//  var schema = NewObjectSchema(false)
+//      .WithOptionalProperty(&#34;id&#34;, TypeCode.String)
+//      .WithRequiredProperty(&#34;name&#34;, TypeCode.String);
+</p>
+<p>
+//  schema.validate({ id: &#34;1&#34;, name: &#34;ABC&#34; });       // Result: no errors
+//  schema.validate({ name: &#34;ABC&#34; });                // Result: no errors
+//  schema.validate({ id: 1, name: &#34;ABC&#34; });         // Result: id type mismatch
+//  schema.validate({ id: 1, _name: &#34;ABC&#34; });        // Result: name is missing, unexpected _name
+//  schema.validate(&#34;ABC&#34;);                          // Result: type mismatch
+</p>
+
+			<pre>type ObjectSchema struct {
+    <a href="index.html#Schema">Schema</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewObjectSchema">func <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=898:934#L21">NewObjectSchema</a>
+					<a class="permalink" href="index.html#NewObjectSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewObjectSchema() *<a href="index.html#ObjectSchema">ObjectSchema</a></pre>
+				<p>
+Creates a new validation schema and sets its values.
+Returns *ObjectSchema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewObjectSchemaWithRules">func <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1358:1462#L40">NewObjectSchemaWithRules</a>
+					<a class="permalink" href="index.html#NewObjectSchemaWithRules">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewObjectSchemaWithRules(allowUndefined <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, rules []<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#ObjectSchema">ObjectSchema</a></pre>
+				<p>
+Creates a new validation schema and sets its values.
+see
+IValidationRule
+Parameters:
+</p>
+<pre>- allowUndefined bool
+true to allow properties undefines in the schema
+- required bool
+true to always require non-null values.
+- rules []IValidationRule
+a list with validation rules.
+</pre>
+<p>
+Returns *ObjectSchema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewPagingParamsSchema">func <a href="http://localhost:6060/src/validate/PagingParamsSchema.go?s=207:249#L1">NewPagingParamsSchema</a>
+					<a class="permalink" href="index.html#NewPagingParamsSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewPagingParamsSchema() *<a href="index.html#ObjectSchema">ObjectSchema</a></pre>
+				<p>
+Creates a new instance of validation schema.
+Returns *PagingParamsSchema
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ObjectSchema.AllowUndefined">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2788:2851#L89">AllowUndefined</a>
+					<a class="permalink" href="index.html#ObjectSchema.AllowUndefined">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) AllowUndefined(value <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) *<a href="index.html#ObjectSchema">ObjectSchema</a></pre>
+				<p>
+Sets flag to allow undefined properties
+This method returns reference to this exception to implement Builder pattern to chain additional calls.
+Parameters:
+</p>
+<pre>- value bool
+true to allow undefined properties and false to disallow.
+</pre>
+<p>
+Returns *ObjectSchema
+this validation schema.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.PerformValidation">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=4663:4755#L147">PerformValidation</a>
+					<a class="permalink" href="index.html#ObjectSchema.PerformValidation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) PerformValidation(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against the schema and configured validation rules.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Return []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.Properties">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1740:1793#L53">Properties</a>
+					<a class="permalink" href="index.html#ObjectSchema.Properties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) Properties() []*<a href="index.html#PropertySchema">PropertySchema</a></pre>
+				<p>
+Gets validation schemas for object properties.
+see
+PropertySchema
+Returns []*PropertySchema
+the list of property validation schemas.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.SetProperties">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1983:2044#L63">SetProperties</a>
+					<a class="permalink" href="index.html#ObjectSchema.SetProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) SetProperties(value []*<a href="index.html#PropertySchema">PropertySchema</a>)</pre>
+				<p>
+Sets validation schemas for object properties.
+see
+PropertySchema
+Parameters:
+</p>
+<pre>- value []*PropertySchema
+a list of property validation schemas.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.SetUndefinedAllowed">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2406:2460#L78">SetUndefinedAllowed</a>
+					<a class="permalink" href="index.html#ObjectSchema.SetUndefinedAllowed">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) SetUndefinedAllowed(value <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets flag to allow undefined properties
+Parameters:
+</p>
+<pre>- value bool
+true to allow undefined properties and false to disallow.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.UndefinedAllowed">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2192:2238#L70">UndefinedAllowed</a>
+					<a class="permalink" href="index.html#ObjectSchema.UndefinedAllowed">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) UndefinedAllowed() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Gets flag to allow undefined properties
+Returns bool
+true to allow undefined properties and false to disallow.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.WithOptionalProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=4163:4276#L134">WithOptionalProperty</a>
+					<a class="permalink" href="index.html#ObjectSchema.WithOptionalProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) WithOptionalProperty(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, typ interface{}, rules ...<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#ObjectSchema">ObjectSchema</a></pre>
+				<p>
+Adds a validation schema for an optional object property.
+Parameters:
+</p>
+<pre>- name string
+a property name.
+- type interface{}
+a property schema or type.
+- rules ...IValidationRule
+ a list of property validation rules.
+</pre>
+<p>
+Returns *ObjectSchema
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.WithProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=3219:3292#L103">WithProperty</a>
+					<a class="permalink" href="index.html#ObjectSchema.WithProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) WithProperty(schema *<a href="index.html#PropertySchema">PropertySchema</a>) *<a href="index.html#ObjectSchema">ObjectSchema</a></pre>
+				<p>
+Adds a validation schema for an object property.
+This method returns reference to this exception to implement Builder pattern to chain additional calls.
+see
+PropertySchema
+Parameters:
+</p>
+<pre>- schema *PropertySchema
+a property validation schema to be added.
+</pre>
+<p>
+Returns *ObjectSchema
+this validation schema.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ObjectSchema.WithRequiredProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=3684:3797#L120">WithRequiredProperty</a>
+					<a class="permalink" href="index.html#ObjectSchema.WithRequiredProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ObjectSchema">ObjectSchema</a>) WithRequiredProperty(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, typ interface{}, rules ...<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#ObjectSchema">ObjectSchema</a></pre>
+				<p>
+Adds a validation schema for a required object property.
+Parameters:
+</p>
+<pre>- name string
+a property name.
+- type interface{}
+a property schema or type.
+- rules ...IValidationRule
+a list of property validation rules.
+</pre>
+<p>
+Returns *ObjectSchema
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="OnlyOneExistsRule">type <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=598:652#L12">OnlyOneExistsRule</a>
+				<a class="permalink" href="index.html#OnlyOneExistsRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule that check that at exactly one of the object properties is not null.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example
+</p>
+<pre>var schema = NewSchema().WithRule(NewOnlyOneExistsRule(&#34;field1&#34;, &#34;field2&#34;));
+
+schema.Validate({ field1: 1, field2: &#34;A&#34; });     // Result: only one of properties field1, field2 must exist
+schema.Validate({ field1: 1 });                  // Result: no errors
+schema.Validate({ });                            // Result: only one of properties field1, field2 must exist
+</pre>
+
+			<pre>type OnlyOneExistsRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewOnlyOneExistsRule">func <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=844:910#L21">NewOnlyOneExistsRule</a>
+					<a class="permalink" href="index.html#NewOnlyOneExistsRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewOnlyOneExistsRule(properties ...<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#OnlyOneExistsRule">OnlyOneExistsRule</a></pre>
+				<p>
+Creates a new validation rule and sets its values
+Parameters:
+</p>
+<pre>- properties ...string
+</pre>
+<p>
+a list of property names where at only one property must exist
+Return *OnlyOneExistsRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="OnlyOneExistsRule.Validate">func (*OnlyOneExistsRule) <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=1286:1390#L37">Validate</a>
+					<a class="permalink" href="index.html#OnlyOneExistsRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#OnlyOneExistsRule">OnlyOneExistsRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against this rule.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- schema  ISchema
+a schema this rule is called from
+value interface{}
+a value to be validated.
+</pre>
+<p>
+Retruns []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="OrRule">type <a href="http://localhost:6060/src/validate/OrRule.go?s=584:631#L10">OrRule</a>
+				<a class="permalink" href="index.html#OrRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+alidation rule to combine rules with OR logical operation. When one of rules returns no errors, than this rule also returns no errors. When all rules return errors, than the rule returns all errors.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example
+</p>
+<pre>var schema = NewSchema()
+    .WithRule(NewOrRule(
+        NewValueComparisonRle(&#34;LT&#34;, 1),
+        NewValueComparisonule(&#34;GT&#34;, 10)
+    ));
+
+schema.Validate();          // Result: no error
+schema.Validate5);          // Result: 5 must be less than 1 or 5 must be more than 10
+schema.Validate(20);        // Result: no error
+</pre>
+
+			<pre>type OrRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewOrRule">func <a href="http://localhost:6060/src/validate/OrRule.go?s=775:823#L19">NewOrRule</a>
+					<a class="permalink" href="index.html#NewOrRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewOrRule(rules ...<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#OrRule">OrRule</a></pre>
+				<p>
+Creates a new validation rule and ses its values
+Parameters:
+</p>
+<pre>- rule IValidationRule
+a rule to be negaed.
+</pre>
+<p>
+Returns *OrRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="OrRule.Validate">func (*OrRule) <a href="http://localhost:6060/src/validate/OrRule.go?s=1188:1281#L35">Validate</a>
+					<a class="permalink" href="index.html#OrRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#OrRule">OrRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against this rule.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to th value.
+- schema  ISchema
+a schema this rule is called from
+value interface{}
+a valueto be validated.
+</pre>
+<p>
+Retruns []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PropertiesComparisonRule">type <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=520:614#L9">PropertiesComparisonRule</a>
+				<a class="permalink" href="index.html#PropertiesComparisonRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule that compares two object properties.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example
+</p>
+<pre>var schema = NewObjectSchema()
+    .WithRule(NewPropertyComparisonRule(&#34;field1&#34;, &#34;NE&#34;, &#34;field2&#34;));
+
+schema.Validate({ field1: 1, field2: 2 });       // Result: no errors
+schema.Validate({ field1: 1, field2: 1 });       // Result: field1 shall not be equal to field2
+schema.Validate({});                             // Result: no errors
+</pre>
+
+			<pre>type PropertiesComparisonRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewPropertiesComparisonRule">func <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=1036:1148#L26">NewPropertiesComparisonRule</a>
+					<a class="permalink" href="index.html#NewPropertiesComparisonRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewPropertiesComparisonRule(property1 <a href="http://localhost:6060/pkg/builtin/#string">string</a>, operation <a href="http://localhost:6060/pkg/builtin/#string">string</a>, property2 <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#PropertiesComparisonRule">PropertiesComparisonRule</a></pre>
+				<p>
+Creates a new validation rule and sets its arguments.
+see
+ObjectComparator.compare
+Parameters:
+</p>
+<pre>- property1 string
+a name of the first property to compare.
+- operation string
+a comparison operation: &#34;==&#34; (&#34;=&#34;, &#34;EQ&#34;), &#34;!= &#34; (&#34;&lt;&gt;&#34;, &#34;NE&#34;); &#34;&lt;&#34;/&#34;&gt;&#34; (&#34;LT&#34;/&#34;GT&#34;), &#34;&lt;=&#34;/&#34;&gt;=&#34; (&#34;LE&#34;/&#34;GE&#34;); &#34;LIKE&#34;.
+property2 string
+a name of the second property to compare.
+</pre>
+<p>
+Returns *PropertiesComparisonRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="PropertiesComparisonRule.Validate">func (*PropertiesComparisonRule) <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=1576:1687#L44">Validate</a>
+					<a class="permalink" href="index.html#PropertiesComparisonRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#PropertiesComparisonRule">PropertiesComparisonRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against this rule.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- schema Schema
+a schema this rule is called from
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Return []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PropertySchema">type <a href="http://localhost:6060/src/validate/PropertySchema.go?s=398:467#L7">PropertySchema</a>
+				<a class="permalink" href="index.html#PropertySchema">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Schema to validate object properties
+</p>
+<p>
+see
+ObjectSchema
+</p>
+<p>
+Example
+var schema = NewObjectSchema()
+</p>
+<pre>.WithProperty(NewPropertySchema(&#34;id&#34;, TypeCode.String));
+</pre>
+<p>
+schema.Validate({ id: &#34;1&#34;, name: &#34;ABC&#34; });       // Result: no errors
+schema.Validate({ name: &#34;ABC&#34; });                // Result: no errors
+schema.Validate({ id: 1, name: &#34;ABC&#34; });         // Result: id type mismatch
+</p>
+
+			<pre>type PropertySchema struct {
+    <a href="index.html#Schema">Schema</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewPropertySchema">func <a href="http://localhost:6060/src/validate/PropertySchema.go?s=552:592#L15">NewPropertySchema</a>
+					<a class="permalink" href="index.html#NewPropertySchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewPropertySchema() *<a href="index.html#PropertySchema">PropertySchema</a></pre>
+				<p>
+Creates a new validation schema and sets its values.
+Returns *PropertySchema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewPropertySchemaWithRules">func <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1030:1147#L36">NewPropertySchemaWithRules</a>
+					<a class="permalink" href="index.html#NewPropertySchemaWithRules">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewPropertySchemaWithRules(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, typ interface{}, required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, rules []<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#PropertySchema">PropertySchema</a></pre>
+				<p>
+Creates a new validation schema and sets its values.
+see
+IValidationRule
+see
+TypeCode
+Parameters:
+</p>
+<pre>- name string
+a property name
+- type interface{}
+a property type
+- required bool
+true to always require non-null values.
+- rules []IValidationRule
+a list with validation rules.
+</pre>
+<p>
+Returns *PropertySchema
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="PropertySchema.Name">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1339:1377#L48">Name</a>
+					<a class="permalink" href="index.html#PropertySchema.Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#PropertySchema">PropertySchema</a>) Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the property name.
+Returns string
+the property name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PropertySchema.PerformValidation">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=2203:2297#L83">PerformValidation</a>
+					<a class="permalink" href="index.html#PropertySchema.PerformValidation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#PropertySchema">PropertySchema</a>) PerformValidation(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against the schema and configured validation rules.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Return  []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PropertySchema.SetName">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1488:1534#L56">SetName</a>
+					<a class="permalink" href="index.html#PropertySchema.SetName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#PropertySchema">PropertySchema</a>) SetName(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets the property name.
+Parameters:
+</p>
+<pre>- value string
+a new property name.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="PropertySchema.SetType">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1835:1886#L71">SetType</a>
+					<a class="permalink" href="index.html#PropertySchema.SetType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#PropertySchema">PropertySchema</a>) SetType(value interface{})</pre>
+				<p>
+Sets a new property type. The type can be defined as type, type name or TypeCode
+Parameters:
+</p>
+<pre>- value interface{}
+a new property type.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="PropertySchema.Type">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1620:1663#L63">Type</a>
+					<a class="permalink" href="index.html#PropertySchema.Type">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#PropertySchema">PropertySchema</a>) Type() interface{}</pre>
+				<p>
+Gets the property type.
+Returns any
+the property type.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Schema">type <a href="http://localhost:6060/src/validate/Schema.go?s=425:512#L6">Schema</a>
+				<a class="permalink" href="index.html#Schema">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Basic schema that validates values against a set of validation rules.
+</p>
+<p>
+This schema is used as a basis for specific schemas to validate objects, project properties, arrays and maps.
+</p>
+
+			<pre>type Schema struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="InheritSchema">func <a href="http://localhost:6060/src/validate/Schema.go?s=1241:1285#L46">InheritSchema</a>
+					<a class="permalink" href="index.html#InheritSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func InheritSchema(base <a href="index.html#ISchemaBase">ISchemaBase</a>) *<a href="index.html#Schema">Schema</a></pre>
+				<p>
+Inherit schema
+Parameters:
+</p>
+<pre>- base ISchemaBase
+base foe create new schema
+</pre>
+<p>
+Returns *Schema
+</p>
+
+				
+				
+			
+				
+				<h3 id="InheritSchemaWithRules">func <a href="http://localhost:6060/src/validate/Schema.go?s=1629:1722#L64">InheritSchemaWithRules</a>
+					<a class="permalink" href="index.html#InheritSchemaWithRules">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func InheritSchemaWithRules(base <a href="index.html#ISchemaBase">ISchemaBase</a>, required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, rules []<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#Schema">Schema</a></pre>
+				<p>
+Inherit schema with rules
+Parameters:
+</p>
+<pre>- base ISchemaBase
+base foe create new schema
+- required bool
+true to always require non-null values.
+- rules []IValidationRule
+a list with validation rules.
+</pre>
+<p>
+Returns *Schema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewSchema">func <a href="http://localhost:6060/src/validate/Schema.go?s=601:625#L14">NewSchema</a>
+					<a class="permalink" href="index.html#NewSchema">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewSchema() *<a href="index.html#Schema">Schema</a></pre>
+				<p>
+Creates a new instance of validation schema and sets its values.
+Returns *Schema
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewSchemaWithRules">func <a href="http://localhost:6060/src/validate/Schema.go?s=979:1050#L32">NewSchemaWithRules</a>
+					<a class="permalink" href="index.html#NewSchemaWithRules">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewSchemaWithRules(required <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>, rules []<a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#Schema">Schema</a></pre>
+				<p>
+Creates a new instance of validation schema and sets its values.
+see
+IValidationRule
+Parameters:
+</p>
+<pre>- required bool
+true to always require non-null values.
+- rules []IValidationRule
+a list with validation rules.
+</pre>
+<p>
+Returns *Schema
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Schema.MakeOptional">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=3268:3307#L120">MakeOptional</a>
+					<a class="permalink" href="index.html#Schema.MakeOptional">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) MakeOptional() *<a href="index.html#Schema">Schema</a></pre>
+				<p>
+Makes validated values optional. Validation for null values will be skipped.
+This method returns reference to this exception to implement Builder pattern to chain additional calls.
+see
+makeRequired
+Returns *Schema
+this validation schema
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.MakeRequired">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2939:2978#L109">MakeRequired</a>
+					<a class="permalink" href="index.html#Schema.MakeRequired">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) MakeRequired() *<a href="index.html#Schema">Schema</a></pre>
+				<p>
+Makes validated values always required (non-null). For null values the schema will raise errors.
+This method returns reference to this exception to implement Builder pattern to chain additional calls.
+see
+makeOptional
+Returns *Schema
+this validation schema
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.PerformTypeValidation">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=5538:5645#L208">PerformTypeValidation</a>
+					<a class="permalink" href="index.html#Schema.PerformTypeValidation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) PerformTypeValidation(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, typ interface{}, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value to match specified type. The type can be defined as a Schema, type, a type name or TypeCode When type is a Schema, it executes validation recursively against that Schema.
+see
+performValidation
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- type interface{}
+a type to match the value type
+value interface{}
+a value to be validated.
+</pre>
+<p>
+Returns []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.PerformValidation">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=4066:4152#L149">PerformValidation</a>
+					<a class="permalink" href="index.html#Schema.PerformValidation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) PerformValidation(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates a given value against the schema and configured validation rules.
+Parameters:
+</p>
+<pre>- path string
+a dot notation path to the value.
+- value interface{}
+a value to be validated.
+</pre>
+<p>
+Return []*ValidationResult
+a list with validation results to add new results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.Required">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2001:2033#L76">Required</a>
+					<a class="permalink" href="index.html#Schema.Required">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) Required() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Gets a flag that always requires non-null values. For null values it raises a validation error.
+Returns bool
+true to always require non-null values and false to allow null values.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.Rules">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2397:2439#L91">Rules</a>
+					<a class="permalink" href="index.html#Schema.Rules">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) Rules() []<a href="index.html#IValidationRule">IValidationRule</a></pre>
+				<p>
+Gets validation rules to check values against.
+Returns []IValidationRule
+a list with validation rules.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.SetRequired">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2219:2259#L84">SetRequired</a>
+					<a class="permalink" href="index.html#Schema.SetRequired">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) SetRequired(value <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Sets a flag that always requires non-null values.
+Parameters:
+</p>
+<pre>- value bool
+true to always require non-null values and false to allow null values.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.SetRules">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2592:2642#L99">SetRules</a>
+					<a class="permalink" href="index.html#Schema.SetRules">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) SetRules(value []<a href="index.html#IValidationRule">IValidationRule</a>)</pre>
+				<p>
+Sets validation rules to check values against.
+Parameters:
+</p>
+<pre>- value []IValidationRule
+a list with validation rules.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.Validate">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=6832:6896#L265">Validate</a>
+					<a class="permalink" href="index.html#Schema.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) Validate(value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Validates the given value and results validation results.
+see
+ValidationResult
+Parameters:
+</p>
+<pre>- value interface{}
+a value to be validated.
+</pre>
+<p>
+Returns []*ValidationResult
+a list with validation results.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.ValidateAndReturnError">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=7287:7405#L278">ValidateAndReturnError</a>
+					<a class="permalink" href="index.html#Schema.ValidateAndReturnError">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) ValidateAndReturnError(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}, strict <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/">errors</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/errors/#ApplicationError">ApplicationError</a></pre>
+				<p>
+Validates the given value and returns a *errors.ApplicationError if errors were found.
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+- value interface{}
+a value to be validated.
+- strict bool
+true to treat warnings as errors.
+</pre>
+<p>
+Returns *errors.ApplicationError
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.ValidateAndThrowError">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=7866:7958#L293">ValidateAndThrowError</a>
+					<a class="permalink" href="index.html#Schema.ValidateAndThrowError">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) ValidateAndThrowError(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}, strict <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Validates the given value and throws a *errors.ApplicationError if errors were found.
+see
+ApplicationError.throwExceptionIfNeeded
+Parameters:
+</p>
+<pre>- correlationId string
+transaction id to trace execution through call chain.
+- value interface{}
+a value to be validated.
+- strict: bool
+true to treat warnings as errors.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="Schema.WithRule">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=3615:3670#L133">WithRule</a>
+					<a class="permalink" href="index.html#Schema.WithRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#Schema">Schema</a>) WithRule(rule <a href="index.html#IValidationRule">IValidationRule</a>) *<a href="index.html#Schema">Schema</a></pre>
+				<p>
+Returns Schema
+this validation schema.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TObjectComparator">type <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=386:417#L8">TObjectComparator</a>
+				<a class="permalink" href="index.html#TObjectComparator">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform comparison operations over arbitrary values.
+</p>
+<p>
+Example
+</p>
+<pre>ObjectComparator.Compare(2, &#34;GT&#34;, 1);        // Result: true
+ObjectComparator.AreEqual(&#34;A&#34;, &#34;B&#34;);         // Result: false
+</pre>
+
+			<pre>type TObjectComparator struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TObjectComparator.AreEqual">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=2050:2131#L58">AreEqual</a>
+					<a class="permalink" href="index.html#TObjectComparator.AreEqual">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectComparator">TObjectComparator</a>) AreEqual(value1 interface{}, value2 interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if two values are equal. The operation can be performed over values of any type.
+Parameters:
+</p>
+<pre>- value1 interface
+the first value to compare
+value2 interface{}
+the second value to compare
+</pre>
+<p>
+Returns bool
+true if values are equal and false otherwise
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectComparator.AreNotEqual">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=3112:3196#L98">AreNotEqual</a>
+					<a class="permalink" href="index.html#TObjectComparator.AreNotEqual">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectComparator">TObjectComparator</a>) AreNotEqual(value1 interface{}, value2 interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if two values are NOT equal The operation can be performed over values of any type.
+Parameters:
+</p>
+<pre>- value1 interface{}
+the first value to compare
+- value2 interface{}
+the second value to compare
+</pre>
+<p>
+Returns bool
+true if values are NOT equal and false otherwise
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectComparator.Compare">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=901:999#L22">Compare</a>
+					<a class="permalink" href="index.html#TObjectComparator.Compare">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectComparator">TObjectComparator</a>) Compare(value1 interface{}, operation <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value2 interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Perform comparison operation over two arguments. The operation can be performed over values of any type.
+Parameters:
+</p>
+<pre>- value1 interface{}
+the first argument to compare
+operation string
+the comparison operation: &#34;==&#34; (&#34;=&#34;, &#34;EQ&#34;), &#34;!= &#34; (&#34;&lt;&gt;&#34;, &#34;NE&#34;); &#34;&lt;&#34;/&#34;&gt;&#34; (&#34;LT&#34;/&#34;GT&#34;), &#34;&lt;=&#34;/&#34;&gt;=&#34; (&#34;LE&#34;/&#34;GE&#34;); &#34;LIKE&#34;.
+- value2 interface{}
+the second argument to compare
+</pre>
+<p>
+Returns bool
+result of the comparison operation
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectComparator.IsGreater">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=4182:4264#L129">IsGreater</a>
+					<a class="permalink" href="index.html#TObjectComparator.IsGreater">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectComparator">TObjectComparator</a>) IsGreater(value1 interface{}, value2 interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if first value is greater than the second one. The operation can be performed over numbers or strings.
+Parameters:
+</p>
+<pre>- value1 interface{}
+the first value to compare
+- value2 interface{}
+the second value to compare
+</pre>
+<p>
+Returns bool
+true if the first value is greater than second and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectComparator.IsLess">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=3560:3639#L110">IsLess</a>
+					<a class="permalink" href="index.html#TObjectComparator.IsLess">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectComparator">TObjectComparator</a>) IsLess(value1 interface{}, value2 interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if first value is less than the second one. The operation can be performed over numbers or strings.
+Parameters:
+</p>
+<pre>- value1 interface{}
+the first value to compare
+- value2 interface{}
+the second value to compare
+</pre>
+<p>
+Returns bool
+true if the first value is less than second and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectComparator.Match">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=4724:4802#L148">Match</a>
+					<a class="permalink" href="index.html#TObjectComparator.Match">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectComparator">TObjectComparator</a>) Match(value1 interface{}, value2 interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if string  views are matches
+Parameters:
+</p>
+<pre>- value1 interface{}
+a string value to match
+- value1 interface{}
+a string value to match
+</pre>
+<p>
+Returns bool
+true if the value matches regular expression and false otherwise.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ValidationResult">type <a href="http://localhost:6060/src/validate/ValidationResult.go?s=62:220#L1">ValidationResult</a>
+				<a class="permalink" href="index.html#ValidationResult">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Result generated by schema validation
+</p>
+
+			<pre>type ValidationResult struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewValidationResult">func <a href="http://localhost:6060/src/validate/ValidationResult.go?s=780:933#L22">NewValidationResult</a>
+					<a class="permalink" href="index.html#NewValidationResult">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewValidationResult(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, typ <a href="index.html#ValidationResultType">ValidationResultType</a>, code <a href="http://localhost:6060/pkg/builtin/#string">string</a>, message <a href="http://localhost:6060/pkg/builtin/#string">string</a>,
+    expected interface{}, actual interface{}) *<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				<p>
+Creates a new instance of validation ressult and sets its values.
+see
+ValidationResultType
+Parameters:
+</p>
+<pre>- path string
+a dot notation path of the validated element.
+- type: ValidationResultType
+a type of the validation result: Information, Warning, or Error.
+- code string
+an error code.
+- message string
+a human readable message.
+- expected interface{}
+an value expected by schema validation.
+- actual interface{}
+an actual value found by schema validation.
+</pre>
+<p>
+Returns *ValidationResult
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ValidationResult.Actual">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=2020:2067#L75">Actual</a>
+					<a class="permalink" href="index.html#ValidationResult.Actual">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ValidationResult">ValidationResult</a>) Actual() interface{}</pre>
+				<p>
+Gets the actual value found by schema validation.
+Returns any
+the actual value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ValidationResult.Code">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1564:1604#L53">Code</a>
+					<a class="permalink" href="index.html#ValidationResult.Code">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ValidationResult">ValidationResult</a>) Code() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the error code.
+Returns string
+the error code
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ValidationResult.Expected">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1857:1906#L68">Expected</a>
+					<a class="permalink" href="index.html#ValidationResult.Expected">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ValidationResult">ValidationResult</a>) Expected() interface{}</pre>
+				<p>
+Returns any
+the expected value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ValidationResult.Message">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1702:1745#L60">Message</a>
+					<a class="permalink" href="index.html#ValidationResult.Message">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ValidationResult">ValidationResult</a>) Message() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the human readable message.
+Returns string
+the result message.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ValidationResult.Path">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1193:1233#L37">Path</a>
+					<a class="permalink" href="index.html#ValidationResult.Path">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ValidationResult">ValidationResult</a>) Path() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets dot notation path of the validated element.
+Returns string
+the path of the validated element.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ValidationResult.Type">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1430:1484#L46">Type</a>
+					<a class="permalink" href="index.html#ValidationResult.Type">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ValidationResult">ValidationResult</a>) Type() <a href="index.html#ValidationResultType">ValidationResultType</a></pre>
+				<p>
+Gets the type of the validation result: Information, Warning, or Error.
+see
+ValidationResultType
+Returns ValidationResultType
+the type of the validation result.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ValidationResultType">type <a href="http://localhost:6060/src/validate/ValidationResultType.go?s=251:280#L1">ValidationResultType</a>
+				<a class="permalink" href="index.html#ValidationResultType">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Types of validation results generated by validation schemas.
+Information = 0 General information (not an error).
+Warning = 1 Warning about something suspecious. In strict mode is treated as error
+Error = 2 - Validation error.
+</p>
+
+			<pre>type ValidationResultType <a href="http://localhost:6060/pkg/builtin/#int">int</a></pre>
+
+			
+				
+				<pre>const (
+    <span id="Information">Information</span> <a href="index.html#ValidationResultType">ValidationResultType</a> = <a href="http://localhost:6060/pkg/builtin/#iota">iota</a>
+    <span id="Warning">Warning</span>
+    <span id="Error">Error</span>
+)</pre>
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ValueComparisonRule">type <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=371:447#L9">ValueComparisonRule</a>
+				<a class="permalink" href="index.html#ValueComparisonRule">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Validation rule that compares value to a constant.
+</p>
+<p>
+see
+IValidationRule
+</p>
+<p>
+Example
+</p>
+<pre>var schema = NewSchema()
+    .WithRule(NewValueComparisonRule(&#34;EQ&#34;, 1));
+
+schema.Validate(1);          // Result: no errors
+schema.Validate(2);          // Result: 2 is not equal to 1
+</pre>
+
+			<pre>type ValueComparisonRule struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewValueComparisonRule">func <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=754:839#L21">NewValueComparisonRule</a>
+					<a class="permalink" href="index.html#NewValueComparisonRule">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewValueComparisonRule(operation <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{}) *<a href="index.html#ValueComparisonRule">ValueComparisonRule</a></pre>
+				<p>
+Creates a new validation rule and sets its values.
+Parameters:
+</p>
+<pre>- operation string
+a comparison operation: &#34;==&#34; (&#34;=&#34;, &#34;EQ&#34;), &#34;!= &#34; (&#34;&lt;&gt;&#34;, &#34;NE&#34;); &#34;&lt;&#34;/&#34;&gt;&#34; (&#34;LT&#34;/&#34;GT&#34;), &#34;&lt;=&#34;/&#34;&gt;=&#34; (&#34;LE&#34;/&#34;GE&#34;); &#34;LIKE&#34;.
+- value interface{}
+a constant value to compare to
+</pre>
+<p>
+Returns *ValueComparisonRule
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="ValueComparisonRule.Validate">func (*ValueComparisonRule) <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=922:1028#L28">Validate</a>
+					<a class="permalink" href="index.html#ValueComparisonRule.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#ValueComparisonRule">ValueComparisonRule</a>) Validate(path <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="index.html#ISchema">ISchema</a>, value interface{}) []*<a href="index.html#ValidationResult">ValidationResult</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

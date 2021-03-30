@@ -12,12 +12,12 @@ var Notifier *TNotifier = &TNotifier{}
 // see
 // INotifiable
 // Parameters:
-// 			 - correlationId string
-// 			 transaction id to trace execution through call chain.
-// 			 - component interface{}
-// 			the component that is to be notified.
-// 			- args *Parameters
-// 			notifiation arguments.
+//  - correlationId string
+//  transaction id to trace execution through call chain.
+//  - component interface{}
+//  the component that is to be notified.
+//  - args *Parameters
+//  notifiation arguments.
 func (c *TNotifier) NotifyOne(correlationId string, component interface{}, args *Parameters) {
 	v, ok := component.(INotifiable)
 	if ok {

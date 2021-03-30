@@ -9,12 +9,12 @@ For instance: business calls when the component is not ready.
 // see
 // ErrorCategory
 // Parameters:
-//          - correlation_id string
-//          a unique transaction id to trace execution through call chain.
-//          - code string
-//          a unique error code.
-//          - message string
-//          a human-readable description of the error.
+//  - correlation_id string
+//  a unique transaction id to trace execution through call chain.
+//  - code string
+//  a unique error code.
+//  - message string
+//  a human-readable description of the error.
 // Returns *ApplicationError
 func NewInvalidStateError(correlationId, code, message string) *ApplicationError {
 	return &ApplicationError{

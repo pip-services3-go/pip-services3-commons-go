@@ -7,15 +7,15 @@ see
 IValidationRule
 
 Example
-var schema = NewSchema()
-    .WithRule(NewOrRule(
-        NewValueComparisonRle("LT", 1),
-        NewValueComparisonule("GT", 10)
-    ));
-
-schema.Validate();          // Result: no error
-schema.Validate5);          // Result: 5 must be less than 1 or 5 must be more than 10
-schema.Validate(20);        // Result: no error
+ var schema = NewSchema()
+     .WithRule(NewOrRule(
+         NewValueComparisonRle("LT", 1),
+         NewValueComparisonule("GT", 10)
+     ));
+ 
+ schema.Validate();          // Result: no error
+ schema.Validate5);          // Result: 5 must be less than 1 or 5 must be more than 10
+ schema.Validate(20);        // Result: no error
 */
 type OrRule struct {
 	rules []IValidationRule

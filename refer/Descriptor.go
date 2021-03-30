@@ -20,14 +20,13 @@ Locate all loggers (match by type and version)
 Locate persistence components for a microservice (match by group and type)
 Locate specific component by its name (match by name)
 Example
-locator1 := NewDescriptor("mygroup", "connector", "aws", "default", "1.0");
-locator2 := NewDescriptorFromString("mygroup:connector:*:*:1.0");
-
-locator1.Match(locator2);        // Result: true
-locator1.Equal(locator2);        // Result: true
-locator1.ExactMatch(locator2);    // Result: false
+ locator1 := NewDescriptor("mygroup", "connector", "aws", "default", "1.0");
+ locator2 := NewDescriptorFromString("mygroup:connector:*:*:1.0");
+ 
+ locator1.Match(locator2);        // Result: true
+ locator1.Equal(locator2);        // Result: true
+ locator1.ExactMatch(locator2);    // Result: false
 */
-
 type Descriptor struct {
 	group   string
 	typ     string
@@ -38,16 +37,16 @@ type Descriptor struct {
 
 // Creates a new instance of the descriptor.
 // Parameters:
-// 			- group string
-// 			a logical component group
-// 			- type string
-// 			a logical component type or contract
-// 			- kind string
-// 			a component implementation type
-// 			- name string
-// 			a unique component name
-// 			- version string
-// 			a component implementation version
+//  - group string
+//  a logical component group
+//  - type string
+//  a logical component type or contract
+//  - kind string
+//  a component implementation type
+//  - name string
+//  a unique component name
+//  - version string
+//  a component implementation version
 // Returns *Descriptor
 
 func NewDescriptor(group string, typ string, kind string, name string, version string) *Descriptor {

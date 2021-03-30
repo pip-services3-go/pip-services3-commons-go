@@ -13,11 +13,11 @@ see
 IValidationRule
 
 Example
-var schema = NewSchema()
-    .WithRule(NewIncludedRule(1, 2, 3));
-
-schema.Validate(2);      // Result: no errors
-schema.Validate(10);     // Result: 10 must be one of 1, 2, 3
+ var schema = NewSchema()
+     .WithRule(NewIncludedRule(1, 2, 3));
+ 
+ schema.Validate(2);      // Result: no errors
+ schema.Validate(10);     // Result: 10 must be one of 1, 2, 3
 */
 type IncludedRule struct {
 	values []interface{}

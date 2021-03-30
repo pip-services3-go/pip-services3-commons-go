@@ -15,24 +15,24 @@ see
 Referencer
 
 Example
-type MyController {
-	_persistence IPersistence
-}
-
-    func (mc* MyController) setReferences(references IReferences) {
-        mc._persistence = references.getOneRequired(
-            NewDescriptor("mygroup", "persistence", "*", "*", "1.0"))
-        );
-    }
-    ...
-}
+ type MyController {
+ 	_persistence IPersistence
+ }
+ 
+     func (mc* MyController) setReferences(references IReferences) {
+         mc._persistence = references.getOneRequired(
+             NewDescriptor("mygroup", "persistence", "*", "*", "1.0"))
+         );
+     }
+     ...
+ }
 */
 type IReferenceable interface {
 	// 	Sets references to dependent components.
 	// see
 	// IReferences
 	// Parameters:
-	// 			- references IReferences
-	// 			references to locate the component dependencies.
+	//  - references IReferences
+	//  references to locate the component dependencies.
 	SetReferences(references IReferences)
 }

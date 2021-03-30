@@ -15,10 +15,10 @@ import (
 // see
 // ValidationResult
 // Parameters:
-// 			- correlationId string
-// 			- message string
-// 			a human-readable description of the error.
-// 			- results: []*ValidationResult
+//  - correlationId string
+//  - message string
+//  a human-readable description of the error.
+//  - results: []*ValidationResult
 // a list of validation results
 // Returns *errors.ApplicationError
 func NewValidationError(correlationId string, message string, results []*ValidationResult) *errors.ApplicationError {
@@ -36,8 +36,8 @@ func NewValidationError(correlationId string, message string, results []*Validat
 // see
 // ValidationResult
 // Parameters:
-// 			- results []*ValidationResult
-// 			a list of validation results.
+//  - results []*ValidationResult
+//  a list of validation results.
 // Returns string
 // a composed error message.
 func composeErrorMessage(results []*ValidationResult) string {
@@ -70,12 +70,12 @@ func composeErrorMessage(results []*ValidationResult) string {
 // see
 // ValidationResult
 // Parameters:
-// 			- correlationId string
-// 			 transaction id to trace execution through call chain.
-// 			- results []*ValidationResult
-// 			list of validation results that may contain errors
-// 			strict boolean
-// 			true to treat warnings as errors.
+//  - correlationId string
+//  transaction id to trace execution through call chain.
+//  - results []*ValidationResult
+//  list of validation results that may contain errors
+//  strict boolean
+//  true to treat warnings as errors.
 // 	Returns *errors.ApplicationError
 // a newly created ValidationException or null if no errors in found.
 func NewValidationErrorFromResults(correlationId string, results []*ValidationResult, strict bool) *errors.ApplicationError {
@@ -104,12 +104,12 @@ func NewValidationErrorFromResults(correlationId string, results []*ValidationRe
 // see
 // ValidationException
 // Parameters:
-// 			 - correlationId string
-// 			transaction id to trace execution through call chain.
-// 			- results []*ValidationResult
-// 			list of validation results that may contain errors
-// 			- strict bool
-// 			true to treat warnings as errors.
+//  - correlationId string
+//  transaction id to trace execution through call chain.
+//  - results []*ValidationResult
+//  list of validation results that may contain errors
+//  - strict bool
+//  true to treat warnings as errors.
 func ThrowValidationErrorIfNeeded(correlationId string, results []*ValidationResult, strict bool) {
 	err := NewValidationErrorFromResults(correlationId, results, strict)
 	if err != nil {

@@ -52,12 +52,12 @@ func (c *TRecursiveObjectWriter) performSetProperty(obj interface{}, names []str
 // The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
 // If the property does not exist or introspection fails this method doesn't do anything and doesn't any throw errors.
 // Parameters:
-// 				- obj interface{}
-// 				an object to write property to.
-// 				- name string
-// 				a name of the property to set.
-// 				- value interface{}
-// 				a new value for the property to set.
+//  - obj interface{}
+//  an object to write property to.
+//  - name string
+//  a name of the property to set.
+//  - value interface{}
+//  a new value for the property to set.
 
 func (c *TRecursiveObjectWriter) SetProperty(obj interface{}, name string, value interface{}) {
 	if obj == nil || name == "" {

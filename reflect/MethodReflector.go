@@ -15,11 +15,11 @@ This class has symmetric implementation across all languages supported by Pip.Se
 Because all languages have different casing and case sensitivity rules, this MethodReflector treats all method names as case insensitive.
 
 Example:
-myObj = MyObject();
-
-methods = MethodReflector.GetMethodNames();
-MethodReflector.HasMethod(myObj, "myMethod");
-MethodReflector.InvokeMethod(myObj, "myMethod", 123);
+ myObj = MyObject();
+ 
+ methods = MethodReflector.GetMethodNames();
+ MethodReflector.HasMethod(myObj, "myMethod");
+ MethodReflector.InvokeMethod(myObj, "myMethod", 123);
 */
 type TMethodReflector struct{}
 
@@ -34,10 +34,10 @@ func (c *TMethodReflector) matchMethod(method refl.Method, name string) bool {
 
 // Checks if object has a method with specified name..
 // Parameters:
-// 			- obj interface{}
-// 			an object to introspect.
-// 			- name string
-// 			a name of the method to check.
+//  - obj interface{}
+//  an object to introspect.
+//  - name string
+//  a name of the method to check.
 // Returns bool
 // true if the object has the method and false if it doesn't.
 func (c *TMethodReflector) HasMethod(obj interface{}, name string) bool {
@@ -62,12 +62,12 @@ func (c *TMethodReflector) HasMethod(obj interface{}, name string) bool {
 
 // Invokes an object method by its name with specified parameters.
 // Parameters:
-// 			 - obj interface{}
-// 			 an object to invoke.
-// 			 - name string
-// 			 a name of the method to invoke.
-// 			 - args ...interface{}
-// 			 a list of method arguments.
+//  - obj interface{}
+//  an object to invoke.
+//  - name string
+//  a name of the method to invoke.
+//  - args ...interface{}
+//  a list of method arguments.
 // Returns interface{}
 // the result of the method invocation or null if method returns void.
 func (c *TMethodReflector) InvokeMethod(obj interface{}, name string, args ...interface{}) interface{} {
@@ -107,8 +107,8 @@ func (c *TMethodReflector) InvokeMethod(obj interface{}, name string, args ...in
 
 // Gets names of all methods implemented in specified object.
 // Parameters:
-// 			- obj interface{}
-// 			an objec to introspect.
+//  - obj interface{}
+//  an objec to introspect.
 // Returns []string
 // a list with method names.
 func (c *TMethodReflector) GetMethodNames(obj interface{}) []string {

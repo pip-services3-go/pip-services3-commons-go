@@ -19,10 +19,10 @@ var TypeMatcher = &TTypeMatcher{}
 
 // Matches expected type to a type of a value. The expected type can be specified by a type, type name or TypeCode.
 // Parameters:
-// 			- expectedType interface{}
-// 			an expected type to match.
-// 			- actualValue interface{}
-// 			a value to match its type to the expected one.
+//  - expectedType interface{}
+//  an expected type to match.
+//  - actualValue interface{}
+//  a value to match its type to the expected one.
 // Returns bool
 // true if types are matching and false if they don't.
 func (c *TTypeMatcher) MatchValue(expectedType interface{}, actualValue interface{}) bool {

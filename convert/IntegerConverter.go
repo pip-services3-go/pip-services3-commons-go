@@ -35,8 +35,8 @@ func (c *TIntegerConverter) ToInteger(value interface{}) int {
 
 // Converts value into integer or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: integer value or default when conversion is not supported.
 func (c *TIntegerConverter) ToIntegerWithDefault(value interface{}, defaultValue int) int {
 	return ToIntegerWithDefault(value, defaultValue)
@@ -63,8 +63,8 @@ func ToInteger(value interface{}) int {
 
 // Converts value into integer or returns default when conversion is not possible.
 // Parameters: 
-// "value" - the value to convert.
-// "defaultValue" - the default value.
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
 // Returns: integer value or default when conversion is not supported.
 func ToIntegerWithDefault(value interface{}, defaultValue int) int {
 	r := ToNullableInteger(value)

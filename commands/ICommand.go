@@ -22,8 +22,8 @@ type ICommand interface {
 	// see
 	// ValidationResult
 	// Parameters:
-	// - args: Parameters
-	// the parameters (arguments) to validate.
+	//  - args: Parameters
+	//  the parameters (arguments) to validate.
 	// Returns ValidationResult[]
 	// an array of ValidationResults.
 	Validate(args *run.Parameters) []*validate.ValidationResult

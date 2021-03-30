@@ -7,16 +7,15 @@ StringValueMap
 
 Example:
  filter := NewFilterParamsFromTuples(
-    "type", "Type1",
-    "from_create_time", new Date(2000, 0, 1),
-    "to_create_time", new Date(),
-    "completed", true
-);
-paging = NewPagingParams(0, 100);
-
-err, page = myDataClient.getDataByFilter(filter, paging);
+     "type", "Type1",
+     "from_create_time", new Date(2000, 0, 1),
+     "to_create_time", new Date(),
+     "completed", true
+ );
+ paging = NewPagingParams(0, 100);
+ 
+ err, page = myDataClient.getDataByFilter(filter, paging);
 */
-
 type FilterParams struct {
 	StringValueMap
 }

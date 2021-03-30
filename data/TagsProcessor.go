@@ -21,8 +21,8 @@ var hashTagRegex = regexp.MustCompile("#\\w+")
 // Normalizes a tag by replacing special symbols like '_' and '#' with spaces.
 // When tags are normalized then can be presented to user in similar shape and form.
 // Parameters:
-// 			- tag string
-// 			the tag to normalize.
+//  - tag string
+//  the tag to normalize.
 // Returns string
 // a normalized tag.
 func (c *TTagsProcessor) NormalizeTag(tag string) string {
@@ -33,8 +33,8 @@ func (c *TTagsProcessor) NormalizeTag(tag string) string {
 // Compress a tag by removing special symbols like spaces, '_' and '#'
 // and converting the tag to lower case. When tags are compressed they can be matched in search queries.
 // Parameters:
-// 			 - tag string
-// 			the tag to compress.
+//  - tag string
+//  the tag to compress.
 // Returns string
 // a compressed tag.
 func (c *TTagsProcessor) CompressTag(tag string) string {
@@ -44,10 +44,10 @@ func (c *TTagsProcessor) CompressTag(tag string) string {
 
 // Compares two tags using their compressed form.
 // Parameters:
-// 			- tag1 string
-// 			the first tag.
-// 			- tag2 string
-// 			the second tag.
+//  - tag1 string
+//  the first tag.
+//  - tag2 string
+//  the second tag.
 // Returns bool
 // true if the tags are equal and false otherwise.
 func (c *TTagsProcessor) EqualTags(tag1 string, tag2 string) bool {
@@ -62,8 +62,8 @@ func (c *TTagsProcessor) EqualTags(tag1 string, tag2 string) bool {
 
 // Normalizes a list of tags.
 // Parameters
-// 			- tags []string
-// 			the tags to normalize.
+//  - tags []string
+//  the tags to normalize.
 // Returns []string
 // a list with normalized tags.
 
@@ -76,8 +76,8 @@ func (c *TTagsProcessor) NormalizeTags(tags []string) []string {
 
 // Normalizes a comma-separated list of tags.
 // Parameters
-// 			- tagList string
-// 			a comma-separated list of tags to normalize.
+//  - tagList string
+//  a comma-separated list of tags to normalize.
 // Returns []string
 // a list with normalized tags.
 func (c *TTagsProcessor) NormalizeTagList(tagList string) []string {
@@ -87,8 +87,8 @@ func (c *TTagsProcessor) NormalizeTagList(tagList string) []string {
 
 // Compresses a list of tags.
 // Parameters
-// 			- tags []string
-// 			the tags to compress.
+//  - tags []string
+//  the tags to compress.
 // Returns []string
 // a list with normalized tags.
 func (c *TTagsProcessor) CompressTags(tags []string) []string {
@@ -100,8 +100,8 @@ func (c *TTagsProcessor) CompressTags(tags []string) []string {
 
 //Compresses a comma-separated list of tags.
 // Parameters:
-// 			 - tagList string
-// 			 a comma-separated list of tags to compress.
+//  - tagList string
+//  a comma-separated list of tags to compress.
 // Returns []string
 // a list with compressed tags.
 func (c *TTagsProcessor) CompressTagList(tagList string) []string {
@@ -111,8 +111,8 @@ func (c *TTagsProcessor) CompressTagList(tagList string) []string {
 
 // Extracts hash tags from a text.
 // Parameters:
-// 			- text string
-// 			a text that contains hash tags
+//  - text string
+//  a text that contains hash tags
 // Returns []string
 // a list with extracted and compressed tags.
 func (c *TTagsProcessor) ExtractHashTags(text string) []string {
@@ -141,29 +141,29 @@ func (c *TTagsProcessor) ExtractHashTags(text string) []string {
 	return tags
 }
 
-// private static extractString(field: any): string {
-// 	if (field == null) return '';
-// 	if (_.isString(field)) return field;
-// 	if (!_.isObject(field)) return '';
-
-// 	let result = '';
-// 	for (let prop in field) {
-// 		result += ' ' + TagsProcessor.extractString(field[prop]);
-// 	}
-// 	return result;
-// }
-
-// public static extractHashTags(obj: any, ...searchFields: string[]): string[] {
-// 	let tags = TagsProcessor.compressTags(obj.tags);
-
-// 	_.each(searchFields, (field) => {
-// 		let text = TagsProcessor.extractString(obj[field]);
-
-// 		if (text != '') {
-// 			let hashTags = text.match(TagsProcessor.HASHTAG_REGEX);
-// 			tags = tags.concat(TagsProcessor.compressTags(hashTags));
-// 		}
-// 	});
-
-// 	return _.uniq(tags);
-// }
+//  private static extractString(field: any): string {
+//  	if (field == null) return '';
+//  	if (_.isString(field)) return field;
+//  	if (!_.isObject(field)) return '';
+//
+//  	let result = '';
+//  	for (let prop in field) {
+//  		result += ' ' + TagsProcessor.extractString(field[prop]);
+//  	}
+//  	return result;
+//  }
+//
+//  public static extractHashTags(obj: any, ...searchFields: string[]): string[] {
+//  	let tags = TagsProcessor.compressTags(obj.tags);
+//  
+//  	_.each(searchFields, (field) => {
+//  		let text = TagsProcessor.extractString(obj[field]);
+//  
+//  		if (text != '') {
+//  			let hashTags = text.match(TagsProcessor.HASHTAG_REGEX);
+//  			tags = tags.concat(TagsProcessor.compressTags(hashTags));
+//  		}
+//  	});
+//  
+//  	return _.uniq(tags);
+//  }

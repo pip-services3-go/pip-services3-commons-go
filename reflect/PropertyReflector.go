@@ -15,12 +15,12 @@ This class has symmetric implementation across all languages supported by Pip.Se
 Because all languages have different casing and case sensitivity rules, this PropertyReflector treats all property names as case insensitive.
 
 Example:
-myObj := MyObject{}
-
-properties := PropertyReflector.GetPropertyNames()
-PropertyReflector.HasProperty(myObj, "myProperty")
-value := PropertyReflector.GetProperty(myObj, "myProperty")
-PropertyReflector.SetProperty(myObj, "myProperty", 123)
+ myObj := MyObject{}
+ 
+ properties := PropertyReflector.GetPropertyNames()
+ PropertyReflector.HasProperty(myObj, "myProperty")
+ value := PropertyReflector.GetProperty(myObj, "myProperty")
+ PropertyReflector.SetProperty(myObj, "myProperty", 123)
 */
 type TPropertyReflector struct{}
 

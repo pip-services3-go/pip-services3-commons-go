@@ -17,13 +17,13 @@ The string map is highly versatile. It can be converted into many formats, store
 This class is widely used in Pip.Services as a basis for variety of classes, such as ConfigParams, ConnectionParams,
 CredentialParams and others.
 
-Example
-value1 := NewStringValueMapFromString("key1=1;key2=123.456;key3=2018-01-01");
-
-value1.getAsBoolean("key1");   // Result: true
-value1.getAsInteger("key2");   // Result: 123
-value1.getAsFloat("key2");     // Result: 123.456
-value1.getAsDateTime("key3");  // Result: new Date(2018,0,1)
+Example:
+ value1 := NewStringValueMapFromString("key1=1;key2=123.456;key3=2018-01-01");
+ 
+ value1.getAsBoolean("key1");   // Result: true
+ value1.getAsInteger("key2");   // Result: 123
+ value1.getAsFloat("key2");     // Result: 123.456
+ value1.getAsDateTime("key3");  // Result: new Date(2018,0,1)
 see
 StringConverter
 see
@@ -55,7 +55,7 @@ func NewEmptyStringValueMap() *StringValueMap {
 
 // Creates a new instance of the map and assigns its value.
 // Parameters
-// 			- value map[string]string
+//  - value map[string]string
 // Returns *StringValueMap
 func NewStringValueMap(value map[string]string) *StringValueMap {
 	c := &StringValueMap{}
@@ -76,8 +76,8 @@ func (c *StringValueMap) Value() map[string]string {
 
 // Gets a map element specified by its key.
 // Parameters:
-// 			-key string
-// 			a key of the element to get.
+//  -key string
+//  a key of the element to get.
 // Returns string
 // the value of the map element.
 func (c *StringValueMap) Get(key string) string {
@@ -97,9 +97,9 @@ func (c *StringValueMap) Keys() []string {
 
 // Puts a new value into map element specified by its key.
 // Parameters:
-// 			- key string
-// 			a key of the element to put.
-// 			- value interface{}
+//  - key string
+//  a key of the element to put.
+//  - value interface{}
 // a new value for map element.
 // Returns interface{}
 func (c *StringValueMap) Put(key string, value interface{}) {
@@ -108,16 +108,16 @@ func (c *StringValueMap) Put(key string, value interface{}) {
 
 // Removes a map element specified by its key
 // Parameters:
-// 			- key string
-// 			a key of the element to remove.
+//  - key string
+//  a key of the element to remove.
 func (c *StringValueMap) Remove(key string) {
 	delete(c.value, key)
 }
 
 // Checks if this map contains a key. The check uses direct comparison between key and the specified key value.
 // Parameters
-// 			- key string
-// 			a value to be checked
+//  - key string
+//  a value to be checked
 // Returns bool
 // true if this map contains the key or false otherwise.
 func (c *StringValueMap) Contains(key string) bool {
@@ -127,8 +127,8 @@ func (c *StringValueMap) Contains(key string) bool {
 
 // Appends new elements to this map.
 // Parameters:
-// 		- values map[string]string
-// 		a map with elements to be added.
+//  - values map[string]string
+//  a map with elements to be added.
 func (c *StringValueMap) Append(values map[string]string) {
 	if values == nil {
 		return
@@ -141,8 +141,8 @@ func (c *StringValueMap) Append(values map[string]string) {
 
 // Appends new elements to this map.
 // Parameters:
-// 		- values map[string]interface{}
-// 		a map with elements to be added.
+//  - values map[string]interface{}
+//  a map with elements to be added.
 func (c *StringValueMap) AppendAny(values map[string]interface{}) {
 	if values == nil {
 		return
@@ -175,7 +175,7 @@ func (c *StringValueMap) GetAsSingleObject() interface{} {
 
 // Sets a new value to map.
 // Parameters:
-// 			 - value interface{}
+//  - value interface{}
 // a new element or array value.
 func (c *StringValueMap) SetAsSingleObject(value interface{}) {
 	a := convert.ToMap(value)
@@ -187,8 +187,8 @@ func (c *StringValueMap) SetAsSingleObject(value interface{}) {
 // Gets the value stored in map element without any conversions.
 // When element key is not defined it returns the entire map value.
 // Parameters:
-// 			 - key string
-// 			 a key of the element to get
+//  - key string
+//  a key of the element to get
 // Returns interface{}
 // the element value or value of the map when index is not defined.
 func (c *StringValueMap) GetAsObject(key string) interface{} {
@@ -200,9 +200,9 @@ func (c *StringValueMap) GetAsObject(key string) interface{} {
 // see
 // MapConverter.toMap
 // Parameters:
-// 			- key any
-// 			 a key of the element to set
-//  		- value interface{}
+//  - key any
+//  a key of the element to set
+//  - value interface{}
 // a new element or map value.
 func (c *StringValueMap) SetAsObject(key string, value interface{}) {
 	c.Put(key, value)
@@ -212,8 +212,8 @@ func (c *StringValueMap) SetAsObject(key string, value interface{}) {
 // see
 // StringConverter.toNullableString
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *string
 // string value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableString(key string) *string {
@@ -225,8 +225,8 @@ func (c *StringValueMap) GetAsNullableString(key string) *string {
 // see
 // getAsStringWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns string
 // string value of the element or "" if conversion is not supported.
 func (c *StringValueMap) GetAsString(key string) string {
@@ -237,10 +237,10 @@ func (c *StringValueMap) GetAsString(key string) string {
 // see
 // StringConverter.toStringWithDefault
 // Parameters:
-// 			 - key string
-// 			 a key of element to get.
-// 			 - defaultValue string
-// 			 the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue string
+//  the default value
 // Returns string
 // string value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsStringWithDefault(key string, defaultValue string) string {
@@ -258,8 +258,8 @@ func (c *StringValueMap) GetAsStringWithDefault(key string, defaultValue string)
 // see
 // BooleanConverter.toNullableBoolean
 // Parameters:
-// 			 - key string
-// 			 a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *bool
 // boolean value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableBoolean(key string) *bool {
@@ -271,8 +271,8 @@ func (c *StringValueMap) GetAsNullableBoolean(key string) *bool {
 // see
 // getAsBooleanWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns bool
 // boolean value of the element or false if conversion is not supported.
 func (c *StringValueMap) GetAsBoolean(key string) bool {
@@ -283,10 +283,10 @@ func (c *StringValueMap) GetAsBoolean(key string) bool {
 // see
 // BooleanConverter.toBooleanWithDefault
 // Parameters
-// 			- key string
-// 			a key of element to get.
-// 			- defaultValue bool
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue bool
+//  the default value
 // Returns bool
 // boolean value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsBooleanWithDefault(key string, defaultValue bool) bool {
@@ -298,8 +298,8 @@ func (c *StringValueMap) GetAsBooleanWithDefault(key string, defaultValue bool) 
 // see
 // IntegerConverter.toNullableInteger
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *int
 // integer value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableInteger(key string) *int {
@@ -311,8 +311,8 @@ func (c *StringValueMap) GetAsNullableInteger(key string) *int {
 // see
 // getAsIntegerWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns int
 func (c *StringValueMap) GetAsInteger(key string) int {
 	return c.GetAsIntegerWithDefault(key, 0)
@@ -322,10 +322,10 @@ func (c *StringValueMap) GetAsInteger(key string) int {
 // see
 // IntegerConverter.toIntegerWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
-// 			- defaultValue int
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue int
+//  the default value
 // Returns int
 // integer value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsIntegerWithDefault(key string, defaultValue int) int {
@@ -337,8 +337,8 @@ func (c *StringValueMap) GetAsIntegerWithDefault(key string, defaultValue int) i
 // see
 // LongConverter.toNullableLong
 // Parameters:
-// 			 - key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *int64
 // int64 value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableLong(key string) *int64 {
@@ -350,8 +350,8 @@ func (c *StringValueMap) GetAsNullableLong(key string) *int64 {
 // see
 // getAsLongWithDefault
 // Parameters:
-// 			 - key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns int64
 // loint64ng value of the element or 0 if conversion is not supported.
 func (c *StringValueMap) GetAsLong(key string) int64 {
@@ -362,10 +362,10 @@ func (c *StringValueMap) GetAsLong(key string) int64 {
 // see
 // LongConverter.toLongWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
-// 			- defaultValue int64
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue int64
+//  the default value
 // Returns int64
 // int64 value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsLongWithDefault(key string, defaultValue int64) int64 {
@@ -377,8 +377,8 @@ func (c *StringValueMap) GetAsLongWithDefault(key string, defaultValue int64) in
 // see
 // FloatConverter.toNullableFloat
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *float32
 // float32 value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableFloat(key string) *float32 {
@@ -390,8 +390,8 @@ func (c *StringValueMap) GetAsNullableFloat(key string) *float32 {
 // see
 // getAsFloatWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns float32
 // float32 value of the element or 0 if conversion is not supported.
 func (c *StringValueMap) GetAsFloat(key string) float32 {
@@ -402,10 +402,10 @@ func (c *StringValueMap) GetAsFloat(key string) float32 {
 // see
 // FloatConverter.toFloatWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
-// 			- defaultValue: float32
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue: float32
+//  the default value
 // Returns float32
 // float32 value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsFloatWithDefault(key string, defaultValue float32) float32 {
@@ -417,8 +417,8 @@ func (c *StringValueMap) GetAsFloatWithDefault(key string, defaultValue float32)
 // see
 // DoubleConverter.toNullableDouble
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *float64
 // float64 value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableDouble(key string) *float64 {
@@ -430,8 +430,8 @@ func (c *StringValueMap) GetAsNullableDouble(key string) *float64 {
 // see
 // getAsDoubleWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns float64
 // float64 value of the element or 0 if conversion is not supported.
 func (c *StringValueMap) GetAsDouble(key string) float64 {
@@ -442,10 +442,10 @@ func (c *StringValueMap) GetAsDouble(key string) float64 {
 // see
 // DoubleConverter.toDoubleWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
-// 			- defaultValue float64
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue float64
+//  the default value
 // Returns float64
 // float64 value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsDoubleWithDefault(key string, defaultValue float64) float64 {
@@ -457,8 +457,8 @@ func (c *StringValueMap) GetAsDoubleWithDefault(key string, defaultValue float64
 // see
 // DateTimeConverter.toNullableDateTime
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns time.Time
 // time.Time value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableDateTime(key string) *time.Time {
@@ -470,8 +470,8 @@ func (c *StringValueMap) GetAsNullableDateTime(key string) *time.Time {
 // see
 // getAsDateTimeWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns time.Time
 // time.Time value of the element or the current date if conversion is not supported.
 func (c *StringValueMap) GetAsDateTime(key string) time.Time {
@@ -482,10 +482,10 @@ func (c *StringValueMap) GetAsDateTime(key string) time.Time {
 // see
 // DateTimeConverter.toDateTimeWithDefault
 // Parameters:
-// 			- key string
-// 			a key of element to get.
-// 			- defaultValue time.Time
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue time.Time
+//  the default value
 // Returns time.Time
 // time.Time value of the element or default value if conversion is not supported.
 
@@ -494,26 +494,26 @@ func (c *StringValueMap) GetAsDateTimeWithDefault(key string, defaultValue time.
 	return convert.DateTimeConverter.ToDateTimeWithDefault(value, defaultValue)
 }
 
-// func (c *StringValueMap) GetAsNullableType(typ convert.TypeCode, key string) interface{} {
-// 	value := c.Get(key)
-// 	return convert.TypeConverter.ToNullableType(typ, value)
-// }
+//  func (c *StringValueMap) GetAsNullableType(typ convert.TypeCode, key string) interface{} {
+//  	value := c.Get(key)
+//  	return convert.TypeConverter.ToNullableType(typ, value)
+//  }
 
-// func (c *StringValueMap) GetAsType(typ convert.TypeCode, key string) interface{} {
-// 	return c.GetAsTypeWithDefault(typ, key, nil)
-// }
+//  func (c *StringValueMap) GetAsType(typ convert.TypeCode, key string) interface{} {
+//  	return c.GetAsTypeWithDefault(typ, key, nil)
+//  }
 
-// func (c *StringValueMap) GetAsTypeWithDefault(typ convert.TypeCode, key string, defaultValue interface{}) interface{} {
-// 	value := c.Get(key)
-// 	return convert.TypeConverter.ToTypeWithDefault(typ, value, defaultValue)
-// }
+//  func (c *StringValueMap) GetAsTypeWithDefault(typ convert.TypeCode, key string, defaultValue interface{}) interface{} {
+//  	value := c.Get(key)
+//  	return convert.TypeConverter.ToTypeWithDefault(typ, value, defaultValue)
+//  }
 
 // Converts map element into an AnyValue or returns an empty AnyValue if conversion is not possible.
 // see
 // AnyValue
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *AnyValue
 // AnyValue value of the element or empty AnyValue if conversion is not supported.
 func (c *StringValueMap) GetAsValue(key string) *AnyValue {
@@ -527,8 +527,8 @@ func (c *StringValueMap) GetAsValue(key string) *AnyValue {
 // see
 // AnyValueArray.fromValue
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *AnyValueArray
 // AnyValueArray value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableArray(key string) *AnyValueArray {
@@ -546,8 +546,8 @@ func (c *StringValueMap) GetAsNullableArray(key string) *AnyValueArray {
 // see
 // AnyValueArray.fromValue
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *AnyValueArray
 // AnyValueArray value of the element or empty AnyValueArray if conversion is not supported.
 func (c *StringValueMap) GetAsArray(key string) *AnyValueArray {
@@ -561,10 +561,10 @@ func (c *StringValueMap) GetAsArray(key string) *AnyValueArray {
 // see
 // getAsNullableArray
 // Parameters
-// 			- key string
-// 			a key of element to get.
-// 			- defaultValue *AnyValueArray
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  - defaultValue *AnyValueArray
+//  the default value
 // Returns *AnyValueArray
 // AnyValueArray value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsArrayWithDefault(key string, defaultValue *AnyValueArray) *AnyValueArray {
@@ -580,8 +580,8 @@ func (c *StringValueMap) GetAsArrayWithDefault(key string, defaultValue *AnyValu
 // see
 // fromValue
 // Parameters:
-// 			 - key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *AnyValueMap
 // AnyValueMap value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableMap(key string) *AnyValueMap {
@@ -597,8 +597,8 @@ func (c *StringValueMap) GetAsNullableMap(key string) *AnyValueMap {
 // see
 // fromValue
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *AnyValueMap
 // AnyValueMap value of the element or empty AnyValueMap if conversion is not supported.
 func (c *StringValueMap) GetAsMap(key string) *AnyValueMap {
@@ -610,10 +610,10 @@ func (c *StringValueMap) GetAsMap(key string) *AnyValueMap {
 // see
 // getAsNullableMap
 // Parameters:
-// 			 - key string
-// 			a key of element to get.
-// 			defaultValue *AnyValueMap
-// 			the default value
+//  - key string
+//  a key of element to get.
+//  defaultValue *AnyValueMap
+//  the default value
 // Returns *AnyValueMap
 // AnyValueMap value of the element or default value if conversion is not supported.
 func (c *StringValueMap) GetAsMapWithDefault(key string, defaultValue *AnyValueMap) *AnyValueMap {
@@ -626,7 +626,7 @@ func (c *StringValueMap) GetAsMapWithDefault(key string, defaultValue *AnyValueM
 }
 
 // Gets a string representation of the object. The result is a semicolon-separated
-// list of key-value pairs as "key1=value1;key2=value2;key=value3"
+//  list of key-value pairs as "key1=value1;key2=value2;key=value3"
 // Returns string
 // a string representation of the object.
 func (c *StringValueMap) String() string {
@@ -675,8 +675,8 @@ func (c *StringValueMap) UnmarshalJSON(data []byte) error {
 // see
 // setAsObject
 // Parameters:
-// 			 - value interface{}
-// 			 value to be converted
+//  - value interface{}
+//  value to be converted
 // Returns *StringValueMap
 // a newly created StringValueMap.
 func NewStringValueMapFromValue(value interface{}) *StringValueMap {
@@ -689,8 +689,8 @@ func NewStringValueMapFromValue(value interface{}) *StringValueMap {
 // see
 // fromTuplesArray
 // Parameters
-// 			- tuples ...interface{}
-// 			a list of values where odd elements are keys and the following even elements are values
+//  - tuples ...interface{}
+//  a list of values where odd elements are keys and the following even elements are values
 // Returns *StringValueMap
 // a newly created StringValueMap.
 
@@ -701,8 +701,8 @@ func NewStringValueMapFromTuples(tuples ...interface{}) *StringValueMap {
 // Creates a new StringValueMap from a list of key-value pairs called tuples.
 // The method is similar to fromTuples but tuples are passed as array instead of parameters.
 // Parameters:
-// 			 - tuples: []interface{}
-// 			a list of values where odd elements are keys and the following even elements are values
+//  - tuples: []interface{}
+//  a list of values where odd elements are keys and the following even elements are values
 // Returns *StringValueMap
 // a newly created StringValueMap.
 func NewStringValueMapFromTuplesArray(tuples []interface{}) *StringValueMap {
@@ -727,8 +727,8 @@ func NewStringValueMapFromTuplesArray(tuples []interface{}) *StringValueMap {
 
 // Parses semicolon-separated key-value pairs and returns them as a StringValueMap.
 // Parameters:
-// 			- line string
-// 			semicolon-separated key-value list to initialize StringValueMap.
+//  - line string
+//  semicolon-separated key-value list to initialize StringValueMap.
 // Returns *StringValueMap
 // a newly created StringValueMap.
 func NewStringValueMapFromString(line string) *StringValueMap {
@@ -773,8 +773,8 @@ func NewStringValueMapFromString(line string) *StringValueMap {
 // Creates a new AnyValueMap by merging two or more maps.
 // Maps defined later in the list override values from previously defined maps.
 // Parameters:
-//  		- maps...map[string]string
-// 			an array of maps to be merged
+//  - maps...map[string]string
+//  an array of maps to be merged
 // Returns StringValueMap
 // a newly created AnyValueMap.
 func NewStringValueMapFromMaps(maps ...map[string]string) *StringValueMap {

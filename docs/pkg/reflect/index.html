@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>reflect - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.13.15";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package reflect
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "reflect"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="index.html#pkg-variables">Variables</a></dd>
+			
+			
+			
+				
+				<dd><a href="index.html#IValueWrapper">type IValueWrapper</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TMethodReflector">type TMethodReflector</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TMethodReflector.GetMethodNames">func (c *TMethodReflector) GetMethodNames(obj interface{}) []string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TMethodReflector.HasMethod">func (c *TMethodReflector) HasMethod(obj interface{}, name string) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TMethodReflector.InvokeMethod">func (c *TMethodReflector) InvokeMethod(obj interface{}, name string, args ...interface{}) interface{}</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TObjectReader">type TObjectReader</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectReader.GetProperties">func (c *TObjectReader) GetProperties(obj interface{}) map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectReader.GetProperty">func (c *TObjectReader) GetProperty(obj interface{}, name string) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectReader.GetPropertyNames">func (c *TObjectReader) GetPropertyNames(obj interface{}) []string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectReader.GetValue">func (c *TObjectReader) GetValue(obj interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectReader.HasProperty">func (c *TObjectReader) HasProperty(obj interface{}, name string) bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TObjectWriter">type TObjectWriter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectWriter.GetValue">func (c *TObjectWriter) GetValue(obj interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectWriter.SetProperties">func (c *TObjectWriter) SetProperties(obj interface{}, values map[string]interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TObjectWriter.SetProperty">func (c *TObjectWriter) SetProperty(obj interface{}, name string, value interface{})</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TPropertyReflector">type TPropertyReflector</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TPropertyReflector.GetProperties">func (c *TPropertyReflector) GetProperties(obj interface{}) map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TPropertyReflector.GetProperty">func (c *TPropertyReflector) GetProperty(obj interface{}, name string) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TPropertyReflector.GetPropertyNames">func (c *TPropertyReflector) GetPropertyNames(obj interface{}) []string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TPropertyReflector.HasProperty">func (c *TPropertyReflector) HasProperty(obj interface{}, name string) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TPropertyReflector.SetProperties">func (c *TPropertyReflector) SetProperties(obj interface{}, values map[string]interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TPropertyReflector.SetProperty">func (c *TPropertyReflector) SetProperty(obj interface{}, name string, value interface{})</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRecursiveObjectReader">type TRecursiveObjectReader</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRecursiveObjectReader.GetProperties">func (c *TRecursiveObjectReader) GetProperties(obj interface{}) map[string]interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRecursiveObjectReader.GetProperty">func (c *TRecursiveObjectReader) GetProperty(obj interface{}, name string) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRecursiveObjectReader.GetPropertyNames">func (c *TRecursiveObjectReader) GetPropertyNames(obj interface{}) []string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRecursiveObjectReader.HasProperty">func (c *TRecursiveObjectReader) HasProperty(obj interface{}, name string) bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TRecursiveObjectWriter">type TRecursiveObjectWriter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRecursiveObjectWriter.CopyProperties">func (c *TRecursiveObjectWriter) CopyProperties(dest interface{}, src interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRecursiveObjectWriter.SetProperties">func (c *TRecursiveObjectWriter) SetProperties(obj interface{}, values map[string]interface{})</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TRecursiveObjectWriter.SetProperty">func (c *TRecursiveObjectWriter) SetProperty(obj interface{}, name string, value interface{})</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TTypeMatcher">type TTypeMatcher</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeMatcher.MatchType">func (c *TTypeMatcher) MatchType(expectedType interface{}, actualType refl.Type) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeMatcher.MatchTypeByName">func (c *TTypeMatcher) MatchTypeByName(expectedType string, actualType refl.Type) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeMatcher.MatchValue">func (c *TTypeMatcher) MatchValue(expectedType interface{}, actualValue interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeMatcher.MatchValueByName">func (c *TTypeMatcher) MatchValueByName(expectedType string, actualValue interface{}) bool</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TTypeReflector">type TTypeReflector</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeReflector.CreateInstance">func (c *TTypeReflector) CreateInstance(name string, pkg string, args ...interface{}) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeReflector.CreateInstanceByDescriptor">func (c *TTypeReflector) CreateInstanceByDescriptor(typ *TypeDescriptor, args ...interface{}) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeReflector.CreateInstanceByType">func (c *TTypeReflector) CreateInstanceByType(typ refl.Type, args ...interface{}) (interface{}, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeReflector.GetType">func (c *TTypeReflector) GetType(name string, pkg string) refl.Type</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TTypeReflector.GetTypeByDescriptor">func (c *TTypeReflector) GetTypeByDescriptor(typ *TypeDescriptor) refl.Type</a></dd>
+				
+			
+				
+				<dd><a href="index.html#TypeDescriptor">type TypeDescriptor</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTypeDescriptor">func NewTypeDescriptor(name string, pkg string) *TypeDescriptor</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#ParseTypeDescriptorFromString">func ParseTypeDescriptorFromString(value string) (*TypeDescriptor, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TypeDescriptor.Equals">func (c *TypeDescriptor) Equals(obj interface{}) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TypeDescriptor.Name">func (c *TypeDescriptor) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TypeDescriptor.Package">func (c *TypeDescriptor) Package() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TypeDescriptor.String">func (c *TypeDescriptor) String() string</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/reflect/IValueWrapper.go">IValueWrapper.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/MethodReflector.go">MethodReflector.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/ObjectReader.go">ObjectReader.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/ObjectWriter.go">ObjectWriter.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/PropertyReflector.go">PropertyReflector.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/RecursiveObjectReader.go">RecursiveObjectReader.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/RecursiveObjectWriter.go">RecursiveObjectWriter.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/TypeDescriptor.go">TypeDescriptor.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/TypeMatcher.go">TypeMatcher.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/TypeReflector.go">TypeReflector.go</a>
+			
+				<a href="http://localhost:6060/src/reflect/doc.go">doc.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				
+				<pre>var <span id="MethodReflector">MethodReflector</span> = &amp;<a href="index.html#TMethodReflector">TMethodReflector</a>{}</pre>
+			
+				
+				<pre>var <span id="ObjectReader">ObjectReader</span> = &amp;<a href="index.html#TObjectReader">TObjectReader</a>{}</pre>
+			
+				
+				<pre>var <span id="ObjectWriter">ObjectWriter</span> = &amp;<a href="index.html#TObjectWriter">TObjectWriter</a>{}</pre>
+			
+				
+				<pre>var <span id="PropertyReflector">PropertyReflector</span> = &amp;<a href="index.html#TPropertyReflector">TPropertyReflector</a>{}</pre>
+			
+				
+				<pre>var <span id="RecursiveObjectReader">RecursiveObjectReader</span> = &amp;<a href="index.html#TRecursiveObjectReader">TRecursiveObjectReader</a>{}</pre>
+			
+				
+				<pre>var <span id="RecursiveObjectWriter">RecursiveObjectWriter</span> = &amp;<a href="index.html#TRecursiveObjectWriter">TRecursiveObjectWriter</a>{}</pre>
+			
+				
+				<pre>var <span id="TypeMatcher">TypeMatcher</span> = &amp;<a href="index.html#TTypeMatcher">TTypeMatcher</a>{}</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="IValueWrapper">type <a href="http://localhost:6060/src/reflect/IValueWrapper.go?s=17:75#L1">IValueWrapper</a>
+				<a class="permalink" href="index.html#IValueWrapper">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type IValueWrapper interface {
+    InnerValue() interface{}
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="TMethodReflector">type <a href="http://localhost:6060/src/reflect/MethodReflector.go?s=618:648#L14">TMethodReflector</a>
+				<a class="permalink" href="index.html#TMethodReflector">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform method introspection and dynamic invocation.
+</p>
+<p>
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+</p>
+<p>
+Because all languages have different casing and case sensitivity rules, this MethodReflector treats all method names as case insensitive.
+</p>
+<p>
+Example:
+</p>
+<pre>myObj = MyObject();
+
+methods = MethodReflector.GetMethodNames();
+MethodReflector.HasMethod(myObj, &#34;myMethod&#34;);
+MethodReflector.InvokeMethod(myObj, &#34;myMethod&#34;, 123);
+</pre>
+
+			<pre>type TMethodReflector struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TMethodReflector.GetMethodNames">func (*TMethodReflector) <a href="http://localhost:6060/src/reflect/MethodReflector.go?s=2851:2918#L104">GetMethodNames</a>
+					<a class="permalink" href="index.html#TMethodReflector.GetMethodNames">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TMethodReflector">TMethodReflector</a>) GetMethodNames(obj interface{}) []<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets names of all methods implemented in specified object.
+Parameters:
+</p>
+<pre>- obj interface{}
+an objec to introspect.
+</pre>
+<p>
+Returns []string
+a list with method names.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TMethodReflector.HasMethod">func (*TMethodReflector) <a href="http://localhost:6060/src/reflect/MethodReflector.go?s=1223:1294#L33">HasMethod</a>
+					<a class="permalink" href="index.html#TMethodReflector.HasMethod">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TMethodReflector">TMethodReflector</a>) HasMethod(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if object has a method with specified name..
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to introspect.
+- name string
+a name of the method to check.
+</pre>
+<p>
+Returns bool
+true if the object has the method and false if it doesn&#39;t.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TMethodReflector.InvokeMethod">func (*TMethodReflector) <a href="http://localhost:6060/src/reflect/MethodReflector.go?s=1939:2041#L63">InvokeMethod</a>
+					<a class="permalink" href="index.html#TMethodReflector.InvokeMethod">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TMethodReflector">TMethodReflector</a>) InvokeMethod(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args ...interface{}) interface{}</pre>
+				<p>
+Invokes an object method by its name with specified parameters.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to invoke.
+- name string
+a name of the method to invoke.
+- args ...interface{}
+a list of method arguments.
+</pre>
+<p>
+Returns interface{}
+the result of the method invocation or null if method returns void.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TObjectReader">type <a href="http://localhost:6060/src/reflect/ObjectReader.go?s=1196:1223#L28">TObjectReader</a>
+				<a class="permalink" href="index.html#TObjectReader">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform property introspection and dynamic reading.
+</p>
+<p>
+In contrast to PropertyReflector which only introspects regular objects, this ObjectReader is also able to handle maps and arrays. For maps properties are key-pairs identified by string keys, For arrays properties are elements identified by integer index.
+</p>
+<p>
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+</p>
+<p>
+Because all languages have different casing and case sensitivity rules, this ObjectReader treats all property names as case insensitive.
+</p>
+<p>
+see
+PropertyReflector
+</p>
+<p>
+Example:
+</p>
+<pre>myObj := MyObject{}
+
+properties := ObjectReader.GetPropertyNames()
+ObjectReader.HasProperty(myObj, &#34;myProperty&#34;)
+value := PropertyReflector.GetProperty(myObj, &#34;myProperty&#34;)
+
+myMap := { key1: 123, key2: &#34;ABC&#34; }
+ObjectReader.HasProperty(myMap, &#34;key1&#34;)
+value := ObjectReader.GetProperty(myMap, &#34;key1&#34;)
+
+myArray := [1, 2, 3]
+ObjectReader.HasProperty(myArrat, &#34;0&#34;)
+value := ObjectReader.GetProperty(myArray, &#34;0&#34;)
+</pre>
+
+			<pre>type TObjectReader struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TObjectReader.GetProperties">func (*TObjectReader) <a href="http://localhost:6060/src/reflect/ObjectReader.go?s=5231:5308#L165">GetProperties</a>
+					<a class="permalink" href="index.html#TObjectReader.GetProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectReader">TObjectReader</a>) GetProperties(obj interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Get values of all properties in specified object and returns them as a map.
+The object can be a user defined object, map or array. Returned properties correspondently are object properties, map key-pairs or array elements with their indexes.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to get properties from.
+</pre>
+<p>
+Returns map[string]interface{}
+a map, containing the names of the object&#39;s properties and their values.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectReader.GetProperty">func (*TObjectReader) <a href="http://localhost:6060/src/reflect/ObjectReader.go?s=3135:3212#L93">GetProperty</a>
+					<a class="permalink" href="index.html#TObjectReader.GetProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectReader">TObjectReader</a>) GetProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) interface{}</pre>
+				<p>
+Gets value of object property specified by its name.
+The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
+Parameters:
+</p>
+<pre>- obj interface
+an object to read property from.
+- name string
+a name of the property to get.
+</pre>
+<p>
+Returns interface{}
+the property value or null if property doesn&#39;t exist or introspection failed.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectReader.GetPropertyNames">func (*TObjectReader) <a href="http://localhost:6060/src/reflect/ObjectReader.go?s=4187:4253#L131">GetPropertyNames</a>
+					<a class="permalink" href="index.html#TObjectReader.GetPropertyNames">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectReader">TObjectReader</a>) GetPropertyNames(obj interface{}) []<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets names of all properties implemented in specified object.
+The object can be a user defined object, map or array. Returned property name correspondently are object properties, map keys or array indexes.
+Parameters:
+</p>
+<pre>- obj interface{}
+an objec to introspect.
+</pre>
+<p>
+Returns []string
+a list with property names.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectReader.GetValue">func (*TObjectReader) <a href="http://localhost:6060/src/reflect/ObjectReader.go?s=1516:1577#L38">GetValue</a>
+					<a class="permalink" href="index.html#TObjectReader.GetValue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectReader">TObjectReader</a>) GetValue(obj interface{}) interface{}</pre>
+				<p>
+Gets a real object value. If object is a wrapper, it unwraps the value behind it. Otherwise it returns the same object value.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to unwrap..
+</pre>
+<p>
+Returns interface{}
+an actual (unwrapped) object value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectReader.HasProperty">func (*TObjectReader) <a href="http://localhost:6060/src/reflect/ObjectReader.go?s=2065:2135#L56">HasProperty</a>
+					<a class="permalink" href="index.html#TObjectReader.HasProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectReader">TObjectReader</a>) HasProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if object has a property with specified name.
+The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to introspect.
+- name string
+a name of the property to check.
+</pre>
+<p>
+Returns bool
+true if the object has the property and false if it doesn&#39;t.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TObjectWriter">type <a href="http://localhost:6060/src/reflect/ObjectWriter.go?s=995:1022#L23">TObjectWriter</a>
+				<a class="permalink" href="index.html#TObjectWriter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform property introspection and dynamic writing.
+</p>
+<p>
+In contrast to PropertyReflector which only introspects regular objects, this ObjectWriter is also able to handle maps and arrays. For maps properties are key-pairs identified by string keys, For arrays properties are elements identified by integer index.
+</p>
+<p>
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+</p>
+<p>
+Because all languages have different casing and case sensitivity rules, this ObjectWriter treats all property names as case insensitive.
+</p>
+<p>
+see
+PropertyReflector
+</p>
+<p>
+Example:
+</p>
+<pre>myObj := MyObject{}
+
+ObjectWriter.SetProperty(myObj, &#34;myProperty&#34;, 123)
+
+myMap := { key1: 123, key2: &#34;ABC&#34; }
+ObjectWriter.SetProperty(myMap, &#34;key1&#34;, &#34;XYZ&#34;)
+
+myArray := [1, 2, 3]
+ObjectWriter.SetProperty(myArray, &#34;0&#34;, 123)
+</pre>
+
+			<pre>type TObjectWriter struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TObjectWriter.GetValue">func (*TObjectWriter) <a href="http://localhost:6060/src/reflect/ObjectWriter.go?s=1315:1376#L33">GetValue</a>
+					<a class="permalink" href="index.html#TObjectWriter.GetValue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectWriter">TObjectWriter</a>) GetValue(obj interface{}) interface{}</pre>
+				<p>
+Gets a real object value. If object is a wrapper, it unwraps the value behind it. Otherwise it returns the same object value.
+Parameters:
+</p>
+<pre> - obj interface{}
+	an object to unwrap..
+</pre>
+<p>
+Returns interface{}
+an actual (unwrapped) object value.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectWriter.SetProperties">func (*TObjectWriter) <a href="http://localhost:6060/src/reflect/ObjectWriter.go?s=3367:3452#L101">SetProperties</a>
+					<a class="permalink" href="index.html#TObjectWriter.SetProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectWriter">TObjectWriter</a>) SetProperties(obj interface{}, values map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{})</pre>
+				<p>
+Sets values of some (all) object properties.
+The object can be a user defined object, map or array. Property values correspondently are object properties, map key-pairs or array elements with their indexes.
+If some properties do not exist or introspection fails they are just silently skipped and no errors thrown.
+see
+setProperty
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to write properties to.
+- values map[string]interface{}
+a map, containing property names and their values.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TObjectWriter.SetProperty">func (*TObjectWriter) <a href="http://localhost:6060/src/reflect/ObjectWriter.go?s=1973:2057#L52">SetProperty</a>
+					<a class="permalink" href="index.html#TObjectWriter.SetProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TObjectWriter">TObjectWriter</a>) SetProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{})</pre>
+				<p>
+Sets value of object property specified by its name.
+The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
+If the property does not exist or introspection fails this method doesn&#39;t do anything and doesn&#39;t any throw errors.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to write property to.
+- name string
+a name of the property to set.
+- value interface{}
+a new value for the property to set.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TPropertyReflector">type <a href="http://localhost:6060/src/reflect/PropertyReflector.go?s=708:740#L15">TPropertyReflector</a>
+				<a class="permalink" href="index.html#TPropertyReflector">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform property introspection and dynamic reading and writing.
+</p>
+<p>
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+</p>
+<p>
+Because all languages have different casing and case sensitivity rules, this PropertyReflector treats all property names as case insensitive.
+</p>
+<p>
+Example:
+</p>
+<pre>myObj := MyObject{}
+
+properties := PropertyReflector.GetPropertyNames()
+PropertyReflector.HasProperty(myObj, &#34;myProperty&#34;)
+value := PropertyReflector.GetProperty(myObj, &#34;myProperty&#34;)
+PropertyReflector.SetProperty(myObj, &#34;myProperty&#34;, 123)
+</pre>
+
+			<pre>type TPropertyReflector struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TPropertyReflector.GetProperties">func (*TPropertyReflector) <a href="http://localhost:6060/src/reflect/PropertyReflector.go?s=5441:5523#L193">GetProperties</a>
+					<a class="permalink" href="index.html#TPropertyReflector.GetProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TPropertyReflector">TPropertyReflector</a>) GetProperties(obj interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Get values of all properties in specified object and returns them as a map.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to get properties from.
+</pre>
+<p>
+Returns map[string]interface{}
+a map, containing the names of the object&#39;s properties and their values.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TPropertyReflector.GetProperty">func (*TPropertyReflector) <a href="http://localhost:6060/src/reflect/PropertyReflector.go?s=3424:3506#L114">GetProperty</a>
+					<a class="permalink" href="index.html#TPropertyReflector.GetProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TPropertyReflector">TPropertyReflector</a>) GetProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) interface{}</pre>
+				<p>
+Gets value of object property specified by its name.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to read property from.
+- name string
+a name of the property to get.
+</pre>
+<p>
+Returns interface{}
+the property value or null if property doesn&#39;t exist or introspection failed.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TPropertyReflector.GetPropertyNames">func (*TPropertyReflector) <a href="http://localhost:6060/src/reflect/PropertyReflector.go?s=4499:4570#L159">GetPropertyNames</a>
+					<a class="permalink" href="index.html#TPropertyReflector.GetPropertyNames">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TPropertyReflector">TPropertyReflector</a>) GetPropertyNames(obj interface{}) []<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets names of all properties implemented in specified object.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to introspect.
+</pre>
+<p>
+Returns []string
+a list with property names.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TPropertyReflector.HasProperty">func (*TPropertyReflector) <a href="http://localhost:6060/src/reflect/PropertyReflector.go?s=2501:2576#L77">HasProperty</a>
+					<a class="permalink" href="index.html#TPropertyReflector.HasProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TPropertyReflector">TPropertyReflector</a>) HasProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Checks if object has a property with specified name..
+Parameters:
+</p>
+<pre>			- obj interface{}
+			an object to introspect.
+			- name string
+   		a name of the property to check.
+</pre>
+<p>
+Returns bool
+true if the object has the property and false if it doesn&#39;t.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TPropertyReflector.SetProperties">func (*TPropertyReflector) <a href="http://localhost:6060/src/reflect/PropertyReflector.go?s=7999:8089#L287">SetProperties</a>
+					<a class="permalink" href="index.html#TPropertyReflector.SetProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TPropertyReflector">TPropertyReflector</a>) SetProperties(obj interface{}, values map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{})</pre>
+				<p>
+Sets values of some (all) object properties.
+If some properties do not exist or introspection fails they are just silently skipped and no errors thrown.
+see
+SetProperty
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to write properties to.
+- values map[string]interface{}
+a map, containing property names and their values.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TPropertyReflector.SetProperty">func (*TPropertyReflector) <a href="http://localhost:6060/src/reflect/PropertyReflector.go?s=6743:6832#L240">SetProperty</a>
+					<a class="permalink" href="index.html#TPropertyReflector.SetProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TPropertyReflector">TPropertyReflector</a>) SetProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{})</pre>
+				<p>
+Sets value of object property specified by its name.
+If the property does not exist or introspection fails this method doesn&#39;t do anything and doesn&#39;t any throw errors.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to write property to.
+name string
+a name of the property to set.
+- value interface{}
+a new value for the property to set.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRecursiveObjectReader">type <a href="http://localhost:6060/src/reflect/RecursiveObjectReader.go?s=360:396#L4">TRecursiveObjectReader</a>
+				<a class="permalink" href="index.html#TRecursiveObjectReader">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform property introspection and dynamic reading.
+</p>
+<p>
+It is similar to ObjectReader but reads properties recursively through the entire object graph. Nested property names are defined using dot notation as &#34;object.subobject.property&#34;
+</p>
+
+			<pre>type TRecursiveObjectReader struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRecursiveObjectReader.GetProperties">func (*TRecursiveObjectReader) <a href="http://localhost:6060/src/reflect/RecursiveObjectReader.go?s=5693:5779#L193">GetProperties</a>
+					<a class="permalink" href="index.html#TRecursiveObjectReader.GetProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRecursiveObjectReader">TRecursiveObjectReader</a>) GetProperties(obj interface{}) map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{}</pre>
+				<p>
+Get values of all properties in specified object and its subobjects and returns them as a map.
+The object can be a user defined object, map or array. Returned properties correspondently are object properties, map key-pairs or array elements with their indexes.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to get properties from.
+</pre>
+<p>
+Returns map[string]interface{}
+a map, containing the names of the object&#39;s properties and their values.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRecursiveObjectReader.GetProperty">func (*TRecursiveObjectReader) <a href="http://localhost:6060/src/reflect/RecursiveObjectReader.go?s=2320:2406#L67">GetProperty</a>
+					<a class="permalink" href="index.html#TRecursiveObjectReader.GetProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRecursiveObjectReader">TRecursiveObjectReader</a>) GetProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) interface{}</pre>
+				<p>
+Recursively gets value of object or its subobjects property specified by its name.
+The object can be a user defined object, map or array. The property name correspondently must be object property, map key or array index.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to read property from.
+- name string
+a name of the property to get.
+</pre>
+<p>
+Returns interface{}
+the property value or null if property doesn&#39;t exist or introspection failed.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRecursiveObjectReader.GetPropertyNames">func (*TRecursiveObjectReader) <a href="http://localhost:6060/src/reflect/RecursiveObjectReader.go?s=4136:4211#L138">GetPropertyNames</a>
+					<a class="permalink" href="index.html#TRecursiveObjectReader.GetPropertyNames">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRecursiveObjectReader">TRecursiveObjectReader</a>) GetPropertyNames(obj interface{}) []<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Recursively gets names of all properties implemented in specified object and its subobjects.
+The object can be a user defined object, map or array. Returned property name correspondently are object properties, map keys or array indexes.
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to introspect.
+</pre>
+<p>
+Returns []string
+a list with property names.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TRecursiveObjectReader.HasProperty">func (*TRecursiveObjectReader) <a href="http://localhost:6060/src/reflect/RecursiveObjectReader.go?s=1244:1323#L32">HasProperty</a>
+					<a class="permalink" href="index.html#TRecursiveObjectReader.HasProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRecursiveObjectReader">TRecursiveObjectReader</a>) HasProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TRecursiveObjectWriter">type <a href="http://localhost:6060/src/reflect/RecursiveObjectWriter.go?s=361:397#L4">TRecursiveObjectWriter</a>
+				<a class="permalink" href="index.html#TRecursiveObjectWriter">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform property introspection and dynamic writing.
+</p>
+<p>
+It is similar to ObjectWriter but writes properties recursively through the entire object graph. Nested property names are defined using dot notation as &#34;object.subobject.property&#34;
+</p>
+
+			<pre>type TRecursiveObjectWriter struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TRecursiveObjectWriter.CopyProperties">func (*TRecursiveObjectWriter) <a href="http://localhost:6060/src/reflect/RecursiveObjectWriter.go?s=3395:3477#L91">CopyProperties</a>
+					<a class="permalink" href="index.html#TRecursiveObjectWriter.CopyProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRecursiveObjectWriter">TRecursiveObjectWriter</a>) CopyProperties(dest interface{}, src interface{})</pre>
+				<p>
+Copies content of one object to another object by recursively reading all properties from source object and then recursively writing them to destination object.
+Parameters:
+</p>
+<pre>- dest interface{}
+a destination object to write properties to.
+- src interface{}
+a source object to read properties from
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TRecursiveObjectWriter.SetProperties">func (*TRecursiveObjectWriter) <a href="http://localhost:6060/src/reflect/RecursiveObjectWriter.go?s=2847:2941#L75">SetProperties</a>
+					<a class="permalink" href="index.html#TRecursiveObjectWriter.SetProperties">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRecursiveObjectWriter">TRecursiveObjectWriter</a>) SetProperties(obj interface{}, values map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{})</pre>
+				<p>
+Recursively sets values of some (all) object and its subobjects properties.
+The object can be a user defined object, map or array. Property values correspondently are object properties, map key-pairs or array elements with their indexes.
+If some properties do not exist or introspection fails they are just silently skipped and no errors thrown.
+see
+SetProperty
+Parameters:
+</p>
+<pre>- obj interface{}
+an object to write properties to.
+- values map[atring]inteerface{}
+a map, containing property names and their values.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="TRecursiveObjectWriter.SetProperty">func (*TRecursiveObjectWriter) <a href="http://localhost:6060/src/reflect/RecursiveObjectWriter.go?s=2038:2131#L52">SetProperty</a>
+					<a class="permalink" href="index.html#TRecursiveObjectWriter.SetProperty">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TRecursiveObjectWriter">TRecursiveObjectWriter</a>) SetProperty(obj interface{}, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, value interface{})</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TTypeMatcher">type <a href="http://localhost:6060/src/reflect/TypeMatcher.go?s=323:349#L6">TTypeMatcher</a>
+				<a class="permalink" href="index.html#TTypeMatcher">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class matches value types for equality.
+</p>
+<p>
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+</p>
+
+			<pre>type TTypeMatcher struct{}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TTypeMatcher.MatchType">func (*TTypeMatcher) <a href="http://localhost:6060/src/reflect/TypeMatcher.go?s=1937:2022#L58">MatchType</a>
+					<a class="permalink" href="index.html#TTypeMatcher.MatchType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeMatcher">TTypeMatcher</a>) MatchType(expectedType interface{}, actualType <a href="index.html">refl</a>.<a href="index.html#Type">Type</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Matches expected type to an actual type. The types can be specified as types, type names or TypeCode.
+Parameters:
+</p>
+<pre>- expectedType interface{}
+an expected type to match.
+- actualType refl.Type
+n actual type to match.
+</pre>
+<p>
+Returns bool
+true if types are matching and false if they don&#39;t.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeMatcher.MatchTypeByName">func (*TTypeMatcher) <a href="http://localhost:6060/src/reflect/TypeMatcher.go?s=4153:4239#L135">MatchTypeByName</a>
+					<a class="permalink" href="index.html#TTypeMatcher.MatchTypeByName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeMatcher">TTypeMatcher</a>) MatchTypeByName(expectedType <a href="http://localhost:6060/pkg/builtin/#string">string</a>, actualType <a href="index.html">refl</a>.<a href="index.html#Type">Type</a>) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Matches expected type to an actual type.
+Parameters:
+</p>
+<pre>- expectedType string
+an expected type name to match.
+- actualType refl.Type
+an actual type to match defined by type code.
+</pre>
+<p>
+Returns bool
+true if types are matching and false if they don&#39;t.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeMatcher.MatchValue">func (*TTypeMatcher) <a href="http://localhost:6060/src/reflect/TypeMatcher.go?s=731:820#L18">MatchValue</a>
+					<a class="permalink" href="index.html#TTypeMatcher.MatchValue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeMatcher">TTypeMatcher</a>) MatchValue(expectedType interface{}, actualValue interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Matches expected type to a type of a value. The expected type can be specified by a type, type name or TypeCode.
+Parameters:
+</p>
+<pre>- expectedType interface{}
+an expected type to match.
+- actualValue interface{}
+a value to match its type to the expected one.
+</pre>
+<p>
+Returns bool
+true if types are matching and false if they don&#39;t.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeMatcher.MatchValueByName">func (*TTypeMatcher) <a href="http://localhost:6060/src/reflect/TypeMatcher.go?s=1315:1405#L38">MatchValueByName</a>
+					<a class="permalink" href="index.html#TTypeMatcher.MatchValueByName">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeMatcher">TTypeMatcher</a>) MatchValueByName(expectedType <a href="http://localhost:6060/pkg/builtin/#string">string</a>, actualValue interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Matches expected type to a type of a value.
+Parameters:
+</p>
+<pre>- expectedType string
+an expected type name to match.
+- actualValue interface{}
+a value to match its type to the expected one.
+</pre>
+<p>
+Returns bool
+true if types are matching and false if they don&#39;t.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TTypeReflector">type <a href="http://localhost:6060/src/reflect/TypeReflector.go?s=668:696#L15">TTypeReflector</a>
+				<a class="permalink" href="index.html#TTypeReflector">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to perform object type introspection and object instantiation.
+</p>
+<p>
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+</p>
+<p>
+Because all languages have different casing and case sensitivity rules, this TypeReflector treats all type names as case insensitive.
+</p>
+<p>
+see
+TypeDescriptor
+</p>
+<p>
+Example:
+</p>
+<pre>descriptor := NewTypeDescriptor(&#34;MyObject&#34;, &#34;mylibrary&#34;);
+TypeReflector.GetTypeByDescriptor(descriptor);
+myObj = TypeReflector.CreateInstanceByDescriptor(descriptor);
+</pre>
+
+			<pre>type TTypeReflector struct{}
+</pre>
+
+			
+
+			
+				
+				<pre>var <span id="TypeReflector">TypeReflector</span> *<a href="index.html#TTypeReflector">TTypeReflector</a> = &amp;<a href="index.html#TTypeReflector">TTypeReflector</a>{}</pre>
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TTypeReflector.CreateInstance">func (*TTypeReflector) <a href="http://localhost:6060/src/reflect/TypeReflector.go?s=2586:2692#L82">CreateInstance</a>
+					<a class="permalink" href="index.html#TTypeReflector.CreateInstance">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeReflector">TTypeReflector</a>) CreateInstance(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, pkg <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args ...interface{}) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Creates an instance of an object type specified by its name and library where it is defined.
+Parameters:
+</p>
+<pre>- name string
+an object type name.
+- pkg: string
+a package (module) where object type is defined.
+- args ...interface{}
+rguments for the object constructor.
+</pre>
+<p>
+Returns any
+the created object instance.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeReflector.CreateInstanceByDescriptor">func (*TTypeReflector) <a href="http://localhost:6060/src/reflect/TypeReflector.go?s=3277:3391#L104">CreateInstanceByDescriptor</a>
+					<a class="permalink" href="index.html#TTypeReflector.CreateInstanceByDescriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeReflector">TTypeReflector</a>) CreateInstanceByDescriptor(typ *<a href="index.html#TypeDescriptor">TypeDescriptor</a>, args ...interface{}) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Returns interface{}, error
+the created object instance and error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeReflector.CreateInstanceByType">func (*TTypeReflector) <a href="http://localhost:6060/src/reflect/TypeReflector.go?s=1828:1930#L55">CreateInstanceByType</a>
+					<a class="permalink" href="index.html#TTypeReflector.CreateInstanceByType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeReflector">TTypeReflector</a>) CreateInstanceByType(typ <a href="index.html">refl</a>.<a href="index.html#Type">Type</a>, args ...interface{}) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Creates an instance of an object type.
+Parameters:
+</p>
+<pre>- type refl.Type
+an object type (factory function) to create.
+args ...interface{}
+arguments for the object constructor.
+</pre>
+<p>
+Returns interface{}, error
+the created object instance and error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeReflector.GetType">func (*TTypeReflector) <a href="http://localhost:6060/src/reflect/TypeReflector.go?s=1004:1071#L27">GetType</a>
+					<a class="permalink" href="index.html#TTypeReflector.GetType">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeReflector">TTypeReflector</a>) GetType(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, pkg <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="index.html">refl</a>.<a href="index.html#Type">Type</a></pre>
+				<p>
+Gets object type by its name and library where it is defined.
+Parameters:
+</p>
+<pre>- name string
+an object type name.
+pkg string
+a package where the type is defined
+</pre>
+<p>
+Returns refl.Type
+the object type or nil is the type wasn&#39;t found.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TTypeReflector.GetTypeByDescriptor">func (*TTypeReflector) <a href="http://localhost:6060/src/reflect/TypeReflector.go?s=1375:1450#L39">GetTypeByDescriptor</a>
+					<a class="permalink" href="index.html#TTypeReflector.GetTypeByDescriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TTypeReflector">TTypeReflector</a>) GetTypeByDescriptor(typ *<a href="index.html#TypeDescriptor">TypeDescriptor</a>) <a href="index.html">refl</a>.<a href="index.html#Type">Type</a></pre>
+				<p>
+Gets object type by type descriptor.
+Parameters:
+</p>
+<pre>- descriptor *TypeDescriptor
+a type descriptor that points to an object type
+</pre>
+<p>
+Returns refl.Type
+the object type or nil is the type wasn&#39;t found.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TypeDescriptor">type <a href="http://localhost:6060/src/reflect/TypeDescriptor.go?s=372:428#L4">TypeDescriptor</a>
+				<a class="permalink" href="index.html#TypeDescriptor">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Descriptor that points to specific object type by it&#39;s name and optional library (or module) where this type is defined.
+</p>
+<p>
+This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+</p>
+
+			<pre>type TypeDescriptor struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTypeDescriptor">func <a href="http://localhost:6060/src/reflect/TypeDescriptor.go?s=675:738#L16">NewTypeDescriptor</a>
+					<a class="permalink" href="index.html#NewTypeDescriptor">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTypeDescriptor(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, pkg <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#TypeDescriptor">TypeDescriptor</a></pre>
+				<p>
+Creates a new instance of the type descriptor and sets its values.
+Parameters:
+</p>
+<pre>- name string
+a name of the object type.
+- library string
+a library or module where this object type is implemented.
+</pre>
+<p>
+Returns *TypeDescriptor
+</p>
+
+				
+				
+			
+				
+				<h3 id="ParseTypeDescriptorFromString">func <a href="http://localhost:6060/src/reflect/TypeDescriptor.go?s=2382:2455#L83">ParseTypeDescriptorFromString</a>
+					<a class="permalink" href="index.html#ParseTypeDescriptorFromString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func ParseTypeDescriptorFromString(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="index.html#TypeDescriptor">TypeDescriptor</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Parses a string to get descriptor fields and returns them as a Descriptor.
+The string must have format name[,package]
+throws
+a ConfigError if the descriptor string is of a wrong format.
+Parameters:
+</p>
+<pre>- value string
+a string to parse.
+</pre>
+<p>
+Returns *TypeDescriptor
+a newly created Descriptor.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="TypeDescriptor.Equals">func (*TypeDescriptor) <a href="http://localhost:6060/src/reflect/TypeDescriptor.go?s=1442:1495#L43">Equals</a>
+					<a class="permalink" href="index.html#TypeDescriptor.Equals">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TypeDescriptor">TypeDescriptor</a>) Equals(obj interface{}) <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Compares this descriptor to a value. If the value is also a TypeDescriptor it compares their name and library fields. Otherwise this method returns false.
+Parameters:
+</p>
+<pre>- obj interface{}
+a value to compare.
+</pre>
+<p>
+Returns bool
+true if value is identical TypeDescriptor and false otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TypeDescriptor.Name">func (*TypeDescriptor) <a href="http://localhost:6060/src/reflect/TypeDescriptor.go?s=885:923#L26">Name</a>
+					<a class="permalink" href="index.html#TypeDescriptor.Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TypeDescriptor">TypeDescriptor</a>) Name() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Get the name of the object type.
+Returns string
+the name of the object type.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TypeDescriptor.Package">func (*TypeDescriptor) <a href="http://localhost:6060/src/reflect/TypeDescriptor.go?s=1076:1117#L33">Package</a>
+					<a class="permalink" href="index.html#TypeDescriptor.Package">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TypeDescriptor">TypeDescriptor</a>) Package() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets the name of the package or module where the object type is defined.
+Returns string
+the name of the package or module.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TypeDescriptor.String">func (*TypeDescriptor) <a href="http://localhost:6060/src/reflect/TypeDescriptor.go?s=1856:1896#L61">String</a>
+					<a class="permalink" href="index.html#TypeDescriptor.String">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TypeDescriptor">TypeDescriptor</a>) String() <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Gets a string representation of the object. The result has format name[,package]
+Returns string
+a string representation of the object.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.13.15.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

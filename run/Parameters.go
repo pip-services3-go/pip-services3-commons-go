@@ -30,7 +30,7 @@ func NewEmptyParameters() *Parameters {
 
 // Creates a new instance of the map and assigns its value.
 // Parameters:
-// 			- values map[string]interface{}
+//  - values map[string]interface{}
 // Returns *Parameters
 func NewParameters(values map[string]interface{}) *Parameters {
 	c := &Parameters{}
@@ -42,8 +42,8 @@ func NewParameters(values map[string]interface{}) *Parameters {
 // Gets a map element specified by its key.
 // The key can be defined using dot notation and allows to recursively access elements of elements.
 // Parameters:
-// 			- key string
-// 			a key of the element to get.
+//  - key string
+//  a key of the element to get.
 // Returns interface{}
 // the value of the map element.
 func (c *Parameters) Get(key string) interface{} {
@@ -59,10 +59,10 @@ func (c *Parameters) Get(key string) interface{} {
 // Puts a new value into map element specified by its key.
 // The key can be defined using dot notation and allows to recursively access elements of elements.
 // Parameters:
-// 			- key string
-// 			a key of the element to put.
-// 			- value interface{}
-// 			a new value for map element.
+//  - key string
+//  a key of the element to put.
+//  - value interface{}
+//  a new value for map element.
 func (c *Parameters) Put(key string, value interface{}) {
 	if key == "" {
 		// Do nothing...
@@ -75,8 +75,8 @@ func (c *Parameters) Put(key string, value interface{}) {
 
 // Removes a map element specified by its key
 // Parameters:
-// 			- key string
-// 			a key of the element to remove.
+//  - key string
+//  a key of the element to remove.
 func (c *Parameters) Remove(key string) {
 	// Todo: Make this method recursive
 	c.AnyValueMap.Remove(key)
@@ -85,8 +85,8 @@ func (c *Parameters) Remove(key string) {
 // Checks if this map contains an element with specified key.
 // The key can be defined using dot notation and allows to recursively access elements of elements.
 // Parameters:
-// 			- key string
-// 			a key to be checked
+//  - key string
+//  a key to be checked
 // Returns bool
 // true if this map contains the key or false otherwise.
 func (c *Parameters) Contains(key string) bool {
@@ -95,8 +95,8 @@ func (c *Parameters) Contains(key string) bool {
 
 // Converts map element into an Parameters or returns nil if conversion is not possible.
 // Parameters:
-// 			- key: string
-// 			a key of element to get.
+//  - key: string
+//  a key of element to get.
 // Returns *Parameters
 // Parameters value of the element or nil if conversion is not supported.
 func (c *Parameters) GetAsNullableParameters(key string) *Parameters {
@@ -109,8 +109,8 @@ func (c *Parameters) GetAsNullableParameters(key string) *Parameters {
 
 // Converts map element into an Parameters or returns empty Parameters if conversion is not possible.
 // Parameters:
-// 			- key string
-// 			a key of element to get.
+//  - key string
+//  a key of element to get.
 // Returns *Parameters
 // Parameters value of the element or empty Parameters if conversion is not supported.
 func (c *Parameters) GetAsParameters(key string) *Parameters {
@@ -120,10 +120,10 @@ func (c *Parameters) GetAsParameters(key string) *Parameters {
 
 // Converts map element into an Parameters or returns default value if conversion is not possible.
 // Parameters:
-// 			-key string
-// 			a key of element to get.
-// 			- defaultValue *Parameters
-// 			the default value
+//  -key string
+//  a key of element to get.
+//  - defaultValue *Parameters
+//  the default value
 // Returns *Parameters
 // Parameters value of the element or default value if conversion is not supported.
 func (c *Parameters) GetAsParametersWithDefault(key string, defaultValue *Parameters) *Parameters {
@@ -145,10 +145,10 @@ func (c *Parameters) Clone() interface{} {
 // see
 // setDefaults
 // Parameters:
-// 			- parameters: Parameters
-// 			Parameters with parameters to override the current values.
-// 			- recursive bool
-// 		    true to perform deep copy, and false for shallow copy. Default: false
+//  - parameters: Parameters
+//  Parameters with parameters to override the current values.
+//  - recursive bool
+//  true to perform deep copy, and false for shallow copy. Default: false
 // Returns *Parameters
 // a new Parameters object.
 func (c *Parameters) Override(parameters *Parameters, recursive bool) *Parameters {
@@ -171,10 +171,10 @@ func (c *Parameters) Override(parameters *Parameters, recursive bool) *Parameter
 // see
 // Override
 // Parameters:
-// 			- defaultParameters *Parameters
-// 			Parameters with default parameter values.
-// 			- recursive bool
-// 			true to perform deep copy, and false for shallow copy. Default: false
+//  - defaultParameters *Parameters
+//  Parameters with default parameter values.
+//  - recursive bool
+//  true to perform deep copy, and false for shallow copy. Default: false
 // Returns *Parameters
 // a new Parameters object.
 func (c *Parameters) SetDefaults(defaultParameters *Parameters, recursive bool) *Parameters {
@@ -195,8 +195,8 @@ func (c *Parameters) SetDefaults(defaultParameters *Parameters, recursive bool) 
 
 // Assigns (copies over) properties from the specified value to this map.
 // Parameters:
-// 			- value interface{}
-// 			value whose properties shall be copied over.
+//  - value interface{}
+//  value whose properties shall be copied over.
 func (c *Parameters) AssignTo(value interface{}) {
 	if value == nil {
 		return
@@ -206,8 +206,8 @@ func (c *Parameters) AssignTo(value interface{}) {
 
 // Picks select parameters from this Parameters and returns them as a new Parameters object.
 // Parameters:
-// 			- paths ...string
-// 			keys to be picked and copied over to new Parameters.
+//  - paths ...string
+//  keys to be picked and copied over to new Parameters.
 // Returns *Parameters
 // a new Parameters object.
 func (c *Parameters) Pick(paths ...string) *Parameters {
@@ -222,8 +222,8 @@ func (c *Parameters) Pick(paths ...string) *Parameters {
 
 // Omits selected parameters from this Parameters and returns the rest as a new Parameters object.
 // Parameters:
-// 			- paths ...string
-// 			keys to be omitted from copying over to new Parameters.
+//  - paths ...string
+//  keys to be omitted from copying over to new Parameters.
 // Returns *Parameters
 // a new Parameters object.
 func (c *Parameters) Omit(paths ...string) *Parameters {
@@ -236,8 +236,8 @@ func (c *Parameters) Omit(paths ...string) *Parameters {
 
 // Creates a new Parameters object filled with key-value pairs from specified object.
 // Parameters:
-// 			- value interface{}
-// 			an object with key-value pairs used to initialize a new Parameters.
+//  - value interface{}
+//  an object with key-value pairs used to initialize a new Parameters.
 // Returns *Parameters
 // a new Parameters object.
 func NewParametersFromValue(value interface{}) *Parameters {
@@ -250,8 +250,8 @@ func NewParametersFromValue(value interface{}) *Parameters {
 // see
 // AnyValueMapFromTuplesArray
 // Parameters:
-// 			- tuples ...interface{}
-// 			the tuples to fill a new Parameters object.
+//  - tuples ...interface{}
+//  the tuples to fill a new Parameters object.
 // Returns *Parameters
 // a new Parameters object.
 func NewParametersFromTuples(tuples ...interface{}) *Parameters {
@@ -260,8 +260,8 @@ func NewParametersFromTuples(tuples ...interface{}) *Parameters {
 
 // Creates a new AnyValueMap from a list of key-value pairs called tuples. The method is similar to fromTuples but tuples are passed as array instead of parameters.
 // Parameters:
-// 			- tuples []interface{}
-// 			a list of values where odd elements are keys and the following even elements are values
+//  - tuples []interface{}
+//  a list of values where odd elements are keys and the following even elements are values
 // Returns *Parameters
 // a newly created Parameters.
 func NewParametersFromTuplesArray(tuples []interface{}) *Parameters {
@@ -286,8 +286,8 @@ func NewParametersFromTuplesArray(tuples []interface{}) *Parameters {
 
 // Creates a new Parameters by merging two or more maps. Maps defined later in the list override values from previously defined maps.
 // Parameters:
-// 			-maps ...map[string]interface{}
-// 			an array of maps to be merged
+//  - maps ...map[string]interface{}
+//  an array of maps to be merged
 // Returns *Parameters
 // a newly created Parameters.
 func NewParametersFromMaps(maps ...map[string]interface{}) *Parameters {
@@ -304,7 +304,7 @@ func NewParametersFromMaps(maps ...map[string]interface{}) *Parameters {
 // see
 // ConfigParams
 // Parameters:
-// config: *config.ConfigParams
+//  config: *config.ConfigParams
 // a ConfigParams that contain parameters.
 
 // Returns Parameters

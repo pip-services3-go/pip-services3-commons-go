@@ -13,25 +13,24 @@ see
 INotifiable
 
 Example:
-type MyComponent {
-	timer FixedRateTimer
-}
-    ...
-    func (mc* MyComponent) open(correlationId string) {
-		...
-		mc.timer = NewFixedRateTimerFromCallback(() => { this.cleanup }, 60000, 0);
-        mc.timer.start();
-        ...
-    }
-
-    func (mc* MyComponent) open(correlationId: string){
-        ...
-        mc.timer.stop();
-        ...
-    }
+ type MyComponent {
+ 	timer FixedRateTimer
+ }
+     ...
+     func (mc* MyComponent) open(correlationId string) {
+ 		...
+ 		mc.timer = NewFixedRateTimerFromCallback(() => { this.cleanup }, 60000, 0);
+         mc.timer.start();
+         ...
+     }
+ 
+     func (mc* MyComponent) open(correlationId: string){
+         ...
+         mc.timer.stop();
+         ...
+     }
 
 */
-
 type FixedRateTimer struct {
 	task     INotifiable
 	callback func()
@@ -48,12 +47,12 @@ func NewFixedRateTimer() *FixedRateTimer {
 
 // Creates new instance of the timer and sets its values.
 // Parameters:
-// 			- callback func()
-// 			 callback function to call when timer is triggered.
-// 			- interval int
-// 		 	an interval to trigger timer in milliseconds.
-// 			- delay int
-// 			a delay before the first triggering in milliseconds.
+//  - callback func()
+//   callback function to call when timer is triggered.
+//  - interval int
+//  an interval to trigger timer in milliseconds.
+//  - delay int
+//  a delay before the first triggering in milliseconds.
 // Returns *FixedRateTimer
 func NewFixedRateTimerFromCallback(callback func(), interval int, delay int) *FixedRateTimer {
 	return &FixedRateTimer{
@@ -65,12 +64,12 @@ func NewFixedRateTimerFromCallback(callback func(), interval int, delay int) *Fi
 
 // Creates new instance of the timer and sets its values.
 // Parameters:
-// 			- callback INotifiable
-// 			Notifiable object to call when timer is triggered.
-// 			- interval int
-// 		 	an interval to trigger timer in milliseconds.
-// 			- delay int
-// 			a delay before the first triggering in milliseconds.
+//  - callback INotifiable
+//  Notifiable object to call when timer is triggered.
+//  - interval int
+//  an interval to trigger timer in milliseconds.
+//  - delay int
+//  a delay before the first triggering in milliseconds.
 // Returns *FixedRateTimer
 func NewFixedRateTimerFromTask(task INotifiable, interval int, delay int) *FixedRateTimer {
 	c := &FixedRateTimer{
@@ -90,8 +89,8 @@ func (c *FixedRateTimer) Task() INotifiable {
 
 // Sets a new INotifiable object to receive notifications from this timer.
 // Parameters:
-// 			- value INotifiable
-// 			a INotifiable object to be triggered.
+//  - value INotifiable
+//  a INotifiable object to be triggered.
 func (c *FixedRateTimer) SetTask(value INotifiable) {
 	c.task = value
 	c.callback = func() {
@@ -109,8 +108,8 @@ func (c *FixedRateTimer) Callback() func() {
 
 // Sets the callback function that is called when this timer is triggered.
 // Parameters:
-// 			- value func()
-// 			the callback function to be called.
+//  - value func()
+//  the callback function to be called.
 func (c *FixedRateTimer) SetCallback(value func()) {
 	c.callback = value
 	c.task = nil
@@ -125,8 +124,8 @@ func (c *FixedRateTimer) Delay() int {
 
 // Sets initial delay before the timer is triggered for the first time.
 // Parameters:
-// 			value int
-// 			a delay in milliseconds.
+//  - value int
+//  a delay in milliseconds.
 func (c *FixedRateTimer) SetDelay(value int) {
 	c.delay = value
 }
@@ -140,8 +139,8 @@ func (c *FixedRateTimer) Interval() int {
 
 // Sets periodic timer triggering interval.
 // Parameters:
-// 			- value int
-// 			an interval in milliseconds.
+//  - value int
+//  an interval in milliseconds.
 func (c *FixedRateTimer) SetInterval(value int) {
 	c.interval = value
 }
@@ -195,10 +194,10 @@ func (c *FixedRateTimer) Stop() {
 }
 
 // Closes the timer.
-// This is required by [[ICloseable]] interface, but besides that it is identical to stop().
+// This is required by ICloseable interface, but besides that it is identical to stop().
 // Parameters:
-// 			 - correlationId: string
-// 			transaction id to trace execution through call chain.
+//  - correlationId: string
+//  transaction id to trace execution through call chain.
 // Returns error
 func (c *FixedRateTimer) Close(correlationId string) error {
 	c.Stop()

@@ -13,11 +13,11 @@ see
 IValidationRule
 
 Example
-var schema = NewSchema().WithRule(NewOnlyOneExistsRule("field1", "field2"));
-
-schema.Validate({ field1: 1, field2: "A" });     // Result: only one of properties field1, field2 must exist
-schema.Validate({ field1: 1 });                  // Result: no errors
-schema.Validate({ });                            // Result: only one of properties field1, field2 must exist
+ var schema = NewSchema().WithRule(NewOnlyOneExistsRule("field1", "field2"));
+ 
+ schema.Validate({ field1: 1, field2: "A" });     // Result: only one of properties field1, field2 must exist
+ schema.Validate({ field1: 1 });                  // Result: no errors
+ schema.Validate({ });                            // Result: only one of properties field1, field2 must exist
 */
 type OnlyOneExistsRule struct {
 	properties []string
@@ -25,7 +25,7 @@ type OnlyOneExistsRule struct {
 
 // Creates a new validation rule and sets its values
 // Parameters:
-// 			- properties ...string
+//  - properties ...string
 // a list of property names where at only one property must exist
 // Return *OnlyOneExistsRule
 func NewOnlyOneExistsRule(properties ...string) *OnlyOneExistsRule {
@@ -36,12 +36,12 @@ func NewOnlyOneExistsRule(properties ...string) *OnlyOneExistsRule {
 
 // Validates a given value against this rule.
 // Parameters:
-// 			- path string
-// 			a dot notation path to the value.
-// 			- schema  ISchema
-// 			a schema this rule is called from
-// 			value interface{}
-// 			a value to be validated.
+//  - path string
+//  a dot notation path to the value.
+//  - schema  ISchema
+//  a schema this rule is called from
+//  value interface{}
+//  a value to be validated.
 // Retruns []*ValidationResult
 // a list with validation results to add new results.
 func (c *OnlyOneExistsRule) Validate(path string, schema ISchema, value interface{}) []*ValidationResult {

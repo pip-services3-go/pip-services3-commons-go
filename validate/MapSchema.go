@@ -11,11 +11,11 @@ import (
 Schema to validate maps.
 
 Example
-var schema = NewMapSchema(TypeCode.String, TypeCode.Integer);
-
-schema.Validate({ "key1": "A", "key2": "B" });       // Result: no errors
-schema.Validate({ "key1": 1, "key2": 2 });           // Result: element type mismatch
-schema.Validate([ 1, 2, 3 ]);                        // Result: type mismatch
+ var schema = NewMapSchema(TypeCode.String, TypeCode.Integer);
+ 
+ schema.Validate({ "key1": "A", "key2": "B" });       // Result: no errors
+ schema.Validate({ "key1": 1, "key2": 2 });           // Result: element type mismatch
+ schema.Validate([ 1, 2, 3 ]);                        // Result: type mismatch
 */
 type MapSchema struct {
 	Schema

@@ -12,10 +12,10 @@ var Referencer *TReferencer = &TReferencer{}
 // see
 // IReferenceable
 // Parameters:
-// 			- references IReferences
-// 			the references to be set.
-// 			- component interface{}
-// 			the component to set references to.
+//  - references IReferences
+//  the references to be set.
+//  - component interface{}
+//  the component to set references to.
 func (c *TReferencer) SetReferencesForOne(references IReferences, component interface{}) {
 	v, ok := component.(IReferenceable)
 	if ok {

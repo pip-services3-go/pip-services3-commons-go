@@ -34,10 +34,10 @@ func NewSchema() *Schema {
 // see
 // IValidationRule
 // Parameters:
-// 			- required bool
-// 			true to always require non-null values.
-// 			- rules []IValidationRule
-// 			a list with validation rules.
+//  - required bool
+//  true to always require non-null values.
+//  - rules []IValidationRule
+//  a list with validation rules.
 // Returns *Schema
 func NewSchemaWithRules(required bool, rules []IValidationRule) *Schema {
 	c := &Schema{
@@ -50,8 +50,8 @@ func NewSchemaWithRules(required bool, rules []IValidationRule) *Schema {
 
 //Inherit schema
 //Parameters:
-//			- base ISchemaBase
-//          base foe create new schema
+//  - base ISchemaBase
+//  base foe create new schema
 // Returns *Schema
 func InheritSchema(base ISchemaBase) *Schema {
 	c := &Schema{
@@ -64,12 +64,12 @@ func InheritSchema(base ISchemaBase) *Schema {
 
 //Inherit schema with rules
 //Parameters:
-//			- base ISchemaBase
-//          base foe create new schema
-//			- required bool
-// 			true to always require non-null values.
-//			- rules []IValidationRule
-//			a list with validation rules.
+//  - base ISchemaBase
+//  base foe create new schema
+//  - required bool
+//  true to always require non-null values.
+//  - rules []IValidationRule
+//  a list with validation rules.
 // Returns *Schema
 func InheritSchemaWithRules(base ISchemaBase, required bool, rules []IValidationRule) *Schema {
 	c := &Schema{
@@ -89,8 +89,8 @@ func (c *Schema) Required() bool {
 
 //Sets a flag that always requires non-null values.
 // Parameters:
-// 			- value bool
-// 			true to always require non-null values and false to allow null values.
+//   - value bool
+//   true to always require non-null values and false to allow null values.
 func (c *Schema) SetRequired(value bool) {
 	c.required = value
 }
@@ -104,8 +104,8 @@ func (c *Schema) Rules() []IValidationRule {
 
 // Sets validation rules to check values against.
 // Parameters:
-// 			- value []IValidationRule
-// 			a list with validation rules.
+//   - value []IValidationRule
+//   a list with validation rules.
 func (c *Schema) SetRules(value []IValidationRule) {
 	c.rules = value
 }
@@ -135,8 +135,8 @@ func (c *Schema) MakeOptional() *Schema {
 // Adds validation rule to this schema.
 // This method returns reference to this exception to implement Builder pattern to chain additional calls.
 // Parameters:
-// 			- rule IValidationRule
-// 			a validation rule to be added.
+//   - rule IValidationRule
+//   a validation rule to be added.
 
 // Returns Schema
 // this validation schema.
@@ -150,10 +150,10 @@ func (c *Schema) WithRule(rule IValidationRule) *Schema {
 
 // Validates a given value against the schema and configured validation rules.
 // Parameters:
-// 			- path string
-// 			a dot notation path to the value.
-// 			- value interface{}
-// 			a value to be validated.
+//   - path string
+//   a dot notation path to the value.
+//   - value interface{}
+//   a value to be validated.
 // Return []*ValidationResult
 // a list with validation results to add new results.
 func (c *Schema) PerformValidation(path string, value interface{}) []*ValidationResult {
@@ -207,12 +207,12 @@ func (c *Schema) typeToString(typ interface{}) string {
 // see
 // performValidation
 // Parameters:
-// 			- path string
-// 			a dot notation path to the value.
-// 			- type interface{}
-// 			a type to match the value type
-// 			value interface{}
-// 			a value to be validated.
+//   - path string
+//   a dot notation path to the value.
+//   - type interface{}
+//   a type to match the value type
+//   value interface{}
+//   a value to be validated.
 // Returns []*ValidationResult
 // a list with validation results to add new results.
 func (c *Schema) PerformTypeValidation(path string, typ interface{}, value interface{}) []*ValidationResult {
@@ -268,8 +268,8 @@ func (c *Schema) PerformTypeValidation(path string, typ interface{}, value inter
 // see
 // ValidationResult
 // Parameters:
-// 			- value interface{}
-// 			a value to be validated.
+//   - value interface{}
+//   a value to be validated.
 // Returns []*ValidationResult
 // a list with validation results.
 func (c *Schema) Validate(value interface{}) []*ValidationResult {
@@ -278,12 +278,12 @@ func (c *Schema) Validate(value interface{}) []*ValidationResult {
 
 // Validates the given value and returns a *errors.ApplicationError if errors were found.
 // Parameters:
-// 			- correlationId string
-// 			transaction id to trace execution through call chain.
-// 			- value interface{}
-// 			a value to be validated.
-// 			- strict bool
-// 			true to treat warnings as errors.
+//   - correlationId string
+//   transaction id to trace execution through call chain.
+//   - value interface{}
+//   a value to be validated.
+//   - strict bool
+//   true to treat warnings as errors.
 // Returns *errors.ApplicationError
 func (c *Schema) ValidateAndReturnError(correlationId string, value interface{}, strict bool) *errors.ApplicationError {
 	results := c.Validate(value)
@@ -294,12 +294,12 @@ func (c *Schema) ValidateAndReturnError(correlationId string, value interface{},
 // see
 // ApplicationError.throwExceptionIfNeeded
 // Parameters:
-// 			- correlationId string
-// 			transaction id to trace execution through call chain.
-// 			- value interface{}
-// 			a value to be validated.
-// 			- strict: bool
-// 			true to treat warnings as errors.
+//   - correlationId string
+//   transaction id to trace execution through call chain.
+//   - value interface{}
+//   a value to be validated.
+//   - strict: bool
+//   true to treat warnings as errors.
 func (c *Schema) ValidateAndThrowError(correlationId string, value interface{}, strict bool) {
 	results := c.Validate(value)
 	ThrowValidationErrorIfNeeded(correlationId, results, strict)
