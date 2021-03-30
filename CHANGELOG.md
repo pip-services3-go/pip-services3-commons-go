@@ -1,12 +1,17 @@
 
 # <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Portable Abstractions and Patterns for Golang Changelog
 
+## <a name="1.0.4"></a> 1.0.4 (2021-03-30)
+
+### Bug fix
+
+* Add json tags for PagingParams
+
 ## <a name="1.0.3"></a> 1.0.3 (2020-11-20)
 
 ### Features
 
 * Add GetSchema method in command
-
 
 ## <a name="1.0.3"></a> 1.0.3 (2020-11-20)
 
