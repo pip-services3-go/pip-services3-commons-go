@@ -8,7 +8,7 @@ Access errors caused by missing user identity (authentication error) or incorrec
 // see
 // ErrorCategory
 // Parameters:
-//  - correlation_id string
+//  - correlationId string
 //  a unique transaction id to trace execution through call chain.
 //  - code string
 //  a unique error code.

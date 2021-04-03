@@ -8,7 +8,7 @@ package errors
  category - Standard error category
  cause - Original error wrapped by this exception
  code - A unique error code
- correlation_id - A unique transaction id to trace execution throug call chain
+ correlationId - A unique transaction id to trace execution throug call chain
  details - A map with additional details that can be used to restore error description in other languages
  message - A human-readable error description (usually written in English)
  stack_trace - Stack trace of the exception

@@ -9,7 +9,7 @@ For instance: business calls when the component is not ready.
 // see
 // ErrorCategory
 // Parameters:
-//  - correlation_id string
+//  - correlationId string
 //  a unique transaction id to trace execution through call chain.
 //  - code string
 //  a unique error code.

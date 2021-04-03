@@ -150,7 +150,7 @@ as regular commands, but run their own logic before calling the actual command.
 				<dd><a href="index.html#Command">type Command</a></dd>
 				
 					
-					<dd>&nbsp; &nbsp; <a href="index.html#NewCommand">func NewCommand(name string, schema validate.ISchema, function func(correlationId string, args *run.Parameters) (interface{}, error)) *Command</a></dd>
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCommand">func NewCommand(name string, schema validate.ISchema, action func(correlationId string, args *run.Parameters) (interface{}, error)) *Command</a></dd>
 				
 				
 					
@@ -329,7 +329,7 @@ as regular commands, but run their own logic before calling the actual command.
 		
 			
 			
-			<h2 id="Command">type <a href="http://localhost:6060/src/commands/Command.go?s=855:1002#L20">Command</a>
+			<h2 id="Command">type <a href="http://localhost:6060/src/commands/Command.go?s=851:992#L19">Command</a>
 				<a class="permalink" href="index.html#Command">&#xb6;</a>
 				
 				
@@ -353,9 +353,6 @@ if (err) {
 }
 // Console output: 2 + 2 = 4
 </pre>
-<p>
-//
-</p>
 
 			<pre>type Command struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -372,13 +369,13 @@ if (err) {
 
 			
 				
-				<h3 id="NewCommand">func <a href="http://localhost:6060/src/commands/Command.go?s=1350:1493#L35">NewCommand</a>
+				<h3 id="NewCommand">func <a href="http://localhost:6060/src/commands/Command.go?s=1341:1482#L34">NewCommand</a>
 					<a class="permalink" href="index.html#NewCommand">&#xb6;</a>
 					
 					
 				</h3>
 				<pre>func NewCommand(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema <a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/">validate</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/validate/#ISchema">ISchema</a>,
-    function func(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)) *<a href="index.html#Command">Command</a></pre>
+    action func(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, args *<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/">run</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-go/pip-services3-commons-go/run/#Parameters">Parameters</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)) *<a href="index.html#Command">Command</a></pre>
 				<p>
 Creates a new command object and assigns it&#39;s parameters.
 </p>
@@ -387,7 +384,7 @@ Parameters
 </p>
 <pre>- name: string - the command name.
 - schema: validate.ISchema the schema to validate command arguments.
-function: func(correlationId string, args *run.Parameters) (interface{}, error)
+- action: func(correlationId string, args *run.Parameters) (interface{}, error)
 the function to be executed by this command.
 
 Returns *Command
@@ -399,7 +396,7 @@ Returns *Command
 
 			
 				
-				<h3 id="Command.Execute">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=2259:2349#L67">Execute</a>
+				<h3 id="Command.Execute">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=2237:2327#L64">Execute</a>
 					<a class="permalink" href="index.html#Command.Execute">&#xb6;</a>
 					
 					
@@ -412,7 +409,6 @@ in callback.
 Parameters:
 </p>
 <pre>correlationId: string - (optional) transaction id to trace execution through call chain.
-
 args: run.Parameters - the parameters (arguments) to pass to this command for execution.
 </pre>
 <p>
@@ -424,7 +420,7 @@ Returns (interface{}, error)
 				
 			
 				
-				<h3 id="Command.GetSchema">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3764:3810#L127">GetSchema</a>
+				<h3 id="Command.GetSchema">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3738:3784#L123">GetSchema</a>
 					<a class="permalink" href="index.html#Command.GetSchema">&#xb6;</a>
 					
 					
@@ -439,7 +435,7 @@ GetSchema methods return validation schema for this command
 				
 			
 				
-				<h3 id="Command.Name">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=1765:1796#L54">Name</a>
+				<h3 id="Command.Name">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=1744:1775#L53">Name</a>
 					<a class="permalink" href="index.html#Command.Name">&#xb6;</a>
 					
 					
@@ -457,7 +453,7 @@ Returns string - the name of this command.
 				
 			
 				
-				<h3 id="Command.Validate">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3429:3506#L114">Validate</a>
+				<h3 id="Command.Validate">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3403:3480#L110">Validate</a>
 					<a class="permalink" href="index.html#Command.Validate">&#xb6;</a>
 					
 					
@@ -470,8 +466,10 @@ Validates the command args before execution using the defined schema.
 Parameters:
 </p>
 <pre>args: run.Parameters - the parameters (arguments) to validate using this command&#39;s schema.
-Returns []*validate.ValidationResult an array of ValidationResults or an empty array (if no schema is set).
 </pre>
+<p>
+Returns []*validate.ValidationResult an array of ValidationResults or an empty array (if no schema is set).
+</p>
 
 				
 				
@@ -1178,14 +1176,13 @@ InterceptedCommand
 		
 			
 			
-			<h2 id="IEventListener">type <a href="http://localhost:6060/src/commands/IEventListener.go?s=586:961#L19">IEventListener</a>
+			<h2 id="IEventListener">type <a href="http://localhost:6060/src/commands/IEventListener.go?s=583:957#L19">IEventListener</a>
 				<a class="permalink" href="index.html#IEventListener">&#xb6;</a>
 				
 				
 			</h2>
 			
 			<pre>type IEventListener interface {
-
     <span class="comment">// A method called when events this listener is subscrubed to are fired.</span>
     <span class="comment">// Parameters:</span>
     <span class="comment">//  - correlationId: string</span>

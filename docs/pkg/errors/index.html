@@ -356,7 +356,7 @@ Unsupported - Errors caused by calls to unsupported or not yet implemented funct
 		
 			
 			
-			<h2 id="ApplicationError">type <a href="http://localhost:6060/src/errors/ApplicationError.go?s=1801:2279#L20">ApplicationError</a>
+			<h2 id="ApplicationError">type <a href="http://localhost:6060/src/errors/ApplicationError.go?s=1800:2278#L20">ApplicationError</a>
 				<a class="permalink" href="index.html#ApplicationError">&#xb6;</a>
 				
 				
@@ -381,7 +381,7 @@ message: is a human-readable error description
 category: one of 12 standard error categories of errors
 status: numeric HTTP status code for REST invocations
 code: a unique error code, usually defined as &#34;MY_ERROR_CODE&#34;
-correlation_id: a unique transaction id to trace execution through a call chain
+correlationId: a unique transaction id to trace execution through a call chain
 details: map with error parameters that can help to recreate meaningful error description in other languages
 stack_trace: a stack trace
 cause: original error that is wrapped by this exception
@@ -418,7 +418,7 @@ ErrorDescription
 
 			
 				
-				<h3 id="NewBadRequestError">func <a href="http://localhost:6060/src/errors/BadRequestError.go?s=435:513#L10">NewBadRequestError</a>
+				<h3 id="NewBadRequestError">func <a href="http://localhost:6060/src/errors/BadRequestError.go?s=434:512#L10">NewBadRequestError</a>
 					<a class="permalink" href="index.html#NewBadRequestError">&#xb6;</a>
 					
 					
@@ -430,7 +430,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -445,7 +445,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewConfigError">func <a href="http://localhost:6060/src/errors/ConfigError.go?s=428:502#L8">NewConfigError</a>
+				<h3 id="NewConfigError">func <a href="http://localhost:6060/src/errors/ConfigError.go?s=427:501#L8">NewConfigError</a>
 					<a class="permalink" href="index.html#NewConfigError">&#xb6;</a>
 					
 					
@@ -457,7 +457,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -472,7 +472,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewConflictError">func <a href="http://localhost:6060/src/errors/ConflictError.go?s=471:547#L8">NewConflictError</a>
+				<h3 id="NewConflictError">func <a href="http://localhost:6060/src/errors/ConflictError.go?s=470:546#L8">NewConflictError</a>
 					<a class="permalink" href="index.html#NewConflictError">&#xb6;</a>
 					
 					
@@ -484,7 +484,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -499,7 +499,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewConnectionError">func <a href="http://localhost:6060/src/errors/ConnectionError.go?s=494:572#L8">NewConnectionError</a>
+				<h3 id="NewConnectionError">func <a href="http://localhost:6060/src/errors/ConnectionError.go?s=493:571#L8">NewConnectionError</a>
 					<a class="permalink" href="index.html#NewConnectionError">&#xb6;</a>
 					
 					
@@ -511,7 +511,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -526,7 +526,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewError">func <a href="http://localhost:6060/src/errors/ApplicationError.go?s=4715:4762#L137">NewError</a>
+				<h3 id="NewError">func <a href="http://localhost:6060/src/errors/ApplicationError.go?s=4714:4761#L137">NewError</a>
 					<a class="permalink" href="index.html#NewError">&#xb6;</a>
 					
 					
@@ -562,7 +562,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewFileError">func <a href="http://localhost:6060/src/errors/FileError.go?s=394:466#L8">NewFileError</a>
+				<h3 id="NewFileError">func <a href="http://localhost:6060/src/errors/FileError.go?s=393:465#L8">NewFileError</a>
 					<a class="permalink" href="index.html#NewFileError">&#xb6;</a>
 					
 					
@@ -574,7 +574,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -589,7 +589,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewInternalError">func <a href="http://localhost:6060/src/errors/InternalError.go?s=389:465#L8">NewInternalError</a>
+				<h3 id="NewInternalError">func <a href="http://localhost:6060/src/errors/InternalError.go?s=388:464#L8">NewInternalError</a>
 					<a class="permalink" href="index.html#NewInternalError">&#xb6;</a>
 					
 					
@@ -601,7 +601,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -616,7 +616,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewInvalidStateError">func <a href="http://localhost:6060/src/errors/InvalidStateError.go?s=505:585#L9">NewInvalidStateError</a>
+				<h3 id="NewInvalidStateError">func <a href="http://localhost:6060/src/errors/InvalidStateError.go?s=504:584#L9">NewInvalidStateError</a>
 					<a class="permalink" href="index.html#NewInvalidStateError">&#xb6;</a>
 					
 					
@@ -628,7 +628,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -643,7 +643,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewInvocationError">func <a href="http://localhost:6060/src/errors/InvocationError.go?s=425:503#L8">NewInvocationError</a>
+				<h3 id="NewInvocationError">func <a href="http://localhost:6060/src/errors/InvocationError.go?s=424:502#L8">NewInvocationError</a>
 					<a class="permalink" href="index.html#NewInvocationError">&#xb6;</a>
 					
 					
@@ -655,7 +655,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -670,7 +670,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewNotFoundError">func <a href="http://localhost:6060/src/errors/NotFoundError.go?s=403:479#L8">NewNotFoundError</a>
+				<h3 id="NewNotFoundError">func <a href="http://localhost:6060/src/errors/NotFoundError.go?s=402:478#L8">NewNotFoundError</a>
 					<a class="permalink" href="index.html#NewNotFoundError">&#xb6;</a>
 					
 					
@@ -682,7 +682,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -697,7 +697,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewUnauthorizedError">func <a href="http://localhost:6060/src/errors/UnauthorizedError.go?s=476:556#L8">NewUnauthorizedError</a>
+				<h3 id="NewUnauthorizedError">func <a href="http://localhost:6060/src/errors/UnauthorizedError.go?s=475:555#L8">NewUnauthorizedError</a>
 					<a class="permalink" href="index.html#NewUnauthorizedError">&#xb6;</a>
 					
 					
@@ -709,7 +709,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -724,7 +724,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewUnknownError">func <a href="http://localhost:6060/src/errors/UnknownError.go?s=380:455#L8">NewUnknownError</a>
+				<h3 id="NewUnknownError">func <a href="http://localhost:6060/src/errors/UnknownError.go?s=379:454#L8">NewUnknownError</a>
 					<a class="permalink" href="index.html#NewUnknownError">&#xb6;</a>
 					
 					
@@ -736,7 +736,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -751,7 +751,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="NewUnsupportedError">func <a href="http://localhost:6060/src/errors/UnsupportedError.go?s=426:505#L8">NewUnsupportedError</a>
+				<h3 id="NewUnsupportedError">func <a href="http://localhost:6060/src/errors/UnsupportedError.go?s=425:504#L8">NewUnsupportedError</a>
 					<a class="permalink" href="index.html#NewUnsupportedError">&#xb6;</a>
 					
 					
@@ -763,7 +763,7 @@ see
 ErrorCategory
 Parameters:
 </p>
-<pre>- correlation_id string
+<pre>- correlationId string
 a unique transaction id to trace execution through call chain.
 - code string
 a unique error code.
@@ -778,7 +778,7 @@ Returns *ApplicationError
 				
 			
 				
-				<h3 id="WrapError">func <a href="http://localhost:6060/src/errors/ApplicationError.go?s=4352:4411#L123">WrapError</a>
+				<h3 id="WrapError">func <a href="http://localhost:6060/src/errors/ApplicationError.go?s=4351:4410#L123">WrapError</a>
 					<a class="permalink" href="index.html#WrapError">&#xb6;</a>
 					
 					
@@ -800,7 +800,7 @@ Return *ApplicationError
 
 			
 				
-				<h3 id="ApplicationError.Error">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2315:2356#L33">Error</a>
+				<h3 id="ApplicationError.Error">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2314:2355#L33">Error</a>
 					<a class="permalink" href="index.html#ApplicationError.Error">&#xb6;</a>
 					
 					
@@ -816,7 +816,7 @@ error message
 				
 			
 				
-				<h3 id="ApplicationError.WithCause">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=3271:3338#L77">WithCause</a>
+				<h3 id="ApplicationError.WithCause">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=3270:3337#L77">WithCause</a>
 					<a class="permalink" href="index.html#ApplicationError.WithCause">&#xb6;</a>
 					
 					
@@ -835,7 +835,7 @@ Return *ApplicationError
 				
 			
 				
-				<h3 id="ApplicationError.WithCauseString">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=3507:3581#L87">WithCauseString</a>
+				<h3 id="ApplicationError.WithCauseString">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=3506:3580#L87">WithCauseString</a>
 					<a class="permalink" href="index.html#ApplicationError.WithCauseString">&#xb6;</a>
 					
 					
@@ -854,7 +854,7 @@ Return *ApplicationError
 				
 			
 				
-				<h3 id="ApplicationError.WithCode">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2486:2552#L42">WithCode</a>
+				<h3 id="ApplicationError.WithCode">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2485:2551#L42">WithCode</a>
 					<a class="permalink" href="index.html#ApplicationError.WithCode">&#xb6;</a>
 					
 					
@@ -873,7 +873,7 @@ Return *ApplicationError
 				
 			
 				
-				<h3 id="ApplicationError.WithCorrelationId">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=3747:3831#L97">WithCorrelationId</a>
+				<h3 id="ApplicationError.WithCorrelationId">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=3746:3830#L97">WithCorrelationId</a>
 					<a class="permalink" href="index.html#ApplicationError.WithCorrelationId">&#xb6;</a>
 					
 					
@@ -892,7 +892,7 @@ Return *ApplicationError
 				
 			
 				
-				<h3 id="ApplicationError.WithDetails">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2964:3051#L64">WithDetails</a>
+				<h3 id="ApplicationError.WithDetails">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2963:3050#L64">WithDetails</a>
 					<a class="permalink" href="index.html#ApplicationError.WithDetails">&#xb6;</a>
 					
 					
@@ -913,7 +913,7 @@ Return *ApplicationError
 				
 			
 				
-				<h3 id="ApplicationError.WithStatus">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2691:2758#L52">WithStatus</a>
+				<h3 id="ApplicationError.WithStatus">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=2690:2757#L52">WithStatus</a>
 					<a class="permalink" href="index.html#ApplicationError.WithStatus">&#xb6;</a>
 					
 					
@@ -932,7 +932,7 @@ Return *ApplicationError
 				
 			
 				
-				<h3 id="ApplicationError.Wrap">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=4009:4069#L107">Wrap</a>
+				<h3 id="ApplicationError.Wrap">func (*ApplicationError) <a href="http://localhost:6060/src/errors/ApplicationError.go?s=4008:4068#L107">Wrap</a>
 					<a class="permalink" href="index.html#ApplicationError.Wrap">&#xb6;</a>
 					
 					
@@ -956,7 +956,7 @@ Return *ApplicationError
 		
 			
 			
-			<h2 id="ErrorDescription">type <a href="http://localhost:6060/src/errors/ErrorDescription.go?s=815:1344#L8">ErrorDescription</a>
+			<h2 id="ErrorDescription">type <a href="http://localhost:6060/src/errors/ErrorDescription.go?s=814:1344#L8">ErrorDescription</a>
 				<a class="permalink" href="index.html#ErrorDescription">&#xb6;</a>
 				
 				
@@ -970,7 +970,7 @@ object close to its original type without missing additional details.
 category - Standard error category
 cause - Original error wrapped by this exception
 code - A unique error code
-correlation_id - A unique transaction id to trace execution throug call chain
+correlationId - A unique transaction id to trace execution throug call chain
 details - A map with additional details that can be used to restore error description in other languages
 message - A human-readable error description (usually written in English)
 stack_trace - Stack trace of the exception
@@ -985,7 +985,7 @@ type - Data type of the original error
 <span id="ErrorDescription.Code"></span>    Code          <a href="http://localhost:6060/pkg/builtin/#string">string</a>                 `json:&#34;code&#34;`
 <span id="ErrorDescription.Message"></span>    Message       <a href="http://localhost:6060/pkg/builtin/#string">string</a>                 `json:&#34;message&#34;`
 <span id="ErrorDescription.Details"></span>    Details       map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]interface{} `json:&#34;details&#34;`
-<span id="ErrorDescription.CorrelationId"></span>    CorrelationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>                 `json:&#34;correlaion_id&#34;`
+<span id="ErrorDescription.CorrelationId"></span>    CorrelationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>                 `json:&#34;correlation_id&#34;`
 <span id="ErrorDescription.Cause"></span>    Cause         <a href="http://localhost:6060/pkg/builtin/#string">string</a>                 `json:&#34;cause&#34;`
 <span id="ErrorDescription.StackTrace"></span>    StackTrace    <a href="http://localhost:6060/pkg/builtin/#string">string</a>                 `json:&#34;stack_trace&#34;`
 }

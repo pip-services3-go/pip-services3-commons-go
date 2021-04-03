@@ -115,6 +115,9 @@
 				<dd><a href="index.html#FromJson">func FromJson(value string) (interface{}, error)</a></dd>
 			
 				
+				<dd><a href="index.html#FromJsonAs">func FromJsonAs(result interface{}, value string) (interface{}, error)</a></dd>
+			
+				
 				<dd><a href="index.html#JsonToMap">func JsonToMap(value string) map[string]interface{}</a></dd>
 			
 				
@@ -346,6 +349,12 @@
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#TJsonConverter.ToNullableMap">func (c *TJsonConverter) ToNullableMap(value string) *map[string]interface{}</a></dd>
 				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TJsonConverter.ToObject">func (c *TJsonConverter) ToObject(value string) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TJsonConverter.ToObjectAs">func (c *TJsonConverter) ToObjectAs(result interface{}, value string) (interface{}, error)</a></dd>
+				
 			
 				
 				<dd><a href="index.html#TLongConverter">type TLongConverter</a></dd>
@@ -491,7 +500,30 @@ Returns: converted object value or null when value is null.
 		
 			
 			
-			<h2 id="JsonToMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2877:2928#L78">JsonToMap</a>
+			<h2 id="FromJsonAs">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=604:674#L14">FromJsonAs</a>
+				<a class="permalink" href="index.html#FromJsonAs">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FromJsonAs(result interface{}, value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Converts value from JSON string to an object with specified type
+Parameters:
+</p>
+<pre>result - a references to the object that will receive a converted value.
+value - the JSON string to convert.
+</pre>
+<p>
+Returns: converted object value or null when value is null.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="JsonToMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3966:4017#L108">JsonToMap</a>
 				<a class="permalink" href="index.html#JsonToMap">&#xb6;</a>
 				
 				
@@ -509,7 +541,7 @@ Returns: Map object value or empty map when conversion is not supported.
 		
 			
 			
-			<h2 id="JsonToMapWithDefault">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3268:3367#L87">JsonToMapWithDefault</a>
+			<h2 id="JsonToMapWithDefault">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=4356:4455#L117">JsonToMapWithDefault</a>
 				<a class="permalink" href="index.html#JsonToMapWithDefault">&#xb6;</a>
 				
 				
@@ -532,7 +564,7 @@ Returns: Map object value or default map when conversion is not supported.
 		
 			
 			
-			<h2 id="JsonToNullableMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2507:2567#L67">JsonToNullableMap</a>
+			<h2 id="JsonToNullableMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3596:3656#L97">JsonToNullableMap</a>
 				<a class="permalink" href="index.html#JsonToNullableMap">&#xb6;</a>
 				
 				
@@ -866,7 +898,7 @@ Returns: integer value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=540:586#L15">ToJson</a>
+			<h2 id="ToJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=960:1006#L28">ToJson</a>
 				<a class="permalink" href="index.html#ToJson">&#xb6;</a>
 				
 				
@@ -1994,7 +2026,7 @@ Returns: integer value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="TJsonConverter">type <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1117:1145#L37">TJsonConverter</a>
+			<h2 id="TJsonConverter">type <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1537:1565#L50">TJsonConverter</a>
 				<a class="permalink" href="index.html#TJsonConverter">&#xb6;</a>
 				
 				
@@ -2031,7 +2063,7 @@ fmt.Println(value3) // {&#34;key&#34;:123}
 
 			
 				
-				<h3 id="TJsonConverter.ToMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1753:1820#L51">ToMap</a>
+				<h3 id="TJsonConverter.ToMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2173:2240#L64">ToMap</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToMap">&#xb6;</a>
 					
 					
@@ -2048,7 +2080,7 @@ Returns: Map object value or empty map when conversion is not supported.
 				
 			
 				
-				<h3 id="TJsonConverter.ToMapWithDefault">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2123:2238#L60">ToMapWithDefault</a>
+				<h3 id="TJsonConverter.ToMapWithDefault">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2542:2657#L73">ToMapWithDefault</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToMapWithDefault">&#xb6;</a>
 					
 					
@@ -2070,7 +2102,7 @@ Returns: Map object value or default map when conversion is not supported.
 				
 			
 				
-				<h3 id="TJsonConverter.ToNullableMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1415:1491#L44">ToNullableMap</a>
+				<h3 id="TJsonConverter.ToNullableMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1835:1911#L57">ToNullableMap</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToNullableMap">&#xb6;</a>
 					
 					
@@ -2080,6 +2112,45 @@ Returns: Map object value or default map when conversion is not supported.
 Converts JSON string into map object or returns null when conversion is not possible.
 Parameters: &#34;value&#34; - the JSON string to convert.
 Returns: Map object value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TJsonConverter.ToObject">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2882:2941#L80">ToObject</a>
+					<a class="permalink" href="index.html#TJsonConverter.ToObject">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TJsonConverter">TJsonConverter</a>) ToObject(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) interface{}</pre>
+				<p>
+Converts JSON string into an object.
+Parameters: &#34;value&#34; - the JSON string to convert.
+Returns: Map object value or empty map when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TJsonConverter.ToObjectAs">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3253:3343#L90">ToObjectAs</a>
+					<a class="permalink" href="index.html#TJsonConverter.ToObjectAs">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TJsonConverter">TJsonConverter</a>) ToObjectAs(result interface{}, value <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (interface{}, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Converts JSON string into an object with specified type.
+Parameters:
+</p>
+<pre>result - a references to an object that will receive the result
+value - the JSON string to convert.
+</pre>
+<p>
+Returns: Map object value or empty map when conversion is not supported.
 </p>
 
 				

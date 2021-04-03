@@ -595,6 +595,9 @@
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#NewEmptyDataPage">func NewEmptyDataPage() *DataPage</a></dd>
 				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmptyTokenizedDataPage">func NewEmptyTokenizedDataPage() *DataPage</a></dd>
+				
 				
 			
 				
@@ -939,6 +942,37 @@
 					<dd>&nbsp; &nbsp; <a href="index.html#TTagsProcessor.NormalizeTags">func (c *TTagsProcessor) NormalizeTags(tags []string) []string</a></dd>
 				
 			
+				
+				<dd><a href="index.html#TokenizedDataPage">type TokenizedDataPage</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTokenizedDataPage">func NewTokenizedDataPage(token string, data []interface{}) *TokenizedDataPage</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#TokenizedPagingParams">type TokenizedPagingParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmptyTokenizedPagingParams">func NewEmptyTokenizedPagingParams() *TokenizedPagingParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTokenizedPagingParams">func NewTokenizedPagingParams(token, take, total interface{}) *TokenizedPagingParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTokenizedPagingParamsFromMap">func NewTokenizedPagingParamsFromMap(value *AnyValueMap) *TokenizedPagingParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTokenizedPagingParamsFromTuples">func NewTokenizedPagingParamsFromTuples(tuples ...interface{}) *TokenizedPagingParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTokenizedPagingParamsFromValue">func NewTokenizedPagingParamsFromValue(value interface{}) *TokenizedPagingParams</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TokenizedPagingParams.GetTake">func (c *TokenizedPagingParams) GetTake(maxTake int64) int64</a></dd>
+				
+			
 			
 			</dl>
 			</div><!-- #manual-nav -->
@@ -981,6 +1015,10 @@
 				<a href="http://localhost:6060/src/data/StringValueMap.go">StringValueMap.go</a>
 			
 				<a href="http://localhost:6060/src/data/TagsProcessor.go">TagsProcessor.go</a>
+			
+				<a href="http://localhost:6060/src/data/TokenizedDataPage.go">TokenizedDataPage.go</a>
+			
+				<a href="http://localhost:6060/src/data/TokenizedPagingParams.go">TokenizedPagingParams.go</a>
 			
 			</span>
 			</p>
@@ -4468,6 +4506,21 @@ Returns *DataPage
 				
 				
 			
+				
+				<h3 id="NewEmptyTokenizedDataPage">func <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1235:1277#L28">NewEmptyTokenizedDataPage</a>
+					<a class="permalink" href="index.html#NewEmptyTokenizedDataPage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmptyTokenizedDataPage() *<a href="index.html#DataPage">DataPage</a></pre>
+				<p>
+Creates a new empty instance of data page.
+Returns *TokenizedDataPage
+</p>
+
+				
+				
+			
 
 			
 		
@@ -4752,7 +4805,7 @@ value2 := values.get(&#39;pt&#39;); // Result: &#34;Hello World!&#34;
 		
 			
 			
-			<h2 id="PagingParams">type <a href="http://localhost:6060/src/data/PagingParams.go?s=691:759#L12">PagingParams</a>
+			<h2 id="PagingParams">type <a href="http://localhost:6060/src/data/PagingParams.go?s=691:804#L12">PagingParams</a>
 				<a class="permalink" href="index.html#PagingParams">&#xb6;</a>
 				
 				
@@ -4780,9 +4833,9 @@ err, page = myDataClient.getDataByFilter(filter, paging);
 </pre>
 
 			<pre>type PagingParams struct {
-<span id="PagingParams.Skip"></span>    Skip  *<a href="http://localhost:6060/pkg/builtin/#int64">int64</a>
-<span id="PagingParams.Take"></span>    Take  *<a href="http://localhost:6060/pkg/builtin/#int64">int64</a>
-<span id="PagingParams.Total"></span>    Total <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>
+<span id="PagingParams.Skip"></span>    Skip  *<a href="http://localhost:6060/pkg/builtin/#int64">int64</a> `json:&#34;skip&#34;`
+<span id="PagingParams.Take"></span>    Take  *<a href="http://localhost:6060/pkg/builtin/#int64">int64</a> `json:&#34;take&#34;`
+<span id="PagingParams.Total"></span>    Total <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `json:&#34;total&#34;`
 }
 </pre>
 
@@ -4796,7 +4849,7 @@ err, page = myDataClient.getDataByFilter(filter, paging);
 
 			
 				
-				<h3 id="NewEmptyPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=811:852#L20">NewEmptyPagingParams</a>
+				<h3 id="NewEmptyPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=856:897#L20">NewEmptyPagingParams</a>
 					<a class="permalink" href="index.html#NewEmptyPagingParams">&#xb6;</a>
 					
 					
@@ -4811,7 +4864,7 @@ Returns *PagingParams
 				
 			
 				
-				<h3 id="NewPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=1178:1243#L33">NewPagingParams</a>
+				<h3 id="NewPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=1223:1288#L33">NewPagingParams</a>
 					<a class="permalink" href="index.html#NewPagingParams">&#xb6;</a>
 					
 					
@@ -4833,7 +4886,7 @@ Returns *PagingParams
 				
 			
 				
-				<h3 id="NewPagingParamsFromMap">func <a href="http://localhost:6060/src/data/PagingParams.go?s=3183:3244#L111">NewPagingParamsFromMap</a>
+				<h3 id="NewPagingParamsFromMap">func <a href="http://localhost:6060/src/data/PagingParams.go?s=3228:3289#L111">NewPagingParamsFromMap</a>
 					<a class="permalink" href="index.html#NewPagingParamsFromMap">&#xb6;</a>
 					
 					
@@ -4855,7 +4908,7 @@ a newly created PagingParams.
 				
 			
 				
-				<h3 id="NewPagingParamsFromTuples">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2785:2852#L100">NewPagingParamsFromTuples</a>
+				<h3 id="NewPagingParamsFromTuples">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2830:2897#L100">NewPagingParamsFromTuples</a>
 					<a class="permalink" href="index.html#NewPagingParamsFromTuples">&#xb6;</a>
 					
 					
@@ -4877,7 +4930,7 @@ a newly created PagingParams.
 				
 			
 				
-				<h3 id="NewPagingParamsFromValue">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2316:2378#L84">NewPagingParamsFromValue</a>
+				<h3 id="NewPagingParamsFromValue">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2361:2423#L84">NewPagingParamsFromValue</a>
 					<a class="permalink" href="index.html#NewPagingParamsFromValue">&#xb6;</a>
 					
 					
@@ -4901,7 +4954,7 @@ a newly created PagingParams.
 
 			
 				
-				<h3 id="PagingParams.GetSkip">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=1622:1673#L49">GetSkip</a>
+				<h3 id="PagingParams.GetSkip">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=1667:1718#L49">GetSkip</a>
 					<a class="permalink" href="index.html#PagingParams.GetSkip">&#xb6;</a>
 					
 					
@@ -4924,7 +4977,7 @@ the number of items to skip.
 				
 			
 				
-				<h3 id="PagingParams.GetTake">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=1957:2008#L65">GetTake</a>
+				<h3 id="PagingParams.GetTake">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=2002:2053#L65">GetTake</a>
 					<a class="permalink" href="index.html#PagingParams.GetTake">&#xb6;</a>
 					
 					
@@ -6884,6 +6937,258 @@ a list with normalized tags.
 				</h3>
 				<pre>func (c *<a href="index.html#TTagsProcessor">TTagsProcessor</a>) NormalizeTags(tags []<a href="http://localhost:6060/pkg/builtin/#string">string</a>) []<a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
 				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TokenizedDataPage">type <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1053:1157#L21">TokenizedDataPage</a>
+				<a class="permalink" href="index.html#TokenizedDataPage">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Data transfer object that is used to pass results of paginated queries. It contains items of retrieved
+page and optional total number of items.
+Most often this object type is used to send responses to paginated queries.
+Pagination parameters are defined by TokenizedPagingParams object. The token parameter in the TokenizedPagingParams
+there determines a starting point for a new search. It is received in the TokenizedDataPage from the previous search.
+The takes parameter sets number of items to return in the page.
+And the optional total parameter tells to return total number of items in the query.
+Remember: not all implementations support the total parameter because its generation may lead to severe
+performance implications.
+see
+TokenizedPagingParams
+</p>
+<p>
+Example:
+</p>
+<pre>   err, page = myDataClient.getDataByFilter(
+     &#34;123&#34;,
+     FilterParams.fromTuples(&#34;completed&#34;: true),
+     NewTokenizedPagingParams(&#34;&#34;, 100, true)
+   };
+
+	if err != nil {
+		panic()
+	}
+	for item range page.Data {
+        fmt.Println(item);
+    }
+);
+</pre>
+
+			<pre>type TokenizedDataPage struct {
+<span id="TokenizedDataPage.Token"></span>    Token <a href="http://localhost:6060/pkg/builtin/#string">string</a>        `json:&#34;token&#34;`
+<span id="TokenizedDataPage.Data"></span>    Data  []interface{} `json:&#34;data&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTokenizedDataPage">func <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1547:1625#L38">NewTokenizedDataPage</a>
+					<a class="permalink" href="index.html#NewTokenizedDataPage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTokenizedDataPage(token <a href="http://localhost:6060/pkg/builtin/#string">string</a>, data []interface{}) *<a href="index.html#TokenizedDataPage">TokenizedDataPage</a></pre>
+				<p>
+Creates a new instance of data page and assigns its values.
+Parameters:
+</p>
+<pre>- token a token that defines a starting point for next search
+- data []interface{}
+a list of items from the retrieved page.
+</pre>
+<p>
+Returns *TokenizedDataPage
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="TokenizedPagingParams">type <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=753:876#L12">TokenizedPagingParams</a>
+				<a class="permalink" href="index.html#TokenizedPagingParams">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Data transfer object to pass paging parameters for queries.
+</p>
+<p>
+The page is defined by two parameters:
+</p>
+<p>
+the token parameter a starting point for a new page. The token shall be received from previous searches.
+the take parameter sets how many items to return in a page.
+additionally, the optional total parameter tells to return total number of items in the query.
+Remember: not all implementations support the total parameter because its generation may lead to
+severe performance implications.
+</p>
+<p>
+Example:
+</p>
+<pre>filter := NewFilterParamsFromTuples(&#34;type&#34;, &#34;Type1&#34;);
+paging := NewTokenizedPagingParams(&#34;&#34;, 100);
+
+err, page = myDataClient.getDataByFilter(filter, paging);
+</pre>
+
+			<pre>type TokenizedPagingParams struct {
+<span id="TokenizedPagingParams.Token"></span>    Token <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;token&#34;`
+<span id="TokenizedPagingParams.Take"></span>    Take  *<a href="http://localhost:6060/pkg/builtin/#int64">int64</a> `json:&#34;take&#34;`
+<span id="TokenizedPagingParams.Total"></span>    Total <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>   `json:&#34;total&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmptyTokenizedPagingParams">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=939:998#L20">NewEmptyTokenizedPagingParams</a>
+					<a class="permalink" href="index.html#NewEmptyTokenizedPagingParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmptyTokenizedPagingParams() *<a href="index.html#TokenizedPagingParams">TokenizedPagingParams</a></pre>
+				<p>
+Creates a new instance.
+Returns *TokenizedPagingParams
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewTokenizedPagingParams">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=1393:1477#L30">NewTokenizedPagingParams</a>
+					<a class="permalink" href="index.html#NewTokenizedPagingParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTokenizedPagingParams(token, take, total interface{}) *<a href="index.html#TokenizedPagingParams">TokenizedPagingParams</a></pre>
+				<p>
+Creates a new instance and sets its values.
+Parameters:
+</p>
+<pre>- token string a token received from previous searches to define a starting point for this search.
+- take interface{} the number of items to return.
+- total interface{} true to return the total number of items.
+</pre>
+<p>
+Returns *TokenizedPagingParams
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewTokenizedPagingParamsFromMap">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=3249:3328#L92">NewTokenizedPagingParamsFromMap</a>
+					<a class="permalink" href="index.html#NewTokenizedPagingParamsFromMap">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTokenizedPagingParamsFromMap(value *<a href="index.html#AnyValueMap">AnyValueMap</a>) *<a href="index.html#TokenizedPagingParams">TokenizedPagingParams</a></pre>
+				<p>
+Creates a new TokenizedPagingParams and sets it parameters from the specified map
+Parameters:
+</p>
+<pre>- value AnyValueMap
+a AnyValueMap or StringValueMap to initialize this TokenizedPagingParams
+</pre>
+<p>
+Returns *TokenizedPagingParams
+a newly created TokenizedPagingParams.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewTokenizedPagingParamsFromTuples">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=2788:2873#L81">NewTokenizedPagingParamsFromTuples</a>
+					<a class="permalink" href="index.html#NewTokenizedPagingParamsFromTuples">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTokenizedPagingParamsFromTuples(tuples ...interface{}) *<a href="index.html#TokenizedPagingParams">TokenizedPagingParams</a></pre>
+				<p>
+Creates a new TokenizedPagingParams from a list of key-value pairs called tuples.
+Parameters
+</p>
+<pre>- tuples ...interface{}
+a list of values where odd elements are keys and the following even elements are values
+</pre>
+<p>
+Returns *TokenizedPagingParams
+a newly created TokenizedPagingParams.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewTokenizedPagingParamsFromValue">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=2256:2336#L65">NewTokenizedPagingParamsFromValue</a>
+					<a class="permalink" href="index.html#NewTokenizedPagingParamsFromValue">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTokenizedPagingParamsFromValue(value interface{}) *<a href="index.html#TokenizedPagingParams">TokenizedPagingParams</a></pre>
+				<p>
+Converts specified value into TokenizedPagingParams.
+Parameters:
+</p>
+<pre>- value interface{}
+value to be converted
+</pre>
+<p>
+Returns *PagingParams
+a newly created PagingParams.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="TokenizedPagingParams.GetTake">func (*TokenizedPagingParams) <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=1879:1939#L46">GetTake</a>
+					<a class="permalink" href="index.html#TokenizedPagingParams.GetTake">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TokenizedPagingParams">TokenizedPagingParams</a>) GetTake(maxTake <a href="http://localhost:6060/pkg/builtin/#int64">int64</a>) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Gets the number of items to return in a page.
+Parameters:
+</p>
+<pre>- maxTake int64
+the maximum number of items to return.
+</pre>
+<p>
+Returns int64
+the number of items to return.
+</p>
+
 				
 				
 				

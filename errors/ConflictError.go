@@ -8,7 +8,7 @@ Errors raised by conflicts between object versions that were posted by the user 
 // see
 // ErrorCategory
 // Parameters:
-//  - correlation_id string
+//  - correlationId string
 //  a unique transaction id to trace execution through call chain.
 //  - code string
 //  a unique error code.

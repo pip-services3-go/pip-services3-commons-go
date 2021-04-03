@@ -15,7 +15,7 @@ message: is a human-readable error description
 category: one of 12 standard error categories of errors
 status: numeric HTTP status code for REST invocations
 code: a unique error code, usually defined as "MY_ERROR_CODE"
-correlation_id: a unique transaction id to trace execution through a call chain
+correlationId: a unique transaction id to trace execution through a call chain
 details: map with error parameters that can help to recreate meaningful error description in other languages
 stack_trace: a stack trace
 cause: original error that is wrapped by this exception

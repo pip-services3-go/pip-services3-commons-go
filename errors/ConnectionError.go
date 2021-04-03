@@ -8,7 +8,7 @@ Errors that occur during connections to remote services. They can be related to 
 // see
 // ErrorCategory
 // Parameters:
-//  - correlation_id string
+//  - correlationId string
 //  a unique transaction id to trace execution through call chain.
 //  - code string
 //  a unique error code.
