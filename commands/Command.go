@@ -17,7 +17,7 @@ Example:
      param2 := args.getAsFloat("param2");
      return (param1 + param2), nil;
  });
- 
+
  result, err := command.Execute("123", Parameters.NewParametersFromTuples("param1", 2, "param2", 2))
  if (err) {
  	fmt.Println(err)
@@ -25,55 +25,52 @@ Example:
  	fmt.Println("2 + 2 = " + result)
  }
  // Console output: 2 + 2 = 4
-//
 */
 type Command struct {
-	schema   validate.ISchema
-	function func(correlationId string, args *run.Parameters) (interface{}, error)
-	name     string
+	schema validate.ISchema
+	action func(correlationId string, args *run.Parameters) (interface{}, error)
+	name   string
 }
 
-//Creates a new command object and assigns it's parameters.
+// Creates a new command object and assigns it's parameters.
 //
 // Parameters
 //  - name: string - the command name.
 //  - schema: validate.ISchema the schema to validate command arguments.
-//  function: func(correlationId string, args *run.Parameters) (interface{}, error)
+//  - action: func(correlationId string, args *run.Parameters) (interface{}, error)
 //  the function to be executed by this command.
 //
 //  Returns *Command
 func NewCommand(name string, schema validate.ISchema,
-	function func(correlationId string, args *run.Parameters) (interface{}, error)) *Command {
+	action func(correlationId string, args *run.Parameters) (interface{}, error)) *Command {
 	if name == "" {
 		panic("Name cannot be empty")
 	}
-	if function == nil {
-		panic("Function cannot be nil")
+	if action == nil {
+		panic("Action cannot be nil")
 	}
 
 	return &Command{
-		name:     name,
-		schema:   schema,
-		function: function,
+		name:   name,
+		schema: schema,
+		action: action,
 	}
 }
 
-//Gets the command name.
+// Gets the command name.
 //
-//Returns string - the name of this command.
+// Returns string - the name of this command.
 func (c *Command) Name() string {
 	return c.name
 }
 
-//Executes the command. Before execution it validates args using the defined schema.
-//The command execution intercepts exceptions raised by the called function and returns them as an error
-//in callback.
-//Parameters:
+// Executes the command. Before execution it validates args using the defined schema.
+// The command execution intercepts exceptions raised by the called function and returns them as an error
+// in callback.
+// Parameters:
 //  correlationId: string - (optional) transaction id to trace execution through call chain.
-//
 //  args: run.Parameters - the parameters (arguments) to pass to this command for execution.
-//
-//Returns (interface{}, error)
+// Returns (interface{}, error)
 func (c *Command) Execute(correlationId string, args *run.Parameters) (interface{}, error) {
 	if c.schema != nil {
 		err := c.schema.ValidateAndReturnError(correlationId, args, false)
@@ -105,7 +102,7 @@ func (c *Command) Execute(correlationId string, args *run.Parameters) (interface
 			}
 		}()
 
-		return c.function(correlationId, args)
+		return c.action(correlationId, args)
 	}()
 
 	if err2 != nil {
@@ -115,12 +112,11 @@ func (c *Command) Execute(correlationId string, args *run.Parameters) (interface
 	return result, err
 }
 
+// Validates the command args before execution using the defined schema.
 //
-//Validates the command args before execution using the defined schema.
-//
-//Parameters:
+// Parameters:
 //  args: run.Parameters - the parameters (arguments) to validate using this command's schema.
-//  Returns []*validate.ValidationResult an array of ValidationResults or an empty array (if no schema is set).
+// Returns []*validate.ValidationResult an array of ValidationResults or an empty array (if no schema is set).
 func (c *Command) Validate(args *run.Parameters) []*validate.ValidationResult {
 	if c.schema != nil {
 		results := c.schema.Validate(args)

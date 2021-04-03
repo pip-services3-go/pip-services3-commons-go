@@ -13,10 +13,23 @@ func FromJson(value string) (interface{}, error) {
 	}
 
 	var m interface{}
-	if err := json.Unmarshal([]byte(value), &m); err != nil {
+	return FromJsonAs(m, value)
+}
+
+// Converts value from JSON string to an object with specified type
+// Parameters:
+//   result - a references to the object that will receive a converted value.
+//   value - the JSON string to convert.
+// Returns: converted object value or null when value is null.
+func FromJsonAs(result interface{}, value string) (interface{}, error) {
+	if value == "" {
+		return nil, nil
+	}
+
+	if err := json.Unmarshal([]byte(value), &result); err != nil {
 		return nil, err
 	}
-	return m, nil
+	return result, nil
 }
 
 // Converts value into JSON string.
@@ -63,12 +76,29 @@ func (c *TJsonConverter) ToMap(value string) map[string]interface{} {
 }
 
 // Converts JSON string into map object or returns default map when conversion is not possible.
-// Parameters: 
+// Parameters:
 //  "value" - the JSON string to convert.
 //  "defaultValue" - the default value.
 // Returns: Map object value or default map when conversion is not supported.
 func (c *TJsonConverter) ToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{} {
 	return JsonToMapWithDefault(value, defaultValue)
+}
+
+// Converts JSON string into an object.
+// Parameters: "value" - the JSON string to convert.
+// Returns: Map object value or empty map when conversion is not supported.
+func (c *TJsonConverter) ToObject(value string) interface{} {
+	result, _ := FromJson(value)
+	return result
+}
+
+// Converts JSON string into an object with specified type.
+// Parameters:
+//   result - a references to an object that will receive the result
+//   value - the JSON string to convert.
+// Returns: Map object value or empty map when conversion is not supported.
+func (c *TJsonConverter) ToObjectAs(result interface{}, value string) (interface{}, error) {
+	return FromJsonAs(result, value)
 }
 
 // Converts JSON string into map object or returns null when conversion is not possible.
@@ -90,7 +120,7 @@ func JsonToMap(value string) map[string]interface{} {
 }
 
 // Converts JSON string into map object or returns default map when conversion is not possible.
-// Parameters: 
+// Parameters:
 //  "value" - the JSON string to convert.
 //  "defaultValue" - the default value.
 // Returns: Map object value or default map when conversion is not supported.
