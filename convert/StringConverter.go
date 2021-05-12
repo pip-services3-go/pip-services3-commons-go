@@ -43,7 +43,7 @@ func (c *TStringConverter) ToString(value interface{}) string {
 }
 
 // Converts value into string or returns default when value is null.
-// Parameters: 
+// Parameters:
 //  "value" - the value to convert.
 //  "defaultValue" - the default value.
 // Returns: string value or default when value is null.
@@ -64,7 +64,11 @@ func ToNullableString(value interface{}) *string {
 		r := value.(string)
 		return &r
 
-	case byte, uint, uint32, uint64, int, int32, int64:
+	case uint, uint32, uint64:
+		r := strconv.FormatUint(ToULong(value), 10)
+		return &r
+
+	case byte, int, int32, int64:
 		r := strconv.FormatInt(ToLong(value), 10)
 		return &r
 
@@ -113,7 +117,7 @@ func ToString(value interface{}) string {
 }
 
 // Converts value into string or returns default when value is null.
-// Parameters: 
+// Parameters:
 //  "value" - the value to convert.
 //  "defaultValue" - the default value.
 // Returns: string value or default when value is null.

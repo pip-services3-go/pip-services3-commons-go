@@ -15,23 +15,29 @@ func TestStringValueMapNew(t *testing.T) {
 	value = data.NewStringValueMapFromValue(map[string]string{
 		"key1": "1",
 		"key2": "A",
+		"key3": "16030862614303175036",
 	})
 	assert.Equal(t, "1", value.Get("key1"))
 	assert.Equal(t, "A", value.Get("key2"))
+	assert.Equal(t, "16030862614303175036", value.Get("key3"))
 
 	value = data.NewStringValueMapFromMaps(map[string]string{
 		"key1": "1",
 		"key2": "A",
+		"key3": "16030862614303175036",
 	})
 	assert.Equal(t, "1", value.Get("key1"))
 	assert.Equal(t, "A", value.Get("key2"))
+	assert.Equal(t, "16030862614303175036", value.Get("key3"))
 
 	value = data.NewStringValueMapFromTuples(
 		"key1", "1",
 		"key2", "A",
+		"key3", "16030862614303175036",
 	)
 	assert.Equal(t, "1", value.Get("key1"))
 	assert.Equal(t, "A", value.Get("key2"))
+	assert.Equal(t, "16030862614303175036", value.Get("key3"))
 }
 
 func TestStringValueMapGetAndSet(t *testing.T) {
@@ -47,6 +53,9 @@ func TestStringValueMapGetAndSet(t *testing.T) {
 	assert.Equal(t, 1, value.GetAsInteger("key2"))
 	assert.True(t, 1.0-value.GetAsFloat("key2") < 0.001)
 	assert.Equal(t, "1", value.GetAsString("key2"))
+
+	value.Put("key3", "16030862614303175036")
+	assert.Equal(t, (uint64)(16030862614303175036), value.GetAsULong("key3"))
 
 	value.Remove("key2")
 	assert.Equal(t, "", value.GetAsObject("key2"))

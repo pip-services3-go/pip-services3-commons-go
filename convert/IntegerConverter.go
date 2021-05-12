@@ -33,8 +33,31 @@ func (c *TIntegerConverter) ToInteger(value interface{}) int {
 	return ToInteger(value)
 }
 
+// Converts value into unsigned integer or returns default when conversion is not possible.
+// Parameters:
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
+// Returns: integer value or default when conversion is not supported.
+func (c *TIntegerConverter) ToUIntegerWithDefault(value interface{}, defaultValue uint) uint {
+	return ToUIntegerWithDefault(value, defaultValue)
+}
+
+// Converts value into unsigned integer or returns null when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: integer value or null when conversion is not supported.
+func (c *TIntegerConverter) ToNullableUInteger(value interface{}) *uint {
+	return ToNullableUInteger(value)
+}
+
+// Converts value into unsigned integer or returns 0 when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: integer value or 0 when conversion is not supported.
+func (c *TIntegerConverter) ToUInteger(value interface{}) uint {
+	return ToUInteger(value)
+}
+
 // Converts value into integer or returns default when conversion is not possible.
-// Parameters: 
+// Parameters:
 //  "value" - the value to convert.
 //  "defaultValue" - the default value.
 // Returns: integer value or default when conversion is not supported.
@@ -62,12 +85,44 @@ func ToInteger(value interface{}) int {
 }
 
 // Converts value into integer or returns default when conversion is not possible.
-// Parameters: 
+// Parameters:
 //  "value" - the value to convert.
 //  "defaultValue" - the default value.
 // Returns: integer value or default when conversion is not supported.
 func ToIntegerWithDefault(value interface{}, defaultValue int) int {
 	r := ToNullableInteger(value)
+	if r == nil {
+		return defaultValue
+	}
+	return *r
+}
+
+// Converts value into unsigned integer or returns null when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: integer value or null when conversion is not supported.
+func ToNullableUInteger(value interface{}) *uint {
+	v := ToNullableULong(value)
+	if v == nil {
+		return nil
+	}
+	r := uint(*v)
+	return &r
+}
+
+// Converts value into unsigned integer or returns 0 when conversion is not possible.
+// Parameters: "value" - the value to convert
+// Returns: integer value or 0 when conversion is not supported.
+func ToUInteger(value interface{}) uint {
+	return ToUIntegerWithDefault(value, 0)
+}
+
+// Converts value into unsigned integer or returns default when conversion is not possible.
+// Parameters:
+//  "value" - the value to convert.
+//  "defaultValue" - the default value.
+// Returns: integer value or default when conversion is not supported.
+func ToUIntegerWithDefault(value interface{}, defaultValue uint) uint {
+	r := ToNullableUInteger(value)
 	if r == nil {
 		return defaultValue
 	}

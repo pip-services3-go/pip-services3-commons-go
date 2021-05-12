@@ -12,6 +12,7 @@ func TestToString(t *testing.T) {
 
 	assert.Equal(t, "xyz", convert.ToString("xyz"))
 	assert.Equal(t, "123", convert.ToString(123))
+	assert.Equal(t, "16030862614303175036", convert.ToString((uint64)(16030862614303175036)))
 	assert.Equal(t, "true", convert.ToString(true))
 
 	value := struct{ prop string }{"xyz"}

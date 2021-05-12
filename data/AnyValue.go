@@ -125,6 +125,19 @@ func (c *AnyValue) GetAsIntegerWithDefault(defaultValue int) int {
 	return convert.IntegerConverter.ToIntegerWithDefault(c.value, defaultValue)
 }
 
+// Converts object value into an unsigned integer or returns 0 if conversion is not possible.
+// Returns: unsigned integer value or 0 if conversion is not supported.
+func (c *AnyValue) GetAsUInteger() uint {
+	return c.GetAsUIntegerWithDefault(0)
+}
+
+// Converts object value into a unsigned integer or returns default value if conversion is not possible.
+// Parameters: "defaultValue" - the default value
+// Returns: unsigned integer value or default if conversion is not supported.
+func (c *AnyValue) GetAsUIntegerWithDefault(defaultValue uint) uint {
+	return convert.IntegerConverter.ToUIntegerWithDefault(c.value, defaultValue)
+}
+
 // Converts object value into a long or returns null if conversion is not possible.
 // Returns: long value or null if conversion is not supported.
 func (c *AnyValue) GetAsNullableLong() *int64 {
@@ -142,6 +155,19 @@ func (c *AnyValue) GetAsLong() int64 {
 // Returns: long value or default if conversion is not supported.
 func (c *AnyValue) GetAsLongWithDefault(defaultValue int64) int64 {
 	return convert.LongConverter.ToLongWithDefault(c.value, defaultValue)
+}
+
+// Converts object value into a unsiged long or returns 0 if conversion is not possible.
+// Returns: unsiged long value or 0 if conversion is not supported.
+func (c *AnyValue) GetAsULong() uint64 {
+	return c.GetAsULongWithDefault(0)
+}
+
+// Converts object value into a unsiged long or returns default value if conversion is not possible.
+// Parameters: "defaultValue" - the default value
+// Returns: unsiged long value or default if conversion is not supported.
+func (c *AnyValue) GetAsULongWithDefault(defaultValue uint64) uint64 {
+	return convert.LongConverter.ToULongWithDefault(c.value, defaultValue)
 }
 
 // Converts object value into a float or returns null if conversion is not possible.
