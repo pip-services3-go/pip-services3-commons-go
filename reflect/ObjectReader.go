@@ -1,8 +1,8 @@
 package reflect
 
 import (
+	"fmt"
 	refl "reflect"
-	"strconv"
 	"strings"
 
 	"github.com/pip-services3-go/pip-services3-commons-go/convert"
@@ -22,15 +22,15 @@ PropertyReflector
 
 Example:
  myObj := MyObject{}
- 
+
  properties := ObjectReader.GetPropertyNames()
  ObjectReader.HasProperty(myObj, "myProperty")
  value := PropertyReflector.GetProperty(myObj, "myProperty")
- 
+
  myMap := { key1: 123, key2: "ABC" }
  ObjectReader.HasProperty(myMap, "key1")
  value := ObjectReader.GetProperty(myMap, "key1")
- 
+
  myArray := [1, 2, 3]
  ObjectReader.HasProperty(myArrat, "0")
  value := ObjectReader.GetProperty(myArray, "0")
@@ -156,8 +156,9 @@ func (c *TObjectReader) GetPropertyNames(obj interface{}) []string {
 	}
 
 	if val.Kind() == refl.Slice || val.Kind() == refl.Array {
+		strFmt := c.GetStrIndexFormat(val.Len())
 		for index := 0; index < val.Len(); index++ {
-			properties = append(properties, strconv.Itoa(index))
+			properties = append(properties, fmt.Sprintf(strFmt, index))
 		}
 		return properties
 	}
@@ -190,11 +191,22 @@ func (c *TObjectReader) GetProperties(obj interface{}) map[string]interface{} {
 	}
 
 	if val.Kind() == refl.Slice || val.Kind() == refl.Array {
+		strFmt := c.GetStrIndexFormat(val.Len())
 		for index := 0; index < val.Len(); index++ {
-			values[strconv.Itoa(index)] = val.Index(index).Interface()
+			values[fmt.Sprintf(strFmt, index)] = val.Index(index).Interface()
 		}
 		return values
 	}
 
 	return PropertyReflector.GetProperties(obj)
+}
+
+func (c *TObjectReader) GetStrIndexFormat(len int) string {
+	count := 0
+	for len > 0 {
+		count++
+		len = len / 10
+	}
+
+	return fmt.Sprintf("%%0%dd", count)
 }
