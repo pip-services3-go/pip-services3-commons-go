@@ -1,24 +1,24 @@
 package test_reflect
 
 type RootClass struct {
-	rootPrivateField int
-	RootPublicField  string
-	rootProperty     bool
+	rootPrivateField int    `json:"root_private_field"`
+	RootPublicField  string `json:"root_public_field"`
+	rootProperty     bool   `json:"root_property"`
 }
 
 func (c *RootClass) RootMethod() {
 }
 
 type NestedClass struct {
-	PublicField int
+	PublicField int `json:"public_field"`
 }
 
 type TestClass struct {
 	RootClass
 
-	privateField int
-	PublicField  string
-	property     bool
+	privateField int    `json:"private_field"`
+	PublicField  string `json:"public_field"`
+	property     bool   `json:"property"`
 
 	NestedField *NestedClass
 }

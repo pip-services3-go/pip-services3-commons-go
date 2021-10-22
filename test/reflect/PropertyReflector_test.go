@@ -18,6 +18,15 @@ func TestReflectorHasProperty(t *testing.T) {
 	assert.True(t, reflect.PropertyReflector.HasProperty(obj, "NestedField"))
 	assert.True(t, reflect.PropertyReflector.HasProperty(obj, "RootPublicProperty"))
 	assert.True(t, reflect.PropertyReflector.HasProperty(obj, "PublicProperty"))
+
+	// check by names in tags
+	assert.False(t, reflect.PropertyReflector.HasProperty(obj, "root_private_field"))
+	//assert.True(t, reflect.PropertyReflector.HasProperty(obj, "RootPublicField"))
+	assert.False(t, reflect.PropertyReflector.HasProperty(obj, "private_field"))
+	assert.True(t, reflect.PropertyReflector.HasProperty(obj, "public_field"))
+	assert.False(t, reflect.PropertyReflector.HasProperty(obj, "nested_field"))
+	assert.False(t, reflect.PropertyReflector.HasProperty(obj, "root_public_property"))
+	assert.False(t, reflect.PropertyReflector.HasProperty(obj, "public_property"))
 }
 
 func TestReflectorGetProperty(t *testing.T) {
@@ -25,9 +34,11 @@ func TestReflectorGetProperty(t *testing.T) {
 
 	assert.Nil(t, reflect.PropertyReflector.GetProperty(obj, "123"))
 	assert.Nil(t, reflect.PropertyReflector.GetProperty(obj, "rootPrivateField"))
+	assert.Nil(t, reflect.PropertyReflector.GetProperty(obj, "root_private_field"))
 	//assert.Equal(t, "AAA", reflect.PropertyReflector.GetProperty(obj, "RootPublicField"))
 	assert.Nil(t, reflect.PropertyReflector.GetProperty(obj, "privateField"))
 	assert.Equal(t, "BBB", reflect.PropertyReflector.GetProperty(obj, "PublicField"))
+	assert.Equal(t, "BBB", reflect.PropertyReflector.GetProperty(obj, "public_field"))
 	assert.NotNil(t, reflect.PropertyReflector.GetProperty(obj, "NestedField"))
 	assert.Equal(t, true, reflect.PropertyReflector.GetProperty(obj, "RootPublicProperty"))
 	assert.Equal(t, true, reflect.PropertyReflector.GetProperty(obj, "PublicProperty"))
@@ -56,6 +67,9 @@ func TestReflectorSetProperty(t *testing.T) {
 	reflect.PropertyReflector.SetProperty(obj, "PublicField", "XYZ")
 	assert.Equal(t, "XYZ", reflect.PropertyReflector.GetProperty(obj, "PublicField"))
 
+	reflect.PropertyReflector.SetProperty(obj, "public_field", "CCC") // set over tag name
+	assert.Equal(t, "CCC", reflect.PropertyReflector.GetProperty(obj, "PublicField"))
+
 	assert.Equal(t, true, reflect.PropertyReflector.GetProperty(obj, "PublicProperty"))
 	reflect.PropertyReflector.SetProperty(obj, "PublicProperty", false)
 	assert.Equal(t, false, reflect.PropertyReflector.GetProperty(obj, "PublicProperty"))
@@ -75,4 +89,15 @@ func TestReflectorSetProperties(t *testing.T) {
 	reflect.PropertyReflector.SetProperties(obj, values)
 	assert.Equal(t, "XYZ", reflect.PropertyReflector.GetProperty(obj, "PublicField"))
 	assert.Equal(t, false, reflect.PropertyReflector.GetProperty(obj, "PublicProperty"))
+
+	values = map[string]interface{}{
+		"public_field":   "CCC",
+		"PublicProperty": true,
+	}
+
+	reflect.PropertyReflector.SetProperties(obj, values)
+
+	reflect.PropertyReflector.SetProperty(obj, "public_field", "CCC") // set over tag name
+	assert.Equal(t, "CCC", reflect.PropertyReflector.GetProperty(obj, "PublicField"))
+	assert.Equal(t, true, reflect.PropertyReflector.GetProperty(obj, "PublicProperty"))
 }
