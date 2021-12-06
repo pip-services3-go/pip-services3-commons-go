@@ -66,4 +66,7 @@ func TestToTypeWithDefault(t *testing.T) {
 		convert.TypeConverter.ToTypeWithDefault(convert.DateTime, "1975-04-08T17:30:00.00Z", time.Time{}))
 	assert.Equal(t, 1, len(convert.TypeConverter.ToTypeWithDefault(convert.Array, 123, []interface{}{}).([]interface{})))
 	//assert.Equal(t, 1, convert.TypeConverter.ToTypeWithDefault<any>(convert.Map, StringValueMap.fromString("abc=123"), null)).length)
+
+	assert.Equal(t, convert.DateTimeConverter.ToDateTime("1975-04-08T17:30:00.00Z"),
+		convert.TypeConverter.ToTypeWithDefault(convert.DateTime, "1975-04-08T17:30:00.00Z", nil))
 }

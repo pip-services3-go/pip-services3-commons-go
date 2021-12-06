@@ -246,25 +246,35 @@ func ToTypeWithDefault(typ TypeCode, value interface{}, defaultValue interface{}
 
 	// Convert to known types
 	if typ == String {
-		return ToStringWithDefault(value, defaultValue.(string))
+		val, _ := defaultValue.(string)
+		return ToStringWithDefault(value, val)
 	} else if typ == Boolean {
-		return BooleanConverter.ToBooleanWithDefault(value, defaultValue.(bool))
+		val, _ := defaultValue.(bool)
+		return BooleanConverter.ToBooleanWithDefault(value, val)
 	} else if typ == Integer {
-		return IntegerConverter.ToIntegerWithDefault(value, defaultValue.(int))
+		val, _ := defaultValue.(int)
+		return IntegerConverter.ToIntegerWithDefault(value, val)
 	} else if typ == Long {
-		return LongConverter.ToLongWithDefault(value, defaultValue.(int64))
+		val, _ := defaultValue.(int64)
+		return LongConverter.ToLongWithDefault(value, val)
 	} else if typ == Float {
-		return FloatConverter.ToFloatWithDefault(value, defaultValue.(float32))
+		val, _ := defaultValue.(float32)
+		return FloatConverter.ToFloatWithDefault(value, val)
 	} else if typ == Double {
-		return DoubleConverter.ToDoubleWithDefault(value, defaultValue.(float64))
+		val, _ := defaultValue.(float64)
+		return DoubleConverter.ToDoubleWithDefault(value, val)
 	} else if typ == DateTime {
-		return DateTimeConverter.ToDateTimeWithDefault(value, defaultValue.(time.Time))
+		val, _ := defaultValue.(time.Time)
+		return DateTimeConverter.ToDateTimeWithDefault(value, val)
 	} else if typ == Duration {
-		return DurationConverter.ToDurationWithDefault(value, defaultValue.(time.Duration))
+		val, _ := defaultValue.(time.Duration)
+		return DurationConverter.ToDurationWithDefault(value, val)
 	} else if typ == Array {
-		return ArrayConverter.ToArrayWithDefault(value, defaultValue.([]interface{}))
+		val, _ := defaultValue.([]interface{})
+		return ArrayConverter.ToArrayWithDefault(value, val)
 	} else if typ == Map {
-		return MapConverter.ToMapWithDefault(value, defaultValue.(map[string]interface{}))
+		val, _ := defaultValue.(map[string]interface{})
+		return MapConverter.ToMapWithDefault(value, val)
 	} else {
 		return defaultValue
 	}

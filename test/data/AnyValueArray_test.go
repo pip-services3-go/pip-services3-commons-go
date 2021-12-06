@@ -25,4 +25,8 @@ func TestAnyValueArrayCreate(t *testing.T) {
 	array = data.NewAnyValueArrayFromValue([]interface{}{1, 2, 3})
 	assert.Equal(t, 3, array.Len())
 	assert.Equal(t, int64(1), array.Get(0))
+
+	array2 := data.NewAnyValueArray([]interface{}{1, map[string]interface{}{"number": "123.456"}, "2018-01-01"})
+	value2 := array2.GetAsMapWithDefault(1, data.NewAnyValueMap(map[string]interface{}{"key1": 1}))
+	assert.Equal(t, value2.GetAsString("number"), "123.456")
 }

@@ -707,7 +707,7 @@ func (c *AnyValueArray) GetAsMap(index int) *AnyValueMap {
 func (c *AnyValueArray) GetAsMapWithDefault(index int, defaultValue *AnyValueMap) *AnyValueMap {
 	result := c.GetAsNullableMap(index)
 	if result != nil {
-		return NewAnyValueMapFromValue(result)
+		return NewAnyValueMapFromValue(result.value)
 	} else {
 		return defaultValue
 	}
