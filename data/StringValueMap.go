@@ -81,7 +81,10 @@ func (c *StringValueMap) Value() map[string]string {
 // Returns string
 // the value of the map element.
 func (c *StringValueMap) Get(key string) string {
-	return c.value[key]
+	if value, ok := c.value[key]; ok {
+		return value
+	}
+	return ""
 }
 
 // Gets keys of all elements stored in this map.
@@ -217,8 +220,10 @@ func (c *StringValueMap) SetAsObject(key string, value interface{}) {
 // Returns *string
 // string value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableString(key string) *string {
-	value := c.Get(key)
-	return convert.StringConverter.ToNullableString(value)
+	if value, ok := c.value[key]; ok {
+		return convert.StringConverter.ToNullableString(value)
+	}
+	return nil
 }
 
 // Converts map element into a string or returns "" if conversion is not possible.
@@ -263,8 +268,10 @@ func (c *StringValueMap) GetAsStringWithDefault(key string, defaultValue string)
 // Returns *bool
 // boolean value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableBoolean(key string) *bool {
-	value := c.Get(key)
-	return convert.BooleanConverter.ToNullableBoolean(value)
+	if value, ok := c.value[key]; ok {
+		return convert.BooleanConverter.ToNullableBoolean(value)
+	}
+	return nil
 }
 
 // Converts map element into a boolean or returns false if conversion is not possible.
@@ -303,8 +310,10 @@ func (c *StringValueMap) GetAsBooleanWithDefault(key string, defaultValue bool) 
 // Returns *int
 // integer value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableInteger(key string) *int {
-	value := c.Get(key)
-	return convert.IntegerConverter.ToNullableInteger(value)
+	if value, ok := c.value[key]; ok {
+		return convert.IntegerConverter.ToNullableInteger(value)
+	}
+	return nil
 }
 
 // Converts map element into an integer or returns 0 if conversion is not possible.
@@ -342,8 +351,10 @@ func (c *StringValueMap) GetAsIntegerWithDefault(key string, defaultValue int) i
 // Returns *int
 // integer value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableUInteger(key string) *uint {
-	value := c.Get(key)
-	return convert.IntegerConverter.ToNullableUInteger(value)
+	if value, ok := c.value[key]; ok {
+		return convert.IntegerConverter.ToNullableUInteger(value)
+	}
+	return nil
 }
 
 // Converts map element into an unsigned integer or returns 0 if conversion is not possible.
@@ -381,8 +392,10 @@ func (c *StringValueMap) GetAsUIntegerWithDefault(key string, defaultValue uint)
 // Returns *int64
 // int64 value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableLong(key string) *int64 {
-	value := c.Get(key)
-	return convert.LongConverter.ToNullableLong(value)
+	if value, ok := c.value[key]; ok {
+		return convert.LongConverter.ToNullableLong(value)
+	}
+	return nil
 }
 
 // Converts map element into a uint64 or returns 0 if conversion is not possible.
@@ -421,8 +434,10 @@ func (c *StringValueMap) GetAsLongWithDefault(key string, defaultValue int64) in
 // Returns *uint64
 // int64 value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableULong(key string) *uint64 {
-	value := c.Get(key)
-	return convert.LongConverter.ToNullableULong(value)
+	if value, ok := c.value[key]; ok {
+		return convert.LongConverter.ToNullableULong(value)
+	}
+	return nil
 }
 
 // Converts map element into a uint64 or returns 0 if conversion is not possible.
@@ -461,8 +476,10 @@ func (c *StringValueMap) GetAsULongWithDefault(key string, defaultValue uint64) 
 // Returns *float32
 // float32 value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableFloat(key string) *float32 {
-	value := c.Get(key)
-	return convert.FloatConverter.ToNullableFloat(value)
+	if value, ok := c.value[key]; ok {
+		return convert.FloatConverter.ToNullableFloat(value)
+	}
+	return nil
 }
 
 // Converts map element into a float32 or returns 0 if conversion is not possible.
@@ -501,8 +518,10 @@ func (c *StringValueMap) GetAsFloatWithDefault(key string, defaultValue float32)
 // Returns *float64
 // float64 value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableDouble(key string) *float64 {
-	value := c.Get(key)
-	return convert.DoubleConverter.ToNullableDouble(value)
+	if value, ok := c.value[key]; ok {
+		return convert.DoubleConverter.ToNullableDouble(value)
+	}
+	return nil
 }
 
 // Converts map element into a float64 or returns 0 if conversion is not possible.
@@ -541,8 +560,10 @@ func (c *StringValueMap) GetAsDoubleWithDefault(key string, defaultValue float64
 // Returns time.Time
 // time.Time value of the element or null if conversion is not supported.
 func (c *StringValueMap) GetAsNullableDateTime(key string) *time.Time {
-	value := c.Get(key)
-	return convert.DateTimeConverter.ToNullableDateTime(value)
+	if value, ok := c.value[key]; ok {
+		return convert.DateTimeConverter.ToNullableDateTime(value)
+	}
+	return nil
 }
 
 // Converts map element into a time.Time or returns the current date if conversion is not possible.
