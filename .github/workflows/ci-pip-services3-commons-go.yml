@@ -26,6 +26,14 @@ jobs:
 
     ############# Release #############
 
+    - name: Delete existing tag
+      uses: dev-drprasad/delete-tag-and-release@v0.1.2
+      with:
+        delete_release: true
+        tag_name: "v${{ steps.build_info.outputs.component_version }}-${{ steps.build_info.outputs.build_number }}"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Tag branch with the build number
       uses: tvdias/github-tagger@v0.0.1
       with:
@@ -54,4 +62,3 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-s3-bucket: ${{ secrets.AWS_S3_BUCKET }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
-    
