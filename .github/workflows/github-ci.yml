@@ -86,7 +86,7 @@ jobs:
 
   # Measure job
   measure:
-    needs: release
+    needs: authoring
     if: always()
     runs-on: ubuntu-18.04
 
