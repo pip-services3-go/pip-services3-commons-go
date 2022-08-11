@@ -1,10 +1,8 @@
 version: '3.3'
 
 services:
-
   test:
+    image: ${IMAGE:-test}
     build:
       context: ..
       dockerfile: docker/Dockerfile.test
-    image: ${IMAGE:-pip/test}
-    command: ${TEST_CMD:-go test ./test/...}
