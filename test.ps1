@@ -10,6 +10,20 @@ $testImage = "$($component.registry)/$($component.name):$($component.version)-$(
 # Set environment variables
 $env:IMAGE = $testImage
 
+# Copy private keys to access git repo
+if (-not (Test-Path -Path "$PSScriptRoot/docker/id_rsa")) {
+    if (-not [string]::IsNullOrEmpty($env:GIT_PRIVATE_KEY)) {
+        Write-Host "Creating docker/id_rsa from environment variable..."
+        Set-Content -Path "$PSScriptRoot/docker/id_rsa" -Value $env:GIT_PRIVATE_KEY
+    } elseif (Test-Path -Path "~/.ssh/id_rsa") {
+        Write-Host "Copying ~/.ssh/id_rsa to docker..."
+        Copy-Item -Path "~/.ssh/id_rsa" -Destination "docker"
+    } else {
+        Write-Host "Missing ~/.ssh/id_rsa file..."
+        Set-Content -Path "$PSScriptRoot/docker/id_rsa" -Value ""
+    }
+}
+
 try {
     # Workaround to remove dangling images
     docker-compose -f "$PSScriptRoot/docker/docker-compose.test.yml" down
