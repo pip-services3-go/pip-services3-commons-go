@@ -3,7 +3,7 @@ FROM golang:1.13
 
 # Set environment variables
 ENV GO111MODULE=on \
-    GOPRIVATE=github.com/organiztion/*
+    GOPRIVATE=github.com/pip-services3-go/*
 
 # Get the source from GitHub
 RUN go get -u go101.org/golds/gold

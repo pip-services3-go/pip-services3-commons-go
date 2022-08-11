@@ -6,7 +6,7 @@ ENV GO111MODULE=on \
     CGO_ENABLED=0 \
     GOOS=linux \
     GOARCH=amd64 \
-    GOPRIVATE=github.com/nov-pocs/*
+    GOPRIVATE=github.com/pip-services3-go/*
 
 # Copy local ssh keys
 COPY docker/id_rsa /root/.ssh/
