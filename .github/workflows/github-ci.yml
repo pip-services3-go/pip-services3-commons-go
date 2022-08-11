@@ -59,9 +59,6 @@ jobs:
     - name: Execute build script
       shell: bash
       run: script-delivery-ps/authoring/build/build.ps1
-      env:
-        GIT_PRIVATE_KEY: ${{ secrets.GIT_PRIVATE_KEY }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Execute test script
       shell: bash
