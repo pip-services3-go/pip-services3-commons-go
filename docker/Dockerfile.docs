@@ -1,18 +1,14 @@
-# Dockerfile for gRPC Go
 FROM golang:1.13
 
-# Set environment variables
-ENV GO111MODULE=on \
-    GOPRIVATE=github.com/pip-services3-go/*
+# Set environment variables for Go
+ENV GO111MODULE=on
 
-# Get the source from GitHub
-RUN go get -u go101.org/golds/gold
+WORKDIR /app
 
-# Set working directory
-WORKDIR /go/app
+RUN go install golang.org/x/tools/cmd/godoc
 
-# Copy project
-COPY . .
+WORKDIR /app
 
-# Generate docs
-RUN gold -gen -nouses -dir=docs -emphasize-wdpkgs ./..
+COPY . ./src
+
+ENTRYPOINT godoc -http=0.0.0.0:6060 -v -goroot=. 

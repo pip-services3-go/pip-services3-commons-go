@@ -3,37 +3,37 @@
 Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
 
-# Generate image and container names using the data in the "$PSScriptRoot/component.json" file
+# Generate image and container names using the data in the "component.json" file
 $component = Get-Content -Path "$PSScriptRoot/component.json" | ConvertFrom-Json
 
-$docImage = "$($component.registry)/$($component.name):$($component.version)-$($component.build)-docs"
-$container = $component.name
+$docImage="$($component.registry)/$($component.name):$($component.version)-$($component.build)-docs"
+$container=$component.name
 
 # Remove build files
 if (Test-Path "$PSScriptRoot/docs") {
     Remove-Item -Recurse -Force -Path "$PSScriptRoot/docs/*"
 } else {
-    New-Item -ItemType Directory -Force -Path "$PSScriptRoot/docs"
-}
-
-# Copy private keys to access git repo
-if (-not (Test-Path -Path "$PSScriptRoot/docker/id_rsa")) {
-    if ($env:GIT_PRIVATE_KEY -ne $null) {
-        Set-Content -Path "$PSScriptRoot/docker/id_rsa" -Value $env:GIT_PRIVATE_KEY
-    } else {
-        Copy-Item -Path "~/.ssh/id_rsa" -Destination "$PSScriptRoot/docker"
-    }
+    $null = New-Item -ItemType Directory -Force -Path "$PSScriptRoot/docs"
 }
 
 # Build docker image
-docker build -f "$PSScriptRoot/docker/Dockerfile.docs" -t $docImage .
+docker build -f "$PSScriptRoot/docker/Dockerfile.docs" -t $docImage "$PSScriptRoot/."
 
-# Create and copy compiled files, then destroy the container
-docker create --name $container $docImage
-docker cp "$($container):/go/eic/docs" "$PSScriptRoot/"
-docker rm $container
+# Run docgen container
+docker run -d --name $container $docImage
+# Wait it to start
+Start-Sleep -Seconds 2
+# Generate docs
+docker exec -ti $container /bin/bash -c "wget -r -np -N -E -p -k http://localhost:6060/pkg/"
+# Copy docs from container
+docker cp "$($container):/app/localhost:6060/pkg" "$PSScriptRoot/docs/pkg"
+docker cp "$($container):/app/localhost:6060/lib" "$PSScriptRoot/docs/lib"
+# Remove docgen container
+docker rm $container --force
 
-# Verify that docs folder was indeed created after generating documentation
+Write-Output "<head><meta http-equiv='refresh' content='0; URL=./pkg/index.html'></head>" > "$PSScriptRoot/docs/index.html"
+
+# Verify docs 
 if (-not (Test-Path "$PSScriptRoot/docs")) {
-    Write-Error "docs folder doesn't exist in root dir. Build failed. See logs above for more information."
+    Write-Error "docs folder doesn't exist in root dir. Watch logs above."
 }
