@@ -14,7 +14,7 @@
 
 
 
-<script>var goVersion = "go1.13.15";</script>
+<script>var goVersion = "go1.16.15";</script>
 <script src="../../lib/godoc/godocs.js" defer></script>
 </head>
 <body>
@@ -545,7 +545,7 @@
 		
 			
 			
-			<h2 id="NewValidationError">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=592:707#L14">NewValidationError</a>
+			<h2 id="NewValidationError">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=615:730#L14">NewValidationError</a>
 				<a class="permalink" href="index.html#NewValidationError">&#xb6;</a>
 				
 				
@@ -573,7 +573,7 @@ Returns *errors.ApplicationError
 		
 			
 			
-			<h2 id="NewValidationErrorFromResults">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=2163:2286#L71">NewValidationErrorFromResults</a>
+			<h2 id="NewValidationErrorFromResults">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=2243:2366#L71">NewValidationErrorFromResults</a>
 				<a class="permalink" href="index.html#NewValidationErrorFromResults">&#xb6;</a>
 				
 				
@@ -603,7 +603,7 @@ a newly created ValidationException or null if no errors in found.
 		
 			
 			
-			<h2 id="ThrowValidationErrorIfNeeded">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=2998:3095#L103">ThrowValidationErrorIfNeeded</a>
+			<h2 id="ThrowValidationErrorIfNeeded">func <a href="http://localhost:6060/src/validate/ValidationException.go?s=3110:3207#L103">ThrowValidationErrorIfNeeded</a>
 				<a class="permalink" href="index.html#ThrowValidationErrorIfNeeded">&#xb6;</a>
 				
 				
@@ -632,7 +632,7 @@ true to treat warnings as errors.
 		
 			
 			
-			<h2 id="AndRule">type <a href="http://localhost:6060/src/validate/AndRule.go?s=579:627#L8">AndRule</a>
+			<h2 id="AndRule">type <a href="http://localhost:6060/src/validate/AndRule.go?s=596:646#L8">AndRule</a>
 				<a class="permalink" href="index.html#AndRule">&#xb6;</a>
 				
 				
@@ -670,7 +670,7 @@ schema.Validate(20);         // Result: 20 must be letter or equal 10
 
 			
 				
-				<h3 id="NewAndRule">func <a href="http://localhost:6060/src/validate/AndRule.go?s=795:845#L17">NewAndRule</a>
+				<h3 id="NewAndRule">func <a href="http://localhost:6060/src/validate/AndRule.go?s=821:871#L17">NewAndRule</a>
 					<a class="permalink" href="index.html#NewAndRule">&#xb6;</a>
 					
 					
@@ -693,7 +693,7 @@ Returns *AndRule
 
 			
 				
-				<h3 id="AndRule.Validate">func (*AndRule) <a href="http://localhost:6060/src/validate/AndRule.go?s=1201:1295#L33">Validate</a>
+				<h3 id="AndRule.Validate">func (*AndRule) <a href="http://localhost:6060/src/validate/AndRule.go?s=1243:1337#L33">Validate</a>
 					<a class="permalink" href="index.html#AndRule.Validate">&#xb6;</a>
 					
 					
@@ -722,7 +722,7 @@ a list with validation results to add new results.
 		
 			
 			
-			<h2 id="ArraySchema">type <a href="http://localhost:6060/src/validate/ArraySchema.go?s=468:526#L11">ArraySchema</a>
+			<h2 id="ArraySchema">type <a href="http://localhost:6060/src/validate/ArraySchema.go?s=488:549#L11">ArraySchema</a>
 				<a class="permalink" href="index.html#ArraySchema">&#xb6;</a>
 				
 				
@@ -756,7 +756,7 @@ schema.Validate(&#34;A&#34;);                // Result: type mismatch
 
 			
 				
-				<h3 id="NewArraySchema">func <a href="http://localhost:6060/src/validate/ArraySchema.go?s=757:812#L24">NewArraySchema</a>
+				<h3 id="NewArraySchema">func <a href="http://localhost:6060/src/validate/ArraySchema.go?s=790:845#L24">NewArraySchema</a>
 					<a class="permalink" href="index.html#NewArraySchema">&#xb6;</a>
 					
 					
@@ -770,7 +770,7 @@ Returns *ArraySchema
 				
 			
 				
-				<h3 id="NewProjectionParamsSchema">func <a href="http://localhost:6060/src/validate/ProjectionParamsSchema.go?s=203:248#L1">NewProjectionParamsSchema</a>
+				<h3 id="NewProjectionParamsSchema">func <a href="http://localhost:6060/src/validate/ProjectionParamsSchema.go?s=212:257#L1">NewProjectionParamsSchema</a>
 					<a class="permalink" href="index.html#NewProjectionParamsSchema">&#xb6;</a>
 					
 					
@@ -787,7 +787,7 @@ Returns *ArraySchema
 
 			
 				
-				<h3 id="ArraySchema.PerformValidation">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1621:1712#L55">PerformValidation</a>
+				<h3 id="ArraySchema.PerformValidation">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1685:1776#L55">PerformValidation</a>
 					<a class="permalink" href="index.html#ArraySchema.PerformValidation">&#xb6;</a>
 					
 					
@@ -812,7 +812,7 @@ a list with validation results to add new results.
 				
 			
 				
-				<h3 id="ArraySchema.SetValueType">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1254:1307#L43">SetValueType</a>
+				<h3 id="ArraySchema.SetValueType">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1306:1359#L43">SetValueType</a>
 					<a class="permalink" href="index.html#ArraySchema.SetValueType">&#xb6;</a>
 					
 					
@@ -830,7 +830,7 @@ a type of array elements.
 				
 			
 				
-				<h3 id="ArraySchema.ValueType">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1039:1084#L35">ValueType</a>
+				<h3 id="ArraySchema.ValueType">func (*ArraySchema) <a href="http://localhost:6060/src/validate/ArraySchema.go?s=1083:1128#L35">ValueType</a>
 					<a class="permalink" href="index.html#ArraySchema.ValueType">&#xb6;</a>
 					
 					
@@ -849,7 +849,7 @@ the type of array elements.
 		
 			
 			
-			<h2 id="AtLeastOneExistsRule">type <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=568:625#L13">AtLeastOneExistsRule</a>
+			<h2 id="AtLeastOneExistsRule">type <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=590:649#L13">AtLeastOneExistsRule</a>
 				<a class="permalink" href="index.html#AtLeastOneExistsRule">&#xb6;</a>
 				
 				
@@ -887,7 +887,7 @@ schema.Validate({ });                            // Result: at least one of prop
 
 			
 				
-				<h3 id="NewAtLeastOneExistsRule">func <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=821:893#L22">NewAtLeastOneExistsRule</a>
+				<h3 id="NewAtLeastOneExistsRule">func <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=852:924#L22">NewAtLeastOneExistsRule</a>
 					<a class="permalink" href="index.html#NewAtLeastOneExistsRule">&#xb6;</a>
 					
 					
@@ -910,7 +910,7 @@ Returns *AtLeastOneExistsRule
 
 			
 				
-				<h3 id="AtLeastOneExistsRule.Validate">func (*AtLeastOneExistsRule) <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=1272:1379#L38">Validate</a>
+				<h3 id="AtLeastOneExistsRule.Validate">func (*AtLeastOneExistsRule) <a href="http://localhost:6060/src/validate/AtLeastOneExistsRule.go?s=1319:1426#L38">Validate</a>
 					<a class="permalink" href="index.html#AtLeastOneExistsRule.Validate">&#xb6;</a>
 					
 					
@@ -939,7 +939,7 @@ a list with validation results to add new results.
 		
 			
 			
-			<h2 id="ExcludedRule">type <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=399:449#L12">ExcludedRule</a>
+			<h2 id="ExcludedRule">type <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=420:472#L12">ExcludedRule</a>
 				<a class="permalink" href="index.html#ExcludedRule">&#xb6;</a>
 				
 				
@@ -976,7 +976,7 @@ schema.Validate(10);     // Result: no errors
 
 			
 				
-				<h3 id="NewExcludedRule">func <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=628:685#L21">NewExcludedRule</a>
+				<h3 id="NewExcludedRule">func <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=658:715#L21">NewExcludedRule</a>
 					<a class="permalink" href="index.html#NewExcludedRule">&#xb6;</a>
 					
 					
@@ -999,7 +999,7 @@ Returns *ExcludedRule
 
 			
 				
-				<h3 id="ExcludedRule.Validate">func (*ExcludedRule) <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=1162:1261#L37">Validate</a>
+				<h3 id="ExcludedRule.Validate">func (*ExcludedRule) <a href="http://localhost:6060/src/validate/ExcludedRule.go?s=1208:1307#L37">Validate</a>
 					<a class="permalink" href="index.html#ExcludedRule.Validate">&#xb6;</a>
 					
 					
@@ -1028,7 +1028,7 @@ the results of the validation.
 		
 			
 			
-			<h2 id="ISchema">type <a href="http://localhost:6060/src/validate/ISchema.go?s=122:377#L1">ISchema</a>
+			<h2 id="ISchema">type <a href="http://localhost:6060/src/validate/ISchema.go?s=129:388#L1">ISchema</a>
 				<a class="permalink" href="index.html#ISchema">&#xb6;</a>
 				
 				
@@ -1057,7 +1057,7 @@ Validation schema interface
 		
 			
 			
-			<h2 id="ISchemaBase">type <a href="http://localhost:6060/src/validate/ISchemaBase.go?s=18:119#L1">ISchemaBase</a>
+			<h2 id="ISchemaBase">type <a href="http://localhost:6060/src/validate/ISchemaBase.go?s=20:123#L1">ISchemaBase</a>
 				<a class="permalink" href="index.html#ISchemaBase">&#xb6;</a>
 				
 				
@@ -1081,7 +1081,7 @@ Validation schema interface
 		
 			
 			
-			<h2 id="IValidationRule">type <a href="http://localhost:6060/src/validate/IValidationRule.go?s=285:723#L1">IValidationRule</a>
+			<h2 id="IValidationRule">type <a href="http://localhost:6060/src/validate/IValidationRule.go?s=294:744#L1">IValidationRule</a>
 				<a class="permalink" href="index.html#IValidationRule">&#xb6;</a>
 				
 				
@@ -1124,7 +1124,7 @@ This interface allows to implement custom rules.
 		
 			
 			
-			<h2 id="IncludedRule">type <a href="http://localhost:6060/src/validate/IncludedRule.go?s=398:448#L12">IncludedRule</a>
+			<h2 id="IncludedRule">type <a href="http://localhost:6060/src/validate/IncludedRule.go?s=419:471#L12">IncludedRule</a>
 				<a class="permalink" href="index.html#IncludedRule">&#xb6;</a>
 				
 				
@@ -1161,7 +1161,7 @@ schema.Validate(10);     // Result: 10 must be one of 1, 2, 3
 
 			
 				
-				<h3 id="NewIncludedRule">func <a href="http://localhost:6060/src/validate/IncludedRule.go?s=632:689#L21">NewIncludedRule</a>
+				<h3 id="NewIncludedRule">func <a href="http://localhost:6060/src/validate/IncludedRule.go?s=662:719#L21">NewIncludedRule</a>
 					<a class="permalink" href="index.html#NewIncludedRule">&#xb6;</a>
 					
 					
@@ -1184,7 +1184,7 @@ Returns *IncludedRule
 
 			
 				
-				<h3 id="IncludedRule.Validate">func (*IncludedRule) <a href="http://localhost:6060/src/validate/IncludedRule.go?s=1067:1166#L37">Validate</a>
+				<h3 id="IncludedRule.Validate">func (*IncludedRule) <a href="http://localhost:6060/src/validate/IncludedRule.go?s=1113:1212#L37">Validate</a>
 					<a class="permalink" href="index.html#IncludedRule.Validate">&#xb6;</a>
 					
 					
@@ -1213,7 +1213,7 @@ a list with validation results to add new results.
 		
 			
 			
-			<h2 id="MapSchema">type <a href="http://localhost:6060/src/validate/MapSchema.go?s=521:600#L10">MapSchema</a>
+			<h2 id="MapSchema">type <a href="http://localhost:6060/src/validate/MapSchema.go?s=540:623#L10">MapSchema</a>
 				<a class="permalink" href="index.html#MapSchema">&#xb6;</a>
 				
 				
@@ -1247,7 +1247,7 @@ schema.Validate([ 1, 2, 3 ]);                        // Result: type mismatch
 
 			
 				
-				<h3 id="NewFilterParamsSchema">func <a href="http://localhost:6060/src/validate/FilterParamsSchema.go?s=198:237#L1">NewFilterParamsSchema</a>
+				<h3 id="NewFilterParamsSchema">func <a href="http://localhost:6060/src/validate/FilterParamsSchema.go?s=207:246#L1">NewFilterParamsSchema</a>
 					<a class="permalink" href="index.html#NewFilterParamsSchema">&#xb6;</a>
 					
 					
@@ -1262,7 +1262,7 @@ Returns *MapSchema
 				
 			
 				
-				<h3 id="NewMapSchema">func <a href="http://localhost:6060/src/validate/MapSchema.go?s=946:1018#L27">NewMapSchema</a>
+				<h3 id="NewMapSchema">func <a href="http://localhost:6060/src/validate/MapSchema.go?s=982:1054#L27">NewMapSchema</a>
 					<a class="permalink" href="index.html#NewMapSchema">&#xb6;</a>
 					
 					
@@ -1289,7 +1289,7 @@ Returns *MapSchema
 				
 			
 				
-				<h3 id="NewMapSchemaWithRules">func <a href="http://localhost:6060/src/validate/MapSchema.go?s=1624:1745#L51">NewMapSchemaWithRules</a>
+				<h3 id="NewMapSchemaWithRules">func <a href="http://localhost:6060/src/validate/MapSchema.go?s=1684:1805#L51">NewMapSchemaWithRules</a>
 					<a class="permalink" href="index.html#NewMapSchemaWithRules">&#xb6;</a>
 					
 					
@@ -1322,7 +1322,7 @@ Returns *MapSchema
 
 			
 				
-				<h3 id="MapSchema.KeyType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2002:2043#L63">KeyType</a>
+				<h3 id="MapSchema.KeyType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2074:2115#L63">KeyType</a>
 					<a class="permalink" href="index.html#MapSchema.KeyType">&#xb6;</a>
 					
 					
@@ -1339,7 +1339,7 @@ the type of map keys.
 				
 			
 				
-				<h3 id="MapSchema.PerformValidation">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2995:3084#L98">PerformValidation</a>
+				<h3 id="MapSchema.PerformValidation">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=3102:3191#L98">PerformValidation</a>
 					<a class="permalink" href="index.html#MapSchema.PerformValidation">&#xb6;</a>
 					
 					
@@ -1364,7 +1364,7 @@ a list with validation results to add new results.
 				
 			
 				
-				<h3 id="MapSchema.SetKeyType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2204:2253#L71">SetKeyType</a>
+				<h3 id="MapSchema.SetKeyType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2284:2333#L71">SetKeyType</a>
 					<a class="permalink" href="index.html#MapSchema.SetKeyType">&#xb6;</a>
 					
 					
@@ -1383,7 +1383,7 @@ a type of map keys.
 				
 			
 				
-				<h3 id="MapSchema.SetValueType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2614:2665#L86">SetValueType</a>
+				<h3 id="MapSchema.SetValueType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2709:2760#L86">SetValueType</a>
 					<a class="permalink" href="index.html#MapSchema.SetValueType">&#xb6;</a>
 					
 					
@@ -1402,7 +1402,7 @@ a type of map values.
 				
 			
 				
-				<h3 id="MapSchema.ValueType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2402:2445#L78">ValueType</a>
+				<h3 id="MapSchema.ValueType">func (*MapSchema) <a href="http://localhost:6060/src/validate/MapSchema.go?s=2489:2532#L78">ValueType</a>
 					<a class="permalink" href="index.html#MapSchema.ValueType">&#xb6;</a>
 					
 					
@@ -1421,7 +1421,7 @@ the type of map values.
 		
 			
 			
-			<h2 id="NotRule">type <a href="http://localhost:6060/src/validate/NotRule.go?s=430:475#L8">NotRule</a>
+			<h2 id="NotRule">type <a href="http://localhost:6060/src/validate/NotRule.go?s=447:494#L8">NotRule</a>
 				<a class="permalink" href="index.html#NotRule">&#xb6;</a>
 				
 				
@@ -1460,7 +1460,7 @@ schema.Validate(5);          // Result: no error
 
 			
 				
-				<h3 id="NewNotRule">func <a href="http://localhost:6060/src/validate/NotRule.go?s=618:664#L17">NewNotRule</a>
+				<h3 id="NewNotRule">func <a href="http://localhost:6060/src/validate/NotRule.go?s=644:690#L17">NewNotRule</a>
 					<a class="permalink" href="index.html#NewNotRule">&#xb6;</a>
 					
 					
@@ -1483,7 +1483,7 @@ Returns *NotRule
 
 			
 				
-				<h3 id="NotRule.Validate">func (*NotRule) <a href="http://localhost:6060/src/validate/NotRule.go?s=1019:1113#L33">Validate</a>
+				<h3 id="NotRule.Validate">func (*NotRule) <a href="http://localhost:6060/src/validate/NotRule.go?s=1061:1155#L33">Validate</a>
 					<a class="permalink" href="index.html#NotRule.Validate">&#xb6;</a>
 					
 					
@@ -1512,7 +1512,7 @@ a list with validation results to add new results.
 		
 			
 			
-			<h2 id="ObjectSchema">type <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=724:815#L13">ObjectSchema</a>
+			<h2 id="ObjectSchema">type <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=746:841#L13">ObjectSchema</a>
 				<a class="permalink" href="index.html#ObjectSchema">&#xb6;</a>
 				
 				
@@ -1550,7 +1550,7 @@ a list with validation results to add new results.
 
 			
 				
-				<h3 id="NewObjectSchema">func <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=898:934#L21">NewObjectSchema</a>
+				<h3 id="NewObjectSchema">func <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=928:964#L21">NewObjectSchema</a>
 					<a class="permalink" href="index.html#NewObjectSchema">&#xb6;</a>
 					
 					
@@ -1565,7 +1565,7 @@ Returns *ObjectSchema
 				
 			
 				
-				<h3 id="NewObjectSchemaWithRules">func <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1358:1462#L40">NewObjectSchemaWithRules</a>
+				<h3 id="NewObjectSchemaWithRules">func <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1407:1511#L40">NewObjectSchemaWithRules</a>
 					<a class="permalink" href="index.html#NewObjectSchemaWithRules">&#xb6;</a>
 					
 					
@@ -1592,7 +1592,7 @@ Returns *ObjectSchema
 				
 			
 				
-				<h3 id="NewPagingParamsSchema">func <a href="http://localhost:6060/src/validate/PagingParamsSchema.go?s=207:249#L1">NewPagingParamsSchema</a>
+				<h3 id="NewPagingParamsSchema">func <a href="http://localhost:6060/src/validate/PagingParamsSchema.go?s=216:258#L1">NewPagingParamsSchema</a>
 					<a class="permalink" href="index.html#NewPagingParamsSchema">&#xb6;</a>
 					
 					
@@ -1607,7 +1607,7 @@ Returns *PagingParamsSchema
 				
 			
 				
-				<h3 id="NewTokenizedPagingParamsSchema">func <a href="http://localhost:6060/src/validate/TokenizedPagingParamsSchema.go?s=225:276#L1">NewTokenizedPagingParamsSchema</a>
+				<h3 id="NewTokenizedPagingParamsSchema">func <a href="http://localhost:6060/src/validate/TokenizedPagingParamsSchema.go?s=234:285#L1">NewTokenizedPagingParamsSchema</a>
 					<a class="permalink" href="index.html#NewTokenizedPagingParamsSchema">&#xb6;</a>
 					
 					
@@ -1624,7 +1624,7 @@ Returns *TokenizedPagingParamsSchema
 
 			
 				
-				<h3 id="ObjectSchema.AllowUndefined">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2788:2851#L89">AllowUndefined</a>
+				<h3 id="ObjectSchema.AllowUndefined">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2886:2949#L89">AllowUndefined</a>
 					<a class="permalink" href="index.html#ObjectSchema.AllowUndefined">&#xb6;</a>
 					
 					
@@ -1648,7 +1648,7 @@ this validation schema.
 				
 			
 				
-				<h3 id="ObjectSchema.PerformValidation">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=4663:4755#L147">PerformValidation</a>
+				<h3 id="ObjectSchema.PerformValidation">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=4819:4911#L147">PerformValidation</a>
 					<a class="permalink" href="index.html#ObjectSchema.PerformValidation">&#xb6;</a>
 					
 					
@@ -1673,7 +1673,7 @@ a list with validation results to add new results.
 				
 			
 				
-				<h3 id="ObjectSchema.Properties">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1740:1793#L53">Properties</a>
+				<h3 id="ObjectSchema.Properties">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1802:1855#L53">Properties</a>
 					<a class="permalink" href="index.html#ObjectSchema.Properties">&#xb6;</a>
 					
 					
@@ -1692,7 +1692,7 @@ the list of property validation schemas.
 				
 			
 				
-				<h3 id="ObjectSchema.SetProperties">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=1983:2044#L63">SetProperties</a>
+				<h3 id="ObjectSchema.SetProperties">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2055:2116#L63">SetProperties</a>
 					<a class="permalink" href="index.html#ObjectSchema.SetProperties">&#xb6;</a>
 					
 					
@@ -1713,7 +1713,7 @@ a list of property validation schemas.
 				
 			
 				
-				<h3 id="ObjectSchema.SetUndefinedAllowed">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2406:2460#L78">SetUndefinedAllowed</a>
+				<h3 id="ObjectSchema.SetUndefinedAllowed">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2493:2547#L78">SetUndefinedAllowed</a>
 					<a class="permalink" href="index.html#ObjectSchema.SetUndefinedAllowed">&#xb6;</a>
 					
 					
@@ -1732,7 +1732,7 @@ true to allow undefined properties and false to disallow.
 				
 			
 				
-				<h3 id="ObjectSchema.UndefinedAllowed">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2192:2238#L70">UndefinedAllowed</a>
+				<h3 id="ObjectSchema.UndefinedAllowed">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=2271:2317#L70">UndefinedAllowed</a>
 					<a class="permalink" href="index.html#ObjectSchema.UndefinedAllowed">&#xb6;</a>
 					
 					
@@ -1749,7 +1749,7 @@ true to allow undefined properties and false to disallow.
 				
 			
 				
-				<h3 id="ObjectSchema.WithOptionalProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=4163:4276#L134">WithOptionalProperty</a>
+				<h3 id="ObjectSchema.WithOptionalProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=4306:4419#L134">WithOptionalProperty</a>
 					<a class="permalink" href="index.html#ObjectSchema.WithOptionalProperty">&#xb6;</a>
 					
 					
@@ -1775,7 +1775,7 @@ Returns *ObjectSchema
 				
 			
 				
-				<h3 id="ObjectSchema.WithProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=3219:3292#L103">WithProperty</a>
+				<h3 id="ObjectSchema.WithProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=3331:3404#L103">WithProperty</a>
 					<a class="permalink" href="index.html#ObjectSchema.WithProperty">&#xb6;</a>
 					
 					
@@ -1801,7 +1801,7 @@ this validation schema.
 				
 			
 				
-				<h3 id="ObjectSchema.WithRequiredProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=3684:3797#L120">WithRequiredProperty</a>
+				<h3 id="ObjectSchema.WithRequiredProperty">func (*ObjectSchema) <a href="http://localhost:6060/src/validate/ObjectSchema.go?s=3813:3926#L120">WithRequiredProperty</a>
 					<a class="permalink" href="index.html#ObjectSchema.WithRequiredProperty">&#xb6;</a>
 					
 					
@@ -1829,7 +1829,7 @@ Returns *ObjectSchema
 		
 			
 			
-			<h2 id="OnlyOneExistsRule">type <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=598:652#L12">OnlyOneExistsRule</a>
+			<h2 id="OnlyOneExistsRule">type <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=619:675#L12">OnlyOneExistsRule</a>
 				<a class="permalink" href="index.html#OnlyOneExistsRule">&#xb6;</a>
 				
 				
@@ -1866,7 +1866,7 @@ schema.Validate({ });                            // Result: only one of properti
 
 			
 				
-				<h3 id="NewOnlyOneExistsRule">func <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=844:910#L21">NewOnlyOneExistsRule</a>
+				<h3 id="NewOnlyOneExistsRule">func <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=874:940#L21">NewOnlyOneExistsRule</a>
 					<a class="permalink" href="index.html#NewOnlyOneExistsRule">&#xb6;</a>
 					
 					
@@ -1889,7 +1889,7 @@ Return *OnlyOneExistsRule
 
 			
 				
-				<h3 id="OnlyOneExistsRule.Validate">func (*OnlyOneExistsRule) <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=1286:1390#L37">Validate</a>
+				<h3 id="OnlyOneExistsRule.Validate">func (*OnlyOneExistsRule) <a href="http://localhost:6060/src/validate/OnlyOneExistsRule.go?s=1332:1436#L37">Validate</a>
 					<a class="permalink" href="index.html#OnlyOneExistsRule.Validate">&#xb6;</a>
 					
 					
@@ -1918,7 +1918,7 @@ a list with validation results to add new results.
 		
 			
 			
-			<h2 id="OrRule">type <a href="http://localhost:6060/src/validate/OrRule.go?s=584:631#L10">OrRule</a>
+			<h2 id="OrRule">type <a href="http://localhost:6060/src/validate/OrRule.go?s=603:652#L10">OrRule</a>
 				<a class="permalink" href="index.html#OrRule">&#xb6;</a>
 				
 				
@@ -1959,7 +1959,7 @@ schema.Validate(20);        // Result: no error
 
 			
 				
-				<h3 id="NewOrRule">func <a href="http://localhost:6060/src/validate/OrRule.go?s=775:823#L19">NewOrRule</a>
+				<h3 id="NewOrRule">func <a href="http://localhost:6060/src/validate/OrRule.go?s=803:851#L19">NewOrRule</a>
 					<a class="permalink" href="index.html#NewOrRule">&#xb6;</a>
 					
 					
@@ -1982,7 +1982,7 @@ Returns *OrRule
 
 			
 				
-				<h3 id="OrRule.Validate">func (*OrRule) <a href="http://localhost:6060/src/validate/OrRule.go?s=1188:1281#L35">Validate</a>
+				<h3 id="OrRule.Validate">func (*OrRule) <a href="http://localhost:6060/src/validate/OrRule.go?s=1232:1325#L35">Validate</a>
 					<a class="permalink" href="index.html#OrRule.Validate">&#xb6;</a>
 					
 					
@@ -2011,7 +2011,7 @@ a list with validation results to add new results.
 		
 			
 			
-			<h2 id="PropertiesComparisonRule">type <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=520:614#L9">PropertiesComparisonRule</a>
+			<h2 id="PropertiesComparisonRule">type <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=538:636#L9">PropertiesComparisonRule</a>
 				<a class="permalink" href="index.html#PropertiesComparisonRule">&#xb6;</a>
 				
 				
@@ -2049,7 +2049,7 @@ schema.Validate({});                             // Result: no errors
 
 			
 				
-				<h3 id="NewPropertiesComparisonRule">func <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=1036:1148#L26">NewPropertiesComparisonRule</a>
+				<h3 id="NewPropertiesComparisonRule">func <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=1071:1183#L26">NewPropertiesComparisonRule</a>
 					<a class="permalink" href="index.html#NewPropertiesComparisonRule">&#xb6;</a>
 					
 					
@@ -2078,7 +2078,7 @@ Returns *PropertiesComparisonRule
 
 			
 				
-				<h3 id="PropertiesComparisonRule.Validate">func (*PropertiesComparisonRule) <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=1576:1687#L44">Validate</a>
+				<h3 id="PropertiesComparisonRule.Validate">func (*PropertiesComparisonRule) <a href="http://localhost:6060/src/validate/PropertiesComparisonRule.go?s=1629:1740#L44">Validate</a>
 					<a class="permalink" href="index.html#PropertiesComparisonRule.Validate">&#xb6;</a>
 					
 					
@@ -2107,7 +2107,7 @@ a list with validation results to add new results.
 		
 			
 			
-			<h2 id="PropertySchema">type <a href="http://localhost:6060/src/validate/PropertySchema.go?s=398:467#L7">PropertySchema</a>
+			<h2 id="PropertySchema">type <a href="http://localhost:6060/src/validate/PropertySchema.go?s=414:487#L7">PropertySchema</a>
 				<a class="permalink" href="index.html#PropertySchema">&#xb6;</a>
 				
 				
@@ -2147,7 +2147,7 @@ schema.Validate({ id: 1, name: &#34;ABC&#34; });         // Result: id type mism
 
 			
 				
-				<h3 id="NewPropertySchema">func <a href="http://localhost:6060/src/validate/PropertySchema.go?s=552:592#L15">NewPropertySchema</a>
+				<h3 id="NewPropertySchema">func <a href="http://localhost:6060/src/validate/PropertySchema.go?s=576:616#L15">NewPropertySchema</a>
 					<a class="permalink" href="index.html#NewPropertySchema">&#xb6;</a>
 					
 					
@@ -2162,7 +2162,7 @@ Returns *PropertySchema
 				
 			
 				
-				<h3 id="NewPropertySchemaWithRules">func <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1030:1147#L36">NewPropertySchemaWithRules</a>
+				<h3 id="NewPropertySchemaWithRules">func <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1075:1192#L36">NewPropertySchemaWithRules</a>
 					<a class="permalink" href="index.html#NewPropertySchemaWithRules">&#xb6;</a>
 					
 					
@@ -2195,7 +2195,7 @@ Returns *PropertySchema
 
 			
 				
-				<h3 id="PropertySchema.Name">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1339:1377#L48">Name</a>
+				<h3 id="PropertySchema.Name">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1396:1434#L48">Name</a>
 					<a class="permalink" href="index.html#PropertySchema.Name">&#xb6;</a>
 					
 					
@@ -2212,7 +2212,7 @@ the property name.
 				
 			
 				
-				<h3 id="PropertySchema.PerformValidation">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=2203:2297#L83">PerformValidation</a>
+				<h3 id="PropertySchema.PerformValidation">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=2295:2389#L83">PerformValidation</a>
 					<a class="permalink" href="index.html#PropertySchema.PerformValidation">&#xb6;</a>
 					
 					
@@ -2237,7 +2237,7 @@ a list with validation results to add new results.
 				
 			
 				
-				<h3 id="PropertySchema.SetName">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1488:1534#L56">SetName</a>
+				<h3 id="PropertySchema.SetName">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1553:1599#L56">SetName</a>
 					<a class="permalink" href="index.html#PropertySchema.SetName">&#xb6;</a>
 					
 					
@@ -2256,7 +2256,7 @@ a new property name.
 				
 			
 				
-				<h3 id="PropertySchema.SetType">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1835:1886#L71">SetType</a>
+				<h3 id="PropertySchema.SetType">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1915:1966#L71">SetType</a>
 					<a class="permalink" href="index.html#PropertySchema.SetType">&#xb6;</a>
 					
 					
@@ -2275,7 +2275,7 @@ a new property type.
 				
 			
 				
-				<h3 id="PropertySchema.Type">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1620:1663#L63">Type</a>
+				<h3 id="PropertySchema.Type">func (*PropertySchema) <a href="http://localhost:6060/src/validate/PropertySchema.go?s=1692:1735#L63">Type</a>
 					<a class="permalink" href="index.html#PropertySchema.Type">&#xb6;</a>
 					
 					
@@ -2294,7 +2294,7 @@ the property type.
 		
 			
 			
-			<h2 id="Schema">type <a href="http://localhost:6060/src/validate/Schema.go?s=425:512#L6">Schema</a>
+			<h2 id="Schema">type <a href="http://localhost:6060/src/validate/Schema.go?s=440:531#L6">Schema</a>
 				<a class="permalink" href="index.html#Schema">&#xb6;</a>
 				
 				
@@ -2321,7 +2321,7 @@ This schema is used as a basis for specific schemas to validate objects, project
 
 			
 				
-				<h3 id="InheritSchema">func <a href="http://localhost:6060/src/validate/Schema.go?s=1241:1285#L46">InheritSchema</a>
+				<h3 id="InheritSchema">func <a href="http://localhost:6060/src/validate/Schema.go?s=1296:1340#L46">InheritSchema</a>
 					<a class="permalink" href="index.html#InheritSchema">&#xb6;</a>
 					
 					
@@ -2342,7 +2342,7 @@ Returns *Schema
 				
 			
 				
-				<h3 id="InheritSchemaWithRules">func <a href="http://localhost:6060/src/validate/Schema.go?s=1629:1722#L64">InheritSchemaWithRules</a>
+				<h3 id="InheritSchemaWithRules">func <a href="http://localhost:6060/src/validate/Schema.go?s=1702:1795#L64">InheritSchemaWithRules</a>
 					<a class="permalink" href="index.html#InheritSchemaWithRules">&#xb6;</a>
 					
 					
@@ -2367,7 +2367,7 @@ Returns *Schema
 				
 			
 				
-				<h3 id="NewSchema">func <a href="http://localhost:6060/src/validate/Schema.go?s=601:625#L14">NewSchema</a>
+				<h3 id="NewSchema">func <a href="http://localhost:6060/src/validate/Schema.go?s=624:648#L14">NewSchema</a>
 					<a class="permalink" href="index.html#NewSchema">&#xb6;</a>
 					
 					
@@ -2382,7 +2382,7 @@ Returns *Schema
 				
 			
 				
-				<h3 id="NewSchemaWithRules">func <a href="http://localhost:6060/src/validate/Schema.go?s=979:1050#L32">NewSchemaWithRules</a>
+				<h3 id="NewSchemaWithRules">func <a href="http://localhost:6060/src/validate/Schema.go?s=1020:1091#L32">NewSchemaWithRules</a>
 					<a class="permalink" href="index.html#NewSchemaWithRules">&#xb6;</a>
 					
 					
@@ -2409,7 +2409,7 @@ Returns *Schema
 
 			
 				
-				<h3 id="Schema.MakeOptional">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=3268:3307#L120">MakeOptional</a>
+				<h3 id="Schema.MakeOptional">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=3397:3436#L120">MakeOptional</a>
 					<a class="permalink" href="index.html#Schema.MakeOptional">&#xb6;</a>
 					
 					
@@ -2429,7 +2429,7 @@ this validation schema
 				
 			
 				
-				<h3 id="Schema.MakeRequired">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2939:2978#L109">MakeRequired</a>
+				<h3 id="Schema.MakeRequired">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=3057:3096#L109">MakeRequired</a>
 					<a class="permalink" href="index.html#Schema.MakeRequired">&#xb6;</a>
 					
 					
@@ -2449,7 +2449,7 @@ this validation schema
 				
 			
 				
-				<h3 id="Schema.PerformTypeValidation">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=5538:5645#L208">PerformTypeValidation</a>
+				<h3 id="Schema.PerformTypeValidation">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=5755:5862#L208">PerformTypeValidation</a>
 					<a class="permalink" href="index.html#Schema.PerformTypeValidation">&#xb6;</a>
 					
 					
@@ -2478,7 +2478,7 @@ a list with validation results to add new results.
 				
 			
 				
-				<h3 id="Schema.PerformValidation">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=4066:4152#L149">PerformValidation</a>
+				<h3 id="Schema.PerformValidation">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=4224:4310#L149">PerformValidation</a>
 					<a class="permalink" href="index.html#Schema.PerformValidation">&#xb6;</a>
 					
 					
@@ -2503,7 +2503,7 @@ a list with validation results to add new results.
 				
 			
 				
-				<h3 id="Schema.Required">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2001:2033#L76">Required</a>
+				<h3 id="Schema.Required">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2086:2118#L76">Required</a>
 					<a class="permalink" href="index.html#Schema.Required">&#xb6;</a>
 					
 					
@@ -2520,7 +2520,7 @@ true to always require non-null values and false to allow null values.
 				
 			
 				
-				<h3 id="Schema.Rules">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2397:2439#L91">Rules</a>
+				<h3 id="Schema.Rules">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2497:2539#L91">Rules</a>
 					<a class="permalink" href="index.html#Schema.Rules">&#xb6;</a>
 					
 					
@@ -2537,7 +2537,7 @@ a list with validation rules.
 				
 			
 				
-				<h3 id="Schema.SetRequired">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2219:2259#L84">SetRequired</a>
+				<h3 id="Schema.SetRequired">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2312:2352#L84">SetRequired</a>
 					<a class="permalink" href="index.html#Schema.SetRequired">&#xb6;</a>
 					
 					
@@ -2556,7 +2556,7 @@ true to always require non-null values and false to allow null values.
 				
 			
 				
-				<h3 id="Schema.SetRules">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2592:2642#L99">SetRules</a>
+				<h3 id="Schema.SetRules">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=2700:2750#L99">SetRules</a>
 					<a class="permalink" href="index.html#Schema.SetRules">&#xb6;</a>
 					
 					
@@ -2575,7 +2575,7 @@ a list with validation rules.
 				
 			
 				
-				<h3 id="Schema.Validate">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=6832:6896#L265">Validate</a>
+				<h3 id="Schema.Validate">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=7106:7170#L265">Validate</a>
 					<a class="permalink" href="index.html#Schema.Validate">&#xb6;</a>
 					
 					
@@ -2600,7 +2600,7 @@ a list with validation results.
 				
 			
 				
-				<h3 id="Schema.ValidateAndReturnError">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=7287:7405#L278">ValidateAndReturnError</a>
+				<h3 id="Schema.ValidateAndReturnError">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=7574:7692#L278">ValidateAndReturnError</a>
 					<a class="permalink" href="index.html#Schema.ValidateAndReturnError">&#xb6;</a>
 					
 					
@@ -2626,7 +2626,7 @@ Returns *errors.ApplicationError
 				
 			
 				
-				<h3 id="Schema.ValidateAndThrowError">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=7866:7958#L293">ValidateAndThrowError</a>
+				<h3 id="Schema.ValidateAndThrowError">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=8168:8260#L293">ValidateAndThrowError</a>
 					<a class="permalink" href="index.html#Schema.ValidateAndThrowError">&#xb6;</a>
 					
 					
@@ -2651,7 +2651,7 @@ true to treat warnings as errors.
 				
 			
 				
-				<h3 id="Schema.WithRule">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=3615:3670#L133">WithRule</a>
+				<h3 id="Schema.WithRule">func (*Schema) <a href="http://localhost:6060/src/validate/Schema.go?s=3757:3812#L133">WithRule</a>
 					<a class="permalink" href="index.html#Schema.WithRule">&#xb6;</a>
 					
 					
@@ -2669,7 +2669,7 @@ this validation schema.
 		
 			
 			
-			<h2 id="TObjectComparator">type <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=386:417#L8">TObjectComparator</a>
+			<h2 id="TObjectComparator">type <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=403:434#L8">TObjectComparator</a>
 				<a class="permalink" href="index.html#TObjectComparator">&#xb6;</a>
 				
 				
@@ -2699,7 +2699,7 @@ ObjectComparator.AreEqual(&#34;A&#34;, &#34;B&#34;);         // Result: false
 
 			
 				
-				<h3 id="TObjectComparator.AreEqual">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=2050:2131#L58">AreEqual</a>
+				<h3 id="TObjectComparator.AreEqual">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=2117:2198#L58">AreEqual</a>
 					<a class="permalink" href="index.html#TObjectComparator.AreEqual">&#xb6;</a>
 					
 					
@@ -2724,7 +2724,7 @@ true if values are equal and false otherwise
 				
 			
 				
-				<h3 id="TObjectComparator.AreNotEqual">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=3112:3196#L98">AreNotEqual</a>
+				<h3 id="TObjectComparator.AreNotEqual">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=3219:3303#L98">AreNotEqual</a>
 					<a class="permalink" href="index.html#TObjectComparator.AreNotEqual">&#xb6;</a>
 					
 					
@@ -2749,7 +2749,7 @@ true if values are NOT equal and false otherwise
 				
 			
 				
-				<h3 id="TObjectComparator.Compare">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=901:999#L22">Compare</a>
+				<h3 id="TObjectComparator.Compare">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=932:1030#L22">Compare</a>
 					<a class="permalink" href="index.html#TObjectComparator.Compare">&#xb6;</a>
 					
 					
@@ -2776,7 +2776,7 @@ result of the comparison operation
 				
 			
 				
-				<h3 id="TObjectComparator.IsGreater">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=4182:4264#L129">IsGreater</a>
+				<h3 id="TObjectComparator.IsGreater">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=4320:4402#L129">IsGreater</a>
 					<a class="permalink" href="index.html#TObjectComparator.IsGreater">&#xb6;</a>
 					
 					
@@ -2801,7 +2801,7 @@ true if the first value is greater than second and false otherwise.
 				
 			
 				
-				<h3 id="TObjectComparator.IsLess">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=3560:3639#L110">IsLess</a>
+				<h3 id="TObjectComparator.IsLess">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=3679:3758#L110">IsLess</a>
 					<a class="permalink" href="index.html#TObjectComparator.IsLess">&#xb6;</a>
 					
 					
@@ -2826,7 +2826,7 @@ true if the first value is less than second and false otherwise.
 				
 			
 				
-				<h3 id="TObjectComparator.Match">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=4724:4802#L148">Match</a>
+				<h3 id="TObjectComparator.Match">func (*TObjectComparator) <a href="http://localhost:6060/src/validate/ObjectComparator.go?s=4881:4959#L148">Match</a>
 					<a class="permalink" href="index.html#TObjectComparator.Match">&#xb6;</a>
 					
 					
@@ -2853,7 +2853,7 @@ true if the value matches regular expression and false otherwise.
 		
 			
 			
-			<h2 id="ValidationResult">type <a href="http://localhost:6060/src/validate/ValidationResult.go?s=62:220#L1">ValidationResult</a>
+			<h2 id="ValidationResult">type <a href="http://localhost:6060/src/validate/ValidationResult.go?s=67:232#L1">ValidationResult</a>
 				<a class="permalink" href="index.html#ValidationResult">&#xb6;</a>
 				
 				
@@ -2877,7 +2877,7 @@ Result generated by schema validation
 
 			
 				
-				<h3 id="NewValidationResult">func <a href="http://localhost:6060/src/validate/ValidationResult.go?s=780:933#L22">NewValidationResult</a>
+				<h3 id="NewValidationResult">func <a href="http://localhost:6060/src/validate/ValidationResult.go?s=811:965#L22">NewValidationResult</a>
 					<a class="permalink" href="index.html#NewValidationResult">&#xb6;</a>
 					
 					
@@ -2913,7 +2913,7 @@ Returns *ValidationResult
 
 			
 				
-				<h3 id="ValidationResult.Actual">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=2020:2067#L75">Actual</a>
+				<h3 id="ValidationResult.Actual">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=2104:2151#L75">Actual</a>
 					<a class="permalink" href="index.html#ValidationResult.Actual">&#xb6;</a>
 					
 					
@@ -2930,7 +2930,7 @@ the actual value.
 				
 			
 				
-				<h3 id="ValidationResult.Code">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1564:1604#L53">Code</a>
+				<h3 id="ValidationResult.Code">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1626:1666#L53">Code</a>
 					<a class="permalink" href="index.html#ValidationResult.Code">&#xb6;</a>
 					
 					
@@ -2947,7 +2947,7 @@ the error code
 				
 			
 				
-				<h3 id="ValidationResult.Expected">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1857:1906#L68">Expected</a>
+				<h3 id="ValidationResult.Expected">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1934:1983#L68">Expected</a>
 					<a class="permalink" href="index.html#ValidationResult.Expected">&#xb6;</a>
 					
 					
@@ -2963,7 +2963,7 @@ the expected value.
 				
 			
 				
-				<h3 id="ValidationResult.Message">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1702:1745#L60">Message</a>
+				<h3 id="ValidationResult.Message">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1771:1814#L60">Message</a>
 					<a class="permalink" href="index.html#ValidationResult.Message">&#xb6;</a>
 					
 					
@@ -2980,7 +2980,7 @@ the result message.
 				
 			
 				
-				<h3 id="ValidationResult.Path">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1193:1233#L37">Path</a>
+				<h3 id="ValidationResult.Path">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1239:1279#L37">Path</a>
 					<a class="permalink" href="index.html#ValidationResult.Path">&#xb6;</a>
 					
 					
@@ -2997,7 +2997,7 @@ the path of the validated element.
 				
 			
 				
-				<h3 id="ValidationResult.Type">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1430:1484#L46">Type</a>
+				<h3 id="ValidationResult.Type">func (*ValidationResult) <a href="http://localhost:6060/src/validate/ValidationResult.go?s=1485:1539#L46">Type</a>
 					<a class="permalink" href="index.html#ValidationResult.Type">&#xb6;</a>
 					
 					
@@ -3018,7 +3018,7 @@ the type of the validation result.
 		
 			
 			
-			<h2 id="ValidationResultType">type <a href="http://localhost:6060/src/validate/ValidationResultType.go?s=251:280#L1">ValidationResultType</a>
+			<h2 id="ValidationResultType">type <a href="http://localhost:6060/src/validate/ValidationResultType.go?s=260:289#L1">ValidationResultType</a>
 				<a class="permalink" href="index.html#ValidationResultType">&#xb6;</a>
 				
 				
@@ -3053,7 +3053,7 @@ Error = 2 - Validation error.
 		
 			
 			
-			<h2 id="ValueComparisonRule">type <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=371:447#L9">ValueComparisonRule</a>
+			<h2 id="ValueComparisonRule">type <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=389:468#L9">ValueComparisonRule</a>
 				<a class="permalink" href="index.html#ValueComparisonRule">&#xb6;</a>
 				
 				
@@ -3090,7 +3090,7 @@ schema.Validate(2);          // Result: 2 is not equal to 1
 
 			
 				
-				<h3 id="NewValueComparisonRule">func <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=754:839#L21">NewValueComparisonRule</a>
+				<h3 id="NewValueComparisonRule">func <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=784:869#L21">NewValueComparisonRule</a>
 					<a class="permalink" href="index.html#NewValueComparisonRule">&#xb6;</a>
 					
 					
@@ -3115,7 +3115,7 @@ Returns *ValueComparisonRule
 
 			
 				
-				<h3 id="ValueComparisonRule.Validate">func (*ValueComparisonRule) <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=922:1028#L28">Validate</a>
+				<h3 id="ValueComparisonRule.Validate">func (*ValueComparisonRule) <a href="http://localhost:6060/src/validate/ValueComparisonRule.go?s=959:1065#L28">Validate</a>
 					<a class="permalink" href="index.html#ValueComparisonRule.Validate">&#xb6;</a>
 					
 					
@@ -3138,13 +3138,13 @@ Returns *ValueComparisonRule
 
 
 <div id="footer">
-Build version go1.13.15.<br>
+Build version go1.16.15.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
 and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
-<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
-<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
 </div>
 
 </div><!-- .container -->

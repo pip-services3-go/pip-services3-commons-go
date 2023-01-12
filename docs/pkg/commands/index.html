@@ -14,7 +14,7 @@
 
 
 
-<script>var goVersion = "go1.13.15";</script>
+<script>var goVersion = "go1.16.15";</script>
 <script src="../../lib/godoc/godocs.js" defer></script>
 </head>
 <body>
@@ -329,7 +329,7 @@ as regular commands, but run their own logic before calling the actual command.
 		
 			
 			
-			<h2 id="Command">type <a href="http://localhost:6060/src/commands/Command.go?s=851:992#L19">Command</a>
+			<h2 id="Command">type <a href="http://localhost:6060/src/commands/Command.go?s=879:1024#L19">Command</a>
 				<a class="permalink" href="index.html#Command">&#xb6;</a>
 				
 				
@@ -369,7 +369,7 @@ if (err) {
 
 			
 				
-				<h3 id="NewCommand">func <a href="http://localhost:6060/src/commands/Command.go?s=1341:1482#L34">NewCommand</a>
+				<h3 id="NewCommand">func <a href="http://localhost:6060/src/commands/Command.go?s=1384:1526#L34">NewCommand</a>
 					<a class="permalink" href="index.html#NewCommand">&#xb6;</a>
 					
 					
@@ -396,7 +396,7 @@ Returns *Command
 
 			
 				
-				<h3 id="Command.Execute">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=2237:2327#L64">Execute</a>
+				<h3 id="Command.Execute">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=2310:2400#L64">Execute</a>
 					<a class="permalink" href="index.html#Command.Execute">&#xb6;</a>
 					
 					
@@ -420,7 +420,7 @@ Returns (interface{}, error)
 				
 			
 				
-				<h3 id="Command.GetSchema">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3738:3784#L123">GetSchema</a>
+				<h3 id="Command.GetSchema">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3870:3916#L123">GetSchema</a>
 					<a class="permalink" href="index.html#Command.GetSchema">&#xb6;</a>
 					
 					
@@ -435,7 +435,7 @@ GetSchema methods return validation schema for this command
 				
 			
 				
-				<h3 id="Command.Name">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=1744:1775#L53">Name</a>
+				<h3 id="Command.Name">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=1806:1837#L53">Name</a>
 					<a class="permalink" href="index.html#Command.Name">&#xb6;</a>
 					
 					
@@ -453,7 +453,7 @@ Returns string - the name of this command.
 				
 			
 				
-				<h3 id="Command.Validate">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3403:3480#L110">Validate</a>
+				<h3 id="Command.Validate">func (*Command) <a href="http://localhost:6060/src/commands/Command.go?s=3522:3599#L110">Validate</a>
 					<a class="permalink" href="index.html#Command.Validate">&#xb6;</a>
 					
 					
@@ -478,7 +478,7 @@ Returns []*validate.ValidationResult an array of ValidationResults or an empty a
 		
 			
 			
-			<h2 id="CommandSet">type <a href="http://localhost:6060/src/commands/CommandSet.go?s=1385:1571#L34">CommandSet</a>
+			<h2 id="CommandSet">type <a href="http://localhost:6060/src/commands/CommandSet.go?s=1428:1620#L34">CommandSet</a>
 				<a class="permalink" href="index.html#CommandSet">&#xb6;</a>
 				
 				
@@ -536,7 +536,7 @@ Example:
 
 			
 				
-				<h3 id="NewCommandSet">func <a href="http://localhost:6060/src/commands/CommandSet.go?s=1635:1667#L44">NewCommandSet</a>
+				<h3 id="NewCommandSet">func <a href="http://localhost:6060/src/commands/CommandSet.go?s=1688:1720#L44">NewCommandSet</a>
 					<a class="permalink" href="index.html#NewCommandSet">&#xb6;</a>
 					
 					
@@ -553,7 +553,7 @@ Returns *CommandSet
 
 			
 				
-				<h3 id="CommandSet.AddCommand">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3392:3441#L120">AddCommand</a>
+				<h3 id="CommandSet.AddCommand">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3521:3570#L120">AddCommand</a>
 					<a class="permalink" href="index.html#CommandSet.AddCommand">&#xb6;</a>
 					
 					
@@ -574,7 +574,7 @@ Parameters:
 				
 			
 				
-				<h3 id="CommandSet.AddCommandSet">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4411:4469#L164">AddCommandSet</a>
+				<h3 id="CommandSet.AddCommandSet">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4584:4642#L164">AddCommandSet</a>
 					<a class="permalink" href="index.html#CommandSet.AddCommandSet">&#xb6;</a>
 					
 					
@@ -593,7 +593,7 @@ the CommandSet to add.
 				
 			
 				
-				<h3 id="CommandSet.AddCommands">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3661:3714#L131">AddCommands</a>
+				<h3 id="CommandSet.AddCommands">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3801:3854#L131">AddCommands</a>
 					<a class="permalink" href="index.html#CommandSet.AddCommands">&#xb6;</a>
 					
 					
@@ -614,7 +614,7 @@ the array of commands to add.
 				
 			
 				
-				<h3 id="CommandSet.AddEvent">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=3895:3938#L143">AddEvent</a>
+				<h3 id="CommandSet.AddEvent">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4047:4090#L143">AddEvent</a>
 					<a class="permalink" href="index.html#CommandSet.AddEvent">&#xb6;</a>
 					
 					
@@ -635,7 +635,7 @@ the event to add.
 				
 			
 				
-				<h3 id="CommandSet.AddEvents">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4150:4197#L154">AddEvents</a>
+				<h3 id="CommandSet.AddEvents">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4313:4360#L154">AddEvents</a>
 					<a class="permalink" href="index.html#CommandSet.AddEvents">&#xb6;</a>
 					
 					
@@ -656,7 +656,7 @@ the array of events to add.
 				
 			
 				
-				<h3 id="CommandSet.AddInterceptor">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=5268:5336#L199">AddInterceptor</a>
+				<h3 id="CommandSet.AddInterceptor">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=5476:5544#L199">AddInterceptor</a>
 					<a class="permalink" href="index.html#CommandSet.AddInterceptor">&#xb6;</a>
 					
 					
@@ -677,7 +677,7 @@ the interceptor to add.
 				
 			
 				
-				<h3 id="CommandSet.AddListener">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4704:4761#L175">AddListener</a>
+				<h3 id="CommandSet.AddListener">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4888:4945#L175">AddListener</a>
 					<a class="permalink" href="index.html#CommandSet.AddListener">&#xb6;</a>
 					
 					
@@ -698,7 +698,7 @@ the listener to add.
 				
 			
 				
-				<h3 id="CommandSet.Commands">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=1999:2041#L59">Commands</a>
+				<h3 id="CommandSet.Commands">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2067:2109#L59">Commands</a>
 					<a class="permalink" href="index.html#CommandSet.Commands">&#xb6;</a>
 					
 					
@@ -717,7 +717,7 @@ a list of commands.
 				
 			
 				
-				<h3 id="CommandSet.Events">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2174:2212#L68">Events</a>
+				<h3 id="CommandSet.Events">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2251:2289#L68">Events</a>
 					<a class="permalink" href="index.html#CommandSet.Events">&#xb6;</a>
 					
 					
@@ -736,7 +736,7 @@ a list of events.
 				
 			
 				
-				<h3 id="CommandSet.Execute">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=5843:5967#L220">Execute</a>
+				<h3 id="CommandSet.Execute">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=6072:6196#L220">Execute</a>
 					<a class="permalink" href="index.html#CommandSet.Execute">&#xb6;</a>
 					
 					
@@ -748,7 +748,7 @@ a list of events.
 				
 			
 				
-				<h3 id="CommandSet.FindCommand">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2451:2512#L80">FindCommand</a>
+				<h3 id="CommandSet.FindCommand">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2540:2601#L80">FindCommand</a>
 					<a class="permalink" href="index.html#CommandSet.FindCommand">&#xb6;</a>
 					
 					
@@ -773,7 +773,7 @@ the command, whose name matches the provided name.
 				
 			
 				
-				<h3 id="CommandSet.FindEvent">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2781:2836#L92">FindEvent</a>
+				<h3 id="CommandSet.FindEvent">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=2882:2937#L92">FindEvent</a>
 					<a class="permalink" href="index.html#CommandSet.FindEvent">&#xb6;</a>
 					
 					
@@ -798,7 +798,7 @@ the event, whose name matches the provided name.
 				
 			
 				
-				<h3 id="CommandSet.Notify">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=7900:7989#L290">Notify</a>
+				<h3 id="CommandSet.Notify">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=8199:8288#L290">Notify</a>
 					<a class="permalink" href="index.html#CommandSet.Notify">&#xb6;</a>
 					
 					
@@ -821,7 +821,7 @@ the event arguments (parameters).
 				
 			
 				
-				<h3 id="CommandSet.RemoveListener">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=4970:5030#L187">RemoveListener</a>
+				<h3 id="CommandSet.RemoveListener">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=5166:5226#L187">RemoveListener</a>
 					<a class="permalink" href="index.html#CommandSet.RemoveListener">&#xb6;</a>
 					
 					
@@ -842,7 +842,7 @@ the listener to remove.
 				
 			
 				
-				<h3 id="CommandSet.Validate">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=7199:7299#L263">Validate</a>
+				<h3 id="CommandSet.Validate">func (*CommandSet) <a href="http://localhost:6060/src/commands/CommandSet.go?s=7471:7571#L263">Validate</a>
 					<a class="permalink" href="index.html#CommandSet.Validate">&#xb6;</a>
 					
 					
@@ -878,7 +878,7 @@ whose type will be ValidationResultType.Error.
 		
 			
 			
-			<h2 id="Event">type <a href="http://localhost:6060/src/commands/Event.go?s=383:450#L10">Event</a>
+			<h2 id="Event">type <a href="http://localhost:6060/src/commands/Event.go?s=402:472#L10">Event</a>
 				<a class="permalink" href="index.html#Event">&#xb6;</a>
 				
 				
@@ -913,7 +913,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 
 			
 				
-				<h3 id="NewEvent">func <a href="http://localhost:6060/src/commands/Event.go?s=641:674#L23">NewEvent</a>
+				<h3 id="NewEvent">func <a href="http://localhost:6060/src/commands/Event.go?s=673:706#L23">NewEvent</a>
 					<a class="permalink" href="index.html#NewEvent">&#xb6;</a>
 					
 					
@@ -926,7 +926,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 
 			
 				
-				<h3 id="Event.AddListener">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1254:1306#L55">AddListener</a>
+				<h3 id="Event.AddListener">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1318:1370#L55">AddListener</a>
 					<a class="permalink" href="index.html#Event.AddListener">&#xb6;</a>
 					
 					
@@ -938,7 +938,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 				
 			
 				
-				<h3 id="Event.Listeners">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1031:1075#L46">Listeners</a>
+				<h3 id="Event.Listeners">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1086:1130#L46">Listeners</a>
 					<a class="permalink" href="index.html#Event.Listeners">&#xb6;</a>
 					
 					
@@ -950,7 +950,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 				
 			
 				
-				<h3 id="Event.Name">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=881:910#L38">Name</a>
+				<h3 id="Event.Name">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=928:957#L38">Name</a>
 					<a class="permalink" href="index.html#Event.Name">&#xb6;</a>
 					
 					
@@ -962,7 +962,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 				
 			
 				
-				<h3 id="Event.Notify">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1961:2027#L80">Notify</a>
+				<h3 id="Event.Notify">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=2050:2116#L80">Notify</a>
 					<a class="permalink" href="index.html#Event.Notify">&#xb6;</a>
 					
 					
@@ -974,7 +974,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 				
 			
 				
-				<h3 id="Event.RemoveListener">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1526:1581#L64">RemoveListener</a>
+				<h3 id="Event.RemoveListener">func (*Event) <a href="http://localhost:6060/src/commands/Event.go?s=1599:1654#L64">RemoveListener</a>
 					<a class="permalink" href="index.html#Event.RemoveListener">&#xb6;</a>
 					
 					
@@ -988,7 +988,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 		
 			
 			
-			<h2 id="ICommand">type <a href="http://localhost:6060/src/commands/ICommand.go?s=327:789#L3">ICommand</a>
+			<h2 id="ICommand">type <a href="http://localhost:6060/src/commands/ICommand.go?s=339:818#L3">ICommand</a>
 				<a class="permalink" href="index.html#ICommand">&#xb6;</a>
 				
 				
@@ -1027,7 +1027,7 @@ event.Notify(&#34;123&#34;, Parameters.fromTuples(
 		
 			
 			
-			<h2 id="ICommandInterceptor">type <a href="http://localhost:6060/src/commands/ICommandInterceptor.go?s=375:2124#L6">ICommandInterceptor</a>
+			<h2 id="ICommandInterceptor">type <a href="http://localhost:6060/src/commands/ICommandInterceptor.go?s=390:2183#L6">ICommandInterceptor</a>
 				<a class="permalink" href="index.html#ICommandInterceptor">&#xb6;</a>
 				
 				
@@ -1101,7 +1101,7 @@ InterceptedCommand
 		
 			
 			
-			<h2 id="ICommandable">type <a href="http://localhost:6060/src/commands/ICommandable.go?s=543:758#L10">ICommandable</a>
+			<h2 id="ICommandable">type <a href="http://localhost:6060/src/commands/ICommandable.go?s=562:784#L10">ICommandable</a>
 				<a class="permalink" href="index.html#ICommandable">&#xb6;</a>
 				
 				
@@ -1130,7 +1130,7 @@ InterceptedCommand
 		
 			
 			
-			<h2 id="IEvent">type <a href="http://localhost:6060/src/commands/IEvent.go?s=267:912#L3">IEvent</a>
+			<h2 id="IEvent">type <a href="http://localhost:6060/src/commands/IEvent.go?s=279:948#L3">IEvent</a>
 				<a class="permalink" href="index.html#IEvent">&#xb6;</a>
 				
 				
@@ -1176,7 +1176,7 @@ InterceptedCommand
 		
 			
 			
-			<h2 id="IEventListener">type <a href="http://localhost:6060/src/commands/IEventListener.go?s=583:957#L19">IEventListener</a>
+			<h2 id="IEventListener">type <a href="http://localhost:6060/src/commands/IEventListener.go?s=611:995#L19">IEventListener</a>
 				<a class="permalink" href="index.html#IEventListener">&#xb6;</a>
 				
 				
@@ -1208,7 +1208,7 @@ InterceptedCommand
 		
 			
 			
-			<h2 id="InterceptedCommand">type <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1079:1168#L29">InterceptedCommand</a>
+			<h2 id="InterceptedCommand">type <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1117:1209#L29">InterceptedCommand</a>
 				<a class="permalink" href="index.html#InterceptedCommand">&#xb6;</a>
 				
 				
@@ -1262,7 +1262,7 @@ loggedCommand = NewInterceptedCommand(logger, command);
 
 			
 				
-				<h3 id="NewInterceptedCommand">func <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1578:1672#L42">NewInterceptedCommand</a>
+				<h3 id="NewInterceptedCommand">func <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1629:1723#L42">NewInterceptedCommand</a>
 					<a class="permalink" href="index.html#NewInterceptedCommand">&#xb6;</a>
 					
 					
@@ -1288,7 +1288,7 @@ Returns *InterceptedCommand
 
 			
 				
-				<h3 id="InterceptedCommand.Execute">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=2273:2385#L66">Execute</a>
+				<h3 id="InterceptedCommand.Execute">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=2348:2460#L66">Execute</a>
 					<a class="permalink" href="index.html#InterceptedCommand.Execute">&#xb6;</a>
 					
 					
@@ -1316,7 +1316,7 @@ result: interface{}
 				
 			
 				
-				<h3 id="InterceptedCommand.Name">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1831:1873#L51">Name</a>
+				<h3 id="InterceptedCommand.Name">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=1891:1933#L51">Name</a>
 					<a class="permalink" href="index.html#InterceptedCommand.Name">&#xb6;</a>
 					
 					
@@ -1332,7 +1332,7 @@ the name of the command that is being intercepted.
 				
 			
 				
-				<h3 id="InterceptedCommand.Validate">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=2781:2869#L80">Validate</a>
+				<h3 id="InterceptedCommand.Validate">func (*InterceptedCommand) <a href="http://localhost:6060/src/commands/InterceptedCommand.go?s=2870:2958#L80">Validate</a>
 					<a class="permalink" href="index.html#InterceptedCommand.Validate">&#xb6;</a>
 					
 					
@@ -1370,13 +1370,13 @@ an array of *ValidationResults.
 
 
 <div id="footer">
-Build version go1.13.15.<br>
+Build version go1.16.15.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
 and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
-<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
-<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
 </div>
 
 </div><!-- .container -->

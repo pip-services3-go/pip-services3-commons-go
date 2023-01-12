@@ -14,7 +14,7 @@
 
 
 
-<script>var goVersion = "go1.13.15";</script>
+<script>var goVersion = "go1.16.15";</script>
 <script src="../../lib/godoc/godocs.js" defer></script>
 </head>
 <body>
@@ -220,6 +220,12 @@
 				<dd><a href="index.html#ToNullableType">func ToNullableType(typ TypeCode, value interface{}) interface{}</a></dd>
 			
 				
+				<dd><a href="index.html#ToNullableUInteger">func ToNullableUInteger(value interface{}) *uint</a></dd>
+			
+				
+				<dd><a href="index.html#ToNullableULong">func ToNullableULong(value interface{}) *uint64</a></dd>
+			
+				
 				<dd><a href="index.html#ToString">func ToString(value interface{}) string</a></dd>
 			
 				
@@ -230,6 +236,18 @@
 			
 				
 				<dd><a href="index.html#ToTypeWithDefault">func ToTypeWithDefault(typ TypeCode, value interface{}, defaultValue interface{}) interface{}</a></dd>
+			
+				
+				<dd><a href="index.html#ToUInteger">func ToUInteger(value interface{}) uint</a></dd>
+			
+				
+				<dd><a href="index.html#ToUIntegerWithDefault">func ToUIntegerWithDefault(value interface{}, defaultValue uint) uint</a></dd>
+			
+				
+				<dd><a href="index.html#ToULong">func ToULong(value interface{}) uint64</a></dd>
+			
+				
+				<dd><a href="index.html#ToULongWithDefault">func ToULongWithDefault(value interface{}, defaultValue uint64) uint64</a></dd>
 			
 				
 				<dd><a href="index.html#TypeCodeToString">func TypeCodeToString(typ TypeCode) string</a></dd>
@@ -335,6 +353,15 @@
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#TIntegerConverter.ToNullableInteger">func (c *TIntegerConverter) ToNullableInteger(value interface{}) *int</a></dd>
 				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TIntegerConverter.ToNullableUInteger">func (c *TIntegerConverter) ToNullableUInteger(value interface{}) *uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TIntegerConverter.ToUInteger">func (c *TIntegerConverter) ToUInteger(value interface{}) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TIntegerConverter.ToUIntegerWithDefault">func (c *TIntegerConverter) ToUIntegerWithDefault(value interface{}, defaultValue uint) uint</a></dd>
+				
 			
 				
 				<dd><a href="index.html#TJsonConverter">type TJsonConverter</a></dd>
@@ -368,6 +395,15 @@
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#TLongConverter.ToNullableLong">func (c *TLongConverter) ToNullableLong(value interface{}) *int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TLongConverter.ToNullableULong">func (c *TLongConverter) ToNullableULong(value interface{}) *uint64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TLongConverter.ToULong">func (c *TLongConverter) ToULong(value interface{}) uint64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#TLongConverter.ToULongWithDefault">func (c *TLongConverter) ToULongWithDefault(value interface{}, defaultValue uint64) uint64</a></dd>
 				
 			
 				
@@ -482,7 +518,7 @@
 		
 			
 			
-			<h2 id="FromJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=197:245#L1">FromJson</a>
+			<h2 id="FromJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=206:254#L1">FromJson</a>
 				<a class="permalink" href="index.html#FromJson">&#xb6;</a>
 				
 				
@@ -500,7 +536,7 @@ Returns: converted object value or null when value is null.
 		
 			
 			
-			<h2 id="FromJsonAs">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=604:674#L14">FromJsonAs</a>
+			<h2 id="FromJsonAs">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=627:697#L14">FromJsonAs</a>
 				<a class="permalink" href="index.html#FromJsonAs">&#xb6;</a>
 				
 				
@@ -523,7 +559,7 @@ Returns: converted object value or null when value is null.
 		
 			
 			
-			<h2 id="JsonToMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3966:4017#L108">JsonToMap</a>
+			<h2 id="JsonToMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=4083:4134#L108">JsonToMap</a>
 				<a class="permalink" href="index.html#JsonToMap">&#xb6;</a>
 				
 				
@@ -541,7 +577,7 @@ Returns: Map object value or empty map when conversion is not supported.
 		
 			
 			
-			<h2 id="JsonToMapWithDefault">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=4356:4455#L117">JsonToMapWithDefault</a>
+			<h2 id="JsonToMapWithDefault">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=4482:4581#L117">JsonToMapWithDefault</a>
 				<a class="permalink" href="index.html#JsonToMapWithDefault">&#xb6;</a>
 				
 				
@@ -564,7 +600,7 @@ Returns: Map object value or default map when conversion is not supported.
 		
 			
 			
-			<h2 id="JsonToNullableMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3596:3656#L97">JsonToNullableMap</a>
+			<h2 id="JsonToNullableMap">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3702:3762#L97">JsonToNullableMap</a>
 				<a class="permalink" href="index.html#JsonToNullableMap">&#xb6;</a>
 				
 				
@@ -582,7 +618,7 @@ Returns: Map object value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ListToArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=3513:3562#L101">ListToArray</a>
+			<h2 id="ListToArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=3623:3672#L101">ListToArray</a>
 				<a class="permalink" href="index.html#ListToArray">&#xb6;</a>
 				
 				
@@ -605,7 +641,7 @@ Returns: array object or empty array when value is null
 		
 			
 			
-			<h2 id="ToArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=2708:2753#L79">ToArray</a>
+			<h2 id="ToArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=2796:2841#L79">ToArray</a>
 				<a class="permalink" href="index.html#ToArray">&#xb6;</a>
 				
 				
@@ -628,7 +664,7 @@ Returns: array object or empty array when value is null.
 		
 			
 			
-			<h2 id="ToArrayWithDefault">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=3093:3177#L89">ToArrayWithDefault</a>
+			<h2 id="ToArrayWithDefault">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=3191:3275#L89">ToArrayWithDefault</a>
 				<a class="permalink" href="index.html#ToArrayWithDefault">&#xb6;</a>
 				
 				
@@ -652,7 +688,7 @@ Returns: array object or empty array when value is null.
 		
 			
 			
-			<h2 id="ToBoolean">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=2829:2867#L83">ToBoolean</a>
+			<h2 id="ToBoolean">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=2921:2959#L83">ToBoolean</a>
 				<a class="permalink" href="index.html#ToBoolean">&#xb6;</a>
 				
 				
@@ -670,7 +706,7 @@ Returns: boolean value or false when conversion is not supported.
 		
 			
 			
-			<h2 id="ToBooleanWithDefault">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=3166:3234#L92">ToBooleanWithDefault</a>
+			<h2 id="ToBooleanWithDefault">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=3267:3335#L92">ToBooleanWithDefault</a>
 				<a class="permalink" href="index.html#ToBooleanWithDefault">&#xb6;</a>
 				
 				
@@ -693,7 +729,7 @@ Returns: boolean value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToDateTime">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=3116:3160#L94">ToDateTime</a>
+			<h2 id="ToDateTime">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=3219:3263#L94">ToDateTime</a>
 				<a class="permalink" href="index.html#ToDateTime">&#xb6;</a>
 				
 				
@@ -711,7 +747,7 @@ Returns: Date value or current when conversion is not supported.
 		
 			
 			
-			<h2 id="ToDateTimeWithDefault">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=3455:3534#L103">ToDateTimeWithDefault</a>
+			<h2 id="ToDateTimeWithDefault">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=3567:3646#L103">ToDateTimeWithDefault</a>
 				<a class="permalink" href="index.html#ToDateTimeWithDefault">&#xb6;</a>
 				
 				
@@ -734,7 +770,7 @@ Returns: Date value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToDouble">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=3151:3191#L103">ToDouble</a>
+			<h2 id="ToDouble">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=3263:3303#L103">ToDouble</a>
 				<a class="permalink" href="index.html#ToDouble">&#xb6;</a>
 				
 				
@@ -752,7 +788,7 @@ Returns: double value or 0 when conversion is not supported.
 		
 			
 			
-			<h2 id="ToDoubleWithDefault">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=3480:3553#L112">ToDoubleWithDefault</a>
+			<h2 id="ToDoubleWithDefault">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=3601:3674#L112">ToDoubleWithDefault</a>
 				<a class="permalink" href="index.html#ToDoubleWithDefault">&#xb6;</a>
 				
 				
@@ -775,7 +811,7 @@ Returns: double value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToDuration">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=3171:3219#L89">ToDuration</a>
+			<h2 id="ToDuration">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=3269:3317#L89">ToDuration</a>
 				<a class="permalink" href="index.html#ToDuration">&#xb6;</a>
 				
 				
@@ -793,7 +829,7 @@ Returns: time.Duration value or current when conversion is not supported.
 		
 			
 			
-			<h2 id="ToDurationWithDefault">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=3540:3627#L98">ToDurationWithDefault</a>
+			<h2 id="ToDurationWithDefault">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=3647:3734#L98">ToDurationWithDefault</a>
 				<a class="permalink" href="index.html#ToDurationWithDefault">&#xb6;</a>
 				
 				
@@ -816,7 +852,7 @@ Returns: time.Duration value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToFloat">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=2243:2282#L50">ToFloat</a>
+			<h2 id="ToFloat">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=2302:2341#L50">ToFloat</a>
 				<a class="permalink" href="index.html#ToFloat">&#xb6;</a>
 				
 				
@@ -834,7 +870,7 @@ Returns: float value or 0 when conversion is not supported.
 		
 			
 			
-			<h2 id="ToFloatWithDefault">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=2567:2639#L59">ToFloatWithDefault</a>
+			<h2 id="ToFloatWithDefault">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=2635:2707#L59">ToFloatWithDefault</a>
 				<a class="permalink" href="index.html#ToFloatWithDefault">&#xb6;</a>
 				
 				
@@ -857,7 +893,7 @@ Returns: float value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=2272:2309#L50">ToInteger</a>
+			<h2 id="ToInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=3361:3398#L73">ToInteger</a>
 				<a class="permalink" href="index.html#ToInteger">&#xb6;</a>
 				
 				
@@ -875,7 +911,7 @@ Returns: integer value or 0 when conversion is not supported.
 		
 			
 			
-			<h2 id="ToIntegerWithDefault">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=2600:2666#L59">ToIntegerWithDefault</a>
+			<h2 id="ToIntegerWithDefault">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=3697:3763#L82">ToIntegerWithDefault</a>
 				<a class="permalink" href="index.html#ToIntegerWithDefault">&#xb6;</a>
 				
 				
@@ -898,7 +934,7 @@ Returns: integer value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=960:1006#L28">ToJson</a>
+			<h2 id="ToJson">func <a href="http://localhost:6060/src/convert/JsonConverter.go?s=997:1043#L28">ToJson</a>
 				<a class="permalink" href="index.html#ToJson">&#xb6;</a>
 				
 				
@@ -916,7 +952,7 @@ Returns: JSON string or null when value is null.
 		
 			
 			
-			<h2 id="ToLong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=3014:3050#L103">ToLong</a>
+			<h2 id="ToLong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=4120:4156#L126">ToLong</a>
 				<a class="permalink" href="index.html#ToLong">&#xb6;</a>
 				
 				
@@ -934,7 +970,7 @@ Returns: long value or 0 when conversion is not supported.
 		
 			
 			
-			<h2 id="ToLongWithDefault">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=3333:3400#L112">ToLongWithDefault</a>
+			<h2 id="ToLongWithDefault">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=4447:4514#L135">ToLongWithDefault</a>
 				<a class="permalink" href="index.html#ToLongWithDefault">&#xb6;</a>
 				
 				
@@ -957,7 +993,7 @@ Returns: long value or default when conversion is not supported.
 		
 			
 			
-			<h2 id="ToMap">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=2574:2626#L72">ToMap</a>
+			<h2 id="ToMap">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=2655:2707#L72">ToMap</a>
 				<a class="permalink" href="index.html#ToMap">&#xb6;</a>
 				
 				
@@ -975,7 +1011,7 @@ Returns: map object or empty map when conversion is not supported.
 		
 			
 			
-			<h2 id="ToMapWithDefault">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=2942:3042#L81">ToMapWithDefault</a>
+			<h2 id="ToMapWithDefault">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=3032:3132#L81">ToMapWithDefault</a>
 				<a class="permalink" href="index.html#ToMapWithDefault">&#xb6;</a>
 				
 				
@@ -998,7 +1034,7 @@ Returns: map object or default map when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=2113:2167#L50">ToNullableArray</a>
+			<h2 id="ToNullableArray">func <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=2172:2226#L50">ToNullableArray</a>
 				<a class="permalink" href="index.html#ToNullableArray">&#xb6;</a>
 				
 				
@@ -1020,7 +1056,7 @@ Returns: array object or null when value is null.
 		
 			
 			
-			<h2 id="ToNullableBoolean">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=2057:2104#L43">ToNullableBoolean</a>
+			<h2 id="ToNullableBoolean">func <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=2109:2156#L43">ToNullableBoolean</a>
 				<a class="permalink" href="index.html#ToNullableBoolean">&#xb6;</a>
 				
 				
@@ -1038,7 +1074,7 @@ Returns: boolean value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableDateTime">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1891:1944#L39">ToNullableDateTime</a>
+			<h2 id="ToNullableDateTime">func <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1939:1992#L39">ToNullableDateTime</a>
 				<a class="permalink" href="index.html#ToNullableDateTime">&#xb6;</a>
 				
 				
@@ -1056,7 +1092,7 @@ Returns: Date value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableDouble">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1979:2028#L43">ToNullableDouble</a>
+			<h2 id="ToNullableDouble">func <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=2031:2080#L43">ToNullableDouble</a>
 				<a class="permalink" href="index.html#ToNullableDouble">&#xb6;</a>
 				
 				
@@ -1074,7 +1110,7 @@ Returns: double value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableDuration">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1796:1853#L37">ToNullableDuration</a>
+			<h2 id="ToNullableDuration">func <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1842:1899#L37">ToNullableDuration</a>
 				<a class="permalink" href="index.html#ToNullableDuration">&#xb6;</a>
 				
 				
@@ -1092,7 +1128,7 @@ Returns: time.Duration value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableFloat">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1914:1962#L38">ToNullableFloat</a>
+			<h2 id="ToNullableFloat">func <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1961:2009#L38">ToNullableFloat</a>
 				<a class="permalink" href="index.html#ToNullableFloat">&#xb6;</a>
 				
 				
@@ -1110,7 +1146,7 @@ Returns: float value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1948:1994#L38">ToNullableInteger</a>
+			<h2 id="ToNullableInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=3025:3071#L61">ToNullableInteger</a>
 				<a class="permalink" href="index.html#ToNullableInteger">&#xb6;</a>
 				
 				
@@ -1128,7 +1164,7 @@ Returns: integer value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableLong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=1895:1940#L43">ToNullableLong</a>
+			<h2 id="ToNullableLong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=2941:2986#L66">ToNullableLong</a>
 				<a class="permalink" href="index.html#ToNullableLong">&#xb6;</a>
 				
 				
@@ -1146,7 +1182,7 @@ Returns: long value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableMap">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=1883:1944#L37">ToNullableMap</a>
+			<h2 id="ToNullableMap">func <a href="http://localhost:6060/src/convert/MapConverter.go?s=1929:1990#L37">ToNullableMap</a>
 				<a class="permalink" href="index.html#ToNullableMap">&#xb6;</a>
 				
 				
@@ -1164,7 +1200,7 @@ Returns: map object or null when conversion is not supported.
 		
 			
 			
-			<h2 id="ToNullableString">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=1930:1978#L47">ToNullableString</a>
+			<h2 id="ToNullableString">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=1985:2033#L47">ToNullableString</a>
 				<a class="permalink" href="index.html#ToNullableString">&#xb6;</a>
 				
 				
@@ -1182,7 +1218,7 @@ Returns: string value or null when value is null.
 		
 			
 			
-			<h2 id="ToNullableType">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=4447:4511#L154">ToNullableType</a>
+			<h2 id="ToNullableType">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=4610:4674#L154">ToNullableType</a>
 				<a class="permalink" href="index.html#ToNullableType">&#xb6;</a>
 				
 				
@@ -1207,7 +1243,43 @@ conversion is not supported.
 		
 			
 			
-			<h2 id="ToString">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=3030:3069#L101">ToString</a>
+			<h2 id="ToNullableUInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=4065:4113#L93">ToNullableUInteger</a>
+				<a class="permalink" href="index.html#ToNullableUInteger">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableUInteger(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+			<p>
+Converts value into unsigned integer or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToNullableULong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=4807:4854#L146">ToNullableULong</a>
+				<a class="permalink" href="index.html#ToNullableULong">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToNullableULong(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+			<p>
+Converts value into unsigned long or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or null when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToString">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=3208:3247#L105">ToString</a>
 				<a class="permalink" href="index.html#ToString">&#xb6;</a>
 				
 				
@@ -1225,7 +1297,7 @@ Returns: string value or &#34;&#34; when value is null.
 		
 			
 			
-			<h2 id="ToStringWithDefault">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=3331:3402#L110">ToStringWithDefault</a>
+			<h2 id="ToStringWithDefault">func <a href="http://localhost:6060/src/convert/StringConverter.go?s=3517:3588#L114">ToStringWithDefault</a>
 				<a class="permalink" href="index.html#ToStringWithDefault">&#xb6;</a>
 				
 				
@@ -1248,7 +1320,7 @@ Returns: string value or default when value is null.
 		
 			
 			
-			<h2 id="ToType">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=5724:5780#L192">ToType</a>
+			<h2 id="ToType">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=5925:5981#L192">ToType</a>
 				<a class="permalink" href="index.html#ToType">&#xb6;</a>
 				
 				
@@ -1273,7 +1345,7 @@ conversion is not supported
 		
 			
 			
-			<h2 id="ToTypeWithDefault">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=7014:7107#L232">ToTypeWithDefault</a>
+			<h2 id="ToTypeWithDefault">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=7255:7348#L232">ToTypeWithDefault</a>
 				<a class="permalink" href="index.html#ToTypeWithDefault">&#xb6;</a>
 				
 				
@@ -1300,7 +1372,89 @@ conversion is not supported
 		
 			
 			
-			<h2 id="TypeCodeToString">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=8413:8455#L266">TypeCodeToString</a>
+			<h2 id="ToUInteger">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=4414:4453#L105">ToUInteger</a>
+				<a class="permalink" href="index.html#ToUInteger">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToUInteger(value interface{}) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+			<p>
+Converts value into unsigned integer or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or 0 when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToUIntegerWithDefault">func <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=4762:4831#L114">ToUIntegerWithDefault</a>
+				<a class="permalink" href="index.html#ToUIntegerWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToUIntegerWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint">uint</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+			<p>
+Converts value into unsigned integer or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: integer value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToULong">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=6033:6071#L206">ToULong</a>
+				<a class="permalink" href="index.html#ToULong">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToULong(value interface{}) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+			<p>
+Converts value into unsigned long or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or 0 when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToULongWithDefault">func <a href="http://localhost:6060/src/convert/LongConverter.go?s=6372:6442#L215">ToULongWithDefault</a>
+				<a class="permalink" href="index.html#ToULongWithDefault">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ToULongWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+			<p>
+Converts value into unsigned long or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value..
+</pre>
+<p>
+Returns: long value or default when conversion is not supported.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TypeCodeToString">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=8858:8900#L276">TypeCodeToString</a>
 				<a class="permalink" href="index.html#TypeCodeToString">&#xb6;</a>
 				
 				
@@ -1319,7 +1473,7 @@ Returns: the name of the TypeCode passed as a string value.
 		
 			
 			
-			<h2 id="TArrayConverter">type <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=384:413#L8">TArrayConverter</a>
+			<h2 id="TArrayConverter">type <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=401:430#L8">TArrayConverter</a>
 				<a class="permalink" href="index.html#TArrayConverter">&#xb6;</a>
 				
 				
@@ -1356,7 +1510,7 @@ fmt.Println(value3) // [1 2 3]
 
 			
 				
-				<h3 id="TArrayConverter.ListToArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1805:1875#L42">ListToArray</a>
+				<h3 id="TArrayConverter.ListToArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1856:1926#L42">ListToArray</a>
 					<a class="permalink" href="index.html#TArrayConverter.ListToArray">&#xb6;</a>
 					
 					
@@ -1378,7 +1532,7 @@ Returns: array object or empty array when value is null
 				
 			
 				
-				<h3 id="TArrayConverter.ToArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1021:1087#L23">ToArray</a>
+				<h3 id="TArrayConverter.ToArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1053:1119#L23">ToArray</a>
 					<a class="permalink" href="index.html#TArrayConverter.ToArray">&#xb6;</a>
 					
 					
@@ -1396,7 +1550,7 @@ Returns: array object or empty array when value is null.
 				
 			
 				
-				<h3 id="TArrayConverter.ToArrayWithDefault">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1399:1504#L33">ToArrayWithDefault</a>
+				<h3 id="TArrayConverter.ToArrayWithDefault">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=1441:1546#L33">ToArrayWithDefault</a>
 					<a class="permalink" href="index.html#TArrayConverter.ToArrayWithDefault">&#xb6;</a>
 					
 					
@@ -1419,7 +1573,7 @@ Returns: array object or empty array when value is null.
 				
 			
 				
-				<h3 id="TArrayConverter.ToNullableArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=673:748#L15">ToNullableArray</a>
+				<h3 id="TArrayConverter.ToNullableArray">func (*TArrayConverter) <a href="http://localhost:6060/src/convert/ArrayConverter.go?s=697:772#L15">ToNullableArray</a>
 					<a class="permalink" href="index.html#TArrayConverter.ToNullableArray">&#xb6;</a>
 					
 					
@@ -1438,7 +1592,7 @@ Returns: array object or null when value is null.
 		
 			
 			
-			<h2 id="TBooleanConverter">type <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=781:812#L14">TBooleanConverter</a>
+			<h2 id="TBooleanConverter">type <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=804:835#L14">TBooleanConverter</a>
 				<a class="permalink" href="index.html#TBooleanConverter">&#xb6;</a>
 				
 				
@@ -1480,7 +1634,7 @@ fmt.Println(value4)  // &lt;nil&gt;
 
 			
 				
-				<h3 id="TBooleanConverter.ToBoolean">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1379:1440#L28">ToBoolean</a>
+				<h3 id="TBooleanConverter.ToBoolean">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1416:1477#L28">ToBoolean</a>
 					<a class="permalink" href="index.html#TBooleanConverter.ToBoolean">&#xb6;</a>
 					
 					
@@ -1497,7 +1651,7 @@ Returns: boolean value or false when conversion is not supported.
 				
 			
 				
-				<h3 id="TBooleanConverter.ToBooleanWithDefault">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1715:1806#L36">ToBooleanWithDefault</a>
+				<h3 id="TBooleanConverter.ToBooleanWithDefault">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1760:1851#L36">ToBooleanWithDefault</a>
 					<a class="permalink" href="index.html#TBooleanConverter.ToBooleanWithDefault">&#xb6;</a>
 					
 					
@@ -1518,7 +1672,7 @@ Returns: boolean value or default when conversion is not supported.
 				
 			
 				
-				<h3 id="TBooleanConverter.ToNullableBoolean">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1073:1143#L21">ToNullableBoolean</a>
+				<h3 id="TBooleanConverter.ToNullableBoolean">func (*TBooleanConverter) <a href="http://localhost:6060/src/convert/BooleanConverter.go?s=1103:1173#L21">ToNullableBoolean</a>
 					<a class="permalink" href="index.html#TBooleanConverter.ToNullableBoolean">&#xb6;</a>
 					
 					
@@ -1537,7 +1691,7 @@ Returns: boolean value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="TDateTimeConverter">type <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=602:634#L9">TDateTimeConverter</a>
+			<h2 id="TDateTimeConverter">type <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=620:652#L9">TDateTimeConverter</a>
 				<a class="permalink" href="index.html#TDateTimeConverter">&#xb6;</a>
 				
 				
@@ -1576,7 +1730,7 @@ fmt.Println(value3) // 1970-01-01 02:02:03 +0200 EET
 
 			
 				
-				<h3 id="TDateTimeConverter.ToDateTime">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1204:1272#L23">ToDateTime</a>
+				<h3 id="TDateTimeConverter.ToDateTime">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1236:1304#L23">ToDateTime</a>
 					<a class="permalink" href="index.html#TDateTimeConverter.ToDateTime">&#xb6;</a>
 					
 					
@@ -1593,7 +1747,7 @@ Returns: Date value or current when conversion is not supported.
 				
 			
 				
-				<h3 id="TDateTimeConverter.ToDateTimeWithDefault">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1542:1645#L32">ToDateTimeWithDefault</a>
+				<h3 id="TDateTimeConverter.ToDateTimeWithDefault">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=1583:1686#L32">ToDateTimeWithDefault</a>
 					<a class="permalink" href="index.html#TDateTimeConverter.ToDateTimeWithDefault">&#xb6;</a>
 					
 					
@@ -1612,7 +1766,7 @@ Returns: Date value or default when conversion is not supported.
 				
 			
 				
-				<h3 id="TDateTimeConverter.ToNullableDateTime">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=892:969#L16">ToNullableDateTime</a>
+				<h3 id="TDateTimeConverter.ToNullableDateTime">func (*TDateTimeConverter) <a href="http://localhost:6060/src/convert/DateTimeConverter.go?s=917:994#L16">ToNullableDateTime</a>
 					<a class="permalink" href="index.html#TDateTimeConverter.ToNullableDateTime">&#xb6;</a>
 					
 					
@@ -1631,7 +1785,7 @@ Returns: Date value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="TDoubleConverter">type <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=715:745#L13">TDoubleConverter</a>
+			<h2 id="TDoubleConverter">type <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=737:767#L13">TDoubleConverter</a>
 				<a class="permalink" href="index.html#TDoubleConverter">&#xb6;</a>
 				
 				
@@ -1673,7 +1827,7 @@ fmt.Println(*value4) // current milliseconds (e.g. 1.566333114e+09)
 
 			
 				
-				<h3 id="TDoubleConverter.ToDouble">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1299:1361#L27">ToDouble</a>
+				<h3 id="TDoubleConverter.ToDouble">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1335:1397#L27">ToDouble</a>
 					<a class="permalink" href="index.html#TDoubleConverter.ToDouble">&#xb6;</a>
 					
 					
@@ -1690,7 +1844,7 @@ Returns: double value or 0 when conversion is not supported.
 				
 			
 				
-				<h3 id="TDoubleConverter.ToDoubleWithDefault">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1635:1730#L36">ToDoubleWithDefault</a>
+				<h3 id="TDoubleConverter.ToDoubleWithDefault">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1680:1775#L36">ToDoubleWithDefault</a>
 					<a class="permalink" href="index.html#TDoubleConverter.ToDoubleWithDefault">&#xb6;</a>
 					
 					
@@ -1712,7 +1866,7 @@ Returns: double value or default when conversion is not supported.
 				
 			
 				
-				<h3 id="TDoubleConverter.ToNullableDouble">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1002:1073#L20">ToNullableDouble</a>
+				<h3 id="TDoubleConverter.ToNullableDouble">func (*TDoubleConverter) <a href="http://localhost:6060/src/convert/DoubleConverter.go?s=1031:1102#L20">ToNullableDouble</a>
 					<a class="permalink" href="index.html#TDoubleConverter.ToNullableDouble">&#xb6;</a>
 					
 					
@@ -1731,7 +1885,7 @@ Returns: double value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="TDurationConverter">type <a href="http://localhost:6060/src/convert/DurationConverter.go?s=417:449#L7">TDurationConverter</a>
+			<h2 id="TDurationConverter">type <a href="http://localhost:6060/src/convert/DurationConverter.go?s=433:465#L7">TDurationConverter</a>
 				<a class="permalink" href="index.html#TDurationConverter">&#xb6;</a>
 				
 				
@@ -1768,7 +1922,7 @@ fmt.Println(value3) // 2m3s
 
 			
 				
-				<h3 id="TDurationConverter.ToDuration">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1059:1131#L21">ToDuration</a>
+				<h3 id="TDurationConverter.ToDuration">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1089:1161#L21">ToDuration</a>
 					<a class="permalink" href="index.html#TDurationConverter.ToDuration">&#xb6;</a>
 					
 					
@@ -1785,7 +1939,7 @@ Returns: time.Duration value or current when conversion is not supported.
 				
 			
 				
-				<h3 id="TDurationConverter.ToDurationWithDefault">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1421:1532#L30">ToDurationWithDefault</a>
+				<h3 id="TDurationConverter.ToDurationWithDefault">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=1460:1571#L30">ToDurationWithDefault</a>
 					<a class="permalink" href="index.html#TDurationConverter.ToDurationWithDefault">&#xb6;</a>
 					
 					
@@ -1807,7 +1961,7 @@ Returns: time.Duration value or default when conversion is not supported.
 				
 			
 				
-				<h3 id="TDurationConverter.ToNullableDuration">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=725:806#L14">ToNullableDuration</a>
+				<h3 id="TDurationConverter.ToNullableDuration">func (*TDurationConverter) <a href="http://localhost:6060/src/convert/DurationConverter.go?s=748:829#L14">ToNullableDuration</a>
 					<a class="permalink" href="index.html#TDurationConverter.ToNullableDuration">&#xb6;</a>
 					
 					
@@ -1826,7 +1980,7 @@ Returns: time.Duration value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="TFloatConverter">type <a href="http://localhost:6060/src/convert/FloatConverter.go?s=674:703#L8">TFloatConverter</a>
+			<h2 id="TFloatConverter">type <a href="http://localhost:6060/src/convert/FloatConverter.go?s=691:720#L8">TFloatConverter</a>
 				<a class="permalink" href="index.html#TFloatConverter">&#xb6;</a>
 				
 				
@@ -1868,7 +2022,7 @@ fmt.Println(*value4) // current milliseconds (e.g. 1.566333114e+09)
 
 			
 				
-				<h3 id="TFloatConverter.ToFloat">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1245:1305#L22">ToFloat</a>
+				<h3 id="TFloatConverter.ToFloat">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1276:1336#L22">ToFloat</a>
 					<a class="permalink" href="index.html#TFloatConverter.ToFloat">&#xb6;</a>
 					
 					
@@ -1885,7 +2039,7 @@ Returns: float value or 0 when conversion is not supported.
 				
 			
 				
-				<h3 id="TFloatConverter.ToFloatWithDefault">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1576:1669#L31">ToFloatWithDefault</a>
+				<h3 id="TFloatConverter.ToFloatWithDefault">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=1616:1709#L31">ToFloatWithDefault</a>
 					<a class="permalink" href="index.html#TFloatConverter.ToFloatWithDefault">&#xb6;</a>
 					
 					
@@ -1907,7 +2061,7 @@ Returns: float value or default when conversion is not supported.
 				
 			
 				
-				<h3 id="TFloatConverter.ToNullableFloat">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=954:1023#L15">ToNullableFloat</a>
+				<h3 id="TFloatConverter.ToNullableFloat">func (*TFloatConverter) <a href="http://localhost:6060/src/convert/FloatConverter.go?s=978:1047#L15">ToNullableFloat</a>
 					<a class="permalink" href="index.html#TFloatConverter.ToNullableFloat">&#xb6;</a>
 					
 					
@@ -1926,7 +2080,7 @@ Returns: float value or null when conversion is not supported.
 		
 			
 			
-			<h2 id="TIntegerConverter">type <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=685:716#L8">TIntegerConverter</a>
+			<h2 id="TIntegerConverter">type <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=702:733#L8">TIntegerConverter</a>
 				<a class="permalink" href="index.html#TIntegerConverter">&#xb6;</a>
 				
 				
@@ -1968,7 +2122,7 @@ fmt.Println(*value4) // current milliseconds (e.g. 1566333428)
 
 			
 				
-				<h3 id="TIntegerConverter.ToInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1272:1332#L22">ToInteger</a>
+				<h3 id="TIntegerConverter.ToInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1303:1363#L22">ToInteger</a>
 					<a class="permalink" href="index.html#TIntegerConverter.ToInteger">&#xb6;</a>
 					
 					
@@ -1985,7 +2139,7 @@ Returns: integer value or 0 when conversion is not supported.
 				
 			
 				
-				<h3 id="TIntegerConverter.ToIntegerWithDefault">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1609:1698#L31">ToIntegerWithDefault</a>
+				<h3 id="TIntegerConverter.ToIntegerWithDefault">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=2679:2768#L54">ToIntegerWithDefault</a>
 					<a class="permalink" href="index.html#TIntegerConverter.ToIntegerWithDefault">&#xb6;</a>
 					
 					
@@ -2007,7 +2161,7 @@ Returns: integer value or default when conversion is not supported.
 				
 			
 				
-				<h3 id="TIntegerConverter.ToNullableInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=976:1045#L15">ToNullableInteger</a>
+				<h3 id="TIntegerConverter.ToNullableInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1000:1069#L15">ToNullableInteger</a>
 					<a class="permalink" href="index.html#TIntegerConverter.ToNullableInteger">&#xb6;</a>
 					
 					
@@ -2023,10 +2177,66 @@ Returns: integer value or null when conversion is not supported.
 				
 				
 			
+				
+				<h3 id="TIntegerConverter.ToNullableUInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=2016:2087#L38">ToNullableUInteger</a>
+					<a class="permalink" href="index.html#TIntegerConverter.ToNullableUInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TIntegerConverter">TIntegerConverter</a>) ToNullableUInteger(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts value into unsigned integer or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TIntegerConverter.ToUInteger">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=2331:2393#L45">ToUInteger</a>
+					<a class="permalink" href="index.html#TIntegerConverter.ToUInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TIntegerConverter">TIntegerConverter</a>) ToUInteger(value interface{}) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts value into unsigned integer or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: integer value or 0 when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TIntegerConverter.ToUIntegerWithDefault">func (*TIntegerConverter) <a href="http://localhost:6060/src/convert/IntegerConverter.go?s=1657:1749#L31">ToUIntegerWithDefault</a>
+					<a class="permalink" href="index.html#TIntegerConverter.ToUIntegerWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TIntegerConverter">TIntegerConverter</a>) ToUIntegerWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint">uint</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts value into unsigned integer or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value.
+</pre>
+<p>
+Returns: integer value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
 		
 			
 			
-			<h2 id="TJsonConverter">type <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1537:1565#L50">TJsonConverter</a>
+			<h2 id="TJsonConverter">type <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1596:1624#L50">TJsonConverter</a>
 				<a class="permalink" href="index.html#TJsonConverter">&#xb6;</a>
 				
 				
@@ -2063,7 +2273,7 @@ fmt.Println(value3) // {&#34;key&#34;:123}
 
 			
 				
-				<h3 id="TJsonConverter.ToMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2173:2240#L64">ToMap</a>
+				<h3 id="TJsonConverter.ToMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2246:2313#L64">ToMap</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToMap">&#xb6;</a>
 					
 					
@@ -2080,7 +2290,7 @@ Returns: Map object value or empty map when conversion is not supported.
 				
 			
 				
-				<h3 id="TJsonConverter.ToMapWithDefault">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2542:2657#L73">ToMapWithDefault</a>
+				<h3 id="TJsonConverter.ToMapWithDefault">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2624:2739#L73">ToMapWithDefault</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToMapWithDefault">&#xb6;</a>
 					
 					
@@ -2102,7 +2312,7 @@ Returns: Map object value or default map when conversion is not supported.
 				
 			
 				
-				<h3 id="TJsonConverter.ToNullableMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1835:1911#L57">ToNullableMap</a>
+				<h3 id="TJsonConverter.ToNullableMap">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=1901:1977#L57">ToNullableMap</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToNullableMap">&#xb6;</a>
 					
 					
@@ -2119,7 +2329,7 @@ Returns: Map object value or null when conversion is not supported.
 				
 			
 				
-				<h3 id="TJsonConverter.ToObject">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2882:2941#L80">ToObject</a>
+				<h3 id="TJsonConverter.ToObject">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=2971:3030#L80">ToObject</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToObject">&#xb6;</a>
 					
 					
@@ -2136,7 +2346,7 @@ Returns: Map object value or empty map when conversion is not supported.
 				
 			
 				
-				<h3 id="TJsonConverter.ToObjectAs">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3253:3343#L90">ToObjectAs</a>
+				<h3 id="TJsonConverter.ToObjectAs">func (*TJsonConverter) <a href="http://localhost:6060/src/convert/JsonConverter.go?s=3352:3442#L90">ToObjectAs</a>
 					<a class="permalink" href="index.html#TJsonConverter.ToObjectAs">&#xb6;</a>
 					
 					
@@ -2160,7 +2370,7 @@ Returns: Map object value or empty map when conversion is not supported.
 		
 			
 			
-			<h2 id="TLongConverter">type <a href="http://localhost:6060/src/convert/LongConverter.go?s=686:714#L13">TLongConverter</a>
+			<h2 id="TLongConverter">type <a href="http://localhost:6060/src/convert/LongConverter.go?s=708:736#L13">TLongConverter</a>
 				<a class="permalink" href="index.html#TLongConverter">&#xb6;</a>
 				
 				
@@ -2202,7 +2412,7 @@ fmt.Println(*value4) // current milliseconds (e.g. 1566333527)
 
 			
 				
-				<h3 id="TLongConverter.ToLong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=1242:1298#L27">ToLong</a>
+				<h3 id="TLongConverter.ToLong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=1278:1334#L27">ToLong</a>
 					<a class="permalink" href="index.html#TLongConverter.ToLong">&#xb6;</a>
 					
 					
@@ -2219,7 +2429,7 @@ Returns: long value or 0 when conversion is not supported.
 				
 			
 				
-				<h3 id="TLongConverter.ToLongWithDefault">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=1567:1654#L36">ToLongWithDefault</a>
+				<h3 id="TLongConverter.ToLongWithDefault">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=2606:2693#L59">ToLongWithDefault</a>
 					<a class="permalink" href="index.html#TLongConverter.ToLongWithDefault">&#xb6;</a>
 					
 					
@@ -2241,7 +2451,7 @@ Returns: long value or default when conversion is not supported.
 				
 			
 				
-				<h3 id="TLongConverter.ToNullableLong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=959:1024#L20">ToNullableLong</a>
+				<h3 id="TLongConverter.ToNullableLong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=988:1053#L20">ToNullableLong</a>
 					<a class="permalink" href="index.html#TLongConverter.ToNullableLong">&#xb6;</a>
 					
 					
@@ -2257,10 +2467,66 @@ Returns: long value or null when conversion is not supported.
 				
 				
 			
+				
+				<h3 id="TLongConverter.ToNullableULong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=1968:2035#L43">ToNullableULong</a>
+					<a class="permalink" href="index.html#TLongConverter.ToNullableULong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TLongConverter">TLongConverter</a>) ToNullableULong(value interface{}) *<a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts value into unsigned long or returns null when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or null when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TLongConverter.ToULong">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=2270:2328#L50">ToULong</a>
+					<a class="permalink" href="index.html#TLongConverter.ToULong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TLongConverter">TLongConverter</a>) ToULong(value interface{}) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts value into unsigned long or returns 0 when conversion is not possible.
+Parameters: &#34;value&#34; - the value to convert
+Returns: long value or 0 when conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="TLongConverter.ToULongWithDefault">func (*TLongConverter) <a href="http://localhost:6060/src/convert/LongConverter.go?s=1620:1710#L36">ToULongWithDefault</a>
+					<a class="permalink" href="index.html#TLongConverter.ToULongWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#TLongConverter">TLongConverter</a>) ToULongWithDefault(value interface{}, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts value into unsigned long or returns default when conversion is not possible.
+Parameters:
+</p>
+<pre>&#34;value&#34; - the value to convert.
+&#34;defaultValue&#34; - the default value..
+</pre>
+<p>
+Returns: long value or default when conversion is not supported.
+</p>
+
+				
+				
+				
+			
 		
 			
 			
-			<h2 id="TMapConverter">type <a href="http://localhost:6060/src/convert/MapConverter.go?s=574:601#L7">TMapConverter</a>
+			<h2 id="TMapConverter">type <a href="http://localhost:6060/src/convert/MapConverter.go?s=590:617#L7">TMapConverter</a>
 				<a class="permalink" href="index.html#TMapConverter">&#xb6;</a>
 				
 				
@@ -2299,7 +2565,7 @@ fmt.Println(*value3) // map[0:1 1:2 2:3]
 
 			
 				
-				<h3 id="TMapConverter.ToMap">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=1168:1239#L21">ToMap</a>
+				<h3 id="TMapConverter.ToMap">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=1198:1269#L21">ToMap</a>
 					<a class="permalink" href="index.html#TMapConverter.ToMap">&#xb6;</a>
 					
 					
@@ -2316,7 +2582,7 @@ Returns: map object or empty map when conversion is not supported.
 				
 			
 				
-				<h3 id="TMapConverter.ToMapWithDefault">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=1518:1637#L30">ToMapWithDefault</a>
+				<h3 id="TMapConverter.ToMapWithDefault">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=1557:1676#L30">ToMapWithDefault</a>
 					<a class="permalink" href="index.html#TMapConverter.ToMapWithDefault">&#xb6;</a>
 					
 					
@@ -2338,7 +2604,7 @@ Returns: map object or default map when conversion is not supported.
 				
 			
 				
-				<h3 id="TMapConverter.ToNullableMap">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=849:929#L14">ToNullableMap</a>
+				<h3 id="TMapConverter.ToNullableMap">func (*TMapConverter) <a href="http://localhost:6060/src/convert/MapConverter.go?s=872:952#L14">ToNullableMap</a>
 					<a class="permalink" href="index.html#TMapConverter.ToNullableMap">&#xb6;</a>
 					
 					
@@ -2357,7 +2623,7 @@ Returns: map object or null when conversion is not supported.
 		
 			
 			
-			<h2 id="TStringConverter">type <a href="http://localhost:6060/src/convert/StringConverter.go?s=782:812#L17">TStringConverter</a>
+			<h2 id="TStringConverter">type <a href="http://localhost:6060/src/convert/StringConverter.go?s=808:838#L17">TStringConverter</a>
 				<a class="permalink" href="index.html#TStringConverter">&#xb6;</a>
 				
 				
@@ -2401,7 +2667,7 @@ fmt.Println(value4) // 1,2,3
 
 			
 				
-				<h3 id="TStringConverter.ToNullableString">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1040:1110#L24">ToNullableString</a>
+				<h3 id="TStringConverter.ToNullableString">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1073:1143#L24">ToNullableString</a>
 					<a class="permalink" href="index.html#TStringConverter.ToNullableString">&#xb6;</a>
 					
 					
@@ -2418,7 +2684,7 @@ Returns: string value or null when value is null.
 				
 			
 				
-				<h3 id="TStringConverter.ToString">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1309:1370#L31">ToString</a>
+				<h3 id="TStringConverter.ToString">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1349:1410#L31">ToString</a>
 					<a class="permalink" href="index.html#TStringConverter.ToString">&#xb6;</a>
 					
 					
@@ -2435,7 +2701,7 @@ Returns: string value or &#34;&#34; when value is null.
 				
 			
 				
-				<h3 id="TStringConverter.ToStringWithDefault">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1617:1710#L40">ToStringWithDefault</a>
+				<h3 id="TStringConverter.ToStringWithDefault">func (*TStringConverter) <a href="http://localhost:6060/src/convert/StringConverter.go?s=1665:1758#L40">ToStringWithDefault</a>
 					<a class="permalink" href="index.html#TStringConverter.ToStringWithDefault">&#xb6;</a>
 					
 					
@@ -2459,7 +2725,7 @@ Returns: string value or default when value is null.
 		
 			
 			
-			<h2 id="TTypeConverter">type <a href="http://localhost:6060/src/convert/TypeConverter.go?s=582:610#L10">TTypeConverter</a>
+			<h2 id="TTypeConverter">type <a href="http://localhost:6060/src/convert/TypeConverter.go?s=601:629#L10">TTypeConverter</a>
 				<a class="permalink" href="index.html#TTypeConverter">&#xb6;</a>
 				
 				
@@ -2498,7 +2764,7 @@ fmt.Println(value3) // false
 
 			
 				
-				<h3 id="TTypeConverter.ToNullableType">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=1248:1332#L28">ToNullableType</a>
+				<h3 id="TTypeConverter.ToNullableType">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=1285:1369#L28">ToNullableType</a>
 					<a class="permalink" href="index.html#TTypeConverter.ToNullableType">&#xb6;</a>
 					
 					
@@ -2522,7 +2788,7 @@ conversion is not supported.
 				
 			
 				
-				<h3 id="TTypeConverter.ToString">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2658:2712#L59">ToString</a>
+				<h3 id="TTypeConverter.ToString">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2726:2780#L59">ToString</a>
 					<a class="permalink" href="index.html#TTypeConverter.ToString">&#xb6;</a>
 					
 					
@@ -2539,7 +2805,7 @@ Returns: the name of the TypeCode passed as a string value.
 				
 			
 				
-				<h3 id="TTypeConverter.ToType">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=1741:1817#L39">ToType</a>
+				<h3 id="TTypeConverter.ToType">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=1789:1865#L39">ToType</a>
 					<a class="permalink" href="index.html#TTypeConverter.ToType">&#xb6;</a>
 					
 					
@@ -2563,7 +2829,7 @@ conversion is not supported
 				
 			
 				
-				<h3 id="TTypeConverter.ToTypeCode">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=840:903#L17">ToTypeCode</a>
+				<h3 id="TTypeConverter.ToTypeCode">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=866:929#L17">ToTypeCode</a>
 					<a class="permalink" href="index.html#TTypeConverter.ToTypeCode">&#xb6;</a>
 					
 					
@@ -2580,7 +2846,7 @@ Returns: the TypeCode that corresponds to the passed object&#39;s type.
 				
 			
 				
-				<h3 id="TTypeConverter.ToTypeWithDefault">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2317:2430#L52">ToTypeWithDefault</a>
+				<h3 id="TTypeConverter.ToTypeWithDefault">func (*TTypeConverter) <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2378:2491#L52">ToTypeWithDefault</a>
 					<a class="permalink" href="index.html#TTypeConverter.ToTypeWithDefault">&#xb6;</a>
 					
 					
@@ -2608,7 +2874,7 @@ conversion is not supported
 		
 			
 			
-			<h2 id="TypeCode">type <a href="http://localhost:6060/src/convert/TypeCode.go?s=88:105#L1">TypeCode</a>
+			<h2 id="TypeCode">type <a href="http://localhost:6060/src/convert/TypeCode.go?s=91:108#L1">TypeCode</a>
 				<a class="permalink" href="index.html#TypeCode">&#xb6;</a>
 				
 				
@@ -2646,7 +2912,7 @@ Codes for the data types that can be converted using TypeConverter.
 
 			
 				
-				<h3 id="ToTypeCode">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2921:2964#L66">ToTypeCode</a>
+				<h3 id="ToTypeCode">func <a href="http://localhost:6060/src/convert/TypeConverter.go?s=2996:3039#L66">ToTypeCode</a>
 					<a class="permalink" href="index.html#ToTypeCode">&#xb6;</a>
 					
 					
@@ -2675,13 +2941,13 @@ Returns: the TypeCode that corresponds to the passed object&#39;s type.
 
 
 <div id="footer">
-Build version go1.13.15.<br>
+Build version go1.16.15.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
 and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
-<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
-<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
 </div>
 
 </div><!-- .container -->

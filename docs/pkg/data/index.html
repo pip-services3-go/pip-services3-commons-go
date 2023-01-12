@@ -14,7 +14,7 @@
 
 
 
-<script>var goVersion = "go1.13.15";</script>
+<script>var goVersion = "go1.16.15";</script>
 <script src="../../lib/godoc/godocs.js" defer></script>
 </head>
 <body>
@@ -222,6 +222,18 @@
 					<dd>&nbsp; &nbsp; <a href="index.html#AnyValue.GetAsTypeWithDefault">func (c *AnyValue) GetAsTypeWithDefault(typ convert.TypeCode, defaultValue interface{}) interface{}</a></dd>
 				
 					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValue.GetAsUInteger">func (c *AnyValue) GetAsUInteger() uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValue.GetAsUIntegerWithDefault">func (c *AnyValue) GetAsUIntegerWithDefault(defaultValue uint) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValue.GetAsULong">func (c *AnyValue) GetAsULong() uint64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValue.GetAsULongWithDefault">func (c *AnyValue) GetAsULongWithDefault(defaultValue uint64) uint64</a></dd>
+				
+					
 					<dd>&nbsp; &nbsp; <a href="index.html#AnyValue.InnerValue">func (c *AnyValue) InnerValue() interface{}</a></dd>
 				
 					
@@ -378,6 +390,18 @@
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueArray.GetAsTypeWithDefault">func (c *AnyValueArray) GetAsTypeWithDefault(typ convert.TypeCode, index int, defaultValue interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueArray.GetAsUInteger">func (c *AnyValueArray) GetAsUInteger(index int) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueArray.GetAsUIntegerWithDefault">func (c *AnyValueArray) GetAsUIntegerWithDefault(index int, defaultValue uint) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueArray.GetAsULong">func (c *AnyValueArray) GetAsULong(index int) uint64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueArray.GetAsULongWithDefault">func (c *AnyValueArray) GetAsULongWithDefault(index int, defaultValue uint64) uint64</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueArray.GetAsValue">func (c *AnyValueArray) GetAsValue(index int) *AnyValue</a></dd>
@@ -554,6 +578,18 @@
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueMap.GetAsTypeWithDefault">func (c *AnyValueMap) GetAsTypeWithDefault(typ convert.TypeCode, key string, defaultValue interface{}) interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueMap.GetAsUInteger">func (c *AnyValueMap) GetAsUInteger(key string) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueMap.GetAsUIntegerWithDefault">func (c *AnyValueMap) GetAsUIntegerWithDefault(key string, defaultValue uint) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueMap.GetAsULong">func (c *AnyValueMap) GetAsULong(key string) uint64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueMap.GetAsULongWithDefault">func (c *AnyValueMap) GetAsULongWithDefault(key string, defaultValue uint64) uint64</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#AnyValueMap.GetAsValue">func (c *AnyValueMap) GetAsValue(key string) *AnyValue</a></dd>
@@ -854,6 +890,12 @@
 					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsNullableString">func (c *StringValueMap) GetAsNullableString(key string) *string</a></dd>
 				
 					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsNullableUInteger">func (c *StringValueMap) GetAsNullableUInteger(key string) *uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsNullableULong">func (c *StringValueMap) GetAsNullableULong(key string) *uint64</a></dd>
+				
+					
 					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsObject">func (c *StringValueMap) GetAsObject(key string) interface{}</a></dd>
 				
 					
@@ -864,6 +906,18 @@
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsStringWithDefault">func (c *StringValueMap) GetAsStringWithDefault(key string, defaultValue string) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsUInteger">func (c *StringValueMap) GetAsUInteger(key string) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsUIntegerWithDefault">func (c *StringValueMap) GetAsUIntegerWithDefault(key string, defaultValue uint) uint</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsULong">func (c *StringValueMap) GetAsULong(key string) uint64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsULongWithDefault">func (c *StringValueMap) GetAsULongWithDefault(key string, defaultValue uint64) uint64</a></dd>
 				
 					
 					<dd>&nbsp; &nbsp; <a href="index.html#StringValueMap.GetAsValue">func (c *StringValueMap) GetAsValue(key string) *AnyValue</a></dd>
@@ -1034,7 +1088,7 @@
 		
 			
 			
-			<h2 id="AnyValue">type <a href="http://localhost:6060/src/data/AnyValue.go?s=466:509#L9">AnyValue</a>
+			<h2 id="AnyValue">type <a href="http://localhost:6060/src/data/AnyValue.go?s=484:529#L9">AnyValue</a>
 				<a class="permalink" href="index.html#AnyValue">&#xb6;</a>
 				
 				
@@ -1068,7 +1122,7 @@ value.GetAsFloat()   // Result: 123.456
 
 			
 				
-				<h3 id="NewAnyValue">func <a href="http://localhost:6060/src/data/AnyValue.go?s=800:845#L22">NewAnyValue</a>
+				<h3 id="NewAnyValue">func <a href="http://localhost:6060/src/data/AnyValue.go?s=831:876#L22">NewAnyValue</a>
 					<a class="permalink" href="index.html#NewAnyValue">&#xb6;</a>
 					
 					
@@ -1084,7 +1138,7 @@ Returns: new object.
 				
 			
 				
-				<h3 id="NewEmptyAnyValue">func <a href="http://localhost:6060/src/data/AnyValue.go?s=586:619#L15">NewEmptyAnyValue</a>
+				<h3 id="NewEmptyAnyValue">func <a href="http://localhost:6060/src/data/AnyValue.go?s=610:643#L15">NewEmptyAnyValue</a>
 					<a class="permalink" href="index.html#NewEmptyAnyValue">&#xb6;</a>
 					
 					
@@ -1101,7 +1155,7 @@ Returns: new empty object
 
 			
 				
-				<h3 id="AnyValue.Clone">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=12225:12263#L307">Clone</a>
+				<h3 id="AnyValue.Clone">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=13807:13845#L333">Clone</a>
 					<a class="permalink" href="index.html#AnyValue.Clone">&#xb6;</a>
 					
 					
@@ -1117,7 +1171,7 @@ Returns: a clone of this object.
 				
 			
 				
-				<h3 id="AnyValue.Equals">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=10879:10926#L254">Equals</a>
+				<h3 id="AnyValue.Equals">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=12408:12455#L280">Equals</a>
 					<a class="permalink" href="index.html#AnyValue.Equals">&#xb6;</a>
 					
 					
@@ -1135,7 +1189,7 @@ Returns: true when objects are equal and false otherwise.
 				
 			
 				
-				<h3 id="AnyValue.EqualsAsType">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=11751:11826#L286">EqualsAsType</a>
+				<h3 id="AnyValue.EqualsAsType">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=13312:13387#L312">EqualsAsType</a>
 					<a class="permalink" href="index.html#AnyValue.EqualsAsType">&#xb6;</a>
 					
 					
@@ -1159,7 +1213,7 @@ Returns: true when objects are equal and false otherwise.
 				
 			
 				
-				<h3 id="AnyValue.GetAsArray">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=10267:10313#L240">GetAsArray</a>
+				<h3 id="AnyValue.GetAsArray">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=11782:11828#L266">GetAsArray</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsArray">&#xb6;</a>
 					
 					
@@ -1175,7 +1229,7 @@ Returns: AnyArray value or empty AnyArray if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsBoolean">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=3053:3091#L88">GetAsBoolean</a>
+				<h3 id="AnyValue.GetAsBoolean">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=3150:3188#L88">GetAsBoolean</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsBoolean">&#xb6;</a>
 					
 					
@@ -1191,7 +1245,7 @@ Returns: string value or false if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsBooleanWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=3354:3420#L95">GetAsBooleanWithDefault</a>
+				<h3 id="AnyValue.GetAsBooleanWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=3458:3524#L95">GetAsBooleanWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsBooleanWithDefault">&#xb6;</a>
 					
 					
@@ -1208,7 +1262,7 @@ Returns: boolean value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsDateTime">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7318:7362#L183">GetAsDateTime</a>
+				<h3 id="AnyValue.GetAsDateTime">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=8776:8820#L209">GetAsDateTime</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsDateTime">&#xb6;</a>
 					
 					
@@ -1224,7 +1278,7 @@ Returns: DateTime value or current date if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsDateTimeWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7629:7706#L190">GetAsDateTimeWithDefault</a>
+				<h3 id="AnyValue.GetAsDateTimeWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=9094:9171#L216">GetAsDateTimeWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsDateTimeWithDefault">&#xb6;</a>
 					
 					
@@ -1241,7 +1295,7 @@ Returns: DateTime value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsDouble">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=6432:6472#L164">GetAsDouble</a>
+				<h3 id="AnyValue.GetAsDouble">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7871:7911#L190">GetAsDouble</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsDouble">&#xb6;</a>
 					
 					
@@ -1257,7 +1311,7 @@ Returns: double value or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsDoubleWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=6727:6798#L171">GetAsDoubleWithDefault</a>
+				<h3 id="AnyValue.GetAsDoubleWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=8173:8244#L197">GetAsDoubleWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsDoubleWithDefault">&#xb6;</a>
 					
 					
@@ -1274,7 +1328,7 @@ Returns: double value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsDuration">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=8242:8290#L202">GetAsDuration</a>
+				<h3 id="AnyValue.GetAsDuration">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=9719:9767#L228">GetAsDuration</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsDuration">&#xb6;</a>
 					
 					
@@ -1290,7 +1344,7 @@ Returns: Duration value or current date if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsDurationWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=8570:8655#L209">GetAsDurationWithDefault</a>
+				<h3 id="AnyValue.GetAsDurationWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=10054:10139#L235">GetAsDurationWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsDurationWithDefault">&#xb6;</a>
 					
 					
@@ -1307,7 +1361,7 @@ Returns: Duration value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsFloat">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=5583:5622#L145">GetAsFloat</a>
+				<h3 id="AnyValue.GetAsFloat">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7003:7042#L171">GetAsFloat</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsFloat">&#xb6;</a>
 					
 					
@@ -1323,7 +1377,7 @@ Returns: float value or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsFloatWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=5874:5944#L152">GetAsFloatWithDefault</a>
+				<h3 id="AnyValue.GetAsFloatWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7301:7371#L178">GetAsFloatWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsFloatWithDefault">&#xb6;</a>
 					
 					
@@ -1340,7 +1394,7 @@ Returns: float value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsInteger">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=3917:3954#L107">GetAsInteger</a>
+				<h3 id="AnyValue.GetAsInteger">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=4033:4070#L107">GetAsInteger</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsInteger">&#xb6;</a>
 					
 					
@@ -1356,7 +1410,7 @@ Returns: integer value or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsIntegerWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=4212:4276#L114">GetAsIntegerWithDefault</a>
+				<h3 id="AnyValue.GetAsIntegerWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=4335:4399#L114">GetAsIntegerWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsIntegerWithDefault">&#xb6;</a>
 					
 					
@@ -1373,7 +1427,7 @@ Returns: integer value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsLong">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=4754:4790#L126">GetAsLong</a>
+				<h3 id="AnyValue.GetAsLong">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=5535:5571#L139">GetAsLong</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsLong">&#xb6;</a>
 					
 					
@@ -1389,7 +1443,7 @@ Returns: string value or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsLongWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=5039:5104#L133">GetAsLongWithDefault</a>
+				<h3 id="AnyValue.GetAsLongWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=5827:5892#L146">GetAsLongWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsLongWithDefault">&#xb6;</a>
 					
 					
@@ -1406,7 +1460,7 @@ Returns: long value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsMap">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=10527:10569#L246">GetAsMap</a>
+				<h3 id="AnyValue.GetAsMap">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=12048:12090#L272">GetAsMap</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsMap">&#xb6;</a>
 					
 					
@@ -1422,7 +1476,7 @@ Returns: AnyMap value or empty AnyMap if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableBoolean">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=2786:2833#L82">GetAsNullableBoolean</a>
+				<h3 id="AnyValue.GetAsNullableBoolean">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=2877:2924#L82">GetAsNullableBoolean</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableBoolean">&#xb6;</a>
 					
 					
@@ -1438,7 +1492,7 @@ Returns: boolean value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableDateTime">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7030:7083#L177">GetAsNullableDateTime</a>
+				<h3 id="AnyValue.GetAsNullableDateTime">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=8482:8535#L203">GetAsNullableDateTime</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableDateTime">&#xb6;</a>
 					
 					
@@ -1454,7 +1508,7 @@ Returns: DateTime value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableDouble">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=6174:6223#L158">GetAsNullableDouble</a>
+				<h3 id="AnyValue.GetAsNullableDouble">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7607:7656#L184">GetAsNullableDouble</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableDouble">&#xb6;</a>
 					
 					
@@ -1470,7 +1524,7 @@ Returns: double value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableDuration">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=7946:8003#L196">GetAsNullableDuration</a>
+				<h3 id="AnyValue.GetAsNullableDuration">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=9417:9474#L222">GetAsNullableDuration</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableDuration">&#xb6;</a>
 					
 					
@@ -1486,7 +1540,7 @@ Returns: Duration value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableFloat">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=5330:5378#L139">GetAsNullableFloat</a>
+				<h3 id="AnyValue.GetAsNullableFloat">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=6744:6792#L165">GetAsNullableFloat</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableFloat">&#xb6;</a>
 					
 					
@@ -1502,7 +1556,7 @@ Returns: float value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableInteger">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=3657:3703#L101">GetAsNullableInteger</a>
+				<h3 id="AnyValue.GetAsNullableInteger">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=3767:3813#L101">GetAsNullableInteger</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableInteger">&#xb6;</a>
 					
 					
@@ -1518,7 +1572,7 @@ Returns: integer value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableLong">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=4506:4551#L120">GetAsNullableLong</a>
+				<h3 id="AnyValue.GetAsNullableLong">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=5281:5326#L133">GetAsNullableLong</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableLong">&#xb6;</a>
 					
 					
@@ -1534,7 +1588,7 @@ Returns: long value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableString">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1928:1976#L63">GetAsNullableString</a>
+				<h3 id="AnyValue.GetAsNullableString">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=2000:2048#L63">GetAsNullableString</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableString">&#xb6;</a>
 					
 					
@@ -1550,7 +1604,7 @@ Returns: string value or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsNullableType">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=9009:9079#L216">GetAsNullableType</a>
+				<h3 id="AnyValue.GetAsNullableType">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=10500:10570#L242">GetAsNullableType</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsNullableType">&#xb6;</a>
 					
 					
@@ -1567,7 +1621,7 @@ Returns: value defined by the typecode or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsObject">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1555:1599#L51">GetAsObject</a>
+				<h3 id="AnyValue.GetAsObject">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1615:1659#L51">GetAsObject</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsObject">&#xb6;</a>
 					
 					
@@ -1583,7 +1637,7 @@ Returns: the object value.
 				
 			
 				
-				<h3 id="AnyValue.GetAsString">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=2187:2226#L69">GetAsString</a>
+				<h3 id="AnyValue.GetAsString">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=2265:2304#L69">GetAsString</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsString">&#xb6;</a>
 					
 					
@@ -1599,7 +1653,7 @@ Returns: string value or &#34;&#34; if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsStringWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=2483:2552#L76">GetAsStringWithDefault</a>
+				<h3 id="AnyValue.GetAsStringWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=2568:2637#L76">GetAsStringWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsStringWithDefault">&#xb6;</a>
 					
 					
@@ -1616,7 +1670,7 @@ Returns: string value or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValue.GetAsType">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=9462:9524#L224">GetAsType</a>
+				<h3 id="AnyValue.GetAsType">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=10961:11023#L250">GetAsType</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsType">&#xb6;</a>
 					
 					
@@ -1634,7 +1688,7 @@ Returns: value defined by the typecode or type default value if conversion is no
 				
 			
 				
-				<h3 id="AnyValue.GetAsTypeWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=9910:10009#L234">GetAsTypeWithDefault</a>
+				<h3 id="AnyValue.GetAsTypeWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=11419:11518#L260">GetAsTypeWithDefault</a>
 					<a class="permalink" href="index.html#AnyValue.GetAsTypeWithDefault">&#xb6;</a>
 					
 					
@@ -1657,7 +1711,73 @@ Returns: value defined by the typecode or type default value if conversion is no
 				
 			
 				
-				<h3 id="AnyValue.InnerValue">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1040:1083#L33">InnerValue</a>
+				<h3 id="AnyValue.GetAsUInteger">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=4654:4693#L120">GetAsUInteger</a>
+					<a class="permalink" href="index.html#AnyValue.GetAsUInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValue">AnyValue</a>) GetAsUInteger() <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts object value into an unsigned integer or returns 0 if conversion is not possible.
+Returns: unsigned integer value or 0 if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValue.GetAsUIntegerWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=4977:5044#L127">GetAsUIntegerWithDefault</a>
+					<a class="permalink" href="index.html#AnyValue.GetAsUIntegerWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValue">AnyValue</a>) GetAsUIntegerWithDefault(defaultValue <a href="http://localhost:6060/pkg/builtin/#uint">uint</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts object value into a unsigned integer or returns default value if conversion is not possible.
+Parameters: &#34;defaultValue&#34; - the default value
+Returns: unsigned integer value or default if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValue.GetAsULong">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=6132:6170#L152">GetAsULong</a>
+					<a class="permalink" href="index.html#AnyValue.GetAsULong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValue">AnyValue</a>) GetAsULong() <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts object value into a unsiged long or returns 0 if conversion is not possible.
+Returns: unsiged long value or 0 if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValue.GetAsULongWithDefault">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=6443:6511#L159">GetAsULongWithDefault</a>
+					<a class="permalink" href="index.html#AnyValue.GetAsULongWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValue">AnyValue</a>) GetAsULongWithDefault(defaultValue <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts object value into a unsiged long or returns default value if conversion is not possible.
+Parameters: &#34;defaultValue&#34; - the default value
+Returns: unsiged long value or default if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValue.InnerValue">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1082:1125#L33">InnerValue</a>
 					<a class="permalink" href="index.html#AnyValue.InnerValue">&#xb6;</a>
 					
 					
@@ -1673,7 +1793,7 @@ Returns: the object value.
 				
 			
 				
-				<h3 id="AnyValue.SetAsObject">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1705:1754#L57">SetAsObject</a>
+				<h3 id="AnyValue.SetAsObject">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1771:1820#L57">SetAsObject</a>
 					<a class="permalink" href="index.html#AnyValue.SetAsObject">&#xb6;</a>
 					
 					
@@ -1689,7 +1809,7 @@ Parameters: &#34;value&#34; - the new object value.
 				
 			
 				
-				<h3 id="AnyValue.String">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=12396:12430#L313">String</a>
+				<h3 id="AnyValue.String">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=13984:14018#L339">String</a>
 					<a class="permalink" href="index.html#AnyValue.String">&#xb6;</a>
 					
 					
@@ -1705,7 +1825,7 @@ Returns: a string representation of the object.
 				
 			
 				
-				<h3 id="AnyValue.TypeCode">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1358:1404#L45">TypeCode</a>
+				<h3 id="AnyValue.TypeCode">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1412:1458#L45">TypeCode</a>
 					<a class="permalink" href="index.html#AnyValue.TypeCode">&#xb6;</a>
 					
 					
@@ -1721,7 +1841,7 @@ Returns: type code of the object value.
 				
 			
 				
-				<h3 id="AnyValue.Value">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1200:1238#L39">Value</a>
+				<h3 id="AnyValue.Value">func (*AnyValue) <a href="http://localhost:6060/src/data/AnyValue.go?s=1248:1286#L39">Value</a>
 					<a class="permalink" href="index.html#AnyValue.Value">&#xb6;</a>
 					
 					
@@ -1739,7 +1859,7 @@ Returns: the object value.
 		
 			
 			
-			<h2 id="AnyValueArray">type <a href="http://localhost:6060/src/data/AnyValueArray.go?s=728:778#L30">AnyValueArray</a>
+			<h2 id="AnyValueArray">type <a href="http://localhost:6060/src/data/AnyValueArray.go?s=766:818#L30">AnyValueArray</a>
 				<a class="permalink" href="index.html#AnyValueArray">&#xb6;</a>
 				
 				
@@ -1793,7 +1913,7 @@ ICloneable
 
 			
 				
-				<h3 id="NewAnyValueArray">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1095:1153#L46">NewAnyValueArray</a>
+				<h3 id="NewAnyValueArray">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1149:1207#L46">NewAnyValueArray</a>
 					<a class="permalink" href="index.html#NewAnyValueArray">&#xb6;</a>
 					
 					
@@ -1813,7 +1933,7 @@ Returns *AnyValueArray
 				
 			
 				
-				<h3 id="NewAnyValueArrayFromString">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=23039:23141#L756">NewAnyValueArrayFromString</a>
+				<h3 id="NewAnyValueArrayFromString">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=25709:25811#L810">NewAnyValueArrayFromString</a>
 					<a class="permalink" href="index.html#NewAnyValueArrayFromString">&#xb6;</a>
 					
 					
@@ -1839,7 +1959,7 @@ a newly created AnyValueArray.
 				
 			
 				
-				<h3 id="NewAnyValueArrayFromValue">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=22489:22553#L741">NewAnyValueArrayFromValue</a>
+				<h3 id="NewAnyValueArrayFromValue">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=25144:25208#L795">NewAnyValueArrayFromValue</a>
 					<a class="permalink" href="index.html#NewAnyValueArrayFromValue">&#xb6;</a>
 					
 					
@@ -1863,7 +1983,7 @@ a newly created AnyValueArray.
 				
 			
 				
-				<h3 id="NewAnyValueArrayFromValues">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=22167:22236#L729">NewAnyValueArrayFromValues</a>
+				<h3 id="NewAnyValueArrayFromValues">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=24810:24879#L783">NewAnyValueArrayFromValues</a>
 					<a class="permalink" href="index.html#NewAnyValueArrayFromValues">&#xb6;</a>
 					
 					
@@ -1885,7 +2005,7 @@ a newly created AnyValueArray.
 				
 			
 				
-				<h3 id="NewEmptyAnyValueArray">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=852:895#L36">NewEmptyAnyValueArray</a>
+				<h3 id="NewEmptyAnyValueArray">func <a href="http://localhost:6060/src/data/AnyValueArray.go?s=896:939#L36">NewEmptyAnyValueArray</a>
 					<a class="permalink" href="index.html#NewEmptyAnyValueArray">&#xb6;</a>
 					
 					
@@ -1902,7 +2022,7 @@ Returns *AnyValueArray
 
 			
 				
-				<h3 id="AnyValueArray.Append">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2756:2810#L116">Append</a>
+				<h3 id="AnyValueArray.Append">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2880:2934#L116">Append</a>
 					<a class="permalink" href="index.html#AnyValueArray.Append">&#xb6;</a>
 					
 					
@@ -1921,7 +2041,7 @@ a list of elements to be added.
 				
 			
 				
-				<h3 id="AnyValueArray.Clear">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2932:2963#L123">Clear</a>
+				<h3 id="AnyValueArray.Clear">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=3063:3094#L123">Clear</a>
 					<a class="permalink" href="index.html#AnyValueArray.Clear">&#xb6;</a>
 					
 					
@@ -1936,7 +2056,7 @@ Clears this array by removing all its elements.
 				
 			
 				
-				<h3 id="AnyValueArray.Clone">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=21640:21683#L708">Clone</a>
+				<h3 id="AnyValueArray.Clone">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=24262:24305#L762">Clone</a>
 					<a class="permalink" href="index.html#AnyValueArray.Clone">&#xb6;</a>
 					
 					
@@ -1953,7 +2073,7 @@ a clone of this object.
 				
 			
 				
-				<h3 id="AnyValueArray.Contains">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=20446:20502#L658">Contains</a>
+				<h3 id="AnyValueArray.Contains">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=23018:23074#L712">Contains</a>
 					<a class="permalink" href="index.html#AnyValueArray.Contains">&#xb6;</a>
 					
 					
@@ -1976,7 +2096,7 @@ true if this array contains the value or false otherwise.
 				
 			
 				
-				<h3 id="AnyValueArray.ContainsAsType">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=21215:21299#L691">ContainsAsType</a>
+				<h3 id="AnyValueArray.ContainsAsType">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=23820:23904#L745">ContainsAsType</a>
 					<a class="permalink" href="index.html#AnyValueArray.ContainsAsType">&#xb6;</a>
 					
 					
@@ -2000,7 +2120,7 @@ true if this array contains the value or false otherwise.
 				
 			
 				
-				<h3 id="AnyValueArray.Get">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1746:1796#L75">Get</a>
+				<h3 id="AnyValueArray.Get">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1829:1879#L75">Get</a>
 					<a class="permalink" href="index.html#AnyValueArray.Get">&#xb6;</a>
 					
 					
@@ -2023,7 +2143,7 @@ the value of the array element.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsArray">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=18031:18091#L575">GetAsArray</a>
+				<h3 id="AnyValueArray.GetAsArray">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=20514:20574#L629">GetAsArray</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsArray">&#xb6;</a>
 					
 					
@@ -2048,7 +2168,7 @@ AnyValueArray value of the element or empty AnyValueArray if conversion is not s
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsArrayWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=18526:18626#L590">GetAsArrayWithDefault</a>
+				<h3 id="AnyValueArray.GetAsArrayWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=21024:21124#L644">GetAsArrayWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsArrayWithDefault">&#xb6;</a>
 					
 					
@@ -2075,7 +2195,7 @@ AnyValueArray value of the element or default value if conversion is not support
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsBoolean">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=6147:6199#L227">GetAsBoolean</a>
+				<h3 id="AnyValueArray.GetAsBoolean">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=6382:6434#L227">GetAsBoolean</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsBoolean">&#xb6;</a>
 					
 					
@@ -2100,7 +2220,7 @@ boolean value ot the element or false if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsBooleanWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=6608:6690#L241">GetAsBooleanWithDefault</a>
+				<h3 id="AnyValueArray.GetAsBooleanWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=6857:6939#L241">GetAsBooleanWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsBooleanWithDefault">&#xb6;</a>
 					
 					
@@ -2127,7 +2247,7 @@ boolean value ot the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsDateTime">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=12840:12898#L428">GetAsDateTime</a>
+				<h3 id="AnyValueArray.GetAsDateTime">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=15176:15234#L482">GetAsDateTime</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsDateTime">&#xb6;</a>
 					
 					
@@ -2152,7 +2272,7 @@ time.Time value ot the element or the current date if conversion is not supporte
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsDateTimeWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=13327:13420#L442">GetAsDateTimeWithDefault</a>
+				<h3 id="AnyValueArray.GetAsDateTimeWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=15677:15770#L496">GetAsDateTimeWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsDateTimeWithDefault">&#xb6;</a>
 					
 					
@@ -2179,7 +2299,7 @@ time.time value ot the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsDouble">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=11437:11491#L388">GetAsDouble</a>
+				<h3 id="AnyValueArray.GetAsDouble">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=13733:13787#L442">GetAsDouble</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsDouble">&#xb6;</a>
 					
 					
@@ -2204,7 +2324,7 @@ double value ot the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsDoubleWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=11894:11981#L402">GetAsDoubleWithDefault</a>
+				<h3 id="AnyValueArray.GetAsDoubleWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=14204:14291#L456">GetAsDoubleWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsDoubleWithDefault">&#xb6;</a>
 					
 					
@@ -2231,7 +2351,7 @@ double value ot the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsDuration">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=14302:14364#L468">GetAsDuration</a>
+				<h3 id="AnyValueArray.GetAsDuration">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=16678:16740#L522">GetAsDuration</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsDuration">&#xb6;</a>
 					
 					
@@ -2256,7 +2376,7 @@ Date value ot the element or the current date if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsDurationWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=14808:14909#L482">GetAsDurationWithDefault</a>
+				<h3 id="AnyValueArray.GetAsDurationWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=17198:17299#L536">GetAsDurationWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsDurationWithDefault">&#xb6;</a>
 					
 					
@@ -2283,7 +2403,7 @@ Date value ot the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsFloat">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=10107:10160#L348">GetAsFloat</a>
+				<h3 id="AnyValueArray.GetAsFloat">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=12363:12416#L402">GetAsFloat</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsFloat">&#xb6;</a>
 					
 					
@@ -2308,7 +2428,7 @@ float value ot the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsFloatWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=10553:10639#L362">GetAsFloatWithDefault</a>
+				<h3 id="AnyValueArray.GetAsFloatWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=12823:12909#L416">GetAsFloatWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsFloatWithDefault">&#xb6;</a>
 					
 					
@@ -2335,7 +2455,7 @@ float value ot the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsInteger">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=7491:7542#L267">GetAsInteger</a>
+				<h3 id="AnyValueArray.GetAsInteger">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=7766:7817#L267">GetAsInteger</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsInteger">&#xb6;</a>
 					
 					
@@ -2360,7 +2480,7 @@ integer value ot the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsIntegerWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=7942:8022#L281">GetAsIntegerWithDefault</a>
+				<h3 id="AnyValueArray.GetAsIntegerWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=8231:8311#L281">GetAsIntegerWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsIntegerWithDefault">&#xb6;</a>
 					
 					
@@ -2387,7 +2507,7 @@ integer value ot the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsLong">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=8799:8849#L307">GetAsLong</a>
+				<h3 id="AnyValueArray.GetAsLong">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=10080:10130#L334">GetAsLong</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsLong">&#xb6;</a>
 					
 					
@@ -2412,7 +2532,7 @@ int64 value ot the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsLongWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=9239:9320#L322">GetAsLongWithDefault</a>
+				<h3 id="AnyValueArray.GetAsLongWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=11469:11550#L376">GetAsLongWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsLongWithDefault">&#xb6;</a>
 					
 					
@@ -2424,7 +2544,7 @@ int64 value ot the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsMap">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=19476:19532#L628">GetAsMap</a>
+				<h3 id="AnyValueArray.GetAsMap">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=22012:22068#L682">GetAsMap</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsMap">&#xb6;</a>
 					
 					
@@ -2439,7 +2559,7 @@ Returns *AnyValueMap
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsMapWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=19954:20048#L643">GetAsMapWithDefault</a>
+				<h3 id="AnyValueArray.GetAsMapWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=22505:22599#L697">GetAsMapWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsMapWithDefault">&#xb6;</a>
 					
 					
@@ -2466,7 +2586,7 @@ AnyValueMap value of the element or default value if conversion is not supported
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableArray">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=17535:17603#L558">GetAsNullableArray</a>
+				<h3 id="AnyValueArray.GetAsNullableArray">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=20001:20069#L612">GetAsNullableArray</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableArray">&#xb6;</a>
 					
 					
@@ -2491,7 +2611,7 @@ AnyValueArray value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableBoolean">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=5724:5785#L214">GetAsNullableBoolean</a>
+				<h3 id="AnyValueArray.GetAsNullableBoolean">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=5946:6007#L214">GetAsNullableBoolean</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableBoolean">&#xb6;</a>
 					
 					
@@ -2516,7 +2636,7 @@ boolean value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableDateTime">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=12377:12444#L415">GetAsNullableDateTime</a>
+				<h3 id="AnyValueArray.GetAsNullableDateTime">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=14700:14767#L469">GetAsNullableDateTime</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableDateTime">&#xb6;</a>
 					
 					
@@ -2541,7 +2661,7 @@ time.Time value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableDouble">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=11022:11085#L375">GetAsNullableDouble</a>
+				<h3 id="AnyValueArray.GetAsNullableDouble">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=13305:13368#L429">GetAsNullableDouble</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableDouble">&#xb6;</a>
 					
 					
@@ -2566,7 +2686,7 @@ float64 value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableDuration">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=13832:13903#L455">GetAsNullableDuration</a>
+				<h3 id="AnyValueArray.GetAsNullableDuration">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=16195:16266#L509">GetAsNullableDuration</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableDuration">&#xb6;</a>
 					
 					
@@ -2591,7 +2711,7 @@ time.Duration value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableFloat">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=9698:9760#L335">GetAsNullableFloat</a>
+				<h3 id="AnyValueArray.GetAsNullableFloat">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=11941:12003#L389">GetAsNullableFloat</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableFloat">&#xb6;</a>
 					
 					
@@ -2616,7 +2736,7 @@ float64 value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableInteger">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=7077:7137#L254">GetAsNullableInteger</a>
+				<h3 id="AnyValueArray.GetAsNullableInteger">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=7339:7399#L254">GetAsNullableInteger</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableInteger">&#xb6;</a>
 					
 					
@@ -2641,7 +2761,7 @@ integer value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableLong">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=8399:8458#L294">GetAsNullableLong</a>
+				<h3 id="AnyValueArray.GetAsNullableLong">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=9667:9726#L321">GetAsNullableLong</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableLong">&#xb6;</a>
 					
 					
@@ -2666,7 +2786,7 @@ int64 value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableMap">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=19050:19114#L609">GetAsNullableMap</a>
+				<h3 id="AnyValueArray.GetAsNullableMap">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=21567:21631#L663">GetAsNullableMap</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableMap">&#xb6;</a>
 					
 					
@@ -2693,7 +2813,7 @@ AnyValueMap value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableString">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=4385:4447#L174">GetAsNullableString</a>
+				<h3 id="AnyValueArray.GetAsNullableString">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=4567:4629#L174">GetAsNullableString</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableString">&#xb6;</a>
 					
 					
@@ -2718,7 +2838,7 @@ string value of the element or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsNullableType">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=15407:15493#L497">GetAsNullableType</a>
+				<h3 id="AnyValueArray.GetAsNullableType">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=17812:17898#L551">GetAsNullableType</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsNullableType">&#xb6;</a>
 					
 					
@@ -2745,7 +2865,7 @@ element value defined by the typecode or nil if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=3642:3700#L149">GetAsObject</a>
+				<h3 id="AnyValueArray.GetAsObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=3799:3857#L149">GetAsObject</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsObject">&#xb6;</a>
 					
 					
@@ -2769,7 +2889,7 @@ the element value or value of the array when index is not defined.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsSingleObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=3071:3126#L129">GetAsSingleObject</a>
+				<h3 id="AnyValueArray.GetAsSingleObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=3208:3263#L129">GetAsSingleObject</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsSingleObject">&#xb6;</a>
 					
 					
@@ -2785,7 +2905,7 @@ Return interface{}
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsString">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=4800:4853#L187">GetAsString</a>
+				<h3 id="AnyValueArray.GetAsString">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=4995:5048#L187">GetAsString</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsString">&#xb6;</a>
 					
 					
@@ -2810,7 +2930,7 @@ string value ot the element or &#34;&#34; if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsStringWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=5255:5340#L201">GetAsStringWithDefault</a>
+				<h3 id="AnyValueArray.GetAsStringWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=5464:5549#L201">GetAsStringWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsStringWithDefault">&#xb6;</a>
 					
 					
@@ -2837,7 +2957,7 @@ string value ot the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsType">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=16003:16081#L513">GetAsType</a>
+				<h3 id="AnyValueArray.GetAsType">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=18424:18502#L567">GetAsType</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsType">&#xb6;</a>
 					
 					
@@ -2865,7 +2985,7 @@ element value defined by the typecode or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsTypeWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=16606:16721#L530">GetAsTypeWithDefault</a>
+				<h3 id="AnyValueArray.GetAsTypeWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=19044:19159#L584">GetAsTypeWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsTypeWithDefault">&#xb6;</a>
 					
 					
@@ -2895,7 +3015,111 @@ element value defined by the typecode or default value if conversion is not supp
 				
 			
 				
-				<h3 id="AnyValueArray.GetAsValue">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=17144:17199#L545">GetAsValue</a>
+				<h3 id="AnyValueArray.GetAsUInteger">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=8714:8767#L294">GetAsUInteger</a>
+					<a class="permalink" href="index.html#AnyValueArray.GetAsUInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueArray">AnyValueArray</a>) GetAsUInteger(index <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts array element into an unsigned integer or returns 0 if conversion is not possible.
+see
+getAsIntegerWithDefault
+Parameters:
+</p>
+<pre>- index int
+an index of element to get.
+</pre>
+<p>
+Returns uint
+unsigned integer value ot the element or 0 if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueArray.GetAsUIntegerWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=9193:9276#L308">GetAsUIntegerWithDefault</a>
+					<a class="permalink" href="index.html#AnyValueArray.GetAsUIntegerWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueArray">AnyValueArray</a>) GetAsUIntegerWithDefault(index <a href="http://localhost:6060/pkg/builtin/#int">int</a>, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint">uint</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts array element into an integer or returns default value if conversion is not possible.
+see
+IntegerConverter.toIntegerWithDefault
+Parameters:
+</p>
+<pre>- index int
+an index of element to get.
+- defaultValue uint
+the default value
+</pre>
+<p>
+Returns uint
+unsigned integer value ot the element or default value if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueArray.GetAsULong">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=11011:11063#L361">GetAsULong</a>
+					<a class="permalink" href="index.html#AnyValueArray.GetAsULong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueArray">AnyValueArray</a>) GetAsULong(index <a href="http://localhost:6060/pkg/builtin/#int">int</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts array element into a unsigned long or returns 0 if conversion is not possible.
+see
+getAsLongWithDefault
+Parameters:
+</p>
+<pre>- index int
+an index of element to get.
+</pre>
+<p>
+Returns uint64
+uint64 value ot the element or 0 if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueArray.GetAsULongWithDefault">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=10544:10628#L348">GetAsULongWithDefault</a>
+					<a class="permalink" href="index.html#AnyValueArray.GetAsULongWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueArray">AnyValueArray</a>) GetAsULongWithDefault(index <a href="http://localhost:6060/pkg/builtin/#int">int</a>, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts array element into a unsigned long or returns default value if conversion is not possible.
+see
+LongConverter.toLongWithDefault
+Parameters:
+</p>
+<pre>- index int
+an index of element to get.
+- defaultValue int64
+the default value
+</pre>
+<p>
+Returns uint64
+uint64 value ot the element or default value if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueArray.GetAsValue">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=19597:19652#L599">GetAsValue</a>
 					<a class="permalink" href="index.html#AnyValueArray.GetAsValue">&#xb6;</a>
 					
 					
@@ -2922,7 +3146,7 @@ AnyValue value of the element or empty AnyValue if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueArray.InnerValue">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1305:1353#L55">InnerValue</a>
+				<h3 id="AnyValueArray.InnerValue">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1368:1416#L55">InnerValue</a>
 					<a class="permalink" href="index.html#AnyValueArray.InnerValue">&#xb6;</a>
 					
 					
@@ -2937,7 +3161,7 @@ Return inner value of array as interface{}
 				
 			
 				
-				<h3 id="AnyValueArray.Len">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1511:1544#L65">Len</a>
+				<h3 id="AnyValueArray.Len">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1584:1617#L65">Len</a>
 					<a class="permalink" href="index.html#AnyValueArray.Len">&#xb6;</a>
 					
 					
@@ -2952,7 +3176,7 @@ Returns length of array
 				
 			
 				
-				<h3 id="AnyValueArray.Push">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2550:2597#L108">Push</a>
+				<h3 id="AnyValueArray.Push">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2666:2713#L108">Push</a>
 					<a class="permalink" href="index.html#AnyValueArray.Push">&#xb6;</a>
 					
 					
@@ -2971,7 +3195,7 @@ an value what need to insert
 				
 			
 				
-				<h3 id="AnyValueArray.Put">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2015:2072#L86">Put</a>
+				<h3 id="AnyValueArray.Put">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2109:2166#L86">Put</a>
 					<a class="permalink" href="index.html#AnyValueArray.Put">&#xb6;</a>
 					
 					
@@ -2983,7 +3207,7 @@ an value what need to insert
 				
 			
 				
-				<h3 id="AnyValueArray.Remove">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2338:2379#L100">Remove</a>
+				<h3 id="AnyValueArray.Remove">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=2446:2487#L100">Remove</a>
 					<a class="permalink" href="index.html#AnyValueArray.Remove">&#xb6;</a>
 					
 					
@@ -3002,7 +3226,7 @@ an index of the element to remove.
 				
 			
 				
-				<h3 id="AnyValueArray.SetAsObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=4012:4077#L162">SetAsObject</a>
+				<h3 id="AnyValueArray.SetAsObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=4182:4247#L162">SetAsObject</a>
 					<a class="permalink" href="index.html#AnyValueArray.SetAsObject">&#xb6;</a>
 					
 					
@@ -3028,7 +3252,7 @@ a new element or array value.
 				
 			
 				
-				<h3 id="AnyValueArray.SetAsSingleObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=3238:3298#L137">SetAsSingleObject</a>
+				<h3 id="AnyValueArray.SetAsSingleObject">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=3383:3443#L137">SetAsSingleObject</a>
 					<a class="permalink" href="index.html#AnyValueArray.SetAsSingleObject">&#xb6;</a>
 					
 					
@@ -3047,7 +3271,7 @@ input object
 				
 			
 				
-				<h3 id="AnyValueArray.String">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=21723:21762#L712">String</a>
+				<h3 id="AnyValueArray.String">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=24349:24388#L766">String</a>
 					<a class="permalink" href="index.html#AnyValueArray.String">&#xb6;</a>
 					
 					
@@ -3059,7 +3283,7 @@ input object
 				
 			
 				
-				<h3 id="AnyValueArray.Value">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1417:1462#L60">Value</a>
+				<h3 id="AnyValueArray.Value">func (*AnyValueArray) <a href="http://localhost:6060/src/data/AnyValueArray.go?s=1485:1530#L60">Value</a>
 					<a class="permalink" href="index.html#AnyValueArray.Value">&#xb6;</a>
 					
 					
@@ -3076,7 +3300,7 @@ Returns array of elements []interface{}
 		
 			
 			
-			<h2 id="AnyValueMap">type <a href="http://localhost:6060/src/data/AnyValueMap.go?s=766:835#L29">AnyValueMap</a>
+			<h2 id="AnyValueMap">type <a href="http://localhost:6060/src/data/AnyValueMap.go?s=804:876#L29">AnyValueMap</a>
 				<a class="permalink" href="index.html#AnyValueMap">&#xb6;</a>
 				
 				
@@ -3130,7 +3354,7 @@ ICloneable
 
 			
 				
-				<h3 id="InheritAnyValueMap">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1163:1210#L48">InheritAnyValueMap</a>
+				<h3 id="InheritAnyValueMap">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1220:1267#L48">InheritAnyValueMap</a>
 					<a class="permalink" href="index.html#InheritAnyValueMap">&#xb6;</a>
 					
 					
@@ -3150,7 +3374,7 @@ Returns *AnyValueMap
 				
 			
 				
-				<h3 id="NewAnyValueMap">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1434:1496#L60">NewAnyValueMap</a>
+				<h3 id="NewAnyValueMap">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1503:1565#L60">NewAnyValueMap</a>
 					<a class="permalink" href="index.html#NewAnyValueMap">&#xb6;</a>
 					
 					
@@ -3170,7 +3394,7 @@ Returns *AnyValueMap
 				
 			
 				
-				<h3 id="NewAnyValueMapFromMaps">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=23497:23569#L780">NewAnyValueMapFromMaps</a>
+				<h3 id="NewAnyValueMapFromMaps">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=26136:26208#L834">NewAnyValueMapFromMaps</a>
 					<a class="permalink" href="index.html#NewAnyValueMapFromMaps">&#xb6;</a>
 					
 					
@@ -3192,7 +3416,7 @@ a newly created AnyValueMap.
 				
 			
 				
-				<h3 id="NewAnyValueMapFromTuples">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=22363:22428#L742">NewAnyValueMapFromTuples</a>
+				<h3 id="NewAnyValueMapFromTuples">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=24964:25029#L796">NewAnyValueMapFromTuples</a>
 					<a class="permalink" href="index.html#NewAnyValueMapFromTuples">&#xb6;</a>
 					
 					
@@ -3216,7 +3440,7 @@ a newly created AnyValueArray.
 				
 			
 				
-				<h3 id="NewAnyValueMapFromTuplesArray">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=22841:22910#L754">NewAnyValueMapFromTuplesArray</a>
+				<h3 id="NewAnyValueMapFromTuplesArray">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=25454:25523#L808">NewAnyValueMapFromTuplesArray</a>
 					<a class="permalink" href="index.html#NewAnyValueMapFromTuplesArray">&#xb6;</a>
 					
 					
@@ -3227,7 +3451,7 @@ a newly created AnyValueArray.
 				
 			
 				
-				<h3 id="NewAnyValueMapFromValue">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=21914:21974#L728">NewAnyValueMapFromValue</a>
+				<h3 id="NewAnyValueMapFromValue">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=24501:24561#L782">NewAnyValueMapFromValue</a>
 					<a class="permalink" href="index.html#NewAnyValueMapFromValue">&#xb6;</a>
 					
 					
@@ -3251,7 +3475,7 @@ a newly created AnyValueMap.
 				
 			
 				
-				<h3 id="NewEmptyAnyValueMap">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=905:944#L36">NewEmptyAnyValueMap</a>
+				<h3 id="NewEmptyAnyValueMap">func <a href="http://localhost:6060/src/data/AnyValueMap.go?s=950:989#L36">NewEmptyAnyValueMap</a>
 					<a class="permalink" href="index.html#NewEmptyAnyValueMap">&#xb6;</a>
 					
 					
@@ -3268,7 +3492,7 @@ Returns *AnyValueMap
 
 			
 				
-				<h3 id="AnyValueMap.Append">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3230:3288#L134">Append</a>
+				<h3 id="AnyValueMap.Append">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3373:3431#L134">Append</a>
 					<a class="permalink" href="index.html#AnyValueMap.Append">&#xb6;</a>
 					
 					
@@ -3289,7 +3513,7 @@ a map of elements to be added.
 				
 			
 				
-				<h3 id="AnyValueMap.Clear">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3431:3460#L145">Clear</a>
+				<h3 id="AnyValueMap.Clear">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3585:3614#L145">Clear</a>
 					<a class="permalink" href="index.html#AnyValueMap.Clear">&#xb6;</a>
 					
 					
@@ -3304,7 +3528,7 @@ Clears this map by removing all its elements.
 				
 			
 				
-				<h3 id="AnyValueMap.Clone">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=21645:21686#L716">Clone</a>
+				<h3 id="AnyValueMap.Clone">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=24220:24261#L770">Clone</a>
 					<a class="permalink" href="index.html#AnyValueMap.Clone">&#xb6;</a>
 					
 					
@@ -3321,7 +3545,7 @@ a clone of this object.
 				
 			
 				
-				<h3 id="AnyValueMap.Contains">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3023:3070#L125">Contains</a>
+				<h3 id="AnyValueMap.Contains">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3157:3204#L125">Contains</a>
 					<a class="permalink" href="index.html#AnyValueMap.Contains">&#xb6;</a>
 					
 					
@@ -3344,7 +3568,7 @@ true if this map contains the key or false otherwise.
 				
 			
 				
-				<h3 id="AnyValueMap.Get">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2003:2052#L85">Get</a>
+				<h3 id="AnyValueMap.Get">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2097:2146#L85">Get</a>
 					<a class="permalink" href="index.html#AnyValueMap.Get">&#xb6;</a>
 					
 					
@@ -3367,7 +3591,7 @@ the value of the map element.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsArray">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=18853:18912#L613">GetAsArray</a>
+				<h3 id="AnyValueMap.GetAsArray">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=21325:21384#L667">GetAsArray</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsArray">&#xb6;</a>
 					
 					
@@ -3394,7 +3618,7 @@ AnyValueArray value of the element or empty AnyValueArray if conversion is not s
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsArrayWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=19371:19470#L630">GetAsArrayWithDefault</a>
+				<h3 id="AnyValueMap.GetAsArrayWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=21860:21959#L684">GetAsArrayWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsArrayWithDefault">&#xb6;</a>
 					
 					
@@ -3423,7 +3647,7 @@ AnyValueArray value of the element or default value if conversion is not support
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsBoolean">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=6966:7017#L260">GetAsBoolean</a>
+				<h3 id="AnyValueMap.GetAsBoolean">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=7235:7286#L260">GetAsBoolean</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsBoolean">&#xb6;</a>
 					
 					
@@ -3448,7 +3672,7 @@ bool value of the element or false if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsBooleanWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=7414:7495#L274">GetAsBooleanWithDefault</a>
+				<h3 id="AnyValueMap.GetAsBooleanWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=7697:7778#L274">GetAsBooleanWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsBooleanWithDefault">&#xb6;</a>
 					
 					
@@ -3475,7 +3699,7 @@ bool value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsDateTime">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=13616:13673#L463">GetAsDateTime</a>
+				<h3 id="AnyValueMap.GetAsDateTime">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=15938:15995#L517">GetAsDateTime</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsDateTime">&#xb6;</a>
 					
 					
@@ -3500,7 +3724,7 @@ time.Time value of the element or the current date if conversion is not supporte
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsDateTimeWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=14092:14184#L477">GetAsDateTimeWithDefault</a>
+				<h3 id="AnyValueMap.GetAsDateTimeWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=16428:16520#L531">GetAsDateTimeWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsDateTimeWithDefault">&#xb6;</a>
 					
 					
@@ -3527,7 +3751,7 @@ time.Time value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsDouble">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=12221:12274#L422">GetAsDouble</a>
+				<h3 id="AnyValueMap.GetAsDouble">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=14502:14555#L476">GetAsDouble</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsDouble">&#xb6;</a>
 					
 					
@@ -3552,7 +3776,7 @@ float64 value of the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsDoubleWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=12671:12757#L436">GetAsDoubleWithDefault</a>
+				<h3 id="AnyValueMap.GetAsDoubleWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=14966:15052#L490">GetAsDoubleWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsDoubleWithDefault">&#xb6;</a>
 					
 					
@@ -3579,7 +3803,7 @@ float64 value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsDuration">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=15074:15135#L503">GetAsDuration</a>
+				<h3 id="AnyValueMap.GetAsDuration">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=17436:17497#L557">GetAsDuration</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsDuration">&#xb6;</a>
 					
 					
@@ -3604,7 +3828,7 @@ time.Duration value of the element or the current date if conversion is not supp
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsDurationWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=15573:15673#L517">GetAsDurationWithDefault</a>
+				<h3 id="AnyValueMap.GetAsDurationWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=17949:18049#L571">GetAsDurationWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsDurationWithDefault">&#xb6;</a>
 					
 					
@@ -3631,7 +3855,7 @@ time.Duration value of the element or default value if conversion is not support
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsFloat">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=10894:10946#L381">GetAsFloat</a>
+				<h3 id="AnyValueMap.GetAsFloat">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=13134:13186#L435">GetAsFloat</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsFloat">&#xb6;</a>
 					
 					
@@ -3656,7 +3880,7 @@ float32 value of the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsFloatWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=11338:11423#L395">GetAsFloatWithDefault</a>
+				<h3 id="AnyValueMap.GetAsFloatWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=13592:13677#L449">GetAsFloatWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsFloatWithDefault">&#xb6;</a>
 					
 					
@@ -3683,7 +3907,7 @@ float32 value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsInteger">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=8295:8345#L300">GetAsInteger</a>
+				<h3 id="AnyValueMap.GetAsInteger">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=8604:8654#L300">GetAsInteger</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsInteger">&#xb6;</a>
 					
 					
@@ -3708,7 +3932,7 @@ integer value of the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsIntegerWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=8738:8817#L314">GetAsIntegerWithDefault</a>
+				<h3 id="AnyValueMap.GetAsIntegerWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=9987:10066#L341">GetAsIntegerWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsIntegerWithDefault">&#xb6;</a>
 					
 					
@@ -3735,7 +3959,7 @@ integer value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsLong">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=9593:9642#L340">GetAsLong</a>
+				<h3 id="AnyValueMap.GetAsLong">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=11792:11841#L394">GetAsLong</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsLong">&#xb6;</a>
 					
 					
@@ -3760,7 +3984,7 @@ int64 value of the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsLongWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=10024:10104#L354">GetAsLongWithDefault</a>
+				<h3 id="AnyValueMap.GetAsLongWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=12237:12317#L408">GetAsLongWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsLongWithDefault">&#xb6;</a>
 					
 					
@@ -3787,7 +4011,7 @@ int64 value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsMap">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=20335:20390#L664">GetAsMap</a>
+				<h3 id="AnyValueMap.GetAsMap">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=22858:22913#L718">GetAsMap</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsMap">&#xb6;</a>
 					
 					
@@ -3812,7 +4036,7 @@ AnyValueMap value of the element or empty AnyValueMap if conversion is not suppo
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsMapWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=20812:20905#L679">GetAsMapWithDefault</a>
+				<h3 id="AnyValueMap.GetAsMapWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=23350:23443#L733">GetAsMapWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsMapWithDefault">&#xb6;</a>
 					
 					
@@ -3839,7 +4063,7 @@ AnyValueMap value of the element or default value if conversion is not supported
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableArray">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=18323:18390#L594">GetAsNullableArray</a>
+				<h3 id="AnyValueMap.GetAsNullableArray">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=20776:20843#L648">GetAsNullableArray</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableArray">&#xb6;</a>
 					
 					
@@ -3866,7 +4090,7 @@ AnyValueArray value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableBoolean">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=6547:6607#L247">GetAsNullableBoolean</a>
+				<h3 id="AnyValueMap.GetAsNullableBoolean">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=6803:6863#L247">GetAsNullableBoolean</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableBoolean">&#xb6;</a>
 					
 					
@@ -3891,7 +4115,7 @@ bool value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableDateTime">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=13155:13221#L450">GetAsNullableDateTime</a>
+				<h3 id="AnyValueMap.GetAsNullableDateTime">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=15464:15530#L504">GetAsNullableDateTime</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableDateTime">&#xb6;</a>
 					
 					
@@ -3903,7 +4127,7 @@ bool value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableDouble">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=11807:11869#L409">GetAsNullableDouble</a>
+				<h3 id="AnyValueMap.GetAsNullableDouble">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=14075:14137#L463">GetAsNullableDouble</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableDouble">&#xb6;</a>
 					
 					
@@ -3915,7 +4139,7 @@ bool value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableDuration">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=14597:14667#L490">GetAsNullableDuration</a>
+				<h3 id="AnyValueMap.GetAsNullableDuration">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=16946:17016#L544">GetAsNullableDuration</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableDuration">&#xb6;</a>
 					
 					
@@ -3940,7 +4164,7 @@ time.Duration value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableFloat">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=10485:10546#L368">GetAsNullableFloat</a>
+				<h3 id="AnyValueMap.GetAsNullableFloat">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=12712:12773#L422">GetAsNullableFloat</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableFloat">&#xb6;</a>
 					
 					
@@ -3952,7 +4176,7 @@ time.Duration value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableInteger">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=7883:7942#L287">GetAsNullableInteger</a>
+				<h3 id="AnyValueMap.GetAsNullableInteger">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=8179:8238#L287">GetAsNullableInteger</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableInteger">&#xb6;</a>
 					
 					
@@ -3977,7 +4201,7 @@ integer value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableLong">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=9195:9253#L327">GetAsNullableLong</a>
+				<h3 id="AnyValueMap.GetAsNullableLong">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=10457:10515#L354">GetAsNullableLong</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableLong">&#xb6;</a>
 					
 					
@@ -4002,7 +4226,7 @@ int64 value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableMap">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=19857:19920#L647">GetAsNullableMap</a>
+				<h3 id="AnyValueMap.GetAsNullableMap">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=22363:22426#L701">GetAsNullableMap</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableMap">&#xb6;</a>
 					
 					
@@ -4027,7 +4251,7 @@ Returns *AnyValueMap
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableString">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=5221:5282#L207">GetAsNullableString</a>
+				<h3 id="AnyValueMap.GetAsNullableString">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=5437:5498#L207">GetAsNullableString</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableString">&#xb6;</a>
 					
 					
@@ -4052,7 +4276,7 @@ string value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsNullableType">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=16172:16257#L532">GetAsNullableType</a>
+				<h3 id="AnyValueMap.GetAsNullableType">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=18563:18648#L586">GetAsNullableType</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsNullableType">&#xb6;</a>
 					
 					
@@ -4079,7 +4303,7 @@ element value defined by the typecode or null if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=4490:4547#L182">GetAsObject</a>
+				<h3 id="AnyValueMap.GetAsObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=4681:4738#L182">GetAsObject</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsObject">&#xb6;</a>
 					
 					
@@ -4103,7 +4327,7 @@ the element value or value of the map when index is not defined.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsSingleObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3892:3945#L160">GetAsSingleObject</a>
+				<h3 id="AnyValueMap.GetAsSingleObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=4061:4114#L160">GetAsSingleObject</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsSingleObject">&#xb6;</a>
 					
 					
@@ -4121,7 +4345,7 @@ the element value or value of the array when index is not defined.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsString">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=5634:5686#L220">GetAsString</a>
+				<h3 id="AnyValueMap.GetAsString">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=5863:5915#L220">GetAsString</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsString">&#xb6;</a>
 					
 					
@@ -4146,7 +4370,7 @@ string value of the element or &#34;&#34; if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsStringWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=6081:6165#L234">GetAsStringWithDefault</a>
+				<h3 id="AnyValueMap.GetAsStringWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=6324:6408#L234">GetAsStringWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsStringWithDefault">&#xb6;</a>
 					
 					
@@ -4173,7 +4397,7 @@ string value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsType">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=16766:16843#L548">GetAsType</a>
+				<h3 id="AnyValueMap.GetAsType">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=19173:19250#L602">GetAsType</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsType">&#xb6;</a>
 					
 					
@@ -4201,7 +4425,7 @@ element value defined by the typecode or default if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsTypeWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=17358:17472#L564">GetAsTypeWithDefault</a>
+				<h3 id="AnyValueMap.GetAsTypeWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=19781:19895#L618">GetAsTypeWithDefault</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsTypeWithDefault">&#xb6;</a>
 					
 					
@@ -4230,7 +4454,111 @@ element value defined by the typecode or default value if conversion is not supp
 				
 			
 				
-				<h3 id="AnyValueMap.GetAsValue">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=17894:17948#L579">GetAsValue</a>
+				<h3 id="AnyValueMap.GetAsUInteger">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=9527:9579#L327">GetAsUInteger</a>
+					<a class="permalink" href="index.html#AnyValueMap.GetAsUInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueMap">AnyValueMap</a>) GetAsUInteger(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts map element into an integer or returns 0 if conversion is not possible.
+see
+getAsIntegerWithDefault
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+</pre>
+<p>
+Returns int
+integer value of the element or 0 if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueMap.GetAsUIntegerWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=9061:9143#L314">GetAsUIntegerWithDefault</a>
+					<a class="permalink" href="index.html#AnyValueMap.GetAsUIntegerWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueMap">AnyValueMap</a>) GetAsUIntegerWithDefault(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint">uint</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts map element into an integer or returns default value if conversion is not possible.
+see
+IntegerConverter.toIntegerWithDefault
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+-defaultValue int
+the default value
+</pre>
+<p>
+Returns int
+integer value of the element or default value if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueMap.GetAsULong">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=11427:11478#L382">GetAsULong</a>
+					<a class="permalink" href="index.html#AnyValueMap.GetAsULong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueMap">AnyValueMap</a>) GetAsULong(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts map element into a unsigned long or returns 0 if conversion is not possible.
+see
+getAsLongWithDefault
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+</pre>
+<p>
+Returns uint64
+uint64 value of the element or 0 if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueMap.GetAsULongWithDefault">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=10962:11045#L369">GetAsULongWithDefault</a>
+					<a class="permalink" href="index.html#AnyValueMap.GetAsULongWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#AnyValueMap">AnyValueMap</a>) GetAsULongWithDefault(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts map element into a unsigned long or returns default value if conversion is not possible.
+see
+LongConverter.toLongWithDefault
+Parameters:
+</p>
+<pre>-key string
+a key of element to get.
+- defaultValue int64
+the default value
+</pre>
+<p>
+Returns uint64
+uint64 value of the element or default value if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="AnyValueMap.GetAsValue">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=20332:20386#L633">GetAsValue</a>
 					<a class="permalink" href="index.html#AnyValueMap.GetAsValue">&#xb6;</a>
 					
 					
@@ -4257,7 +4585,7 @@ AnyValue value of the element or empty AnyValue if conversion is not supported.
 				
 			
 				
-				<h3 id="AnyValueMap.InnerValue">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1643:1689#L70">InnerValue</a>
+				<h3 id="AnyValueMap.InnerValue">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1722:1768#L70">InnerValue</a>
 					<a class="permalink" href="index.html#AnyValueMap.InnerValue">&#xb6;</a>
 					
 					
@@ -4272,7 +4600,7 @@ Return inner values of map as interface{}
 				
 			
 				
-				<h3 id="AnyValueMap.Keys">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2177:2214#L92">Keys</a>
+				<h3 id="AnyValueMap.Keys">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2278:2315#L92">Keys</a>
 					<a class="permalink" href="index.html#AnyValueMap.Keys">&#xb6;</a>
 					
 					
@@ -4289,7 +4617,7 @@ a list with all map keys.
 				
 			
 				
-				<h3 id="AnyValueMap.Len">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3604:3635#L152">Len</a>
+				<h3 id="AnyValueMap.Len">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=3765:3796#L152">Len</a>
 					<a class="permalink" href="index.html#AnyValueMap.Len">&#xb6;</a>
 					
 					
@@ -4306,7 +4634,7 @@ the number of elements in this map.
 				
 			
 				
-				<h3 id="AnyValueMap.Put">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2515:2571#L107">Put</a>
+				<h3 id="AnyValueMap.Put">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2631:2687#L107">Put</a>
 					<a class="permalink" href="index.html#AnyValueMap.Put">&#xb6;</a>
 					
 					
@@ -4330,7 +4658,7 @@ Returns interface{}
 				
 			
 				
-				<h3 id="AnyValueMap.Remove">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2713:2753#L115">Remove</a>
+				<h3 id="AnyValueMap.Remove">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=2837:2877#L115">Remove</a>
 					<a class="permalink" href="index.html#AnyValueMap.Remove">&#xb6;</a>
 					
 					
@@ -4349,7 +4677,7 @@ a key of the element to remove.
 				
 			
 				
-				<h3 id="AnyValueMap.SetAsObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=4849:4913#L195">SetAsObject</a>
+				<h3 id="AnyValueMap.SetAsObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=5053:5117#L195">SetAsObject</a>
 					<a class="permalink" href="index.html#AnyValueMap.SetAsObject">&#xb6;</a>
 					
 					
@@ -4361,7 +4689,7 @@ a key of the element to remove.
 				
 			
 				
-				<h3 id="AnyValueMap.SetAsSingleObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=4098:4156#L170">SetAsSingleObject</a>
+				<h3 id="AnyValueMap.SetAsSingleObject">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=4277:4335#L170">SetAsSingleObject</a>
 					<a class="permalink" href="index.html#AnyValueMap.SetAsSingleObject">&#xb6;</a>
 					
 					
@@ -4384,7 +4712,7 @@ a new element or array value.
 				
 			
 				
-				<h3 id="AnyValueMap.String">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=21227:21264#L692">String</a>
+				<h3 id="AnyValueMap.String">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=23778:23815#L746">String</a>
 					<a class="permalink" href="index.html#AnyValueMap.String">&#xb6;</a>
 					
 					
@@ -4402,7 +4730,7 @@ a string representation of the object.
 				
 			
 				
-				<h3 id="AnyValueMap.Value">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1763:1815#L75">Value</a>
+				<h3 id="AnyValueMap.Value">func (*AnyValueMap) <a href="http://localhost:6060/src/data/AnyValueMap.go?s=1847:1899#L75">Value</a>
 					<a class="permalink" href="index.html#AnyValueMap.Value">&#xb6;</a>
 					
 					
@@ -4419,7 +4747,7 @@ Returns map of elements as map[string]interface{}
 		
 			
 			
-			<h2 id="DataPage">type <a href="http://localhost:6060/src/data/DataPage.go?s=926:1021#L20">DataPage</a>
+			<h2 id="DataPage">type <a href="http://localhost:6060/src/data/DataPage.go?s=955:1053#L20">DataPage</a>
 				<a class="permalink" href="index.html#DataPage">&#xb6;</a>
 				
 				
@@ -4470,7 +4798,7 @@ Example:
 
 			
 				
-				<h3 id="NewDataPage">func <a href="http://localhost:6060/src/data/DataPage.go?s=1342:1402#L37">NewDataPage</a>
+				<h3 id="NewDataPage">func <a href="http://localhost:6060/src/data/DataPage.go?s=1388:1448#L37">NewDataPage</a>
 					<a class="permalink" href="index.html#NewDataPage">&#xb6;</a>
 					
 					
@@ -4492,7 +4820,7 @@ Returns *DataPage
 				
 			
 				
-				<h3 id="NewEmptyDataPage">func <a href="http://localhost:6060/src/data/DataPage.go?s=1090:1123#L27">NewEmptyDataPage</a>
+				<h3 id="NewEmptyDataPage">func <a href="http://localhost:6060/src/data/DataPage.go?s=1126:1159#L27">NewEmptyDataPage</a>
 					<a class="permalink" href="index.html#NewEmptyDataPage">&#xb6;</a>
 					
 					
@@ -4507,7 +4835,7 @@ Returns *DataPage
 				
 			
 				
-				<h3 id="NewEmptyTokenizedDataPage">func <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1235:1277#L28">NewEmptyTokenizedDataPage</a>
+				<h3 id="NewEmptyTokenizedDataPage">func <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1272:1314#L28">NewEmptyTokenizedDataPage</a>
 					<a class="permalink" href="index.html#NewEmptyTokenizedDataPage">&#xb6;</a>
 					
 					
@@ -4526,7 +4854,7 @@ Returns *TokenizedDataPage
 		
 			
 			
-			<h2 id="FilterParams">type <a href="http://localhost:6060/src/data/FilterParams.go?s=393:437#L9">FilterParams</a>
+			<h2 id="FilterParams">type <a href="http://localhost:6060/src/data/FilterParams.go?s=411:457#L9">FilterParams</a>
 				<a class="permalink" href="index.html#FilterParams">&#xb6;</a>
 				
 				
@@ -4565,7 +4893,7 @@ err, page = myDataClient.getDataByFilter(filter, paging);
 
 			
 				
-				<h3 id="NewEmptyFilterParams">func <a href="http://localhost:6060/src/data/FilterParams.go?s=491:532#L15">NewEmptyFilterParams</a>
+				<h3 id="NewEmptyFilterParams">func <a href="http://localhost:6060/src/data/FilterParams.go?s=515:556#L15">NewEmptyFilterParams</a>
 					<a class="permalink" href="index.html#NewEmptyFilterParams">&#xb6;</a>
 					
 					
@@ -4580,7 +4908,7 @@ Returns *FilterParams
 				
 			
 				
-				<h3 id="NewFilterParams">func <a href="http://localhost:6060/src/data/FilterParams.go?s=804:864#L26">NewFilterParams</a>
+				<h3 id="NewFilterParams">func <a href="http://localhost:6060/src/data/FilterParams.go?s=839:899#L26">NewFilterParams</a>
 					<a class="permalink" href="index.html#NewFilterParams">&#xb6;</a>
 					
 					
@@ -4601,7 +4929,7 @@ Returns *FilterParams
 				
 			
 				
-				<h3 id="NewFilterParamsFromString">func <a href="http://localhost:6060/src/data/FilterParams.go?s=1946:2003#L63">NewFilterParamsFromString</a>
+				<h3 id="NewFilterParamsFromString">func <a href="http://localhost:6060/src/data/FilterParams.go?s=2018:2075#L63">NewFilterParamsFromString</a>
 					<a class="permalink" href="index.html#NewFilterParamsFromString">&#xb6;</a>
 					
 					
@@ -4624,7 +4952,7 @@ Returns *FilterParams
 				
 			
 				
-				<h3 id="NewFilterParamsFromTuples">func <a href="http://localhost:6060/src/data/FilterParams.go?s=1539:1606#L50">NewFilterParamsFromTuples</a>
+				<h3 id="NewFilterParamsFromTuples">func <a href="http://localhost:6060/src/data/FilterParams.go?s=1598:1665#L50">NewFilterParamsFromTuples</a>
 					<a class="permalink" href="index.html#NewFilterParamsFromTuples">&#xb6;</a>
 					
 					
@@ -4646,7 +4974,7 @@ a newly created FilterParams.
 				
 			
 				
-				<h3 id="NewFilterParamsFromValue">func <a href="http://localhost:6060/src/data/FilterParams.go?s=1118:1180#L38">NewFilterParamsFromValue</a>
+				<h3 id="NewFilterParamsFromValue">func <a href="http://localhost:6060/src/data/FilterParams.go?s=1165:1227#L38">NewFilterParamsFromValue</a>
 					<a class="permalink" href="index.html#NewFilterParamsFromValue">&#xb6;</a>
 					
 					
@@ -4672,7 +5000,7 @@ a newly created FilterParams.
 		
 			
 			
-			<h2 id="ICloneable">type <a href="http://localhost:6060/src/data/IClonable.go?s=297:427#L9">ICloneable</a>
+			<h2 id="ICloneable">type <a href="http://localhost:6060/src/data/IClonable.go?s=315:449#L9">ICloneable</a>
 				<a class="permalink" href="index.html#ICloneable">&#xb6;</a>
 				
 				
@@ -4715,7 +5043,7 @@ func (c MyStruct) Clone() interface{} {
 		
 			
 			
-			<h2 id="IEquatable">type <a href="http://localhost:6060/src/data/IEquatable.go?s=14:75#L1">IEquatable</a>
+			<h2 id="IEquatable">type <a href="http://localhost:6060/src/data/IEquatable.go?s=16:79#L1">IEquatable</a>
 				<a class="permalink" href="index.html#IEquatable">&#xb6;</a>
 				
 				
@@ -4739,7 +5067,7 @@ func (c MyStruct) Clone() interface{} {
 		
 			
 			
-			<h2 id="IMap">type <a href="http://localhost:6060/src/data/IMap.go?s=14:149#L1">IMap</a>
+			<h2 id="IMap">type <a href="http://localhost:6060/src/data/IMap.go?s=16:156#L1">IMap</a>
 				<a class="permalink" href="index.html#IMap">&#xb6;</a>
 				
 				
@@ -4766,7 +5094,7 @@ func (c MyStruct) Clone() interface{} {
 		
 			
 			
-			<h2 id="MultiString">type <a href="http://localhost:6060/src/data/MultiString.go?s=555:589#L8">MultiString</a>
+			<h2 id="MultiString">type <a href="http://localhost:6060/src/data/MultiString.go?s=572:606#L8">MultiString</a>
 				<a class="permalink" href="index.html#MultiString">&#xb6;</a>
 				
 				
@@ -4805,7 +5133,7 @@ value2 := values.get(&#39;pt&#39;); // Result: &#34;Hello World!&#34;
 		
 			
 			
-			<h2 id="PagingParams">type <a href="http://localhost:6060/src/data/PagingParams.go?s=691:804#L12">PagingParams</a>
+			<h2 id="PagingParams">type <a href="http://localhost:6060/src/data/PagingParams.go?s=712:829#L12">PagingParams</a>
 				<a class="permalink" href="index.html#PagingParams">&#xb6;</a>
 				
 				
@@ -4849,7 +5177,7 @@ err, page = myDataClient.getDataByFilter(filter, paging);
 
 			
 				
-				<h3 id="NewEmptyPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=856:897#L20">NewEmptyPagingParams</a>
+				<h3 id="NewEmptyPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=885:926#L20">NewEmptyPagingParams</a>
 					<a class="permalink" href="index.html#NewEmptyPagingParams">&#xb6;</a>
 					
 					
@@ -4864,7 +5192,7 @@ Returns *PagingParams
 				
 			
 				
-				<h3 id="NewPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=1223:1288#L33">NewPagingParams</a>
+				<h3 id="NewPagingParams">func <a href="http://localhost:6060/src/data/PagingParams.go?s=1265:1330#L33">NewPagingParams</a>
 					<a class="permalink" href="index.html#NewPagingParams">&#xb6;</a>
 					
 					
@@ -4886,7 +5214,7 @@ Returns *PagingParams
 				
 			
 				
-				<h3 id="NewPagingParamsFromMap">func <a href="http://localhost:6060/src/data/PagingParams.go?s=3228:3289#L111">NewPagingParamsFromMap</a>
+				<h3 id="NewPagingParamsFromMap">func <a href="http://localhost:6060/src/data/PagingParams.go?s=3348:3409#L111">NewPagingParamsFromMap</a>
 					<a class="permalink" href="index.html#NewPagingParamsFromMap">&#xb6;</a>
 					
 					
@@ -4908,7 +5236,7 @@ a newly created PagingParams.
 				
 			
 				
-				<h3 id="NewPagingParamsFromTuples">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2830:2897#L100">NewPagingParamsFromTuples</a>
+				<h3 id="NewPagingParamsFromTuples">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2939:3006#L100">NewPagingParamsFromTuples</a>
 					<a class="permalink" href="index.html#NewPagingParamsFromTuples">&#xb6;</a>
 					
 					
@@ -4930,7 +5258,7 @@ a newly created PagingParams.
 				
 			
 				
-				<h3 id="NewPagingParamsFromValue">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2361:2423#L84">NewPagingParamsFromValue</a>
+				<h3 id="NewPagingParamsFromValue">func <a href="http://localhost:6060/src/data/PagingParams.go?s=2454:2516#L84">NewPagingParamsFromValue</a>
 					<a class="permalink" href="index.html#NewPagingParamsFromValue">&#xb6;</a>
 					
 					
@@ -4954,7 +5282,7 @@ a newly created PagingParams.
 
 			
 				
-				<h3 id="PagingParams.GetSkip">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=1667:1718#L49">GetSkip</a>
+				<h3 id="PagingParams.GetSkip">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=1725:1776#L49">GetSkip</a>
 					<a class="permalink" href="index.html#PagingParams.GetSkip">&#xb6;</a>
 					
 					
@@ -4977,7 +5305,7 @@ the number of items to skip.
 				
 			
 				
-				<h3 id="PagingParams.GetTake">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=2002:2053#L65">GetTake</a>
+				<h3 id="PagingParams.GetTake">func (*PagingParams) <a href="http://localhost:6060/src/data/PagingParams.go?s=2076:2127#L65">GetTake</a>
 					<a class="permalink" href="index.html#PagingParams.GetTake">&#xb6;</a>
 					
 					
@@ -5002,7 +5330,7 @@ the number of items to return.
 		
 			
 			
-			<h2 id="ProjectionParams">type <a href="http://localhost:6060/src/data/ProjectionParams.go?s=708:757#L11">ProjectionParams</a>
+			<h2 id="ProjectionParams">type <a href="http://localhost:6060/src/data/ProjectionParams.go?s=728:779#L11">ProjectionParams</a>
 				<a class="permalink" href="index.html#ProjectionParams">&#xb6;</a>
 				
 				
@@ -5039,7 +5367,7 @@ err, page := myDataClient.getDataByFilter(filter, paging, projection);
 
 			
 				
-				<h3 id="NewEmptyProjectionParams">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=866:915#L17">NewEmptyProjectionParams</a>
+				<h3 id="NewEmptyProjectionParams">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=892:941#L17">NewEmptyProjectionParams</a>
 					<a class="permalink" href="index.html#NewEmptyProjectionParams">&#xb6;</a>
 					
 					
@@ -5054,7 +5382,7 @@ Returns *ProjectionParams
 				
 			
 				
-				<h3 id="NewProjectionParamsFromAnyArray">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=1487:1564#L39">NewProjectionParamsFromAnyArray</a>
+				<h3 id="NewProjectionParamsFromAnyArray">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=1535:1612#L39">NewProjectionParamsFromAnyArray</a>
 					<a class="permalink" href="index.html#NewProjectionParamsFromAnyArray">&#xb6;</a>
 					
 					
@@ -5074,7 +5402,7 @@ Returns *ProjectionParams
 				
 			
 				
-				<h3 id="NewProjectionParamsFromStrings">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=1140:1210#L27">NewProjectionParamsFromStrings</a>
+				<h3 id="NewProjectionParamsFromStrings">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=1176:1246#L27">NewProjectionParamsFromStrings</a>
 					<a class="permalink" href="index.html#NewProjectionParamsFromStrings">&#xb6;</a>
 					
 					
@@ -5094,7 +5422,7 @@ Returns *ProjectionParams
 				
 			
 				
-				<h3 id="NewProjectionParamsFromValue">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3768:3838#L147">NewProjectionParamsFromValue</a>
+				<h3 id="NewProjectionParamsFromValue">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3924:3994#L147">NewProjectionParamsFromValue</a>
 					<a class="permalink" href="index.html#NewProjectionParamsFromValue">&#xb6;</a>
 					
 					
@@ -5118,7 +5446,7 @@ a newly created ProjectionParams.
 				
 			
 				
-				<h3 id="ParseProjectionParams">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=4083:4145#L157">ParseProjectionParams</a>
+				<h3 id="ParseProjectionParams">func <a href="http://localhost:6060/src/data/ProjectionParams.go?s=4249:4311#L157">ParseProjectionParams</a>
 					<a class="permalink" href="index.html#ParseProjectionParams">&#xb6;</a>
 					
 					
@@ -5141,7 +5469,7 @@ Return *ProjectionParams
 
 			
 				
-				<h3 id="ProjectionParams.Append">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3056:3108#L112">Append</a>
+				<h3 id="ProjectionParams.Append">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3177:3229#L112">Append</a>
 					<a class="permalink" href="index.html#ProjectionParams.Append">&#xb6;</a>
 					
 					
@@ -5159,7 +5487,7 @@ Parameters:
 				
 			
 				
-				<h3 id="ProjectionParams.Clear">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3200:3234#L119">Clear</a>
+				<h3 id="ProjectionParams.Clear">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3328:3362#L119">Clear</a>
 					<a class="permalink" href="index.html#ProjectionParams.Clear">&#xb6;</a>
 					
 					
@@ -5174,7 +5502,7 @@ Clear elements
 				
 			
 				
-				<h3 id="ProjectionParams.Get">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2235:2283#L74">Get</a>
+				<h3 id="ProjectionParams.Get">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2318:2366#L74">Get</a>
 					<a class="permalink" href="index.html#ProjectionParams.Get">&#xb6;</a>
 					
 					
@@ -5196,7 +5524,7 @@ Return string
 				
 			
 				
-				<h3 id="ProjectionParams.Len">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2077:2113#L65">Len</a>
+				<h3 id="ProjectionParams.Len">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2151:2187#L65">Len</a>
 					<a class="permalink" href="index.html#ProjectionParams.Len">&#xb6;</a>
 					
 					
@@ -5212,7 +5540,7 @@ higher than the highest element defined in an array.
 				
 			
 				
-				<h3 id="ProjectionParams.Push">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2896:2941#L105">Push</a>
+				<h3 id="ProjectionParams.Push">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3010:3055#L105">Push</a>
 					<a class="permalink" href="index.html#ProjectionParams.Push">&#xb6;</a>
 					
 					
@@ -5230,7 +5558,7 @@ Parameters:
 				
 			
 				
-				<h3 id="ProjectionParams.Put">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2428:2483#L84">Put</a>
+				<h3 id="ProjectionParams.Put">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2521:2576#L84">Put</a>
 					<a class="permalink" href="index.html#ProjectionParams.Put">&#xb6;</a>
 					
 					
@@ -5251,7 +5579,7 @@ value
 				
 			
 				
-				<h3 id="ProjectionParams.Remove">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2716:2760#L98">Remove</a>
+				<h3 id="ProjectionParams.Remove">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=2823:2867#L98">Remove</a>
 					<a class="permalink" href="index.html#ProjectionParams.Remove">&#xb6;</a>
 					
 					
@@ -5270,7 +5598,7 @@ an index of remove element
 				
 			
 				
-				<h3 id="ProjectionParams.String">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3340:3382#L125">String</a>
+				<h3 id="ProjectionParams.String">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=3474:3516#L125">String</a>
 					<a class="permalink" href="index.html#ProjectionParams.String">&#xb6;</a>
 					
 					
@@ -5286,7 +5614,7 @@ Returns string
 				
 			
 				
-				<h3 id="ProjectionParams.Value">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=1893:1936#L59">Value</a>
+				<h3 id="ProjectionParams.Value">func (*ProjectionParams) <a href="http://localhost:6060/src/data/ProjectionParams.go?s=1961:2004#L59">Value</a>
 					<a class="permalink" href="index.html#ProjectionParams.Value">&#xb6;</a>
 					
 					
@@ -5303,7 +5631,7 @@ Return raw values []string
 		
 			
 			
-			<h2 id="SortField">type <a href="http://localhost:6060/src/data/SortField.go?s=329:423#L5">SortField</a>
+			<h2 id="SortField">type <a href="http://localhost:6060/src/data/SortField.go?s=343:440#L5">SortField</a>
 				<a class="permalink" href="index.html#SortField">&#xb6;</a>
 				
 				
@@ -5339,7 +5667,7 @@ err, page = myDataClient.getDataByFilter(filter, paging, sorting);
 
 			
 				
-				<h3 id="NewEmptySortField">func <a href="http://localhost:6060/src/data/SortField.go?s=479:513#L12">NewEmptySortField</a>
+				<h3 id="NewEmptySortField">func <a href="http://localhost:6060/src/data/SortField.go?s=500:534#L12">NewEmptySortField</a>
 					<a class="permalink" href="index.html#NewEmptySortField">&#xb6;</a>
 					
 					
@@ -5354,7 +5682,7 @@ Returns SortField
 				
 			
 				
-				<h3 id="NewSortField">func <a href="http://localhost:6060/src/data/SortField.go?s=779:835#L23">NewSortField</a>
+				<h3 id="NewSortField">func <a href="http://localhost:6060/src/data/SortField.go?s=811:867#L23">NewSortField</a>
 					<a class="permalink" href="index.html#NewSortField">&#xb6;</a>
 					
 					
@@ -5381,7 +5709,7 @@ Returns SortField
 		
 			
 			
-			<h2 id="SortParams">type <a href="http://localhost:6060/src/data/SortParams.go?s=340:367#L6">SortParams</a>
+			<h2 id="SortParams">type <a href="http://localhost:6060/src/data/SortParams.go?s=355:382#L6">SortParams</a>
 				<a class="permalink" href="index.html#SortParams">&#xb6;</a>
 				
 				
@@ -5399,7 +5727,7 @@ Returns SortField
 
 			
 				
-				<h3 id="NewEmptySortParams">func <a href="http://localhost:6060/src/data/SortParams.go?s=419:456#L10">NewEmptySortParams</a>
+				<h3 id="NewEmptySortParams">func <a href="http://localhost:6060/src/data/SortParams.go?s=438:475#L10">NewEmptySortParams</a>
 					<a class="permalink" href="index.html#NewEmptySortParams">&#xb6;</a>
 					
 					
@@ -5414,7 +5742,7 @@ Returns *SortParams
 				
 			
 				
-				<h3 id="NewSortParams">func <a href="http://localhost:6060/src/data/SortParams.go?s=675:725#L20">NewSortParams</a>
+				<h3 id="NewSortParams">func <a href="http://localhost:6060/src/data/SortParams.go?s=704:754#L20">NewSortParams</a>
 					<a class="permalink" href="index.html#NewSortParams">&#xb6;</a>
 					
 					
@@ -5439,7 +5767,7 @@ Returns *SortParams
 		
 			
 			
-			<h2 id="StringValueMap">type <a href="http://localhost:6060/src/data/StringValueMap.go?s=1032:1087#L35">StringValueMap</a>
+			<h2 id="StringValueMap">type <a href="http://localhost:6060/src/data/StringValueMap.go?s=1075:1132#L35">StringValueMap</a>
 				<a class="permalink" href="index.html#StringValueMap">&#xb6;</a>
 				
 				
@@ -5460,7 +5788,7 @@ Returns *SortParams
 
 			
 				
-				<h3 id="NewEmptyStringValueMap">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=1127:1172#L40">NewEmptyStringValueMap</a>
+				<h3 id="NewEmptyStringValueMap">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=1175:1220#L40">NewEmptyStringValueMap</a>
 					<a class="permalink" href="index.html#NewEmptyStringValueMap">&#xb6;</a>
 					
 					
@@ -5474,7 +5802,7 @@ Creates a new instance of the map.
 				
 			
 				
-				<h3 id="NewStringValueMap">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=1374:1437#L50">NewStringValueMap</a>
+				<h3 id="NewStringValueMap">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=1432:1495#L50">NewStringValueMap</a>
 					<a class="permalink" href="index.html#NewStringValueMap">&#xb6;</a>
 					
 					
@@ -5494,7 +5822,7 @@ Returns *StringValueMap
 				
 			
 				
-				<h3 id="NewStringValueMapFromMaps">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=22411:22484#L770">NewStringValueMapFromMaps</a>
+				<h3 id="NewStringValueMapFromMaps">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=26209:26282#L870">NewStringValueMapFromMaps</a>
 					<a class="permalink" href="index.html#NewStringValueMapFromMaps">&#xb6;</a>
 					
 					
@@ -5517,7 +5845,7 @@ a newly created AnyValueMap.
 				
 			
 				
-				<h3 id="NewStringValueMapFromString">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=21469:21530#L724">NewStringValueMapFromString</a>
+				<h3 id="NewStringValueMapFromString">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=25221:25282#L824">NewStringValueMapFromString</a>
 					<a class="permalink" href="index.html#NewStringValueMapFromString">&#xb6;</a>
 					
 					
@@ -5539,7 +5867,7 @@ a newly created StringValueMap.
 				
 			
 				
-				<h3 id="NewStringValueMapFromTuples">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=20326:20397#L687">NewStringValueMapFromTuples</a>
+				<h3 id="NewStringValueMapFromTuples">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=24041:24112#L787">NewStringValueMapFromTuples</a>
 					<a class="permalink" href="index.html#NewStringValueMapFromTuples">&#xb6;</a>
 					
 					
@@ -5550,7 +5878,7 @@ a newly created StringValueMap.
 				
 			
 				
-				<h3 id="NewStringValueMapFromTuplesArray">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=20820:20895#L698">NewStringValueMapFromTuplesArray</a>
+				<h3 id="NewStringValueMapFromTuplesArray">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=24546:24621#L798">NewStringValueMapFromTuplesArray</a>
 					<a class="permalink" href="index.html#NewStringValueMapFromTuplesArray">&#xb6;</a>
 					
 					
@@ -5573,7 +5901,7 @@ a newly created StringValueMap.
 				
 			
 				
-				<h3 id="NewStringValueMapFromValue">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=19869:19935#L672">NewStringValueMapFromValue</a>
+				<h3 id="NewStringValueMapFromValue">func <a href="http://localhost:6060/src/data/StringValueMap.go?s=23569:23635#L772">NewStringValueMapFromValue</a>
 					<a class="permalink" href="index.html#NewStringValueMapFromValue">&#xb6;</a>
 					
 					
@@ -5599,7 +5927,7 @@ a newly created StringValueMap.
 
 			
 				
-				<h3 id="StringValueMap.Append">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3193:3250#L122">Append</a>
+				<h3 id="StringValueMap.Append">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3370:3427#L125">Append</a>
 					<a class="permalink" href="index.html#StringValueMap.Append">&#xb6;</a>
 					
 					
@@ -5618,7 +5946,7 @@ a map with elements to be added.
 				
 			
 				
-				<h3 id="StringValueMap.AppendAny">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3473:3538#L136">AppendAny</a>
+				<h3 id="StringValueMap.AppendAny">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3664:3729#L139">AppendAny</a>
 					<a class="permalink" href="index.html#StringValueMap.AppendAny">&#xb6;</a>
 					
 					
@@ -5637,7 +5965,7 @@ a map with elements to be added.
 				
 			
 				
-				<h3 id="StringValueMap.Clear">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3719:3751#L147">Clear</a>
+				<h3 id="StringValueMap.Clear">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3921:3953#L150">Clear</a>
 					<a class="permalink" href="index.html#StringValueMap.Clear">&#xb6;</a>
 					
 					
@@ -5652,7 +5980,7 @@ Clears this map by removing all its elements.
 				
 			
 				
-				<h3 id="StringValueMap.Clone">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=19294:19338#L646">Clone</a>
+				<h3 id="StringValueMap.Clone">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=22968:23012#L746">Clone</a>
 					<a class="permalink" href="index.html#StringValueMap.Clone">&#xb6;</a>
 					
 					
@@ -5669,7 +5997,7 @@ a clone of this object.
 				
 			
 				
-				<h3 id="StringValueMap.Contains">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2983:3033#L113">Contains</a>
+				<h3 id="StringValueMap.Contains">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3151:3201#L116">Contains</a>
 					<a class="permalink" href="index.html#StringValueMap.Contains">&#xb6;</a>
 					
 					
@@ -5692,7 +6020,7 @@ true if this map contains the key or false otherwise.
 				
 			
 				
-				<h3 id="StringValueMap.Get">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=1923:1970#L73">Get</a>
+				<h3 id="StringValueMap.Get">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2004:2051#L73">Get</a>
 					<a class="permalink" href="index.html#StringValueMap.Get">&#xb6;</a>
 					
 					
@@ -5715,7 +6043,7 @@ the value of the map element.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsArray">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=16502:16564#L543">GetAsArray</a>
+				<h3 id="StringValueMap.GetAsArray">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=20073:20135#L643">GetAsArray</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsArray">&#xb6;</a>
 					
 					
@@ -5742,7 +6070,7 @@ AnyValueArray value of the element or empty AnyValueArray if conversion is not s
 				
 			
 				
-				<h3 id="StringValueMap.GetAsArrayWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=17016:17118#L560">GetAsArrayWithDefault</a>
+				<h3 id="StringValueMap.GetAsArrayWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=20604:20706#L660">GetAsArrayWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsArrayWithDefault">&#xb6;</a>
 					
 					
@@ -5771,7 +6099,7 @@ AnyValueArray value of the element or default value if conversion is not support
 				
 			
 				
-				<h3 id="StringValueMap.GetAsBoolean">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=7420:7474#L268">GetAsBoolean</a>
+				<h3 id="StringValueMap.GetAsBoolean">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=7809:7863#L275">GetAsBoolean</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsBoolean">&#xb6;</a>
 					
 					
@@ -5796,7 +6124,7 @@ boolean value of the element or false if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsBooleanWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=7872:7956#L282">GetAsBooleanWithDefault</a>
+				<h3 id="StringValueMap.GetAsBooleanWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=8275:8359#L289">GetAsBooleanWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsBooleanWithDefault">&#xb6;</a>
 					
 					
@@ -5823,7 +6151,7 @@ boolean value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsDateTime">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=14013:14073#L467">GetAsDateTime</a>
+				<h3 id="StringValueMap.GetAsDateTime">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=17508:17568#L567">GetAsDateTime</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsDateTime">&#xb6;</a>
 					
 					
@@ -5848,7 +6176,7 @@ time.Time value of the element or the current date if conversion is not supporte
 				
 			
 				
-				<h3 id="StringValueMap.GetAsDateTimeWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=14496:14591#L482">GetAsDateTimeWithDefault</a>
+				<h3 id="StringValueMap.GetAsDateTimeWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=18006:18101#L582">GetAsDateTimeWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsDateTimeWithDefault">&#xb6;</a>
 					
 					
@@ -5860,7 +6188,7 @@ time.Time value of the element or the current date if conversion is not supporte
 				
 			
 				
-				<h3 id="StringValueMap.GetAsDouble">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=12620:12676#L427">GetAsDouble</a>
+				<h3 id="StringValueMap.GetAsDouble">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=16042:16098#L525">GetAsDouble</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsDouble">&#xb6;</a>
 					
 					
@@ -5885,7 +6213,7 @@ float64 value of the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsDoubleWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=13074:13163#L441">GetAsDoubleWithDefault</a>
+				<h3 id="StringValueMap.GetAsDoubleWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=16510:16599#L539">GetAsDoubleWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsDoubleWithDefault">&#xb6;</a>
 					
 					
@@ -5912,7 +6240,7 @@ float64 value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsFloat">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=11288:11343#L387">GetAsFloat</a>
+				<h3 id="StringValueMap.GetAsFloat">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=14637:14692#L483">GetAsFloat</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsFloat">&#xb6;</a>
 					
 					
@@ -5937,7 +6265,7 @@ float32 value of the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsFloatWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=11739:11827#L401">GetAsFloatWithDefault</a>
+				<h3 id="StringValueMap.GetAsFloatWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=15102:15190#L497">GetAsFloatWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsFloatWithDefault">&#xb6;</a>
 					
 					
@@ -5964,7 +6292,7 @@ float32 value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsInteger">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=8680:8733#L307">GetAsInteger</a>
+				<h3 id="StringValueMap.GetAsInteger">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=9141:9194#L316">GetAsInteger</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsInteger">&#xb6;</a>
 					
 					
@@ -5988,7 +6316,7 @@ Returns int
 				
 			
 				
-				<h3 id="StringValueMap.GetAsIntegerWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=9127:9209#L321">GetAsIntegerWithDefault</a>
+				<h3 id="StringValueMap.GetAsIntegerWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=9602:9684#L330">GetAsIntegerWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsIntegerWithDefault">&#xb6;</a>
 					
 					
@@ -6015,14 +6343,14 @@ integer value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsLong">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=9984:10036#L347">GetAsLong</a>
+				<h3 id="StringValueMap.GetAsLong">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=11881:11933#L399">GetAsLong</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsLong">&#xb6;</a>
 					
 					
 				</h3>
 				<pre>func (c *<a href="index.html#StringValueMap">StringValueMap</a>) GetAsLong(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#int64">int64</a></pre>
 				<p>
-Converts map element into a int64 or returns 0 if conversion is not possible.
+Converts map element into a uint64 or returns 0 if conversion is not possible.
 see
 getAsLongWithDefault
 Parameters:
@@ -6040,7 +6368,7 @@ loint64ng value of the element or 0 if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsLongWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=10420:10503#L361">GetAsLongWithDefault</a>
+				<h3 id="StringValueMap.GetAsLongWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=12331:12414#L413">GetAsLongWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsLongWithDefault">&#xb6;</a>
 					
 					
@@ -6067,7 +6395,7 @@ int64 value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsMap">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=17979:18037#L594">GetAsMap</a>
+				<h3 id="StringValueMap.GetAsMap">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=21601:21659#L694">GetAsMap</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsMap">&#xb6;</a>
 					
 					
@@ -6092,7 +6420,7 @@ AnyValueMap value of the element or empty AnyValueMap if conversion is not suppo
 				
 			
 				
-				<h3 id="StringValueMap.GetAsMapWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=18452:18548#L609">GetAsMapWithDefault</a>
+				<h3 id="StringValueMap.GetAsMapWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=22089:22185#L709">GetAsMapWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsMapWithDefault">&#xb6;</a>
 					
 					
@@ -6119,7 +6447,7 @@ AnyValueMap value of the element or default value if conversion is not supported
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableArray">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=15973:16043#L524">GetAsNullableArray</a>
+				<h3 id="StringValueMap.GetAsNullableArray">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=19525:19595#L624">GetAsNullableArray</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableArray">&#xb6;</a>
 					
 					
@@ -6146,7 +6474,7 @@ AnyValueArray value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableBoolean">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=7001:7064#L255">GetAsNullableBoolean</a>
+				<h3 id="StringValueMap.GetAsNullableBoolean">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=7344:7407#L260">GetAsNullableBoolean</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableBoolean">&#xb6;</a>
 					
 					
@@ -6171,7 +6499,7 @@ boolean value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableDateTime">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=13554:13623#L454">GetAsNullableDateTime</a>
+				<h3 id="StringValueMap.GetAsNullableDateTime">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=17003:17072#L552">GetAsNullableDateTime</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableDateTime">&#xb6;</a>
 					
 					
@@ -6196,7 +6524,7 @@ time.Time value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableDouble">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=12207:12272#L414">GetAsNullableDouble</a>
+				<h3 id="StringValueMap.GetAsNullableDouble">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=15583:15648#L510">GetAsNullableDouble</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableDouble">&#xb6;</a>
 					
 					
@@ -6221,7 +6549,7 @@ float64 value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableFloat">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=10879:10943#L374">GetAsNullableFloat</a>
+				<h3 id="StringValueMap.GetAsNullableFloat">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=14182:14246#L468">GetAsNullableFloat</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableFloat">&#xb6;</a>
 					
 					
@@ -6246,7 +6574,7 @@ float32 value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableInteger">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=8339:8401#L295">GetAsNullableInteger</a>
+				<h3 id="StringValueMap.GetAsNullableInteger">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=8755:8817#L302">GetAsNullableInteger</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableInteger">&#xb6;</a>
 					
 					
@@ -6271,7 +6599,7 @@ integer value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableLong">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=9583:9644#L334">GetAsNullableLong</a>
+				<h3 id="StringValueMap.GetAsNullableLong">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=11433:11494#L384">GetAsNullableLong</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableLong">&#xb6;</a>
 					
 					
@@ -6296,7 +6624,7 @@ int64 value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableMap">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=17504:17570#L577">GetAsNullableMap</a>
+				<h3 id="StringValueMap.GetAsNullableMap">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=21109:21175#L677">GetAsNullableMap</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableMap">&#xb6;</a>
 					
 					
@@ -6321,7 +6649,7 @@ AnyValueMap value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsNullableString">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=5589:5653#L209">GetAsNullableString</a>
+				<h3 id="StringValueMap.GetAsNullableString">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=5853:5917#L212">GetAsNullableString</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsNullableString">&#xb6;</a>
 					
 					
@@ -6346,7 +6674,57 @@ string value of the element or null if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=4774:4834#L184">GetAsObject</a>
+				<h3 id="StringValueMap.GetAsNullableUInteger">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=10089:10153#L343">GetAsNullableUInteger</a>
+					<a class="permalink" href="index.html#StringValueMap.GetAsNullableUInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#StringValueMap">StringValueMap</a>) GetAsNullableUInteger(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts map element into an unsigned integer or returns null if conversion is not possible.
+see
+IntegerConverter.toNullableInteger
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+</pre>
+<p>
+Returns *int
+integer value of the element or null if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StringValueMap.GetAsNullableULong">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=12797:12860#L426">GetAsNullableULong</a>
+					<a class="permalink" href="index.html#StringValueMap.GetAsNullableULong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#StringValueMap">StringValueMap</a>) GetAsNullableULong(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts map element into a uint64 or returns null if conversion is not possible.
+see
+LongConverter.toNullableLong
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+</pre>
+<p>
+Returns *uint64
+int64 value of the element or null if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StringValueMap.GetAsObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=5013:5073#L187">GetAsObject</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsObject">&#xb6;</a>
 					
 					
@@ -6370,7 +6748,7 @@ the element value or value of the map when index is not defined.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsSingleObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=4182:4238#L162">GetAsSingleObject</a>
+				<h3 id="StringValueMap.GetAsSingleObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=4399:4455#L165">GetAsSingleObject</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsSingleObject">&#xb6;</a>
 					
 					
@@ -6388,7 +6766,7 @@ the element value or value of the array when index is not defined.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsString">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=6000:6055#L222">GetAsString</a>
+				<h3 id="StringValueMap.GetAsString">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=6310:6365#L227">GetAsString</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsString">&#xb6;</a>
 					
 					
@@ -6413,7 +6791,7 @@ string value of the element or &#34;&#34; if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsStringWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=6450:6537#L236">GetAsStringWithDefault</a>
+				<h3 id="StringValueMap.GetAsStringWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=6774:6861#L241">GetAsStringWithDefault</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsStringWithDefault">&#xb6;</a>
 					
 					
@@ -6440,7 +6818,110 @@ string value of the element or default value if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.GetAsValue">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=15546:15603#L509">GetAsValue</a>
+				<h3 id="StringValueMap.GetAsUInteger">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=10487:10542#L357">GetAsUInteger</a>
+					<a class="permalink" href="index.html#StringValueMap.GetAsUInteger">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#StringValueMap">StringValueMap</a>) GetAsUInteger(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts map element into an unsigned integer or returns 0 if conversion is not possible.
+see
+getAsIntegerWithDefault
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+</pre>
+<p>
+Returns int
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StringValueMap.GetAsUIntegerWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=10960:11045#L371">GetAsUIntegerWithDefault</a>
+					<a class="permalink" href="index.html#StringValueMap.GetAsUIntegerWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#StringValueMap">StringValueMap</a>) GetAsUIntegerWithDefault(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint">uint</a>) <a href="http://localhost:6060/pkg/builtin/#uint">uint</a></pre>
+				<p>
+Converts map element into an unsigned integer or returns default value if conversion is not possible.
+see
+IntegerConverter.toIntegerWithDefault
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+- defaultValue int
+the default value
+</pre>
+<p>
+Returns int
+integer value of the element or default value if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StringValueMap.GetAsULong">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=13249:13303#L441">GetAsULong</a>
+					<a class="permalink" href="index.html#StringValueMap.GetAsULong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#StringValueMap">StringValueMap</a>) GetAsULong(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts map element into a uint64 or returns 0 if conversion is not possible.
+see
+getAsLongWithDefault
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+</pre>
+<p>
+Returns uint64
+loint64ng value of the element or 0 if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StringValueMap.GetAsULongWithDefault">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=13706:13792#L455">GetAsULongWithDefault</a>
+					<a class="permalink" href="index.html#StringValueMap.GetAsULongWithDefault">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#StringValueMap">StringValueMap</a>) GetAsULongWithDefault(key <a href="http://localhost:6060/pkg/builtin/#string">string</a>, defaultValue <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a>) <a href="http://localhost:6060/pkg/builtin/#uint64">uint64</a></pre>
+				<p>
+Converts map element into a uint64 or returns default value if conversion is not possible.
+see
+LongConverter.toLongWithDefault
+Parameters:
+</p>
+<pre>- key string
+a key of element to get.
+- defaultValue uint64
+the default value
+</pre>
+<p>
+Returns uint64
+uint64 value of the element or default value if conversion is not supported.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="StringValueMap.GetAsValue">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=19083:19140#L609">GetAsValue</a>
 					<a class="permalink" href="index.html#StringValueMap.GetAsValue">&#xb6;</a>
 					
 					
@@ -6465,7 +6946,7 @@ AnyValue value of the element or empty AnyValue if conversion is not supported.
 				
 			
 				
-				<h3 id="StringValueMap.InnerValue">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=1569:1618#L58">InnerValue</a>
+				<h3 id="StringValueMap.InnerValue">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=1635:1684#L58">InnerValue</a>
 					<a class="permalink" href="index.html#StringValueMap.InnerValue">&#xb6;</a>
 					
 					
@@ -6480,7 +6961,7 @@ Return inner values of map as interface{}
 				
 			
 				
-				<h3 id="StringValueMap.Keys">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2095:2135#L80">Keys</a>
+				<h3 id="StringValueMap.Keys">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2230:2270#L83">Keys</a>
 					<a class="permalink" href="index.html#StringValueMap.Keys">&#xb6;</a>
 					
 					
@@ -6497,7 +6978,7 @@ a list with all map keys.
 				
 			
 				
-				<h3 id="StringValueMap.Len">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=3891:3925#L154">Len</a>
+				<h3 id="StringValueMap.Len">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=4100:4134#L157">Len</a>
 					<a class="permalink" href="index.html#StringValueMap.Len">&#xb6;</a>
 					
 					
@@ -6514,7 +6995,7 @@ the number of elements in this map.
 				
 			
 				
-				<h3 id="StringValueMap.MarshalJSON">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=19379:19433#L650">MarshalJSON</a>
+				<h3 id="StringValueMap.MarshalJSON">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=23057:23111#L750">MarshalJSON</a>
 					<a class="permalink" href="index.html#StringValueMap.MarshalJSON">&#xb6;</a>
 					
 					
@@ -6526,7 +7007,7 @@ the number of elements in this map.
 				
 			
 				
-				<h3 id="StringValueMap.Put">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2435:2494#L95">Put</a>
+				<h3 id="StringValueMap.Put">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2585:2644#L98">Put</a>
 					<a class="permalink" href="index.html#StringValueMap.Put">&#xb6;</a>
 					
 					
@@ -6550,7 +7031,7 @@ Returns interface{}
 				
 			
 				
-				<h3 id="StringValueMap.Remove">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2670:2713#L103">Remove</a>
+				<h3 id="StringValueMap.Remove">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=2828:2871#L106">Remove</a>
 					<a class="permalink" href="index.html#StringValueMap.Remove">&#xb6;</a>
 					
 					
@@ -6569,7 +7050,7 @@ a key of the element to remove.
 				
 			
 				
-				<h3 id="StringValueMap.SetAsObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=5218:5285#L197">SetAsObject</a>
+				<h3 id="StringValueMap.SetAsObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=5470:5537#L200">SetAsObject</a>
 					<a class="permalink" href="index.html#StringValueMap.SetAsObject">&#xb6;</a>
 					
 					
@@ -6595,7 +7076,7 @@ a new element or map value.
 				
 			
 				
-				<h3 id="StringValueMap.SetAsSingleObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=4355:4416#L170">SetAsSingleObject</a>
+				<h3 id="StringValueMap.SetAsSingleObject">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=4580:4641#L173">SetAsSingleObject</a>
 					<a class="permalink" href="index.html#StringValueMap.SetAsSingleObject">&#xb6;</a>
 					
 					
@@ -6616,7 +7097,7 @@ a new element or array value.
 				
 			
 				
-				<h3 id="StringValueMap.String">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=18871:18911#L622">String</a>
+				<h3 id="StringValueMap.String">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=22521:22561#L722">String</a>
 					<a class="permalink" href="index.html#StringValueMap.String">&#xb6;</a>
 					
 					
@@ -6637,7 +7118,7 @@ a string representation of the object.
 				
 			
 				
-				<h3 id="StringValueMap.UnmarshalJSON">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=19469:19526#L654">UnmarshalJSON</a>
+				<h3 id="StringValueMap.UnmarshalJSON">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=23151:23208#L754">UnmarshalJSON</a>
 					<a class="permalink" href="index.html#StringValueMap.UnmarshalJSON">&#xb6;</a>
 					
 					
@@ -6649,7 +7130,7 @@ a string representation of the object.
 				
 			
 				
-				<h3 id="StringValueMap.Value">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=1692:1742#L63">Value</a>
+				<h3 id="StringValueMap.Value">func (*StringValueMap) <a href="http://localhost:6060/src/data/StringValueMap.go?s=1763:1813#L63">Value</a>
 					<a class="permalink" href="index.html#StringValueMap.Value">&#xb6;</a>
 					
 					
@@ -6666,7 +7147,7 @@ Returns map of elements as map[string]interface{}
 		
 			
 			
-			<h2 id="TIdGenerator">type <a href="http://localhost:6060/src/data/IdGenerator.go?s=505:531#L9">TIdGenerator</a>
+			<h2 id="TIdGenerator">type <a href="http://localhost:6060/src/data/IdGenerator.go?s=515:541#L9">TIdGenerator</a>
 				<a class="permalink" href="index.html#TIdGenerator">&#xb6;</a>
 				
 				
@@ -6699,7 +7180,7 @@ IdGenerator.NextShort();     // Possible result: &#34;23495247&#34;
 
 			
 				
-				<h3 id="TIdGenerator.NextLong">func (*TIdGenerator) <a href="http://localhost:6060/src/data/IdGenerator.go?s=1032:1072#L25">NextLong</a>
+				<h3 id="TIdGenerator.NextLong">func (*TIdGenerator) <a href="http://localhost:6060/src/data/IdGenerator.go?s=1058:1098#L25">NextLong</a>
 					<a class="permalink" href="index.html#TIdGenerator.NextLong">&#xb6;</a>
 					
 					
@@ -6716,7 +7197,7 @@ a generated 32-digit object ID
 				
 			
 				
-				<h3 id="TIdGenerator.NextShort">func (*TIdGenerator) <a href="http://localhost:6060/src/data/IdGenerator.go?s=746:787#L17">NextShort</a>
+				<h3 id="TIdGenerator.NextShort">func (*TIdGenerator) <a href="http://localhost:6060/src/data/IdGenerator.go?s=764:805#L17">NextShort</a>
 					<a class="permalink" href="index.html#TIdGenerator.NextShort">&#xb6;</a>
 					
 					
@@ -6736,7 +7217,7 @@ a generated random 9-digit code
 		
 			
 			
-			<h2 id="TTagsProcessor">type <a href="http://localhost:6060/src/data/TagsProcessor.go?s=253:281#L3">TTagsProcessor</a>
+			<h2 id="TTagsProcessor">type <a href="http://localhost:6060/src/data/TagsProcessor.go?s=265:293#L3">TTagsProcessor</a>
 				<a class="permalink" href="index.html#TTagsProcessor">&#xb6;</a>
 				
 				
@@ -6765,7 +7246,7 @@ The search tags can be kept individually or embedded as hash tags inside text li
 
 			
 				
-				<h3 id="TTagsProcessor.CompressTag">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=1224:1279#L30">CompressTag</a>
+				<h3 id="TTagsProcessor.CompressTag">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=1263:1318#L30">CompressTag</a>
 					<a class="permalink" href="index.html#TTagsProcessor.CompressTag">&#xb6;</a>
 					
 					
@@ -6789,7 +7270,7 @@ a compressed tag.
 				
 			
 				
-				<h3 id="TTagsProcessor.CompressTagList">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=2949:3014#L97">CompressTagList</a>
+				<h3 id="TTagsProcessor.CompressTagList">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=3055:3120#L97">CompressTagList</a>
 					<a class="permalink" href="index.html#TTagsProcessor.CompressTagList">&#xb6;</a>
 					
 					
@@ -6812,7 +7293,7 @@ a list with compressed tags.
 				
 			
 				
-				<h3 id="TTagsProcessor.CompressTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=2596:2657#L84">CompressTags</a>
+				<h3 id="TTagsProcessor.CompressTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=2689:2750#L84">CompressTags</a>
 					<a class="permalink" href="index.html#TTagsProcessor.CompressTags">&#xb6;</a>
 					
 					
@@ -6835,7 +7316,7 @@ a list with normalized tags.
 				
 			
 				
-				<h3 id="TTagsProcessor.EqualTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=1571:1636#L43">EqualTags</a>
+				<h3 id="TTagsProcessor.EqualTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=1623:1688#L43">EqualTags</a>
 					<a class="permalink" href="index.html#TTagsProcessor.EqualTags">&#xb6;</a>
 					
 					
@@ -6860,7 +7341,7 @@ true if the tags are equal and false otherwise.
 				
 			
 				
-				<h3 id="TTagsProcessor.ExtractHashTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=3260:3322#L108">ExtractHashTags</a>
+				<h3 id="TTagsProcessor.ExtractHashTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=3377:3439#L108">ExtractHashTags</a>
 					<a class="permalink" href="index.html#TTagsProcessor.ExtractHashTags">&#xb6;</a>
 					
 					
@@ -6883,7 +7364,7 @@ a list with extracted and compressed tags.
 				
 			
 				
-				<h3 id="TTagsProcessor.NormalizeTag">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=801:857#L18">NormalizeTag</a>
+				<h3 id="TTagsProcessor.NormalizeTag">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=828:884#L18">NormalizeTag</a>
 					<a class="permalink" href="index.html#TTagsProcessor.NormalizeTag">&#xb6;</a>
 					
 					
@@ -6907,7 +7388,7 @@ a normalized tag.
 				
 			
 				
-				<h3 id="TTagsProcessor.NormalizeTagList">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=2310:2376#L73">NormalizeTagList</a>
+				<h3 id="TTagsProcessor.NormalizeTagList">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=2392:2458#L73">NormalizeTagList</a>
 					<a class="permalink" href="index.html#TTagsProcessor.NormalizeTagList">&#xb6;</a>
 					
 					
@@ -6930,7 +7411,7 @@ a list with normalized tags.
 				
 			
 				
-				<h3 id="TTagsProcessor.NormalizeTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=1954:2016#L60">NormalizeTags</a>
+				<h3 id="TTagsProcessor.NormalizeTags">func (*TTagsProcessor) <a href="http://localhost:6060/src/data/TagsProcessor.go?s=2023:2085#L60">NormalizeTags</a>
 					<a class="permalink" href="index.html#TTagsProcessor.NormalizeTags">&#xb6;</a>
 					
 					
@@ -6944,7 +7425,7 @@ a list with normalized tags.
 		
 			
 			
-			<h2 id="TokenizedDataPage">type <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1053:1157#L21">TokenizedDataPage</a>
+			<h2 id="TokenizedDataPage">type <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1083:1190#L21">TokenizedDataPage</a>
 				<a class="permalink" href="index.html#TokenizedDataPage">&#xb6;</a>
 				
 				
@@ -6996,7 +7477,7 @@ Example:
 
 			
 				
-				<h3 id="NewTokenizedDataPage">func <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1547:1625#L38">NewTokenizedDataPage</a>
+				<h3 id="NewTokenizedDataPage">func <a href="http://localhost:6060/src/data/TokenizedDataPage.go?s=1594:1672#L38">NewTokenizedDataPage</a>
 					<a class="permalink" href="index.html#NewTokenizedDataPage">&#xb6;</a>
 					
 					
@@ -7022,7 +7503,7 @@ Returns *TokenizedDataPage
 		
 			
 			
-			<h2 id="TokenizedPagingParams">type <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=753:876#L12">TokenizedPagingParams</a>
+			<h2 id="TokenizedPagingParams">type <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=774:901#L12">TokenizedPagingParams</a>
 				<a class="permalink" href="index.html#TokenizedPagingParams">&#xb6;</a>
 				
 				
@@ -7066,7 +7547,7 @@ err, page = myDataClient.getDataByFilter(filter, paging);
 
 			
 				
-				<h3 id="NewEmptyTokenizedPagingParams">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=939:998#L20">NewEmptyTokenizedPagingParams</a>
+				<h3 id="NewEmptyTokenizedPagingParams">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=968:1027#L20">NewEmptyTokenizedPagingParams</a>
 					<a class="permalink" href="index.html#NewEmptyTokenizedPagingParams">&#xb6;</a>
 					
 					
@@ -7081,7 +7562,7 @@ Returns *TokenizedPagingParams
 				
 			
 				
-				<h3 id="NewTokenizedPagingParams">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=1393:1477#L30">NewTokenizedPagingParams</a>
+				<h3 id="NewTokenizedPagingParams">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=1432:1516#L30">NewTokenizedPagingParams</a>
 					<a class="permalink" href="index.html#NewTokenizedPagingParams">&#xb6;</a>
 					
 					
@@ -7103,7 +7584,7 @@ Returns *TokenizedPagingParams
 				
 			
 				
-				<h3 id="NewTokenizedPagingParamsFromMap">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=3249:3328#L92">NewTokenizedPagingParamsFromMap</a>
+				<h3 id="NewTokenizedPagingParamsFromMap">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=3350:3429#L92">NewTokenizedPagingParamsFromMap</a>
 					<a class="permalink" href="index.html#NewTokenizedPagingParamsFromMap">&#xb6;</a>
 					
 					
@@ -7125,7 +7606,7 @@ a newly created TokenizedPagingParams.
 				
 			
 				
-				<h3 id="NewTokenizedPagingParamsFromTuples">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=2788:2873#L81">NewTokenizedPagingParamsFromTuples</a>
+				<h3 id="NewTokenizedPagingParamsFromTuples">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=2878:2963#L81">NewTokenizedPagingParamsFromTuples</a>
 					<a class="permalink" href="index.html#NewTokenizedPagingParamsFromTuples">&#xb6;</a>
 					
 					
@@ -7147,7 +7628,7 @@ a newly created TokenizedPagingParams.
 				
 			
 				
-				<h3 id="NewTokenizedPagingParamsFromValue">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=2256:2336#L65">NewTokenizedPagingParamsFromValue</a>
+				<h3 id="NewTokenizedPagingParamsFromValue">func <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=2330:2410#L65">NewTokenizedPagingParamsFromValue</a>
 					<a class="permalink" href="index.html#NewTokenizedPagingParamsFromValue">&#xb6;</a>
 					
 					
@@ -7171,7 +7652,7 @@ a newly created PagingParams.
 
 			
 				
-				<h3 id="TokenizedPagingParams.GetTake">func (*TokenizedPagingParams) <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=1879:1939#L46">GetTake</a>
+				<h3 id="TokenizedPagingParams.GetTake">func (*TokenizedPagingParams) <a href="http://localhost:6060/src/data/TokenizedPagingParams.go?s=1934:1994#L46">GetTake</a>
 					<a class="permalink" href="index.html#TokenizedPagingParams.GetTake">&#xb6;</a>
 					
 					
@@ -7205,13 +7686,13 @@ the number of items to return.
 
 
 <div id="footer">
-Build version go1.13.15.<br>
+Build version go1.16.15.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
 and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
-<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
-<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
 </div>
 
 </div><!-- .container -->

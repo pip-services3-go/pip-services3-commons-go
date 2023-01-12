@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	uuid "github.com/satori/go.uuid"
+	"github.com/google/uuid"
 )
 
 /*
@@ -33,6 +33,6 @@ func (c *TIdGenerator) NextShort() string {
 // Returns string
 // a generated 32-digit object ID
 func (c *TIdGenerator) NextLong() string {
-	value := uuid.NewV4()
+	value := uuid.New()
 	return hex.EncodeToString(([]byte)(value[:]))
 }

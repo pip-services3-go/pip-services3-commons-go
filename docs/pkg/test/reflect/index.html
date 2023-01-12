@@ -14,7 +14,7 @@
 
 
 
-<script>var goVersion = "go1.13.15";</script>
+<script>var goVersion = "go1.16.15";</script>
 <script src="../../../lib/godoc/godocs.js" defer></script>
 </head>
 <body>
@@ -178,14 +178,14 @@
 		
 			
 			
-			<h2 id="NestedClass">type <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=157:201#L2">NestedClass</a>
+			<h2 id="NestedClass">type <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=251:319#L2">NestedClass</a>
 				<a class="permalink" href="index.html#NestedClass">&#xb6;</a>
 				
 				
 			</h2>
 			
 			<pre>type NestedClass struct {
-<span id="NestedClass.PublicField"></span>    PublicField <a href="http://localhost:6060/pkg/builtin/#int">int</a>
+<span id="NestedClass.PublicField"></span>    PublicField <a href="http://localhost:6060/pkg/builtin/#int">int</a> `json:&#34;public_field&#34;`
 }
 </pre>
 
@@ -203,14 +203,14 @@
 		
 			
 			
-			<h2 id="RootClass">type <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=22:117#L1">RootClass</a>
+			<h2 id="RootClass">type <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=24:206#L1">RootClass</a>
 				<a class="permalink" href="index.html#RootClass">&#xb6;</a>
 				
 				
 			</h2>
 			
 			<pre>type RootClass struct {
-<span id="RootClass.RootPublicField"></span>    RootPublicField <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="RootClass.RootPublicField"></span>    RootPublicField <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;root_public_field&#34;`
     <span class="comment">// contains filtered or unexported fields</span>
 }
 </pre>
@@ -227,7 +227,7 @@
 
 			
 				
-				<h3 id="RootClass.RootMethod">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=119:151#L1">RootMethod</a>
+				<h3 id="RootClass.RootMethod">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=210:242#L1">RootMethod</a>
 					<a class="permalink" href="index.html#RootClass.RootMethod">&#xb6;</a>
 					
 					
@@ -239,7 +239,7 @@
 				
 			
 				
-				<h3 id="RootClass.RootPublicMethod">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=821:881#L43">RootPublicMethod</a>
+				<h3 id="RootClass.RootPublicMethod">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=1046:1106#L43">RootPublicMethod</a>
 					<a class="permalink" href="index.html#RootClass.RootPublicMethod">&#xb6;</a>
 					
 					
@@ -251,7 +251,7 @@
 				
 			
 				
-				<h3 id="RootClass.RootPublicProperty">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=664:709#L35">RootPublicProperty</a>
+				<h3 id="RootClass.RootPublicProperty">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=881:926#L35">RootPublicProperty</a>
 					<a class="permalink" href="index.html#RootClass.RootPublicProperty">&#xb6;</a>
 					
 					
@@ -263,7 +263,7 @@
 				
 			
 				
-				<h3 id="RootClass.SetRootPublicProperty">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=738:791#L39">SetRootPublicProperty</a>
+				<h3 id="RootClass.SetRootPublicProperty">func (*RootClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=959:1012#L39">SetRootPublicProperty</a>
 					<a class="permalink" href="index.html#RootClass.SetRootPublicProperty">&#xb6;</a>
 					
 					
@@ -277,7 +277,7 @@
 		
 			
 			
-			<h2 id="TestClass">type <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=203:325#L6">TestClass</a>
+			<h2 id="TestClass">type <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=323:521#L6">TestClass</a>
 				<a class="permalink" href="index.html#TestClass">&#xb6;</a>
 				
 				
@@ -286,7 +286,7 @@
 			<pre>type TestClass struct {
     <a href="index.html#RootClass">RootClass</a>
 
-<span id="TestClass.PublicField"></span>    PublicField <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+<span id="TestClass.PublicField"></span>    PublicField <a href="http://localhost:6060/pkg/builtin/#string">string</a> `json:&#34;public_field&#34;`
 
 <span id="TestClass.NestedField"></span>    NestedField *<a href="index.html#NestedClass">NestedClass</a>
     <span class="comment">// contains filtered or unexported fields</span>
@@ -303,7 +303,7 @@
 
 			
 				
-				<h3 id="NewTestClass">func <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=327:357#L16">NewTestClass</a>
+				<h3 id="NewTestClass">func <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=525:555#L16">NewTestClass</a>
 					<a class="permalink" href="index.html#NewTestClass">&#xb6;</a>
 					
 					
@@ -316,7 +316,7 @@
 
 			
 				
-				<h3 id="TestClass.PublicMethod">func (*TestClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=1048:1104#L55">PublicMethod</a>
+				<h3 id="TestClass.PublicMethod">func (*TestClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=1285:1341#L55">PublicMethod</a>
 					<a class="permalink" href="index.html#TestClass.PublicMethod">&#xb6;</a>
 					
 					
@@ -328,7 +328,7 @@
 				
 			
 				
-				<h3 id="TestClass.PublicProperty">func (*TestClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=907:948#L47">PublicProperty</a>
+				<h3 id="TestClass.PublicProperty">func (*TestClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=1136:1177#L47">PublicProperty</a>
 					<a class="permalink" href="index.html#TestClass.PublicProperty">&#xb6;</a>
 					
 					
@@ -340,7 +340,7 @@
 				
 			
 				
-				<h3 id="TestClass.SetPublicProperty">func (*TestClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=973:1022#L51">SetPublicProperty</a>
+				<h3 id="TestClass.SetPublicProperty">func (*TestClass) <a href="http://localhost:6060/src/test/reflect/TestClass.go?s=1206:1255#L51">SetPublicProperty</a>
 					<a class="permalink" href="index.html#TestClass.SetPublicProperty">&#xb6;</a>
 					
 					
@@ -363,13 +363,13 @@
 
 
 <div id="footer">
-Build version go1.13.15.<br>
+Build version go1.16.15.<br>
 Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
 the content of this page is licensed under the
 Creative Commons Attribution 3.0 License,
 and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
-<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
-<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
 </div>
 
 </div><!-- .container -->
